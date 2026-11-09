@@ -1,0 +1,8 @@
+# Relative artifact paths are resolved against this file's parent directory.
+artifact_dir = "../artifacts"
+model_id = "distilbert/distilbert-base-uncased-finetuned-sst-2-english"
+model_revision = "main" # Resolved once to a commit SHA and recorded in artifacts/model_source.json.
+seed = 2027
+max_length = 512
+atol = 0.0001
+rtol = 0.0001
