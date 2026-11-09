@@ -80,3 +80,43 @@ def test_invalid_max_length_rejected(tmp_path):
     path.write_text('artifact_dir = "results"\nmodel_id = "test"\nmax_length = 513\n')
     with pytest.raises(ValueError, match="max_length"):
         load_config(path)
+
+
+@pytest.fixture
+def checked_baseline(tmp_path, monkeypatch):
+    from etdl import checks
+    from etdl.io import sha256
+
+    config = Config(artifact_dir=tmp_path, model_id="test")
+    path = tmp_path / "model.onnx"
+    path.write_bytes(b"baseline")
+    write_json(tmp_path / "data/calibration.json", {"split": "train", "rows": [1, 2]})
+    write_json(
+        tmp_path / "reports/checks.json",
+        {
+            "passed": True,
+            "model_sha256": sha256(path),
+            "calibration_sha256": sha256(tmp_path / "data/calibration.json"),
+            "atol": 1e-4,
+            "rtol": 1e-4,
+            "cases": [{"case": "train:1"}],
+        },
+    )
+    monkeypatch.setattr(checks, "checked_model_path", lambda _: path)
+    return config
+
+
+def test_benchmark_cannot_outgrow_verified_sample(checked_baseline):
+    from etdl.checks import verified_dynamic
+
+    with pytest.raises(ValueError, match="every requested training example"):
+        verified_dynamic(checked_baseline, [{"idx": 1}, {"idx": 2}])
+
+
+def test_stricter_tolerances_invalidate_existing_checks(checked_baseline):
+    from dataclasses import replace
+
+    from etdl.checks import verified_dynamic
+
+    with pytest.raises(ValueError, match="tolerances changed"):
+        verified_dynamic(replace(checked_baseline, atol=1e-5))

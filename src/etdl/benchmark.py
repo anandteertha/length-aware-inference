@@ -6,9 +6,9 @@ from datetime import UTC, datetime
 
 import numpy as np
 
+from etdl.checks import verified_dynamic
 from etdl.data import encode, load_calibration, load_tokenizer
-from etdl.io import read_json, sha256, write_json
-from etdl.model import checked_model_path
+from etdl.io import sha256, write_json
 from etdl.runtime import environment, session
 
 
@@ -64,14 +64,9 @@ def sampled_memory(interval=0.01):
 def benchmark(config, limit, threads, repeats, warmup):
     if limit <= 0 or repeats <= 0 or warmup < 0:
         raise ValueError("limit/repeats must be positive; warmup must be nonnegative")
-    path = checked_model_path(config)
-    check_report = read_json(config.artifact_dir / "reports/checks.json")
     calibration_path = config.artifact_dir / "data/calibration.json"
-    if not check_report["passed"] or check_report["model_sha256"] != sha256(path):
-        raise ValueError("A passing output check for this exact model is required")
-    if check_report["calibration_sha256"] != sha256(calibration_path):
-        raise ValueError("Calibration data changed after output checking; rerun check")
     rows = load_calibration(config, limit)
+    path = verified_dynamic(config, rows)
     tokenizer = load_tokenizer(config)
     # Record environment outside timing; this worker does not instantiate a PyTorch model.
     machine = environment()

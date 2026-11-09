@@ -30,6 +30,19 @@ def parser():
     commands.add_parser(
         "export", help="Export and optimize a batch-one, dynamic-length FP32 ONNX model"
     )
+    variants = commands.add_parser("variants", help="Build and check fixed-length ONNX variants")
+    variants.add_argument("--lengths", type=positive, nargs="+", default=[16, 32, 64, 128])
+    variants.add_argument("--limit", type=positive, default=128)
+    study = commands.add_parser("study", help="Profile checked variants and select at most two")
+    study.add_argument("--limit", type=positive, default=128)
+    study.add_argument("--threads", type=positive, default=1)
+    study.add_argument("--repeats", type=positive, default=3)
+    study.add_argument("--warmup", type=nonnegative, default=10)
+    study.add_argument("--memory-budget-mib", type=positive)
+    study.add_argument("--name", help="New study directory name; preserves earlier runs")
+    predict = commands.add_parser("predict", help="Classify text using a frozen measured policy")
+    predict.add_argument("text")
+    predict.add_argument("--policy", type=Path, default=None)
     for name in ("prepare", "check", "benchmark", "milestone"):
         command = commands.add_parser(name)
         command.add_argument("--limit", type=positive, default=128)
@@ -49,6 +62,51 @@ def main():
     arguments = parser().parse_args()
     config = load_config(arguments.config)
     config.artifact_dir.mkdir(parents=True, exist_ok=True)
+    if arguments.command == "variants":
+        for length in arguments.lengths:
+            print(f"Building and checking fixed-{length}", flush=True)
+            subprocess.run(
+                [
+                    sys.executable,
+                    "-m",
+                    "etdl.worker",
+                    "--config",
+                    str(arguments.config.resolve()),
+                    "variant",
+                    "--length",
+                    str(length),
+                    "--limit",
+                    str(arguments.limit),
+                ],
+                check=True,
+            )
+        return
+    if arguments.command == "study":
+        from etdl.study import study
+
+        report = study(
+            config,
+            arguments.config,
+            arguments.limit,
+            arguments.threads,
+            arguments.repeats,
+            arguments.warmup,
+            arguments.memory_budget_mib,
+            arguments.name,
+        )
+        print(json.dumps(report, indent=2))
+        return
+    if arguments.command == "predict":
+        from etdl.router import RoutedClassifier
+
+        policy = arguments.policy or config.artifact_dir / "study-t1/selection.json"
+        classifier = RoutedClassifier(config, policy)
+        print(
+            json.dumps(
+                {**classifier.predict(arguments.text), "ready_ms": classifier.ready_ms}, indent=2
+            )
+        )
+        return
     if arguments.command == "milestone":
         # Child processes isolate export/check's PyTorch allocations from ORT memory measurements.
         prefix = [sys.executable, "-m", "etdl", "--config", str(arguments.config.resolve())]

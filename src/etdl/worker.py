@@ -1,0 +1,45 @@
+"""Isolated study workers. Use the public `etdl variants` / `etdl study` commands."""
+
+import argparse
+import json
+from pathlib import Path
+
+from etdl.config import load_config
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", required=True, type=Path)
+    commands = parser.add_subparsers(dest="command", required=True)
+    variant = commands.add_parser("variant")
+    variant.add_argument("--length", type=int, required=True)
+    variant.add_argument("--limit", type=int, required=True)
+    run = commands.add_parser("run")
+    run.add_argument("--request", type=Path, required=True)
+    run.add_argument("--output", type=Path, required=True)
+    arguments = parser.parse_args()
+    config = load_config(arguments.config)
+    if arguments.command == "variant":
+        from etdl.variants import build_variant, check_variant
+
+        build_variant(config, arguments.length)
+        result = check_variant(config, arguments.length, arguments.limit)
+        print(json.dumps(result, indent=2))
+    else:
+        from etdl.study import run_worker
+
+        result = run_worker(config, arguments.request, arguments.output)
+        print(
+            json.dumps(
+                {
+                    "output": str(arguments.output),
+                    "p95_ms": result["latency"]["end_to_end_ms"]["p95_ms"],
+                    "peak_mib": result["memory_for_budget_bytes"] / 2**20,
+                },
+                indent=2,
+            )
+        )
+
+
+if __name__ == "__main__":
+    main()

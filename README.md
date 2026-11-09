@@ -9,10 +9,11 @@ The dynamic-length model remains the fallback, and choosing no variants is a val
 Implemented: reproducible training-data sampling and length counts, CPU/environment
 inventory, dynamic FP32 ONNX export, ORT graph optimization and operator inventory,
 PyTorch/ONNX output comparisons, mask/padding checks, and a CPU calibration benchmark.
+Fixed 16/32/64/128-token variants now include unchanged-weight checks, output verification,
+measured routing, resident multi-session memory measurements, and bounded subset selection.
 
-Fixed-length variants, measured routing, the memory-constrained selector, comparative
-experiments, and held-out evaluation are subsequent milestones. This code does not yet
-claim a specialization speedup.
+Larger comparative experiments, ablations, and held-out evaluation remain. This code
+does not yet claim a held-out specialization speedup.
 
 The first real-model run is documented in [the milestone results](docs/milestone-1.md).
 
@@ -52,6 +53,54 @@ uv run etdl benchmark --limit 128 --threads 1 --repeats 3 --warmup 10
 `benchmark`. To rerun the entire pipeline, change `artifact_dir` in a copy of the
 config, then pass `--config path/to/config.toml` **before** the subcommand.
 `milestone --threads 1 2 4` runs benchmark processes in a seeded shuffled order.
+
+## Verified specialization and selection
+
+After the baseline passes its checks:
+
+```powershell
+uv run etdl variants --limit 128
+uv run etdl study --limit 128 --threads 1 --repeats 3 --warmup 10 --memory-budget-mib 1536
+uv run etdl predict "Great service!"
+```
+
+Do not request more calibration examples than the dynamic output checks cover.
+`variants` resumes existing graphs only when their hashes and baseline provenance match,
+then checks all eligible requested training examples, boundary lengths and masks.
+
+The study profiles every checked option in separate processes, in a seeded randomized
+order. For each observed token length, it learns the fastest median combined latency,
+including padding and routing preparation. Dynamic execution always competes. Unseen
+lengths route dynamically. It enumerates subsets of zero, one, or two variants, prunes
+variants which never win a route, and measures each remaining configuration in a fresh
+process with every retained session resident. Each graph receives a full-capacity probe
+before warm-up; those probes are excluded from request timing but included in peak memory.
+
+Selection minimizes **measured configuration p95**, subject to the process-memory cap
+and zero changed predictions against the dynamic profile. The budget uses the larger
+of sampled RSS and the OS lifetime high-water mark when available. It never substitutes
+serialized file sizes or sums of individually measured peaks for resident memory.
+If no configuration fits, the command writes an infeasibility report and creates no policy.
+Without an explicit budget, it records a cap of 10% of initially available RAM.
+
+Outputs are in `artifacts/study-t1/`: per-option profiles, configuration requests and raw
+measurements, `summary.json`, `configurations.csv`, `selection.json`, and PNG/SVG
+latency-memory plots. A named run preserves previous results:
+
+```powershell
+uv run etdl study --name repeat-t1 --limit 128 --threads 1 --repeats 3
+uv run etdl predict "A disappointing experience." --policy artifacts/repeat-t1/selection.json
+```
+
+Use `--threads 2` and `--threads 4` for separate studies; compare randomized repeated
+studies before interpreting a speedup. The small initial run can overfit timing noise.
+Keep the frozen policy unchanged during a later held-out evaluation.
+
+`predict` checks the policy's CPU/runtime identity, model hashes, source revision,
+calibration hash, and output tolerances before loading sessions. A missing or changed
+fixed variant is disabled, allowing verified dynamic fallback. An invalid dynamic model
+or incompatible policy aborts. Each prediction logs its route without storing the input
+text in `artifacts/reports/routing-decisions.jsonl`.
 
 ## Outputs
 
@@ -98,16 +147,12 @@ are recorded alongside each run.
   edge-device performance. Full experiments require repeated randomized method and
   thread configurations on the actual measured hardware.
 
-## Next milestones
+## Remaining experiments
 
-1. Derive 16/32/64/128-token models from the same exported weights; verify scores,
-   labels, masks, and padding against the dynamic baseline at relevant boundaries.
-2. Measure eligible options per length and actual resident multi-session memory;
-   enumerate subsets of size zero, one, or two under an explicit memory cap.
-   Include dynamic execution in every routing decision, even when a variant fits.
-3. Freeze selection using training data. Compare PyTorch FP32, optimized dynamic
+1. Expand training-only calibration and repeat randomized runs at 1/2/4 CPU threads.
+   Include PyTorch FP32, optimized dynamic
    ONNX, one fixed variant with fallback, simple buckets, and selected variants.
-4. Evaluate once on held-out validation; report accuracy/changed labels, median/p95,
+2. Evaluate once on held-out validation after freezing selection; report accuracy/changed labels, median/p95,
    startup, disk size, resident peak memory, length breakdowns, and latency-memory
    plots. Add the memory-cap, output-check, and length-frequency ablations.
 

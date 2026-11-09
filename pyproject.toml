@@ -18,6 +18,7 @@ dependencies = [
   "numpy>=2.2,<3",
   "psutil>=7,<8",
   "py-cpuinfo>=9,<10",
+  "matplotlib>=3.10,<4",
 ]
 
 [project.scripts]

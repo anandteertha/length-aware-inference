@@ -1,7 +1,7 @@
 import numpy as np
 
 from etdl.data import encode, load_calibration, load_tokenizer
-from etdl.io import sha256, write_json
+from etdl.io import read_json, sha256, write_json
 from etdl.model import checked_model_path, load_pytorch
 from etdl.runtime import session
 
@@ -20,6 +20,22 @@ def compare_logits(reference, actual, atol, rtol):
         "labels_match": labels_match,
         "max_absolute_error": float(np.max(np.abs(reference - actual))),
     }
+
+
+def verified_dynamic(config, rows=None):
+    path = checked_model_path(config)
+    report = read_json(config.artifact_dir / "reports/checks.json")
+    if not report["passed"] or report["model_sha256"] != sha256(path):
+        raise ValueError("A passing output check for this exact dynamic model is required")
+    if report["calibration_sha256"] != sha256(config.artifact_dir / "data/calibration.json"):
+        raise ValueError("Calibration data changed; rerun output checks")
+    if (report["atol"], report["rtol"]) != (config.atol, config.rtol):
+        raise ValueError("Output tolerances changed; rerun output checks")
+    if rows is not None:
+        checked = {case["case"] for case in report["cases"]}
+        if any(f"train:{row['idx']}" not in checked for row in rows):
+            raise ValueError("Output checks do not cover every requested training example")
+    return path
 
 
 def check(config, limit):
