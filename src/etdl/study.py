@@ -318,7 +318,7 @@ def write_study_outputs(summary_path):
                 color=colors[count],
                 label=f"{count} fixed variants",
             )
-    for index, row in enumerate(records):
+    for row in records:
         if row["selected"]:
             ax.scatter(
                 row["resident_peak_mib"],
@@ -334,7 +334,7 @@ def write_study_outputs(summary_path):
         ax.annotate(
             label,
             (row["resident_peak_mib"], row["p95_ms"]),
-            xytext=(6, 10 + index % 3 * 12),
+            xytext=(6, 9),
             textcoords="offset points",
             fontsize=8,
         )
@@ -346,7 +346,8 @@ def write_study_outputs(summary_path):
         ylabel="Combined request latency p95 (ms)",
         title=f"Training calibration: latency vs resident memory ({summary['threads']} CPU thread)",
     )
-    ax.margins(x=0.15, y=0.35)
+    ax.margins(x=0.15)
+    ax.set_ylim(0, max(row["p95_ms"] for row in records) * 1.18)
     ax.grid(alpha=0.15)
     ax.legend(loc="best", fontsize=8)
     fig.text(
