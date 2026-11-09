@@ -17,6 +17,12 @@ def main():
     run = commands.add_parser("run")
     run.add_argument("--request", type=Path, required=True)
     run.add_argument("--output", type=Path, required=True)
+    reference = commands.add_parser("reference")
+    reference.add_argument("--workload", type=Path, required=True)
+    reference.add_argument("--output", type=Path, required=True)
+    comparison = commands.add_parser("comparison")
+    comparison.add_argument("--request", type=Path, required=True)
+    comparison.add_argument("--output", type=Path, required=True)
     arguments = parser.parse_args()
     config = load_config(arguments.config)
     if arguments.command == "variant":
@@ -25,6 +31,14 @@ def main():
         build_variant(config, arguments.length)
         result = check_variant(config, arguments.length, arguments.limit)
         print(json.dumps(result, indent=2))
+    elif arguments.command == "reference":
+        from etdl.comparison import references
+
+        references(config, arguments.workload, arguments.output)
+    elif arguments.command == "comparison":
+        from etdl.comparison import measure
+
+        measure(config, arguments.request, arguments.output)
     else:
         from etdl.study import run_worker
 

@@ -43,6 +43,16 @@ def parser():
     predict = commands.add_parser("predict", help="Classify text using a frozen measured policy")
     predict.add_argument("text")
     predict.add_argument("--policy", type=Path, default=None)
+    comparison = commands.add_parser(
+        "compare", help="Randomized independent-process training confirmation"
+    )
+    comparison.add_argument("--policy", type=Path)
+    comparison.add_argument("--name", default="confirmation")
+    comparison.add_argument("--limit", type=positive, default=128)
+    comparison.add_argument("--threads", type=positive, nargs="+", default=[1, 2, 4])
+    comparison.add_argument("--blocks", type=positive, default=3)
+    comparison.add_argument("--warmup", type=nonnegative, default=10)
+    comparison.add_argument("--resume", action="store_true")
     for name in ("prepare", "check", "benchmark", "milestone"):
         command = commands.add_parser(name)
         command.add_argument("--limit", type=positive, default=128)
@@ -62,6 +72,23 @@ def main():
     arguments = parser().parse_args()
     config = load_config(arguments.config)
     config.artifact_dir.mkdir(parents=True, exist_ok=True)
+    if arguments.command == "compare":
+        from etdl.comparison import compare
+
+        policy = arguments.policy or config.artifact_dir / "study-t1/selection.json"
+        report = compare(
+            config,
+            arguments.config,
+            policy,
+            arguments.name,
+            arguments.limit,
+            arguments.threads,
+            arguments.blocks,
+            arguments.warmup,
+            arguments.resume,
+        )
+        print(json.dumps(report, indent=2))
+        return
     if arguments.command == "variants":
         for length in arguments.lengths:
             print(f"Building and checking fixed-{length}", flush=True)

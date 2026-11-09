@@ -27,7 +27,7 @@ def environment():
     }
 
 
-def session(path, threads=1, optimized_path=None, profile_prefix=None):
+def session(path, threads=1, optimized_path=None, profile_prefix=None, allow_spinning=None):
     import onnxruntime as ort
 
     if threads < 1:
@@ -37,6 +37,10 @@ def session(path, threads=1, optimized_path=None, profile_prefix=None):
     options.inter_op_num_threads = 1
     options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
     options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+    if allow_spinning is not None:
+        value = "1" if allow_spinning else "0"
+        options.add_session_config_entry("session.intra_op.allow_spinning", value)
+        options.add_session_config_entry("session.inter_op.allow_spinning", value)
     if optimized_path is not None:
         options.optimized_model_filepath = str(optimized_path)
     if profile_prefix is not None:

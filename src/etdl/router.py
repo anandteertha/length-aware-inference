@@ -46,7 +46,13 @@ class RoutedClassifier:
             except (OSError, ValueError, KeyError) as error:
                 self.disabled_variants[name] = str(error)
         self.tokenizer = load_tokenizer(config)
-        self.runtimes = {name: session(path, policy["threads"])[0] for name, path in paths.items()}
+        settings = policy.get("runtime_settings", {})
+        options = (
+            {"allow_spinning": settings["allow_spinning"]} if "allow_spinning" in settings else {}
+        )
+        self.runtimes = {
+            name: session(path, policy["threads"], **options)[0] for name, path in paths.items()
+        }
         self.ready_ms = (time.perf_counter_ns() - started) / 1e6
 
     def predict(self, text):
