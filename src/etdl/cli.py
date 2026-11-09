@@ -53,6 +53,20 @@ def parser():
     comparison.add_argument("--blocks", type=positive, default=3)
     comparison.add_argument("--warmup", type=nonnegative, default=10)
     comparison.add_argument("--resume", action="store_true")
+    freeze = commands.add_parser(
+        "freeze", help="Freeze deployment and evaluation before validation access"
+    )
+    freeze.add_argument("--comparison", default="confirmation")
+    evaluate = commands.add_parser(
+        "evaluate", help="Evaluate a frozen plan on all 872 held-out examples"
+    )
+    evaluate.add_argument("--comparison", default="confirmation")
+    evaluate.add_argument("--resume", action="store_true")
+    ablate = commands.add_parser(
+        "ablate", help="Reanalyse training-only memory, output-check and frequency sensitivity"
+    )
+    ablate.add_argument("--study", default="study-t1")
+    ablate.add_argument("--output", type=Path)
     for name in ("prepare", "check", "benchmark", "milestone"):
         command = commands.add_parser(name)
         command.add_argument("--limit", type=positive, default=128)
@@ -72,6 +86,28 @@ def main():
     arguments = parser().parse_args()
     config = load_config(arguments.config)
     config.artifact_dir.mkdir(parents=True, exist_ok=True)
+    if arguments.command == "ablate":
+        from etdl.ablations import reanalyse
+
+        directory = (config.artifact_dir / arguments.study).resolve()
+        if directory.parent != config.artifact_dir.resolve():
+            raise ValueError("Study must be directly inside artifact_dir")
+        output = arguments.output or config.artifact_dir / f"reports/ablation-{directory.name}.json"
+        print(json.dumps(reanalyse(directory / "summary.json", output), indent=2))
+        return
+    if arguments.command in {"freeze", "evaluate"}:
+        from etdl.comparison import evaluate, freeze
+
+        directory = (config.artifact_dir / arguments.comparison).resolve()
+        if directory.parent != config.artifact_dir.resolve():
+            raise ValueError("Comparison must be a directory directly inside artifact_dir")
+        report = (
+            freeze(config, directory)
+            if arguments.command == "freeze"
+            else evaluate(config, arguments.config, directory, arguments.resume)
+        )
+        print(json.dumps(report, indent=2))
+        return
     if arguments.command == "compare":
         from etdl.comparison import compare
 
@@ -126,7 +162,10 @@ def main():
     if arguments.command == "predict":
         from etdl.router import RoutedClassifier
 
-        policy = arguments.policy or config.artifact_dir / "study-t1/selection.json"
+        preferred = config.artifact_dir / "confirmation/frozen-policy.json"
+        policy = arguments.policy or (
+            preferred if preferred.exists() else config.artifact_dir / "study-t1/selection.json"
+        )
         classifier = RoutedClassifier(config, policy)
         print(
             json.dumps(

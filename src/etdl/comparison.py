@@ -71,9 +71,7 @@ def prepare_workload(config, destination, limit, split="train", freeze_path=None
     if split == "validation":
         if freeze_path is None or not freeze_path.exists():
             raise ValueError("Validation access requires a frozen evaluation plan")
-        frozen = read_json(freeze_path)
-        if frozen["calibration_sha256"] != sha256(calibration_path):
-            raise ValueError("Frozen plan calibration data changed")
+        validate_frozen_plan(config, freeze_path)
     elif split != "train":
         raise ValueError("Only training confirmation or frozen validation are supported")
     tokenizer = load_tokenizer(config)
@@ -185,6 +183,14 @@ def measure(config, request_path, output):
             or sha256(freeze) != request["freeze_sha256"]
         ):
             raise ValueError("Held-out plan changed after validation access")
+        frozen = validate_frozen_plan(config, freeze)
+        if (
+            request["threads"] != frozen["threads"]
+            or request["method"] not in frozen["methods"]
+            or request["block"] != 0
+            or sha256(plan_path) != frozen["execution_plan_sha256"]
+        ):
+            raise ValueError("Held-out condition differs from the prespecified evaluation")
     rows = workload["rows"]
     expected = reference["logits"]
     if set(expected) != {str(row["idx"]) for row in rows}:
@@ -299,6 +305,213 @@ def measure(config, request_path, output):
         f"{method} t{threads} block {request['block']}: p95={report['latency']['end_to_end_ms']['p95_ms']:.3f} ms",
         flush=True,
     )
+
+
+def deployment_candidate(groups, budget_bytes):
+    eligible = [
+        group
+        for group in groups
+        if group["method"] in {"dynamic", "selected"}
+        and group["runs"] >= 3
+        and group["passed"]
+        and group["changed_predictions"] == 0
+        and group["max_peak_bytes"] <= budget_bytes
+    ]
+    if not eligible:
+        raise ValueError(
+            "No confirmed deployment candidate meets correctness and memory constraints"
+        )
+    return min(
+        eligible,
+        key=lambda group: (
+            group["median_run_p95_ms"],
+            group["max_peak_bytes"],
+            group["method"] != "dynamic",
+        ),
+    )
+
+
+def freeze(config, directory):
+    plan_path, summary_path = directory / "plan.json", directory / "summary.json"
+    plan, summary = read_json(plan_path), read_json(summary_path)
+    if (
+        summary["status"] != "complete"
+        or not summary["all_correctness_checks_passed"]
+        or summary["plan_sha256"] != sha256(plan_path)
+    ):
+        raise ValueError("A complete, passing training comparison is required before freezing")
+    validate_plan(config, plan)
+    evaluation_path = directory / "evaluation-plan.json"
+    if evaluation_path.exists():
+        raise ValueError("Evaluation plan already frozen; do not retune using validation")
+    chosen = deployment_candidate(summary["groups"], plan["policy"]["memory_budget_bytes"])
+    policy = dict(plan["policy"])
+    policy.update(
+        {
+            "threads": chosen["threads"],
+            "runtime_settings": {"allow_spinning": False},
+            "measured_memory_bytes": chosen["max_peak_bytes"],
+            "calibration_p95_ms": chosen["median_run_p95_ms"],
+            "selection_metric": "median of independent training-confirmation run p95s",
+            "confirmation_plan_sha256": sha256(plan_path),
+            "confirmation_summary_sha256": sha256(summary_path),
+            "confirmation_training_sha256": plan["workload_sha256"],
+        }
+    )
+    if chosen["method"] == "dynamic":
+        policy["variants"], policy["routing"] = [], {}
+        policy["model_hashes"] = {"dynamic": plan["model_hashes"]["dynamic"]}
+    policy_path = directory / "frozen-policy.json"
+    write_json(policy_path, policy)
+    execution = dict(plan)
+    execution.update(
+        {
+            # Retain the original 16+32 candidate as a comparison even if deployment rejects it.
+            "policy": plan["policy"],
+            "threads": [chosen["threads"]],
+            "blocks": 1,
+            "seed": config.seed + 1000,
+            "workload_sha256": None,
+            "schedule": schedule(METHODS, [chosen["threads"]], 1, config.seed + 1000),
+            "purpose": "single_prespecified_held_out_comparison",
+        }
+    )
+    execution_path = directory / "evaluation-execution.json"
+    write_json(execution_path, execution)
+    frozen = {
+        "status": "frozen_for_validation",
+        "created_at_utc": datetime.now(UTC).isoformat(),
+        "threads": chosen["threads"],
+        "methods": list(METHODS),
+        "chosen_confirmation_method": chosen["method"],
+        "calibration_sha256": plan["calibration_sha256"],
+        "comparison_plan": str(plan_path.resolve()),
+        "comparison_plan_sha256": sha256(plan_path),
+        "comparison_summary": str(summary_path.resolve()),
+        "comparison_summary_sha256": sha256(summary_path),
+        "frozen_policy": str(policy_path.resolve()),
+        "frozen_policy_sha256": sha256(policy_path),
+        "execution_plan": str(execution_path.resolve()),
+        "execution_plan_sha256": sha256(execution_path),
+        "dataset_revision": read_json(config.artifact_dir / "data/calibration.json")["revision"],
+        "hardware_key": plan["hardware_key"],
+        "model_source": plan["model_source"],
+        "validation_examples": 872,
+        "measurement_code_commit": subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], text=True
+        ).strip(),
+    }
+    write_json(evaluation_path, frozen)
+    return frozen
+
+
+def validate_frozen_plan(config, path):
+    frozen = read_json(path)
+    if frozen.get("status") != "frozen_for_validation":
+        raise ValueError("Invalid frozen evaluation status")
+    if frozen["calibration_sha256"] != sha256(config.artifact_dir / "data/calibration.json"):
+        raise ValueError("Frozen plan calibration data changed")
+    for key in ("comparison_plan", "comparison_summary", "frozen_policy", "execution_plan"):
+        if sha256(Path(frozen[key])) != frozen[f"{key}_sha256"]:
+            raise ValueError(f"Frozen {key} changed; evaluation must not be retuned")
+    if frozen["model_source"] != model_source(config):
+        raise ValueError("Frozen checkpoint revision changed")
+    if frozen["hardware_key"] != hardware_key(environment()):
+        raise ValueError("Frozen hardware/runtime changed")
+    validate_plan(config, read_json(Path(frozen["execution_plan"])))
+    return frozen
+
+
+def evaluate(config, config_path, directory, resume=False):
+    freeze_path = directory / "evaluation-plan.json"
+    frozen = validate_frozen_plan(config, freeze_path)
+    execution_path = Path(frozen["execution_plan"])
+    execution = read_json(execution_path)
+    destination = directory / "held-out"
+    if destination.exists() and not resume:
+        raise ValueError("Held-out evaluation exists; resume only the same frozen plan")
+    destination.mkdir(exist_ok=True)
+    marker = destination / "validation-started.json"
+    if marker.exists() and read_json(marker)["freeze_sha256"] != sha256(freeze_path):
+        raise ValueError("Frozen plan changed after validation access")
+    if not marker.exists():
+        write_json(
+            marker,
+            {"started_at_utc": datetime.now(UTC).isoformat(), "freeze_sha256": sha256(freeze_path)},
+        )
+    workload_path = destination / "validation.json"
+    if not workload_path.exists():
+        prepare_workload(config, workload_path, 872, split="validation", freeze_path=freeze_path)
+    reference_path = destination / "references.json"
+    if not reference_path.exists():
+        subprocess_worker(
+            config_path, "reference", "--workload", workload_path, "--output", reference_path
+        )
+    runs = []
+    for condition in execution["schedule"]:
+        output = destination / f"{condition['method']}.json"
+        request_path = destination / f"{condition['method']}.request.json"
+        request = {
+            **condition,
+            "plan": str(execution_path),
+            "plan_sha256": sha256(execution_path),
+            "workload": str(workload_path.resolve()),
+            "workload_sha256": sha256(workload_path),
+            "references": str(reference_path.resolve()),
+            "references_sha256": sha256(reference_path),
+            "freeze": str(freeze_path.resolve()),
+            "freeze_sha256": sha256(freeze_path),
+        }
+        if not output.exists():
+            write_json(request_path, request)
+            print(f"Held-out: {condition['method']} t{condition['threads']}", flush=True)
+            subprocess_worker(
+                config_path, "comparison", "--request", request_path, "--output", output
+            )
+        result = read_json(output)
+        if any(
+            result[key] != request[key]
+            for key in (
+                "method",
+                "threads",
+                "block",
+                "plan_sha256",
+                "workload_sha256",
+                "references_sha256",
+            )
+        ):
+            raise ValueError("Existing held-out result belongs to another frozen evaluation")
+        if result["examples"] != 872 or result["split"] != "validation":
+            raise ValueError("Incomplete held-out result")
+        runs.append(result)
+    deployment = next(run for run in runs if run["method"] == frozen["chosen_confirmation_method"])
+    passed = all(run["passed"] for run in runs)
+    budget_passed = (
+        deployment["memory_for_budget_bytes"] <= execution["policy"]["memory_budget_bytes"]
+    )
+    summary = {
+        "status": "complete" if passed and budget_passed else "completed_with_failures",
+        "split": "validation",
+        "examples": 872,
+        "timing_runs_per_method": 1,
+        "freeze_sha256": sha256(freeze_path),
+        "threads": frozen["threads"],
+        "deployment_method": frozen["chosen_confirmation_method"],
+        "all_correctness_checks_passed": passed,
+        "deployment_memory_within_budget": budget_passed,
+        "runs": [
+            {key: value for key, value in run.items() if key not in {"samples", "environment"}}
+            for run in runs
+        ],
+        "limitations": [
+            "One held-out timing run per method; no latency confidence intervals.",
+            "CPU laptop results do not establish performance on other edge hardware.",
+            "Readiness excludes Python startup/imports and is not a cold device start.",
+            "Validation results did not change the frozen policy.",
+        ],
+    }
+    write_json(destination / "summary.json", summary)
+    return summary
 
 
 def summarize_runs(runs):

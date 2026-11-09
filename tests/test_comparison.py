@@ -119,3 +119,124 @@ def test_confirmation_excludes_original_selection_ids(tmp_path, monkeypatch):
     )
     rows = comparison.prepare_workload(config, tmp_path / "confirmation.json", 2)
     assert [row["idx"] for row in rows] == [2, 3]
+
+
+def test_deployment_selection_uses_all_runs_and_only_allowed_candidates():
+    from etdl.comparison import deployment_candidate
+
+    values = [
+        {
+            "method": "dynamic",
+            "threads": 1,
+            "runs": 3,
+            "passed": True,
+            "changed_predictions": 0,
+            "max_peak_bytes": 600,
+            "median_run_p95_ms": 10,
+        },
+        {
+            "method": "selected",
+            "threads": 2,
+            "runs": 3,
+            "passed": True,
+            "changed_predictions": 0,
+            "max_peak_bytes": 1200,
+            "median_run_p95_ms": 5,
+        },
+        {
+            "method": "buckets",
+            "threads": 4,
+            "runs": 3,
+            "passed": True,
+            "changed_predictions": 0,
+            "max_peak_bytes": 800,
+            "median_run_p95_ms": 1,
+        },
+    ]
+    assert deployment_candidate(values, 1300)["threads"] == 2
+    assert deployment_candidate(values, 1000)["method"] == "dynamic"
+    values[1]["passed"] = False
+    assert deployment_candidate(values, 1300)["method"] == "dynamic"
+    with pytest.raises(ValueError, match="No confirmed deployment"):
+        deployment_candidate(values, 500)
+
+
+def test_frozen_policy_tampering_prevents_validation_access(tmp_path, monkeypatch):
+    from etdl import comparison
+    from etdl.config import Config
+    from etdl.io import sha256, write_json
+
+    config = Config(artifact_dir=tmp_path, model_id="test")
+    calibration = tmp_path / "data/calibration.json"
+    write_json(calibration, {"split": "train"})
+    frozen = {
+        "status": "frozen_for_validation",
+        "calibration_sha256": sha256(calibration),
+        "model_source": {},
+        "hardware_key": {},
+    }
+    for name in ("comparison_plan", "comparison_summary", "frozen_policy", "execution_plan"):
+        path = tmp_path / f"{name}.json"
+        write_json(path, {})
+        frozen[name], frozen[f"{name}_sha256"] = str(path), sha256(path)
+    path = tmp_path / "evaluation-plan.json"
+    write_json(path, frozen)
+    monkeypatch.setattr(comparison, "model_source", lambda _: {})
+    monkeypatch.setattr(comparison, "environment", dict)
+    monkeypatch.setattr(comparison, "hardware_key", lambda _: {})
+    monkeypatch.setattr(comparison, "validate_plan", lambda *args: {})
+    comparison.validate_frozen_plan(config, path)
+    write_json(tmp_path / "frozen_policy.json", {"threads": 99})
+    with pytest.raises(ValueError, match="Frozen frozen_policy changed"):
+        comparison.validate_frozen_plan(config, path)
+
+
+def test_rejected_specialization_is_retained_as_comparator_not_deployed(tmp_path, monkeypatch):
+    from etdl import comparison
+    from etdl.config import Config
+    from etdl.io import read_json, sha256, write_json
+
+    config = Config(artifact_dir=tmp_path, model_id="test")
+    write_json(tmp_path / "data/calibration.json", {"revision": "dataset-revision"})
+    directory = tmp_path / "confirmation"
+    policy = {
+        "variants": ["fixed-16", "fixed-32"],
+        "routing": {"5": "fixed-16"},
+        "memory_budget_bytes": 1500,
+        "model_hashes": {"dynamic": "d", "fixed-16": "a", "fixed-32": "b"},
+    }
+    plan = {
+        "policy": policy,
+        "model_hashes": policy["model_hashes"],
+        "workload_sha256": "w",
+        "calibration_sha256": "c",
+        "hardware_key": {},
+        "model_source": {},
+    }
+    write_json(directory / "plan.json", plan)
+    group = {
+        "method": "dynamic",
+        "threads": 4,
+        "runs": 3,
+        "passed": True,
+        "changed_predictions": 0,
+        "max_peak_bytes": 650,
+        "median_run_p95_ms": 78,
+    }
+    write_json(
+        directory / "summary.json",
+        {
+            "status": "complete",
+            "all_correctness_checks_passed": True,
+            "plan_sha256": sha256(directory / "plan.json"),
+            "groups": [group],
+        },
+    )
+    monkeypatch.setattr(comparison, "validate_plan", lambda *args: {})
+    frozen = comparison.freeze(config, directory)
+    assert frozen["chosen_confirmation_method"] == "dynamic"
+    assert read_json(directory / "frozen-policy.json")["variants"] == []
+    assert read_json(directory / "evaluation-execution.json")["policy"]["variants"] == [
+        "fixed-16",
+        "fixed-32",
+    ]

@@ -54,6 +54,9 @@ run per method, without latency confidence intervals. Accuracy and changed label
 use all 872 examples. Keep failed correctness checks in the report and do not
 retune a failing policy using validation. Full application cold start, other
 hardware and additional held-out timing replications remain separate experiments.
+The `selected` comparison retains the original 16+32 candidate even when the
+training rule chooses dynamic-only for deployment; the deployment recommendation
+is reported separately. This interpretation was clarified before validation access.
 
 ## Software and methodological sources
 
