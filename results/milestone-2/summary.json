@@ -1,0 +1,1380 @@
+{
+  "created_at_utc": "2026-11-09T18:53:01.771442+00:00",
+  "split": "train",
+  "examples": 64,
+  "threads": 1,
+  "seed": 2027,
+  "repeats": 3,
+  "memory_budget_bytes": 1610612736,
+  "budget_rule": "explicit MiB",
+  "hardware_key": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu": "13th Gen Intel(R) Core(TM) i5-1334U",
+    "cpu_flags": [
+      "3dnow",
+      "3dnowprefetch",
+      "abm",
+      "acpi",
+      "adx",
+      "aes",
+      "apic",
+      "avx",
+      "avx2",
+      "bmi1",
+      "bmi2",
+      "clflush",
+      "clflushopt",
+      "clwb",
+      "cmov",
+      "cx16",
+      "cx8",
+      "de",
+      "dts",
+      "erms",
+      "est",
+      "f16c",
+      "fma",
+      "fpu",
+      "fxsr",
+      "gfni",
+      "ht",
+      "hypervisor",
+      "ia64",
+      "intel_pt",
+      "invpcid",
+      "lahf_lm",
+      "mca",
+      "mce",
+      "mmx",
+      "monitor",
+      "movbe",
+      "msr",
+      "mtrr",
+      "osxsave",
+      "pae",
+      "pat",
+      "pbe",
+      "pcid",
+      "pclmulqdq",
+      "pdcm",
+      "pge",
+      "pni",
+      "popcnt",
+      "pse",
+      "pse36",
+      "rdpid",
+      "rdrnd",
+      "rdseed",
+      "sep",
+      "serial",
+      "sha",
+      "smap",
+      "smep",
+      "ss",
+      "sse",
+      "sse2",
+      "sse4_1",
+      "sse4_2",
+      "ssse3",
+      "tm",
+      "tm2",
+      "tsc",
+      "tscdeadline",
+      "umip",
+      "vaes",
+      "vme",
+      "vpclmulqdq",
+      "x2apic",
+      "xsave",
+      "xtpr"
+    ],
+    "ort_version": "1.31.1"
+  },
+  "profile_order": [
+    "fixed-16",
+    "fixed-32",
+    "fixed-128",
+    "fixed-64",
+    "dynamic"
+  ],
+  "subset_order": [
+    [],
+    [
+      "fixed-64"
+    ],
+    [
+      "fixed-16",
+      "fixed-32"
+    ],
+    [
+      "fixed-16",
+      "fixed-64"
+    ],
+    [
+      "fixed-128"
+    ],
+    [
+      "fixed-32"
+    ],
+    [
+      "fixed-16"
+    ],
+    [
+      "fixed-128",
+      "fixed-32"
+    ],
+    [
+      "fixed-128",
+      "fixed-16"
+    ],
+    [
+      "fixed-32",
+      "fixed-64"
+    ]
+  ],
+  "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc",
+  "model_source": {
+    "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "requested_revision": "main",
+    "revision": "714eb0fa89d2f80546fda750413ed43d93601a13"
+  },
+  "limitations": [
+    "Calibration-only selection; validation is still held out.",
+    "Small repeated workload; selection may overfit timing noise.",
+    "Unseen token lengths route dynamically, without extrapolating speedups.",
+    "Memory is process RSS, with capacity probes; sampling can miss brief peaks.",
+    "Idle variants are pruned before measurement because they add only memory."
+  ],
+  "status": "selected",
+  "selection": {
+    "status": "verified_calibration_selection",
+    "variants": [
+      "fixed-16",
+      "fixed-32"
+    ],
+    "routing": {
+      "26": "fixed-32",
+      "7": "fixed-16",
+      "4": "fixed-16",
+      "11": "fixed-16",
+      "20": "fixed-32",
+      "8": "fixed-16",
+      "12": "fixed-16",
+      "3": "fixed-16",
+      "9": "fixed-16",
+      "10": "fixed-16",
+      "19": "fixed-32",
+      "21": "fixed-32",
+      "17": "fixed-32",
+      "18": "fixed-32",
+      "27": "fixed-32",
+      "30": "fixed-32",
+      "37": "dynamic",
+      "33": "dynamic",
+      "22": "fixed-32",
+      "6": "fixed-16",
+      "14": "fixed-16",
+      "15": "fixed-16",
+      "23": "fixed-32",
+      "5": "fixed-16"
+    },
+    "threads": 1,
+    "model_hashes": {
+      "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+      "fixed-16": "2935dfb0e8dab36639d09a3ba02dd729873a7e5d9882d906086bf100787fc744",
+      "fixed-32": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386"
+    },
+    "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc",
+    "model_source": {
+      "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+      "requested_revision": "main",
+      "revision": "714eb0fa89d2f80546fda750413ed43d93601a13"
+    },
+    "hardware_key": {
+      "platform": "Windows-11-10.0.26200-SP0",
+      "cpu": "13th Gen Intel(R) Core(TM) i5-1334U",
+      "cpu_flags": [
+        "3dnow",
+        "3dnowprefetch",
+        "abm",
+        "acpi",
+        "adx",
+        "aes",
+        "apic",
+        "avx",
+        "avx2",
+        "bmi1",
+        "bmi2",
+        "clflush",
+        "clflushopt",
+        "clwb",
+        "cmov",
+        "cx16",
+        "cx8",
+        "de",
+        "dts",
+        "erms",
+        "est",
+        "f16c",
+        "fma",
+        "fpu",
+        "fxsr",
+        "gfni",
+        "ht",
+        "hypervisor",
+        "ia64",
+        "intel_pt",
+        "invpcid",
+        "lahf_lm",
+        "mca",
+        "mce",
+        "mmx",
+        "monitor",
+        "movbe",
+        "msr",
+        "mtrr",
+        "osxsave",
+        "pae",
+        "pat",
+        "pbe",
+        "pcid",
+        "pclmulqdq",
+        "pdcm",
+        "pge",
+        "pni",
+        "popcnt",
+        "pse",
+        "pse36",
+        "rdpid",
+        "rdrnd",
+        "rdseed",
+        "sep",
+        "serial",
+        "sha",
+        "smap",
+        "smep",
+        "ss",
+        "sse",
+        "sse2",
+        "sse4_1",
+        "sse4_2",
+        "ssse3",
+        "tm",
+        "tm2",
+        "tsc",
+        "tscdeadline",
+        "umip",
+        "vaes",
+        "vme",
+        "vpclmulqdq",
+        "x2apic",
+        "xsave",
+        "xtpr"
+      ],
+      "ort_version": "1.31.1"
+    },
+    "memory_budget_bytes": 1610612736,
+    "measured_memory_bytes": 1288417280,
+    "calibration_p95_ms": 50.55598999999996,
+    "atol": 0.0001,
+    "rtol": 0.0001
+  },
+  "measurements": [
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic"
+      ],
+      "variants": [],
+      "routing": {
+        "26": "dynamic",
+        "7": "dynamic",
+        "4": "dynamic",
+        "11": "dynamic",
+        "20": "dynamic",
+        "8": "dynamic",
+        "12": "dynamic",
+        "3": "dynamic",
+        "9": "dynamic",
+        "10": "dynamic",
+        "19": "dynamic",
+        "21": "dynamic",
+        "17": "dynamic",
+        "18": "dynamic",
+        "27": "dynamic",
+        "30": "dynamic",
+        "37": "dynamic",
+        "33": "dynamic",
+        "22": "dynamic",
+        "6": "dynamic",
+        "14": "dynamic",
+        "15": "dynamic",
+        "23": "dynamic",
+        "5": "dynamic"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.7482,
+          "p95_ms": 1.6266549999999993,
+          "mean_ms": 0.8937359375000001
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.01255,
+          "p95_ms": 0.019014999999999994,
+          "mean_ms": 0.033865624999999996
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 99.5034,
+          "p95_ms": 242.88331499999995,
+          "mean_ms": 119.41030729166665
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 100.4388,
+          "p95_ms": 243.75798999999995,
+          "mean_ms": 120.33790885416666
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317071360,
+        "sampled_peak_rss_bytes": 684154880,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 657752064,
+        "incremental_sampled_peak_bytes": 367083520,
+        "process_lifetime_peak_rss_bytes": 685654016
+      },
+      "memory_for_budget_bytes": 685654016,
+      "session_initialization_ms": {
+        "dynamic": 1453.1247
+      },
+      "sessions_ready_ms": 11125.697,
+      "model_size_bytes": 268519584,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-64"
+      ],
+      "variants": [
+        "fixed-64"
+      ],
+      "routing": {
+        "26": "fixed-64",
+        "7": "dynamic",
+        "4": "dynamic",
+        "11": "dynamic",
+        "20": "fixed-64",
+        "8": "dynamic",
+        "12": "dynamic",
+        "3": "dynamic",
+        "9": "dynamic",
+        "10": "dynamic",
+        "19": "fixed-64",
+        "21": "fixed-64",
+        "17": "dynamic",
+        "18": "dynamic",
+        "27": "fixed-64",
+        "30": "fixed-64",
+        "37": "fixed-64",
+        "33": "fixed-64",
+        "22": "fixed-64",
+        "6": "dynamic",
+        "14": "dynamic",
+        "15": "fixed-64",
+        "23": "fixed-64",
+        "5": "dynamic"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.47605,
+          "p95_ms": 0.8888399999999997,
+          "mean_ms": 0.5100614583333334
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.00825,
+          "p95_ms": 0.522995,
+          "mean_ms": 0.12236875000000001
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 60.184749999999994,
+          "p95_ms": 363.8039799999999,
+          "mean_ms": 122.55466354166667
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 60.78825,
+          "p95_ms": 364.63288499999993,
+          "mean_ms": 123.18709374999999
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317284352,
+        "sampled_peak_rss_bytes": 994955264,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 934912000,
+        "incremental_sampled_peak_bytes": 677670912,
+        "process_lifetime_peak_rss_bytes": 1017589760
+      },
+      "memory_for_budget_bytes": 1017589760,
+      "session_initialization_ms": {
+        "dynamic": 997.253,
+        "fixed-64": 521.8171
+      },
+      "sessions_ready_ms": 5013.0531,
+      "model_size_bytes": 537037168,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-64": "58da99c06c61b9b3b715438f04e0524f1a68f06c3661e97e66e0c11152b1b8e2"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-16",
+        "fixed-32"
+      ],
+      "variants": [
+        "fixed-16",
+        "fixed-32"
+      ],
+      "routing": {
+        "26": "fixed-32",
+        "7": "fixed-16",
+        "4": "fixed-16",
+        "11": "fixed-16",
+        "20": "fixed-32",
+        "8": "fixed-16",
+        "12": "fixed-16",
+        "3": "fixed-16",
+        "9": "fixed-16",
+        "10": "fixed-16",
+        "19": "fixed-32",
+        "21": "fixed-32",
+        "17": "fixed-32",
+        "18": "fixed-32",
+        "27": "fixed-32",
+        "30": "fixed-32",
+        "37": "dynamic",
+        "33": "dynamic",
+        "22": "fixed-32",
+        "6": "fixed-16",
+        "14": "fixed-16",
+        "15": "fixed-16",
+        "23": "fixed-32",
+        "5": "fixed-16"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.18580000000000002,
+          "p95_ms": 0.3370499999999999,
+          "mean_ms": 0.21741927083333334
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.10745,
+          "p95_ms": 0.21697499999999992,
+          "mean_ms": 0.14821614583333334
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 22.108449999999998,
+          "p95_ms": 49.92870999999997,
+          "mean_ms": 27.15161875
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 22.50445,
+          "p95_ms": 50.55598999999996,
+          "mean_ms": 27.517254166666664
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317263872,
+        "sampled_peak_rss_bytes": 1251860480,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 1201553408,
+        "incremental_sampled_peak_bytes": 934596608,
+        "process_lifetime_peak_rss_bytes": 1288417280
+      },
+      "memory_for_budget_bytes": 1288417280,
+      "session_initialization_ms": {
+        "dynamic": 487.6153,
+        "fixed-16": 410.6197,
+        "fixed-32": 355.2866
+      },
+      "sessions_ready_ms": 2123.0518,
+      "model_size_bytes": 805554752,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-16": "2935dfb0e8dab36639d09a3ba02dd729873a7e5d9882d906086bf100787fc744",
+        "fixed-32": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-16",
+        "fixed-64"
+      ],
+      "variants": [
+        "fixed-16",
+        "fixed-64"
+      ],
+      "routing": {
+        "26": "fixed-64",
+        "7": "fixed-16",
+        "4": "fixed-16",
+        "11": "fixed-16",
+        "20": "fixed-64",
+        "8": "fixed-16",
+        "12": "fixed-16",
+        "3": "fixed-16",
+        "9": "fixed-16",
+        "10": "fixed-16",
+        "19": "fixed-64",
+        "21": "fixed-64",
+        "17": "dynamic",
+        "18": "dynamic",
+        "27": "fixed-64",
+        "30": "fixed-64",
+        "37": "fixed-64",
+        "33": "fixed-64",
+        "22": "fixed-64",
+        "6": "fixed-16",
+        "14": "fixed-16",
+        "15": "fixed-16",
+        "23": "fixed-64",
+        "5": "fixed-16"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.4304,
+          "p95_ms": 0.8449449999999995,
+          "mean_ms": 0.48167968749999995
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.34265,
+          "p95_ms": 0.5747699999999999,
+          "mean_ms": 0.3534796875
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 83.19395,
+          "p95_ms": 314.35931999999997,
+          "mean_ms": 133.13164375
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 83.96045000000001,
+          "p95_ms": 315.284925,
+          "mean_ms": 133.96680312499998
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317165568,
+        "sampled_peak_rss_bytes": 1263882240,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 1204772864,
+        "incremental_sampled_peak_bytes": 946716672,
+        "process_lifetime_peak_rss_bytes": 1287430144
+      },
+      "memory_for_budget_bytes": 1287430144,
+      "session_initialization_ms": {
+        "dynamic": 744.064,
+        "fixed-16": 847.8592,
+        "fixed-64": 810.0421
+      },
+      "sessions_ready_ms": 7041.4304,
+      "model_size_bytes": 805554752,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-16": "2935dfb0e8dab36639d09a3ba02dd729873a7e5d9882d906086bf100787fc744",
+        "fixed-64": "58da99c06c61b9b3b715438f04e0524f1a68f06c3661e97e66e0c11152b1b8e2"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-128"
+      ],
+      "variants": [
+        "fixed-128"
+      ],
+      "routing": {
+        "26": "dynamic",
+        "7": "dynamic",
+        "4": "dynamic",
+        "11": "dynamic",
+        "20": "dynamic",
+        "8": "dynamic",
+        "12": "dynamic",
+        "3": "dynamic",
+        "9": "dynamic",
+        "10": "dynamic",
+        "19": "dynamic",
+        "21": "fixed-128",
+        "17": "dynamic",
+        "18": "dynamic",
+        "27": "fixed-128",
+        "30": "fixed-128",
+        "37": "fixed-128",
+        "33": "fixed-128",
+        "22": "fixed-128",
+        "6": "dynamic",
+        "14": "dynamic",
+        "15": "dynamic",
+        "23": "dynamic",
+        "5": "dynamic"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.45175,
+          "p95_ms": 0.8193900000000001,
+          "mean_ms": 0.4834515625
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.00685,
+          "p95_ms": 0.41157999999999995,
+          "mean_ms": 0.055624479166666664
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 54.43115,
+          "p95_ms": 562.9430099999997,
+          "mean_ms": 121.05459843749999
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 54.858000000000004,
+          "p95_ms": 563.9787049999998,
+          "mean_ms": 121.59367447916668
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 316772352,
+        "sampled_peak_rss_bytes": 985509888,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 947486720,
+        "incremental_sampled_peak_bytes": 668737536,
+        "process_lifetime_peak_rss_bytes": 1017131008
+      },
+      "memory_for_budget_bytes": 1017131008,
+      "session_initialization_ms": {
+        "dynamic": 707.3169,
+        "fixed-128": 804.702
+      },
+      "sessions_ready_ms": 5821.7099,
+      "model_size_bytes": 537037418,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-128": "c8179b1efb0e8301e50f632e9ac8841521f32390d6820af25d7d7369c9649a09"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-32"
+      ],
+      "variants": [
+        "fixed-32"
+      ],
+      "routing": {
+        "26": "fixed-32",
+        "7": "fixed-32",
+        "4": "fixed-32",
+        "11": "fixed-32",
+        "20": "fixed-32",
+        "8": "fixed-32",
+        "12": "fixed-32",
+        "3": "fixed-32",
+        "9": "fixed-32",
+        "10": "fixed-32",
+        "19": "fixed-32",
+        "21": "fixed-32",
+        "17": "fixed-32",
+        "18": "fixed-32",
+        "27": "fixed-32",
+        "30": "fixed-32",
+        "37": "dynamic",
+        "33": "dynamic",
+        "22": "fixed-32",
+        "6": "fixed-32",
+        "14": "fixed-32",
+        "15": "fixed-32",
+        "23": "fixed-32",
+        "5": "fixed-32"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.41035,
+          "p95_ms": 0.9249849999999996,
+          "mean_ms": 0.48671510416666663
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.32005,
+          "p95_ms": 0.6694999999999999,
+          "mean_ms": 0.335671875
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 140.5082,
+          "p95_ms": 234.08835,
+          "mean_ms": 147.06735364583335
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 141.01865,
+          "p95_ms": 235.16912499999998,
+          "mean_ms": 147.889740625
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317349888,
+        "sampled_peak_rss_bytes": 987185152,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 931049472,
+        "incremental_sampled_peak_bytes": 669835264,
+        "process_lifetime_peak_rss_bytes": 1017667584
+      },
+      "memory_for_budget_bytes": 1017667584,
+      "session_initialization_ms": {
+        "dynamic": 636.8922,
+        "fixed-32": 879.4098
+      },
+      "sessions_ready_ms": 5806.4871,
+      "model_size_bytes": 537037168,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-32": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-16"
+      ],
+      "variants": [
+        "fixed-16"
+      ],
+      "routing": {
+        "26": "dynamic",
+        "7": "fixed-16",
+        "4": "fixed-16",
+        "11": "fixed-16",
+        "20": "dynamic",
+        "8": "fixed-16",
+        "12": "fixed-16",
+        "3": "fixed-16",
+        "9": "fixed-16",
+        "10": "fixed-16",
+        "19": "dynamic",
+        "21": "dynamic",
+        "17": "dynamic",
+        "18": "dynamic",
+        "27": "dynamic",
+        "30": "dynamic",
+        "37": "dynamic",
+        "33": "dynamic",
+        "22": "dynamic",
+        "6": "fixed-16",
+        "14": "fixed-16",
+        "15": "fixed-16",
+        "23": "dynamic",
+        "5": "fixed-16"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.42835,
+          "p95_ms": 0.7906349999999999,
+          "mean_ms": 0.46221249999999997
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.2966,
+          "p95_ms": 0.5965399999999997,
+          "mean_ms": 0.27120052083333335
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 80.975,
+          "p95_ms": 148.50750499999998,
+          "mean_ms": 87.77289322916666
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 81.65530000000001,
+          "p95_ms": 149.112825,
+          "mean_ms": 88.50630625000001
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317632512,
+        "sampled_peak_rss_bytes": 975962112,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 929157120,
+        "incremental_sampled_peak_bytes": 658329600,
+        "process_lifetime_peak_rss_bytes": 1017565184
+      },
+      "memory_for_budget_bytes": 1017565184,
+      "session_initialization_ms": {
+        "dynamic": 887.0124,
+        "fixed-16": 776.1094
+      },
+      "sessions_ready_ms": 5405.7988,
+      "model_size_bytes": 537037168,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-16": "2935dfb0e8dab36639d09a3ba02dd729873a7e5d9882d906086bf100787fc744"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-128",
+        "fixed-32"
+      ],
+      "variants": [
+        "fixed-128",
+        "fixed-32"
+      ],
+      "routing": {
+        "26": "fixed-32",
+        "7": "fixed-32",
+        "4": "fixed-32",
+        "11": "fixed-32",
+        "20": "fixed-32",
+        "8": "fixed-32",
+        "12": "fixed-32",
+        "3": "fixed-32",
+        "9": "fixed-32",
+        "10": "fixed-32",
+        "19": "fixed-32",
+        "21": "fixed-32",
+        "17": "fixed-32",
+        "18": "fixed-32",
+        "27": "fixed-32",
+        "30": "fixed-32",
+        "37": "fixed-128",
+        "33": "fixed-128",
+        "22": "fixed-32",
+        "6": "fixed-32",
+        "14": "fixed-32",
+        "15": "fixed-32",
+        "23": "fixed-32",
+        "5": "fixed-32"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.44345,
+          "p95_ms": 0.8550999999999997,
+          "mean_ms": 0.5071989583333333
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.3348,
+          "p95_ms": 0.5627099999999999,
+          "mean_ms": 0.37401093750000003
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 157.8048,
+          "p95_ms": 250.09919999999985,
+          "mean_ms": 172.2120546875
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 158.9151,
+          "p95_ms": 251.02643999999987,
+          "mean_ms": 173.0932645833333
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 316706816,
+        "sampled_peak_rss_bytes": 1291231232,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 1217556480,
+        "incremental_sampled_peak_bytes": 974524416,
+        "process_lifetime_peak_rss_bytes": 1297203200
+      },
+      "memory_for_budget_bytes": 1297203200,
+      "session_initialization_ms": {
+        "dynamic": 695.7398,
+        "fixed-128": 534.7569,
+        "fixed-32": 927.5033
+      },
+      "sessions_ready_ms": 6389.9381,
+      "model_size_bytes": 805555002,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-128": "c8179b1efb0e8301e50f632e9ac8841521f32390d6820af25d7d7369c9649a09",
+        "fixed-32": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-128",
+        "fixed-16"
+      ],
+      "variants": [
+        "fixed-128",
+        "fixed-16"
+      ],
+      "routing": {
+        "26": "dynamic",
+        "7": "fixed-16",
+        "4": "fixed-16",
+        "11": "fixed-16",
+        "20": "dynamic",
+        "8": "fixed-16",
+        "12": "fixed-16",
+        "3": "fixed-16",
+        "9": "fixed-16",
+        "10": "fixed-16",
+        "19": "dynamic",
+        "21": "fixed-128",
+        "17": "dynamic",
+        "18": "dynamic",
+        "27": "fixed-128",
+        "30": "fixed-128",
+        "37": "fixed-128",
+        "33": "fixed-128",
+        "22": "fixed-128",
+        "6": "fixed-16",
+        "14": "fixed-16",
+        "15": "fixed-16",
+        "23": "dynamic",
+        "5": "fixed-16"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.4273,
+          "p95_ms": 0.9553299999999997,
+          "mean_ms": 0.494240625
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.3175,
+          "p95_ms": 0.6019999999999995,
+          "mean_ms": 0.35732864583333335
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 84.02375,
+          "p95_ms": 584.59687,
+          "mean_ms": 144.54556822916666
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 84.98495,
+          "p95_ms": 586.165915,
+          "mean_ms": 145.3971375
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317181952,
+        "sampled_peak_rss_bytes": 1244278784,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 1218363392,
+        "incremental_sampled_peak_bytes": 927096832,
+        "process_lifetime_peak_rss_bytes": 1297387520
+      },
+      "memory_for_budget_bytes": 1297387520,
+      "session_initialization_ms": {
+        "dynamic": 877.4536,
+        "fixed-128": 805.2986,
+        "fixed-16": 679.0052
+      },
+      "sessions_ready_ms": 6884.8942,
+      "model_size_bytes": 805555002,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-128": "c8179b1efb0e8301e50f632e9ac8841521f32390d6820af25d7d7369c9649a09",
+        "fixed-16": "2935dfb0e8dab36639d09a3ba02dd729873a7e5d9882d906086bf100787fc744"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    },
+    {
+      "kind": "configuration",
+      "split": "train",
+      "models": [
+        "dynamic",
+        "fixed-32",
+        "fixed-64"
+      ],
+      "variants": [
+        "fixed-32",
+        "fixed-64"
+      ],
+      "routing": {
+        "26": "fixed-32",
+        "7": "fixed-32",
+        "4": "fixed-32",
+        "11": "fixed-32",
+        "20": "fixed-32",
+        "8": "fixed-32",
+        "12": "fixed-32",
+        "3": "fixed-32",
+        "9": "fixed-32",
+        "10": "fixed-32",
+        "19": "fixed-32",
+        "21": "fixed-32",
+        "17": "fixed-32",
+        "18": "fixed-32",
+        "27": "fixed-32",
+        "30": "fixed-32",
+        "37": "fixed-64",
+        "33": "fixed-64",
+        "22": "fixed-32",
+        "6": "fixed-32",
+        "14": "fixed-32",
+        "15": "fixed-32",
+        "23": "fixed-32",
+        "5": "fixed-32"
+      },
+      "threads": 1,
+      "repeats": 3,
+      "warmup_requests": 10,
+      "capacity_probes": true,
+      "examples": 64,
+      "latency": {
+        "tokenization_ms": {
+          "count": 192,
+          "median_ms": 0.419,
+          "p95_ms": 0.75871,
+          "mean_ms": 0.440434375
+        },
+        "routing_padding_ms": {
+          "count": 192,
+          "median_ms": 0.33715,
+          "p95_ms": 0.5326299999999999,
+          "mean_ms": 0.33565052083333335
+        },
+        "inference_ms": {
+          "count": 192,
+          "median_ms": 137.99415,
+          "p95_ms": 193.61929499999994,
+          "mean_ms": 137.5023296875
+        },
+        "end_to_end_ms": {
+          "count": 192,
+          "median_ms": 138.6058,
+          "p95_ms": 194.47789499999993,
+          "mean_ms": 138.27841458333333
+        }
+      },
+      "accuracy": 1.0,
+      "changed_predictions": 0,
+      "memory": {
+        "rss_before_bytes": 317026304,
+        "sampled_peak_rss_bytes": 1267879936,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 1204662272,
+        "incremental_sampled_peak_bytes": 950853632,
+        "process_lifetime_peak_rss_bytes": 1289490432
+      },
+      "memory_for_budget_bytes": 1289490432,
+      "session_initialization_ms": {
+        "dynamic": 627.2823,
+        "fixed-32": 749.1279,
+        "fixed-64": 701.8947
+      },
+      "sessions_ready_ms": 6270.279,
+      "model_size_bytes": 805554752,
+      "model_hashes": {
+        "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+        "fixed-32": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386",
+        "fixed-64": "58da99c06c61b9b3b715438f04e0524f1a68f06c3661e97e66e0c11152b1b8e2"
+      },
+      "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc"
+    }
+  ],
+  "measurement_code_commit": "32f7a387d530223c1868af1710a3fd09000f1596",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7",
+    "cpu": "13th Gen Intel(R) Core(TM) i5-1334U",
+    "cpu_flags": [
+      "3dnow",
+      "3dnowprefetch",
+      "abm",
+      "acpi",
+      "adx",
+      "aes",
+      "apic",
+      "avx",
+      "avx2",
+      "bmi1",
+      "bmi2",
+      "clflush",
+      "clflushopt",
+      "clwb",
+      "cmov",
+      "cx16",
+      "cx8",
+      "de",
+      "dts",
+      "erms",
+      "est",
+      "f16c",
+      "fma",
+      "fpu",
+      "fxsr",
+      "gfni",
+      "ht",
+      "hypervisor",
+      "ia64",
+      "intel_pt",
+      "invpcid",
+      "lahf_lm",
+      "mca",
+      "mce",
+      "mmx",
+      "monitor",
+      "movbe",
+      "msr",
+      "mtrr",
+      "osxsave",
+      "pae",
+      "pat",
+      "pbe",
+      "pcid",
+      "pclmulqdq",
+      "pdcm",
+      "pge",
+      "pni",
+      "popcnt",
+      "pse",
+      "pse36",
+      "rdpid",
+      "rdrnd",
+      "rdseed",
+      "sep",
+      "serial",
+      "sha",
+      "smap",
+      "smep",
+      "ss",
+      "sse",
+      "sse2",
+      "sse4_1",
+      "sse4_2",
+      "ssse3",
+      "tm",
+      "tm2",
+      "tsc",
+      "tscdeadline",
+      "umip",
+      "vaes",
+      "vme",
+      "vpclmulqdq",
+      "x2apic",
+      "xsave",
+      "xtpr"
+    ],
+    "physical_cores": 10,
+    "logical_cores": 12,
+    "total_memory_bytes": 33986117632,
+    "available_memory_bytes": 13637222400,
+    "available_providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "packages": {
+      "torch": "2.10.0+cpu",
+      "transformers": "5.1.0",
+      "datasets": "4.8.5",
+      "onnx": "1.23.2",
+      "onnxruntime": "1.31.1",
+      "numpy": "2.5.4",
+      "etdl": "0.1.0"
+    }
+  },
+  "calibration_source": {
+    "dataset_id": "nyu-mll/glue",
+    "dataset_config": "sst2",
+    "revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+    "split": "train",
+    "seed": 2027,
+    "model_source": {
+      "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+      "requested_revision": "main",
+      "revision": "714eb0fa89d2f80546fda750413ed43d93601a13"
+    },
+    "max_length": 512,
+    "train_fingerprint": "e0f6962d602757cb"
+  },
+  "studied_train_ids": [
+    62,
+    337,
+    678,
+    787,
+    1479,
+    2509,
+    3399,
+    5114,
+    6253,
+    6277,
+    6529,
+    6738,
+    8634,
+    9599,
+    10297,
+    10767,
+    12183,
+    13471,
+    14202,
+    15274,
+    15748,
+    16453,
+    21345,
+    22124,
+    22859,
+    24973,
+    25226,
+    29249,
+    29849,
+    30466,
+    31380,
+    32291,
+    34657,
+    34777,
+    34970,
+    35035,
+    35863,
+    36006,
+    37036,
+    38398,
+    39142,
+    40216,
+    40278,
+    41009,
+    42451,
+    44399,
+    48272,
+    49874,
+    50509,
+    51070,
+    52668,
+    53375,
+    54490,
+    58623,
+    59337,
+    59817,
+    61380,
+    61618,
+    63144,
+    64300,
+    64511,
+    65290,
+    65315,
+    65489
+  ]
+}

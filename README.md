@@ -16,6 +16,7 @@ Larger comparative experiments, ablations, and held-out evaluation remain. This 
 does not yet claim a held-out specialization speedup.
 
 The first real-model run is documented in [the milestone results](docs/milestone-1.md).
+The specialization study and archived measurements are in [milestone 2](docs/milestone-2.md).
 
 ## Setup (PowerShell)
 

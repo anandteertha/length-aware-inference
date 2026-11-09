@@ -1,0 +1,65 @@
+{
+  "checks-fixed-128": {
+    "passed": true,
+    "length": 128,
+    "case_count": 144,
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "changed_labels": 0,
+    "max_absolute_error": 1.9073486328125e-06,
+    "model_sha256": "c8179b1efb0e8301e50f632e9ac8841521f32390d6820af25d7d7369c9649a09",
+    "base_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+    "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc",
+    "scope": "Sampled training examples, masks and padding; not universal equivalence."
+  },
+  "checks-fixed-16": {
+    "passed": true,
+    "length": 16,
+    "case_count": 110,
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "changed_labels": 0,
+    "max_absolute_error": 1.9073486328125e-06,
+    "model_sha256": "2935dfb0e8dab36639d09a3ba02dd729873a7e5d9882d906086bf100787fc744",
+    "base_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+    "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc",
+    "scope": "Sampled training examples, masks and padding; not universal equivalence."
+  },
+  "checks-fixed-32": {
+    "passed": true,
+    "length": 32,
+    "case_count": 140,
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "changed_labels": 0,
+    "max_absolute_error": 1.9073486328125e-06,
+    "model_sha256": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386",
+    "base_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+    "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc",
+    "scope": "Sampled training examples, masks and padding; not universal equivalence."
+  },
+  "checks-fixed-64": {
+    "passed": true,
+    "length": 64,
+    "case_count": 144,
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "changed_labels": 0,
+    "max_absolute_error": 1.9073486328125e-06,
+    "model_sha256": "58da99c06c61b9b3b715438f04e0524f1a68f06c3661e97e66e0c11152b1b8e2",
+    "base_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+    "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc",
+    "scope": "Sampled training examples, masks and padding; not universal equivalence."
+  },
+  "checks": {
+    "passed": true,
+    "case_count": 98,
+    "changed_labels": 0,
+    "max_absolute_error": 7.3909759521484375e-06,
+    "atol": 0.0001,
+    "rtol": 0.0001,
+    "model_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+    "calibration_sha256": "bcb8ebe30c864c56c9a5283f38541eeb8bdde661f1710166647d8ed898f000bc",
+    "scope": "Sampled training examples and synthetic masks; not a proof of equivalence."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "configuration-requests.csv": "e6b7369b2568bad7ed84873f734f97e1f47d4dcf1e2ec97254e2f9a1d1b6a337",
+  "configurations.csv": "6c3a3b70b4b8a59498241ea4d2651db03be27aa110c38d1cf2d4ed0445ab7e8a",
+  "latency-memory.png": "9c44c6098b2b98b993c282e8c19bcd6543f4ef8de64fd80da5bd9610e03b8c81",
+  "latency-memory.svg": "911c0de00ea252fb031f7bdcd4ff27fdebc19c6be5ff0a7fc84447ee8e09d8d2",
+  "model-manifests.json": "9e36614add2947dafb1ce705f2851a9178c35efa28742735553aa81441aa9651",
+  "profile-requests.csv": "25c93c6e2e8b80bd07b391870e92c031dc96c668de0f22336fafb80a5098a85c",
+  "selection.json": "3cbaffbdba6e15a1a3875af9caa3105e37f133dec919acccd1bdd351e4edee6f",
+  "smoke-predictions.json": "496470ce4768139f7e70ce7928a43fe860f85c3c9e61515421ea85b0a1d9fcbd",
+  "summary.json": "79b688c2e9d4290e3a0ba5f0a388607ebd7aaa186fec6e5c4454700506b34ddb",
+  "verification.json": "282fb688fa215fa364367b7d49279595ab36296febe6cd2e4de6e49a8e7f886f"
+}

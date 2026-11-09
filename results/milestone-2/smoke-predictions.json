@@ -1,0 +1,45 @@
+{
+  "purpose": "Functional checks; first requests are not warmed benchmark measurements.",
+  "ready_ms": 29926.6723,
+  "cases": {
+    "short_positive": {
+      "prediction": 1,
+      "label": "positive",
+      "logits": [
+        -4.278159141540527,
+        4.6214752197265625
+      ],
+      "tokens": 5,
+      "route": "fixed-16",
+      "disabled_variants": {},
+      "end_to_end_ms": 73.1593,
+      "created_at_utc": "2026-11-09T18:55:03.829354+00:00"
+    },
+    "short_negative": {
+      "prediction": 0,
+      "label": "negative",
+      "logits": [
+        4.701131343841553,
+        -3.7929720878601074
+      ],
+      "tokens": 6,
+      "route": "fixed-16",
+      "disabled_variants": {},
+      "end_to_end_ms": 80.8799,
+      "created_at_utc": "2026-11-09T18:55:03.913027+00:00"
+    },
+    "over_variant_limit": {
+      "prediction": 1,
+      "label": "positive",
+      "logits": [
+        -2.867143154144287,
+        3.0807113647460938
+      ],
+      "tokens": 140,
+      "route": "dynamic",
+      "disabled_variants": {},
+      "end_to_end_ms": 584.6521,
+      "created_at_utc": "2026-11-09T18:55:04.504573+00:00"
+    }
+  }
+}

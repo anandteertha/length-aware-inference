@@ -5,3 +5,5 @@
 *.lock text eol=lf
 *.yml text eol=lf
 *.pdf binary
+# Preserve generated archive bytes so checksums survive cloning on any OS.
+results/** -text -whitespace
