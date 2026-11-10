@@ -67,6 +67,16 @@ def parser():
     )
     ablate.add_argument("--study", default="study-t1")
     ablate.add_argument("--output", type=Path)
+    followup = commands.add_parser(
+        "followup", help="Refit policies per thread and compare transformer-optimized graphs"
+    )
+    followup.add_argument("--name", default="followup")
+    followup.add_argument("--threads", type=positive, nargs="+", default=[1, 2, 4])
+    followup.add_argument("--blocks", type=positive, default=3)
+    followup.add_argument("--fit-size", type=positive, default=256)
+    followup.add_argument("--confirmation-size", type=positive, default=128)
+    followup.add_argument("--audit-size", type=positive, default=128)
+    followup.add_argument("--resume", action="store_true")
     for name in ("prepare", "check", "benchmark", "milestone"):
         command = commands.add_parser(name)
         command.add_argument("--limit", type=positive, default=128)
@@ -86,6 +96,22 @@ def main():
     arguments = parser().parse_args()
     config = load_config(arguments.config)
     config.artifact_dir.mkdir(parents=True, exist_ok=True)
+    if arguments.command == "followup":
+        from etdl.followup import execute
+
+        if arguments.name in {".", ".."} or any(value in arguments.name for value in "/\\:"):
+            raise ValueError("Follow-up name must be a single directory name")
+        report = execute(
+            config,
+            arguments.config,
+            config.artifact_dir / arguments.name,
+            resume=arguments.resume,
+            threads=tuple(arguments.threads),
+            blocks=arguments.blocks,
+            sizes=(arguments.fit_size, arguments.confirmation_size, arguments.audit_size),
+        )
+        print(json.dumps(report, indent=2))
+        return
     if arguments.command == "ablate":
         from etdl.ablations import reanalyse
 

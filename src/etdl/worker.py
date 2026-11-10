@@ -23,6 +23,9 @@ def main():
     comparison = commands.add_parser("comparison")
     comparison.add_argument("--request", type=Path, required=True)
     comparison.add_argument("--output", type=Path, required=True)
+    followup = commands.add_parser("followup")
+    followup.add_argument("--request", type=Path, required=True)
+    followup.add_argument("--output", type=Path, required=True)
     arguments = parser.parse_args()
     config = load_config(arguments.config)
     if arguments.command == "variant":
@@ -39,6 +42,10 @@ def main():
         from etdl.comparison import measure
 
         measure(config, arguments.request, arguments.output)
+    elif arguments.command == "followup":
+        from etdl.followup import benchmark
+
+        benchmark(config, arguments.request, arguments.output)
     else:
         from etdl.study import run_worker
 
