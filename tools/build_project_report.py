@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import shutil
 from datetime import UTC, datetime
+from itertools import pairwise
 from pathlib import Path
 
 from etdl.io import read_json, sha256, write_json
@@ -174,10 +175,15 @@ def main():
                 "human_verification": "pending",
             }
         )
-        paragraphs.append(text + f" <!-- claim:{identifier}; evidence:{','.join(evidence)} -->\n")
+        marker = f"<!-- claim:{identifier}; evidence:{','.join(evidence)} -->"
+        paragraphs.append(
+            text[:-1] + f" {marker} |"
+            if text.startswith("|") and text.endswith("|")
+            else text + f" {marker}"
+        )
 
     def literal(text):
-        paragraphs.append(text + "\n")
+        paragraphs.append(text)
 
     literal("# Matching CPU computation to message length\n\nConsolidated project report")
     paragraph(
@@ -348,7 +354,15 @@ def main():
         "Codex assisted code implementation, experiment orchestration, analysis, and report drafting. This repository report is prepared for the project author's review; human verification and author approval are not asserted by the automated evidence audit."
     )
     args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text("\n".join(paragraphs), encoding="utf-8", newline="\n")
+    markdown = paragraphs[0]
+    for previous, current in pairwise(paragraphs):
+        separator = (
+            "\n"
+            if previous.splitlines()[-1].startswith("|") and current.startswith("|")
+            else "\n\n"
+        )
+        markdown += separator + current
+    args.report.write_text(markdown + "\n", encoding="utf-8", newline="\n")
     evidence = {
         "document_type": "Repository systems-benchmark project report",
         "reporting_guidance": "Study-specific recorded protocols; no clinical reporting guideline applies.",
