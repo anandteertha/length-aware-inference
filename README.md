@@ -7,6 +7,8 @@ The dynamic-length model remains the fallback, and choosing no variants is a val
 Start with the [consolidated project report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md). The report links the original validation,
 training-derived follow-up, and synthetic diagnostics to their archived evidence.
+The later [fresh 31-token and OpenVINO report](docs/real31-results.md) tests the
+synthetic lead on unused real training text and records a separate backend diagnostic.
 
 ## Current milestone
 
@@ -33,6 +35,13 @@ optimization showed a small audit difference (73.56 vs 74.75 ms median run p95),
 with overlapping ranges and mixed matched-block results. This training-derived
 audit establishes no new classifier-generalization result or reliable speedup;
 the original prediction policy remains unchanged.
+
+The fresh 31-token test did **not** confirm the earlier transformer-optimized
+fixed-32 lead: matched natural-dynamic/fixed p95 ratios were mixed across five
+process blocks (median 1.005). OpenVINO's standard fixed-32 graph did beat its
+dynamic graph on identical padded inputs in all five blocks (median ratio 1.073),
+but beat natural-length dynamic in only four (median 1.024), with large absolute
+latency variation. This does not change the frozen dynamic-only deployment policy.
 
 ## Setup (PowerShell)
 
