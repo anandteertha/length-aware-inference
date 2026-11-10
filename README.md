@@ -146,6 +146,28 @@ Ablations are explicitly labeled training-only reanalyses of recorded costs. The
 never modify deployment or use validation for selection. Diagnostic traces run after
 timing, and the archive excludes input text and model binaries.
 
+## Per-thread and transformer-optimizer follow-up
+
+The [follow-up protocol](docs/followup-protocol.md) compares the existing FP32
+graphs with an additional ORT transformer optimization pass and refits routing
+separately at 1/2/4 threads. It allocates 256 fitting, 128 confirmation, and 128
+audit rows from previously unused SST-2 training IDs before fitting. The audit
+is held out from inference-policy tuning only; the classifier was trained on
+SST-2 training data. It provides no new classifier-generalization estimate.
+
+```powershell
+uv run etdl followup --name followup
+uv run etdl followup --name followup --resume
+uv run python tools/archive_followup.py --followup artifacts/followup --output results/your-followup --traces
+```
+
+Run the first command once; use the second to resume an interrupted experiment.
+The follow-up freezes fitted policies before confirmation, then freezes the
+candidate before the reserved optimization audit. It leaves the original
+validation results and default prediction policy intact. The archive contains
+request-level measurements, immutable plans, graph checks, and post-timing CPU
+traces, excluding model binaries and input text.
+
 ## Outputs
 
 Generated files are local and ignored by Git:
@@ -200,8 +222,8 @@ population speedup: confirmation has three process blocks on one laptop, and hel
 timing has one process per method. Runtime defaults and workloads differ from the
 initial calibration, so its large apparent gain is not a deployment result.
 
-Further work could refit routes separately for each thread setting using training
-data, test other graph optimizers and weight sharing, collect controlled cold-start
+The follow-up above tests per-thread refitting and an additional transformer
+optimizer. Further work could test weight sharing, collect controlled cold-start
 measurements, repeat timings, and measure actual edge devices. Any new model selection
 needs evaluation data held out from that new tuning process.
 
