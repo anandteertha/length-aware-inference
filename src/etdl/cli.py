@@ -77,6 +77,15 @@ def parser():
     followup.add_argument("--confirmation-size", type=positive, default=128)
     followup.add_argument("--audit-size", type=positive, default=128)
     followup.add_argument("--resume", action="store_true")
+    boundary = commands.add_parser(
+        "boundaries", help="Matched synthetic length-boundary diagnostic"
+    )
+    boundary.add_argument("--name", default="boundaries")
+    boundary.add_argument("--followup", default="followup")
+    boundary.add_argument("--blocks", type=positive, default=5)
+    boundary.add_argument("--repeats", type=positive, default=8)
+    boundary.add_argument("--warmup", type=positive, default=2)
+    boundary.add_argument("--resume", action="store_true")
     for name in ("prepare", "check", "benchmark", "milestone"):
         command = commands.add_parser(name)
         command.add_argument("--limit", type=positive, default=128)
@@ -96,6 +105,33 @@ def main():
     arguments = parser().parse_args()
     config = load_config(arguments.config)
     config.artifact_dir.mkdir(parents=True, exist_ok=True)
+    if arguments.command == "boundaries":
+        from etdl.boundaries import execute
+
+        for name in (arguments.name, arguments.followup):
+            if name in {".", ".."} or any(value in name for value in "/\\:"):
+                raise ValueError("Diagnostic directories must be directly inside artifact_dir")
+        report = execute(
+            config,
+            arguments.config,
+            config.artifact_dir / arguments.name,
+            config.artifact_dir / arguments.followup,
+            resume=arguments.resume,
+            blocks=arguments.blocks,
+            repeats=arguments.repeats,
+            warmup=arguments.warmup,
+        )
+        print(
+            json.dumps(
+                {
+                    key: value
+                    for key, value in report.items()
+                    if key not in {"groups", "paired_ratios"}
+                },
+                indent=2,
+            )
+        )
+        return
     if arguments.command == "followup":
         from etdl.followup import execute
 

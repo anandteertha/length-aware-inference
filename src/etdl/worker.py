@@ -26,9 +26,23 @@ def main():
     followup = commands.add_parser("followup")
     followup.add_argument("--request", type=Path, required=True)
     followup.add_argument("--output", type=Path, required=True)
+    boundary = commands.add_parser("boundary")
+    boundary.add_argument("--request", type=Path, required=True)
+    boundary.add_argument("--output", type=Path, required=True)
+    boundary_ref = commands.add_parser("boundary-reference")
+    boundary_ref.add_argument("--plan", type=Path, required=True)
+    boundary_ref.add_argument("--output", type=Path, required=True)
     arguments = parser.parse_args()
     config = load_config(arguments.config)
-    if arguments.command == "variant":
+    if arguments.command == "boundary-reference":
+        from etdl.boundaries import reference
+
+        reference(config, arguments.plan, arguments.output)
+    elif arguments.command == "boundary":
+        from etdl.boundaries import run_worker
+
+        run_worker(config, arguments.request, arguments.output)
+    elif arguments.command == "variant":
         from etdl.variants import build_variant, check_variant
 
         build_variant(config, arguments.length)
