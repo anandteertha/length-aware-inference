@@ -148,7 +148,7 @@ def render(directory, summary, runs, plan):
         ],
         marker=".",
         color="#059669",
-        label="Mean system CPU during sessions and requests",
+        label="Mean recorded system CPU samples",
     )
     ax.set_xlabel("Process order (all retained)")
     ax.set_ylabel("System CPU utilization (%)")

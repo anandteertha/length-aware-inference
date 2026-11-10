@@ -88,10 +88,7 @@ def main():
     plan = read_json(args.diagnostic / "plan.json")
     quality = read_json(args.diagnostic / "archive-metadata.json")
     interrupted = read_json(args.interrupted / "archive-metadata.json")
-    if quality["long_telemetry_gap_processes"]:
-        raise ValueError(
-            "Replication also has long telemetry gaps; report the limitation explicitly"
-        )
+    replication_gaps = len(quality["long_telemetry_gap_processes"])
     demo = read_json(args.demo)
     policy = Path("results/milestone-3/frozen-policy.json")
     if (
@@ -216,6 +213,19 @@ def main():
     literal(
         "![Original validation latency and memory](../results/project-summary/validation-tradeoff.png)"
     )
+    literal(
+        "| Method | Retained model files (MiB) | Model/session initialization (s) | Ready after probes and warm-up (s) |\n| --- | ---: | ---: | ---: |"
+    )
+    for method in ("pytorch", "dynamic", "single-16", "buckets", "selected"):
+        run = next(r for r in held["runs"] if r["method"] == method)
+        paragraph(
+            f"| {LABELS[method]} | {run['model_size_bytes'] / 2**20:,.1f} | {sum(run['session_initialization_ms'].values()) / 1000:.3f} | {run['sessions_ready_ms'] / 1000:.3f} |",
+            ["E003"],
+        )
+    paragraph(
+        "Readiness includes capacity probes and warm-up but excludes process imports, tokenizer loading, and provenance checks. OS caches may be warm; these are not cold-device startup measurements. Serialized sizes count retained original model files, excluding tokenizer assets and extra optimized inspection copies. RSS includes process overhead and is the larger of sampled process memory and the Windows lifetime high-water mark.",
+        ["E003", "E011"],
+    )
     paragraph(
         "The four-bucket comparison exceeded the memory cap. The dynamic result is one timing observation on this workload, not a stable population estimate. Later experiment timings use different inputs and operating periods, so they must not be read as direct improvements over these validation numbers.",
         ["E003", "E005", "E009"],
@@ -231,8 +241,13 @@ def main():
     )
     literal("Detailed methods and all comparisons: [follow-up report](followup-results.md).")
     literal("## Matched length-boundary diagnostic")
+    quality_statement = (
+        "The replication below had no gaps above the recorded ten-second telemetry threshold."
+        if not replication_gaps
+        else f"The replication also had {replication_gaps} process(es) with flagged telemetry gaps. Its timing tables therefore remain interrupted-run diagnostics and do not establish stable execution costs. No further repeat was selected from these outcomes."
+    )
     paragraph(
-        f"The first diagnostic was interrupted during one process, with a telemetry gap exceeding 21,000 seconds. A recorded timing-quality amendment required retaining that entire run and making one separate replication with the unchanged measurement code and design. The original archive contains {interrupted['processes']} processes and {interrupted['timed_requests']:,} requests; its output checks passed. Its complete results remain available separately. The replication below had no gaps above the recorded ten-second telemetry threshold; the two runs are not pooled.",
+        f"The first diagnostic had long telemetry interruptions, including a gap exceeding 21,000 seconds. A recorded timing-quality amendment required retaining that entire run and making one separate replication with the unchanged measurement code and design. The original archive contains {interrupted['processes']} processes and {interrupted['timed_requests']:,} requests; its output checks passed. Its complete results remain available separately. {quality_statement} The two runs are not pooled.",
         ["E006", "E007", "E012", "E013"],
     )
     literal(
@@ -243,7 +258,7 @@ def main():
         ["E006", "E007", "E010"],
     )
     paragraph(
-        "For lengths up to 128, each process compared dynamic natural-length execution, dynamic execution padded to the smallest fitting bucket, and the matching fixed graph with identical padded token IDs and masks. Length 129 exercised dynamic fallback. Routing/padding and inference were timed separately; their sum excludes tokenization and is not text-to-label end-to-end latency. Both dynamic and fixed sessions were resident in each process.",
+        "For lengths up to 128, each process compared dynamic natural-length execution, dynamic execution padded to the smallest fitting bucket, and the matching fixed graph with identical padded token IDs and masks. Length 129 exercised dynamic fallback. Routing/padding and inference were timed separately; their sum excludes tokenization and is not text-to-label end-to-end latency. Both dynamic and fixed sessions were resident in each process. Lengths assigned to different capacities were measured in different fresh processes, so cross-length curves also contain process variation; the ratios compare matched paths within the same process.",
         ["E007", "E010"],
     )
     # Keep the complete per-length results rather than selecting favorable lengths.
@@ -333,7 +348,7 @@ def main():
         "Codex assisted code implementation, experiment orchestration, analysis, and report drafting. This repository report is prepared for the project author's review; human verification and author approval are not asserted by the automated evidence audit."
     )
     args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text("\n".join(paragraphs), encoding="utf-8")
+    args.report.write_text("\n".join(paragraphs), encoding="utf-8", newline="\n")
     evidence = {
         "document_type": "Repository systems-benchmark project report",
         "reporting_guidance": "Study-specific recorded protocols; no clinical reporting guideline applies.",
