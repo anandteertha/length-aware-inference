@@ -29,6 +29,7 @@ def render(directory, summary, runs, plan):
 
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    from matplotlib.ticker import FuncFormatter
 
     families = sorted(plan["families"])
     for field, filename, ylabel in (
@@ -112,6 +113,7 @@ def render(directory, summary, runs, plan):
             ax.axhline(1, color="#111827", linestyle="--", linewidth=1)
             ax.set_title(f"{family.capitalize()}: {title}", fontsize=10)
             ax.set_yscale("log", base=2)
+            ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:g}"))
             ax.set_xticks([9, 16, 32, 64, 96, 128])
             ax.set_xlabel("Natural token length")
             ax.set_ylabel("Paired process-run p95 ratio")
@@ -163,7 +165,15 @@ def render(directory, summary, runs, plan):
     ]
     for index in interrupted:
         ax.axvline(index, color="#dc2626", linestyle=":", linewidth=1)
-        ax.annotate("telemetry gap", (index, 90), rotation=90, color="#dc2626", fontsize=8)
+        ax.annotate(
+            "gap > 10 s",
+            (index, 98),
+            rotation=90,
+            va="top",
+            ha="right",
+            color="#dc2626",
+            fontsize=8,
+        )
     fig.text(
         0.5,
         0.01,
