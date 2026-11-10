@@ -24,6 +24,11 @@ dependencies = [
 [project.scripts]
 etdl = "etdl.cli:main"
 
+[project.optional-dependencies]
+openvino = [
+    "openvino==2026.4.0",
+]
+
 [dependency-groups]
 dev = ["pytest>=8,<10", "ruff>=0.14,<1"]
 

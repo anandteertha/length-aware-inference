@@ -1,0 +1,120 @@
+{
+  "created_at_utc": "2026-11-10T21:59:08.540419+00:00",
+  "purpose": "Targeted post-selection real-input confirmation; secondary OpenVINO diagnostic",
+  "split": "train",
+  "dataset_revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+  "dataset_fingerprint": "e0f6962d602757cb",
+  "model_source": {
+    "model_id": "distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+    "requested_revision": "main",
+    "revision": "714eb0fa89d2f80546fda750413ed43d93601a13"
+  },
+  "used_training_ids": 704,
+  "eligible_exact31": 486,
+  "selected_ids": [
+    10372,
+    8647,
+    45763,
+    8834,
+    32428,
+    2060,
+    6245,
+    50542,
+    57915,
+    34473,
+    45335,
+    54376,
+    50557,
+    46996,
+    2426,
+    42379,
+    14326,
+    42844,
+    36569,
+    53862,
+    38321,
+    1669,
+    17650,
+    3423,
+    39838,
+    23543,
+    55493,
+    334,
+    24511,
+    57360,
+    13972,
+    39921,
+    59150,
+    41612,
+    45818,
+    40932,
+    58332,
+    19411,
+    40215,
+    4312,
+    6318,
+    2993,
+    40667,
+    4540,
+    3761,
+    52419,
+    66558,
+    1844,
+    52527,
+    48920,
+    8577,
+    17138,
+    23651,
+    8114,
+    25350,
+    41766,
+    7477,
+    27766,
+    60468,
+    51740,
+    39289,
+    25359,
+    57302,
+    55594
+  ],
+  "sample_size": 64,
+  "seed": 311027,
+  "blocks": 5,
+  "repeats": 3,
+  "warmup_per_path": 2,
+  "threads": 4,
+  "atol": 0.0001,
+  "rtol": 0.0001,
+  "power": {
+    "ac_connected": true,
+    "power_scheme_guid": "381b4222-f694-41f0-9685-ff5bb260df2e"
+  },
+  "paths": {
+    "ort_transformer": {
+      "dynamic": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\models\\transformer\\dynamic.onnx",
+      "fixed-32": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\models\\transformer\\fixed-32.onnx"
+    },
+    "openvino_standard": {
+      "dynamic": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\models\\dynamic.onnx",
+      "fixed-32": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\models\\fixed-32.onnx"
+    }
+  },
+  "graph_sha256": {
+    "ort_transformer": {
+      "dynamic": "9d738e3e73f7ca265904ad9cd3d275aee7d118b5d90f59ea80b34e72a76eecfe",
+      "fixed-32": "c2365d7ea37b6b06a8d141c070b86c5678546e1d176b21e61e1fe89517eae1f3"
+    },
+    "openvino_standard": {
+      "dynamic": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+      "fixed-32": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386"
+    }
+  },
+  "code_sha256": {
+    "tools\\real31.py": "1fe8c855a4bc68a2adfd7d39389cf322ac2d109fdb2b0b9cdc44b3cdb4348313",
+    "src\\etdl\\runtime.py": "b285d2e6feef8c552db4643d7fa6bd677672777b94cebfd915c2c7364747c84a",
+    "src\\etdl\\checks.py": "791413fc715cc7dd22a3ac9d6e044bd95b431c95c878d90b2c54080a9b9d77c8",
+    "src\\etdl\\variants.py": "2341ae9f09d9f6221053ab120f2b5b3e744b2fb93531232ed65218b0cfe7aaa4",
+    "src\\etdl\\data.py": "a4b30634e3f9c2fc7685b0565ce04037a3afdc0a9e9465d6feb55658f706eefd"
+  },
+  "workload_sha256": "ae17adf03c663dafa6a15abbf3e51abd56c23623ac423411af84d2533f3fd938"
+}

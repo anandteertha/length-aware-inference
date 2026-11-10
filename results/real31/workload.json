@@ -1,0 +1,389 @@
+{
+  "split": "train",
+  "rows": [
+    {
+      "idx": 10372,
+      "text": "starts with a legend and ends with a story that is so far-fetched it would be impossible to believe if it were n't true ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 8647,
+      "text": "you need n't be steeped in '50s sociology , pop culture or movie lore to appreciate the emotional depth of haynes ' work . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 45763,
+      "text": "are a couple of things that elevate `` glory '' above most of its ilk , most notably the mere presence of duvall ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 8834,
+      "text": "both a beautifully made nature film and a tribute to a woman whose passion for this region and its inhabitants still shines in her quiet blue eyes . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 32428,
+      "text": "beyond the astute direction of cardoso and beautifully detailed performances by all of the actors , is a note of defiance over social dictates . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 2060,
+      "text": "of those reputedly `` unfilmable '' novels that has bucked the odds to emerge as an exquisite motion picture in its own right ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 6245,
+      "text": "seems terrified of the book 's irreverent energy , and scotches most of its \u00e9lan , humor , bile , and irony . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 50542,
+      "text": "he can cross swords with the best of them and helm a more traditionally plotted popcorn thriller while surrendering little of his intellectual rigor or creative composure ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 57915,
+      "text": "not that any of us should be complaining when a film clocks in around 90 minutes these days , but the plotting here leaves a lot to be desired ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 34473,
+      "text": "hits every cliche we 've come to expect , including the assumption that `` crazy '' people are innocent , childlike and inherently funny ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 45335,
+      "text": "'s a pretty good execution of a story that 's a lot richer than the ones hollywood action screenwriters usually come up with on their own ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 54376,
+      "text": "helmer hudlin tries to make a hip comedy , but his dependence on slapstick defeats the possibility of creating a more darkly edged tome . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 50557,
+      "text": "when he moves his setting to the past , and relies on a historical text , he loses the richness of characterization that makes his films so memorable ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 46996,
+      "text": "is surprisingly brilliant , deftly sewing together what could have been a confusing and horrifying vision into an intense and engrossing head-trip ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 2426,
+      "text": "it 's fitting that a movie as artificial and soulless as the country bears owes its genesis to an animatronic display at disneyland . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 42379,
+      "text": "writer-director randall wallace has bitten off more than he or anyone else could chew , and his movie veers like a drunken driver through heavy traffic ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 14326,
+      "text": "of the most moronic screenplays of the year , full of holes that will be obvious even to those who are n't looking for them ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 42844,
+      "text": "has far more energy , wit and warmth than should be expected from any movie with a `` 2 '' at the end of its title . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 36569,
+      "text": "reno ) lets her radical flag fly , taking angry potshots at george w. bush , henry kissinger , larry king , et al . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 53862,
+      "text": "this nicholas nickleby finds itself in reduced circumstances -- and , also like its hero , it remains brightly optimistic , coming through in the end ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 38321,
+      "text": "an old-fashioned scary movie , one that relies on lingering terror punctuated by sudden shocks and not constant bloodshed punctuated by flying guts . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 1669,
+      "text": "falls short on tension , eloquence , spiritual challenge -- things that have made the original new testament stories so compelling for 20 centuries . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 17650,
+      "text": "scherfig , the writer-director , has made a film so unabashedly hopeful that it actually makes the heart soar . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 3423,
+      "text": "is the chance it affords to watch jackson , who also served as executive producer , take his smooth , shrewd , powerful act abroad . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 39838,
+      "text": "white has n't developed characters so much as caricatures , one-dimensional buffoons that get him a few laughs but nothing else . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 23543,
+      "text": "statham employs an accent that i think is supposed to be an attempt at hardass american but sometimes just lapses into unhidden british . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 55493,
+      "text": "4ever has the same sledgehammer appeal as pokemon videos , but it breathes more on the big screen and induces headaches more slowly ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 334,
+      "text": "i 'm not sure which half of dragonfly is worse : the part where nothing 's happening , or the part where something 's happening ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 24511,
+      "text": "a movie with a ` children 's ' song that includes the line ` my stepdad 's not mean , he 's just adjusting ' ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 57360,
+      "text": "it 's far from a frothy piece , and the characters are complex , laden with plenty of baggage and tinged with tragic undertones . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 13972,
+      "text": "'s the brilliant surfing photography bringing you right inside the massive waves that lifts blue crush into one of the summer 's most pleasurable movies . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 39921,
+      "text": "second helpings of love , romance , tragedy , false dawns , real dawns , comic relief , two separate crises during marriage ceremonies , and ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 59150,
+      "text": "is hilarious as she tries to resuscitate the fun-loving libertine lost somewhere inside the conservative , handbag-clutching sarandon ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 41612,
+      "text": "'s a boring movie about a boring man , made watchable by a bravura performance from a consummate actor incapable of being boring ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 45818,
+      "text": "( haneke ) steers clear of the sensational and offers instead an unflinching and objective look at a decidedly perverse pathology . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 40932,
+      "text": "though intrepid in exploring an attraction that crosses sexual identity , ozpetek falls short in showing us antonia 's true emotions ... ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 58332,
+      "text": "formulaic , its plot and pacing typical hollywood war-movie stuff , while the performances elicit more of a sense of deja vu than awe ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 19411,
+      "text": "like whether compromise is the death of self ... this orgasm ( wo n't be an ) exceedingly memorable one for most people . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 40215,
+      "text": "fabulously funny and over the top as a ` very sneaky ' butler who excels in the art of impossible disappearing/reappearing acts ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 4312,
+      "text": "a bad sign when you 're rooting for the film to hurry up and get to its subjects ' deaths just so the documentary will be over ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 6318,
+      "text": "fontaine 's direction , especially her agreeably startling use of close-ups and her grace with a moving camera , creates sheerly cinematic appeal . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 2993,
+      "text": "wise enough to recognize that there are few things in this world more complex -- and , as it turns out , more fragile -- than happiness ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 40667,
+      "text": "connoisseurs of chinese film will be pleased to discover that tian 's meticulous talent has not withered during his enforced hiatus . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 4540,
+      "text": "the hard-to-predict and absolutely essential chemistry between the down-to-earth bullock and the nonchalant grant proves to be sensational ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 3761,
+      "text": "to places in the world devastated by war , famine and poverty and documented the cruelty and suffering he has found with an devastating , eloquent clarity ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 52419,
+      "text": "short of wonderful with its ten-year-old female protagonist and its steadfast refusal to set up a dualistic battle between good and evil ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 66558,
+      "text": "a hoot watching the rock chomp on jumbo ants , pull an arrow out of his back , and leap unscathed through raging fire ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 1844,
+      "text": "translating complex characters from novels to the big screen is an impossible task but they are true to the essence of what it is to be ya-ya ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 52527,
+      "text": "to the perkiness of witherspoon ( who is always a joy to watch , even when her material is not first-rate ) ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 48920,
+      "text": "while some of the camera work is interesting , the film 's mid-to-low budget is betrayed by the surprisingly shoddy makeup work . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 8577,
+      "text": "a played-out idea -- a straight guy has to dress up in drag -- that shockingly manages to be even worse than its title ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 17138,
+      "text": "brash , intelligent and erotically perplexing , haneke 's portrait of an upper class austrian society and the suppression of its tucked away ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 23651,
+      "text": "fans of the modern day hong kong action film finally have the worthy successor to a better tomorrow and the killer which they have been patiently waiting for . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 8114,
+      "text": "the film is darkly funny in its observation of just how much more grueling and time-consuming the illusion of work is than actual work . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 25350,
+      "text": "a perceptive study of two families in crisis -- and of two girls whose friendship is severely tested by bad luck and their own immaturity ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 41766,
+      "text": "that hinges on the subgenre 's most enabling victim ... and an ebullient affection for industrial-model meat freezers ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 7477,
+      "text": "with tiny little jokes and nary an original idea , this sappy ethnic sleeper proves that not only blockbusters pollute the summer movie pool . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 27766,
+      "text": ": the poor acting by the ensemble cast , the flat dialogue by vincent r. nebrida or the gutless direction by laurice guillen ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 60468,
+      "text": "the movie spends more time with schneider than with newcomer mcadams , even though her performance is more interesting ( and funnier ) than his . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 51740,
+      "text": "sorority boys , which is as bad at it is cruel , takes every potential laugh and stiletto-stomps the life out of it . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 39289,
+      "text": "no french people were harmed during the making of this movie , but they were insulted and the audience was put through torture for an hour and a half ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 25359,
+      "text": "there is an accuracy of observation in the work of the director , frank novak , that keeps the film grounded in an undeniable social realism . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 57302,
+      "text": "constructs a hilarious ode to middle america and middle age with this unlikely odyssey , featuring a pathetic , endearing hero who is all too human . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 55594,
+      "text": "a backhanded ode to female camaraderie penned by a man who has little clue about either the nature of women or of friendship . ",
+      "label": 0,
+      "tokens": 31
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Fresh 31-token confirmation and OpenVINO diagnostic
+
+This protocol was fixed before numerical references or timing results were inspected. The earlier [boundary diagnostic](boundary-protocol.md) found a post hoc lead for transformer-optimized fixed-32 at length 31 after inspecting 24 family/length combinations. Its nominal 5/5-block advantage is a lead, not independent confirmation.
+
+## Question and data
+
+The primary question is whether the same fixed-32 graph has lower batch-one p95 than its dynamic counterpart on previously unused, **real** 31-token SST-2 training sentences. The secondary question is whether OpenVINO CPU favors a static 32-token graph over the corresponding dynamic graph. The second question uses the **standard** ONNX graph pair to isolate the new backend; it is exploratory, not a replication of the transformer-optimized ORT pair.
+
+Exclude all 704 training IDs used in original calibration, original confirmation, and follow-up fit/confirmation/audit. From the pinned `nyu-mll/glue` SST-2 training split, tokenize without truncation, retain all remaining sentences with exactly 31 tokens including special tokens, shuffle their IDs with seed 311027, and take 64. The full eligible count and selected IDs are recorded before reference generation. These examples are held out from **inference-policy tuning**, but the released classifier was trained on SST-2 train; this is not an independent classifier-generalization set. The GLUE validation split is not accessed.
+
+## Frozen measurements
+
+Each backend runs in five fresh processes. A process keeps its dynamic and fixed sessions resident and interleaves three paths in shuffled order: natural dynamic at 31 tokens, dynamic padded to 32, and fixed-32 at the identical padded 32-token input. Each of the 64 sentences is run three times per path after two untimed warm-ups per path. Use four CPU inference threads, one synchronous request at a time, FP32, and a two-second rest between processes. The ORT process uses its pre-existing transformer-optimized dynamic and fixed-32 graphs, `ORT_ENABLE_ALL`, CPUExecutionProvider, sequential execution, and disabled spinning. The OpenVINO process loads the pre-existing **standard** ONNX dynamic and fixed-32 graphs, compiles for `CPU` only, forces FP32 inference precision, four inference threads, and one stream. The backend order in each block is seeded and recorded.
+
+Inputs are pretokenized before timing. Report inference-only and input-preparation-plus-inference p95 separately; neither includes tokenization or process startup. Per-process p95 is the unit of analysis. For the primary contrast, report the five matched natural-dynamic/fixed-32 p95 ratios, their median and range; a ratio above one favors fixed. Define descriptive confirmation in advance as all five ratios above one **and** a median above 1.05, with all output checks passing. This is not a formal significance test. Also report dynamic-padded/fixed-32 to separate padding from specialization. Do not select a new router or claim a broad workload win from this targeted stratum.
+
+For OpenVINO, report the same contrasts descriptively with no success threshold. In both backends, compare every output to independently generated PyTorch eager FP32 logits using exact label agreement, finite values, and `atol=rtol=1e-4`. Record graph and code hashes, backend versions, compilation/session initialization, sampled peak process RSS, AC connection and Windows power-scheme snapshots, and one-second CPU telemetry. Flag any power-state mismatch or telemetry gap greater than ten seconds. Keep all process results, including unfavorable ones. An observed performance difference under these conditions is a backend/shape observation, not proof of a particular operator-level cause.
+
+The current dynamic-only four-thread deployment policy and prior archives remain unchanged. Human review of the final interpretation remains pending.
+
+## Software sources
+
+OpenVINO's [CPU documentation](https://docs.openvino.ai/2026/openvino-workflow/running-inference/inference-devices-and-modes/cpu-device.html) states that performance mode may choose half precision automatically and shows how to force FP32. Its [ONNX conversion documentation](https://docs.openvino.ai/2026/openvino-workflow/model-preparation/convert-model-onnx.html) documents direct ONNX loading. Its [thread scheduling documentation](https://docs.openvino.ai/2026/openvino-workflow/running-inference/inference-devices-and-modes/cpu-device/performance-hint-and-thread-scheduling.html) documents inference-thread and stream controls. OpenVINO 2026.4.0 has a Python 3.13 Windows wheel on [PyPI](https://pypi.org/project/openvino/2026.4.0/).
