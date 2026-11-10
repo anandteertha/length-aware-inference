@@ -19,7 +19,10 @@ def main():
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     config = load_config(args.config)
-    policy = args.policy or config.artifact_dir / "confirmation/frozen-policy.json"
+    frozen = config.artifact_dir / "confirmation/frozen-policy.json"
+    policy = args.policy or (
+        frozen if frozen.exists() else config.artifact_dir / "study-t1/selection.json"
+    )
     classifier = RoutedClassifier(config, policy)
     predictions = [{"text": text, **classifier.predict(text)} for text in args.text]
     report = {

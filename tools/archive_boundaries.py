@@ -4,6 +4,7 @@ import argparse
 import csv
 import shutil
 import subprocess
+from itertools import pairwise
 from pathlib import Path
 
 import numpy as np
@@ -16,6 +17,11 @@ MODES = {
     "padded": ("Dynamic, bucket padded", "#d97706"),
     "fixed": ("Fixed, identical padding", "#059669"),
 }
+
+
+def telemetry_gap(run):
+    elapsed = [sample["elapsed_s"] for sample in run["cpu_observations"]]
+    return max([elapsed[0], *[b - a for a, b in pairwise(elapsed)]]) if elapsed else None
 
 
 def render(directory, summary, runs, plan):
@@ -150,6 +156,14 @@ def render(directory, summary, runs, plan):
     ax.grid(alpha=0.12)
     ax.legend(fontsize=9)
     ax.set_title("Recorded system load includes the benchmark worker")
+    interrupted = [
+        index
+        for index, run in enumerate(ordered, start=1)
+        if telemetry_gap(run) is None or telemetry_gap(run) > 10
+    ]
+    for index in interrupted:
+        ax.axvline(index, color="#dc2626", linestyle=":", linewidth=1)
+        ax.annotate("telemetry gap", (index, 90), rotation=90, color="#dc2626", fontsize=8)
     fig.text(
         0.5,
         0.01,
@@ -235,6 +249,17 @@ def main():
             "timed_requests": len(rows),
             "all_checks_passed": summary["all_checks_passed"],
             "all_power_conditions_consistent": summary["all_power_conditions_consistent"],
+            "telemetry_gap_threshold_seconds": 10,
+            "long_telemetry_gap_processes": [
+                {
+                    "family": run["family"],
+                    "capacity": run["capacity"],
+                    "block": run["block"],
+                    "max_gap_seconds": telemetry_gap(run),
+                }
+                for run in results
+                if telemetry_gap(run) is None or telemetry_gap(run) > 10
+            ],
             "max_absolute_error": max(
                 (
                     row["max_absolute_error"]
