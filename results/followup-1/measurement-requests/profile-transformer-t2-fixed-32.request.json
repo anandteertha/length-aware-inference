@@ -1,0 +1,21 @@
+{
+  "registry": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\registry-transformer.json",
+  "registry_sha256": "c9e7b19e2a93613b0e29fa7de97d2ae634b3bf91c8c956f30568d2b13067e36e",
+  "workload": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\fit.json",
+  "workload_sha256": "3cb95a0e118f111d8e2a3a83ccf03778ac5a896add146863563bac1fdd59f175",
+  "references": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\references-fit.json",
+  "references_sha256": "d20420725d2b04d03f8b7308e187ab1445f20f1030e28f0e37330a83b280e1ed",
+  "role": "fit",
+  "kind": "profile",
+  "threads": 2,
+  "models": [
+    "fixed-32"
+  ],
+  "routing": {},
+  "warmup": 10,
+  "repeats": 2,
+  "order_seed": 2037,
+  "block": 0,
+  "method": "fixed-32",
+  "condition_id": "transformer-t2-fixed-32"
+}

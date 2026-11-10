@@ -1,0 +1,158 @@
+{
+  "stage": "audit_choice_frozen",
+  "chosen": {
+    "method": "dynamic",
+    "threads": 4,
+    "runs": 3,
+    "median_run_p95_ms": 67.59663999999998,
+    "min_run_p95_ms": 66.28696499999998,
+    "max_run_p95_ms": 70.80430499999997,
+    "run_p95_ms": [
+      67.59663999999998,
+      66.28696499999998,
+      70.80430499999997
+    ],
+    "max_peak_bytes": 686747648,
+    "accuracy": [
+      0.9921875,
+      0.9921875,
+      0.9921875
+    ],
+    "passed": true,
+    "changed_predictions": 0,
+    "family": "transformer",
+    "variants": []
+  },
+  "conditions": {
+    "standard-t4-dynamic": {
+      "family": "standard",
+      "threads": 4,
+      "method": "dynamic",
+      "models": [
+        "dynamic"
+      ],
+      "routing": {},
+      "registry_sha256": "ee19f1e7f21d8be560632832193d79aa0b4455f5e2d46367f762047ce327b27e"
+    },
+    "standard-t4-selected": {
+      "family": "standard",
+      "threads": 4,
+      "method": "selected",
+      "models": [
+        "dynamic"
+      ],
+      "routing": {
+        "13": "dynamic",
+        "10": "dynamic",
+        "18": "dynamic",
+        "4": "dynamic",
+        "19": "dynamic",
+        "23": "dynamic",
+        "17": "dynamic",
+        "7": "dynamic",
+        "16": "dynamic",
+        "5": "dynamic",
+        "11": "dynamic",
+        "32": "dynamic",
+        "14": "dynamic",
+        "15": "dynamic",
+        "12": "dynamic",
+        "8": "dynamic",
+        "39": "dynamic",
+        "3": "dynamic",
+        "6": "dynamic",
+        "54": "dynamic",
+        "26": "dynamic",
+        "21": "dynamic",
+        "29": "dynamic",
+        "24": "dynamic",
+        "9": "dynamic",
+        "34": "dynamic",
+        "58": "dynamic",
+        "20": "dynamic",
+        "22": "dynamic",
+        "33": "dynamic",
+        "48": "dynamic",
+        "25": "dynamic",
+        "30": "dynamic",
+        "35": "dynamic",
+        "47": "dynamic",
+        "28": "dynamic",
+        "27": "dynamic",
+        "31": "dynamic",
+        "41": "dynamic",
+        "60": "dynamic"
+      },
+      "registry_sha256": "ee19f1e7f21d8be560632832193d79aa0b4455f5e2d46367f762047ce327b27e"
+    },
+    "transformer-t4-dynamic": {
+      "family": "transformer",
+      "threads": 4,
+      "method": "dynamic",
+      "models": [
+        "dynamic"
+      ],
+      "routing": {},
+      "registry_sha256": "c9e7b19e2a93613b0e29fa7de97d2ae634b3bf91c8c956f30568d2b13067e36e"
+    },
+    "transformer-t4-selected": {
+      "family": "transformer",
+      "threads": 4,
+      "method": "selected",
+      "models": [
+        "dynamic"
+      ],
+      "routing": {
+        "13": "dynamic",
+        "10": "dynamic",
+        "18": "dynamic",
+        "4": "dynamic",
+        "19": "dynamic",
+        "23": "dynamic",
+        "17": "dynamic",
+        "7": "dynamic",
+        "16": "dynamic",
+        "5": "dynamic",
+        "11": "dynamic",
+        "32": "dynamic",
+        "14": "dynamic",
+        "15": "dynamic",
+        "12": "dynamic",
+        "8": "dynamic",
+        "39": "dynamic",
+        "3": "dynamic",
+        "6": "dynamic",
+        "54": "dynamic",
+        "26": "dynamic",
+        "21": "dynamic",
+        "29": "dynamic",
+        "24": "dynamic",
+        "9": "dynamic",
+        "34": "dynamic",
+        "58": "dynamic",
+        "20": "dynamic",
+        "22": "dynamic",
+        "33": "dynamic",
+        "48": "dynamic",
+        "25": "dynamic",
+        "30": "dynamic",
+        "35": "dynamic",
+        "47": "dynamic",
+        "28": "dynamic",
+        "27": "dynamic",
+        "31": "dynamic",
+        "41": "dynamic",
+        "60": "dynamic"
+      },
+      "registry_sha256": "c9e7b19e2a93613b0e29fa7de97d2ae634b3bf91c8c956f30568d2b13067e36e"
+    }
+  },
+  "workload_hashes": {
+    "fit": "3cb95a0e118f111d8e2a3a83ccf03778ac5a896add146863563bac1fdd59f175",
+    "confirmation": "ed4ec45cd2ceef51928db8656d78f594507b4746405453afb3514eb536fda9d1",
+    "audit": "04e8f6a8178e67f57e5178e7658562d8771117f4c68f610caafcbb676519e348"
+  },
+  "experiment_sha256": "a6ba59ebdab057687b66340f9d1040acd63fe5890504cc30bedffccf46848edc",
+  "confirmation_plan_sha256": "3ffc33b395a2cdc2bb57300c318e1f1a49def7dd9372ed332c39e5bd92e164f8",
+  "confirmation_summary_sha256": "583deb457799120f2460b8031648b17d55edc188d8d15012029635e1becb2fd6"
+}

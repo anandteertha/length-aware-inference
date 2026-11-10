@@ -1,0 +1,413 @@
+{
+  "status": "complete",
+  "split": "train",
+  "purpose": "exploratory inference optimization audit",
+  "chosen_before_audit": {
+    "method": "dynamic",
+    "threads": 4,
+    "runs": 3,
+    "median_run_p95_ms": 67.59663999999998,
+    "min_run_p95_ms": 66.28696499999998,
+    "max_run_p95_ms": 70.80430499999997,
+    "run_p95_ms": [
+      67.59663999999998,
+      66.28696499999998,
+      70.80430499999997
+    ],
+    "max_peak_bytes": 686747648,
+    "accuracy": [
+      0.9921875,
+      0.9921875,
+      0.9921875
+    ],
+    "passed": true,
+    "changed_predictions": 0,
+    "family": "transformer",
+    "variants": []
+  },
+  "audit_groups": [
+    {
+      "method": "dynamic",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 74.75157,
+      "min_run_p95_ms": 74.73239999999998,
+      "max_run_p95_ms": 77.75784999999999,
+      "run_p95_ms": [
+        77.75784999999999,
+        74.75157,
+        74.73239999999998
+      ],
+      "max_peak_bytes": 686997504,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "selected",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 73.86722999999999,
+      "min_run_p95_ms": 71.988165,
+      "max_run_p95_ms": 76.997295,
+      "run_p95_ms": [
+        76.997295,
+        73.86722999999999,
+        71.988165
+      ],
+      "max_peak_bytes": 687161344,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "dynamic",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 73.55956499999998,
+      "min_run_p95_ms": 71.78742499999998,
+      "max_run_p95_ms": 76.697975,
+      "run_p95_ms": [
+        73.55956499999998,
+        71.78742499999998,
+        76.697975
+      ],
+      "max_peak_bytes": 686972928,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": []
+    },
+    {
+      "method": "selected",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 73.25667499999997,
+      "min_run_p95_ms": 72.72804499999997,
+      "max_run_p95_ms": 74.68225999999999,
+      "run_p95_ms": [
+        72.72804499999997,
+        74.68225999999999,
+        73.25667499999997
+      ],
+      "max_peak_bytes": 686796800,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": []
+    }
+  ],
+  "confirmation_groups": [
+    {
+      "method": "dynamic",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 147.891095,
+      "min_run_p95_ms": 145.20324499999995,
+      "max_run_p95_ms": 156.2616249999999,
+      "run_p95_ms": [
+        145.20324499999995,
+        156.2616249999999,
+        147.891095
+      ],
+      "max_peak_bytes": 685670400,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "dynamic",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 105.23540999999999,
+      "min_run_p95_ms": 100.10300499999998,
+      "max_run_p95_ms": 106.21619,
+      "run_p95_ms": [
+        106.21619,
+        105.23540999999999,
+        100.10300499999998
+      ],
+      "max_peak_bytes": 686874624,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "dynamic",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 71.07541999999998,
+      "min_run_p95_ms": 69.43488999999998,
+      "max_run_p95_ms": 72.04172499999999,
+      "run_p95_ms": [
+        69.43488999999998,
+        72.04172499999999,
+        71.07541999999998
+      ],
+      "max_peak_bytes": 687058944,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "selected",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 152.55135999999996,
+      "min_run_p95_ms": 152.55092999999988,
+      "max_run_p95_ms": 158.13143999999977,
+      "run_p95_ms": [
+        158.13143999999977,
+        152.55092999999988,
+        152.55135999999996
+      ],
+      "max_peak_bytes": 686776320,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "selected",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 106.77355999999997,
+      "min_run_p95_ms": 102.63605999999999,
+      "max_run_p95_ms": 108.03412999999995,
+      "run_p95_ms": [
+        108.03412999999995,
+        102.63605999999999,
+        106.77355999999997
+      ],
+      "max_peak_bytes": 686653440,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "selected",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 71.55259,
+      "min_run_p95_ms": 71.00390499999999,
+      "max_run_p95_ms": 77.99154,
+      "run_p95_ms": [
+        77.99154,
+        71.55259,
+        71.00390499999999
+      ],
+      "max_peak_bytes": 686592000,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "standard",
+      "variants": []
+    },
+    {
+      "method": "dynamic",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 159.88856499999991,
+      "min_run_p95_ms": 147.28832499999996,
+      "max_run_p95_ms": 169.33841999999996,
+      "run_p95_ms": [
+        159.88856499999991,
+        147.28832499999996,
+        169.33841999999996
+      ],
+      "max_peak_bytes": 685977600,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": []
+    },
+    {
+      "method": "dynamic",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 101.49997499999999,
+      "min_run_p95_ms": 91.93764999999998,
+      "max_run_p95_ms": 108.79630999999998,
+      "run_p95_ms": [
+        91.93764999999998,
+        101.49997499999999,
+        108.79630999999998
+      ],
+      "max_peak_bytes": 685985792,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": []
+    },
+    {
+      "method": "dynamic",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 67.59663999999998,
+      "min_run_p95_ms": 66.28696499999998,
+      "max_run_p95_ms": 70.80430499999997,
+      "run_p95_ms": [
+        67.59663999999998,
+        66.28696499999998,
+        70.80430499999997
+      ],
+      "max_peak_bytes": 686747648,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": []
+    },
+    {
+      "method": "selected",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 166.85375,
+      "min_run_p95_ms": 133.50065499999994,
+      "max_run_p95_ms": 175.24963499999998,
+      "run_p95_ms": [
+        175.24963499999998,
+        166.85375,
+        133.50065499999994
+      ],
+      "max_peak_bytes": 1015070720,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": [
+        "fixed-64"
+      ]
+    },
+    {
+      "method": "selected",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 104.48388999999992,
+      "min_run_p95_ms": 100.37274,
+      "max_run_p95_ms": 115.06788499999999,
+      "run_p95_ms": [
+        115.06788499999999,
+        100.37274,
+        104.48388999999992
+      ],
+      "max_peak_bytes": 1015578624,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": [
+        "fixed-32"
+      ]
+    },
+    {
+      "method": "selected",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 68.22337999999996,
+      "min_run_p95_ms": 65.28947999999998,
+      "max_run_p95_ms": 69.56374999999998,
+      "run_p95_ms": [
+        68.22337999999996,
+        69.56374999999998,
+        65.28947999999998
+      ],
+      "max_peak_bytes": 686923776,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0,
+      "family": "transformer",
+      "variants": []
+    }
+  ],
+  "audit_plan_sha256": "21ca536f1a48462dc361ca1acf469e9bec9061a2759e9e0a5f622016b3f876c6",
+  "fit_policies_sha256": "c1d3ac8bd0a23097a7c07a7191ca7227741f81bdc641432c785f726478967619",
+  "all_audit_checks_passed": true,
+  "limitations": [
+    "All new rows are from classifier training data, held out only from inference-policy tuning.",
+    "No GLUE validation results were used or rerun in this follow-up.",
+    "Three process blocks on one laptop; no confidence intervals or causal fusion attribution.",
+    "The original deployment policy remains unchanged."
+  ]
+}

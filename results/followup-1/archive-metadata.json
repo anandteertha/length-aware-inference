@@ -1,0 +1,14 @@
+{
+  "measurement_code_commit": "01c00c5a035081816d358677d3eb76c68099895e",
+  "reporting_commit": "fcafbce21c239987ab1aef3565d58d54a4c37128",
+  "processes": 93,
+  "timed_requests": 24324,
+  "process_counts_by_role": {
+    "audit": 12,
+    "fit": 45,
+    "confirmation": 36
+  },
+  "chosen_audit_memory_within_budget": true,
+  "chosen_audit_score_checks_passed": true,
+  "note": "Audit rows are from upstream classifier training data, held out only from inference-policy tuning."
+}

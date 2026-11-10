@@ -1,0 +1,23 @@
+{
+  "registry": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\registry-standard.json",
+  "registry_sha256": "ee19f1e7f21d8be560632832193d79aa0b4455f5e2d46367f762047ce327b27e",
+  "workload": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\confirmation.json",
+  "workload_sha256": "ed4ec45cd2ceef51928db8656d78f594507b4746405453afb3514eb536fda9d1",
+  "references": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\references-confirmation.json",
+  "references_sha256": "c37b7e96904a8bc5cbddd981b1d7fab909e8b33cf1b5239de7dba9a75b9c229e",
+  "role": "confirmation",
+  "kind": "configuration",
+  "threads": 4,
+  "models": [
+    "dynamic"
+  ],
+  "routing": {},
+  "warmup": 10,
+  "repeats": 1,
+  "order_seed": 2038,
+  "block": 1,
+  "method": "dynamic",
+  "condition_id": "standard-t4-dynamic",
+  "freeze": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\confirmation-plan.json",
+  "freeze_sha256": "3ffc33b395a2cdc2bb57300c318e1f1a49def7dd9372ed332c39e5bd92e164f8"
+}

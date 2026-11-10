@@ -22,6 +22,14 @@ The specialization study and archived measurements are in [milestone 2](docs/mil
 The [final confirmation and held-out report](docs/final-results.md) supersedes the
 earlier calibration result for deployment recommendations.
 
+The [per-thread and transformer-optimizer follow-up](docs/followup-results.md)
+is also complete: 93 timing processes and 24,324 checked requests. It again
+favored a dynamic graph with no fixed variants. Additional transformer
+optimization showed a small audit difference (73.56 vs 74.75 ms median run p95),
+with overlapping ranges and mixed matched-block results. This training-derived
+audit establishes no new classifier-generalization result or reliable speedup;
+the original prediction policy remains unchanged.
+
 ## Setup (PowerShell)
 
 Use Python 3.11-3.13 and [uv](https://docs.astral.sh/uv/). Dependencies are locked in

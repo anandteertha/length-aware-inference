@@ -1,0 +1,23 @@
+{
+  "registry": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\registry-standard.json",
+  "registry_sha256": "ee19f1e7f21d8be560632832193d79aa0b4455f5e2d46367f762047ce327b27e",
+  "workload": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\audit.json",
+  "workload_sha256": "04e8f6a8178e67f57e5178e7658562d8771117f4c68f610caafcbb676519e348",
+  "references": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\references-audit.json",
+  "references_sha256": "06b2e8cb8a5f458177a839a71bc2c4b2b027496f760a2aa1f67ed88781c871b7",
+  "role": "audit",
+  "kind": "configuration",
+  "threads": 4,
+  "models": [
+    "dynamic"
+  ],
+  "routing": {},
+  "warmup": 10,
+  "repeats": 1,
+  "order_seed": 2038,
+  "block": 1,
+  "method": "dynamic",
+  "condition_id": "standard-t4-dynamic",
+  "freeze": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\followup\\audit-plan.json",
+  "freeze_sha256": "21ca536f1a48462dc361ca1acf469e9bec9061a2759e9e0a5f622016b3f876c6"
+}
