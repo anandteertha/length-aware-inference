@@ -17,7 +17,7 @@ LABELS = {
     "dynamic": "Dynamic",
     "single-16": "Fixed 16",
     "buckets": "Buckets",
-    "selected": "Prior 16+32",
+    "selected": "Prior policy",
 }
 COLORS = {
     "pytorch": "#475569",
@@ -35,12 +35,87 @@ def csv_rows(path, rows):
         writer.writerows(rows)
 
 
-def figures(output, confirmation, held_out):
+def capture_traces(output, directory, config_path):
+    """Capture diagnostic CPU traces after every performance run has finished."""
+    from etdl.comparison import validate_frozen_plan, validate_plan
+    from etdl.config import load_config
+    from etdl.data import encode, load_tokenizer
+    from etdl.runtime import session
+    from etdl.variants import pad_inputs
+
+    config = load_config(config_path)
+    frozen = validate_frozen_plan(config, directory / "evaluation-plan.json")
+    plan = read_json(Path(frozen["execution_plan"]))
+    paths = validate_plan(config, plan)
+    workload = read_json(directory / "held-out/validation.json")
+    row = min(workload["rows"], key=lambda item: item["tokens"])
+    if row["tokens"] > 16:
+        raise ValueError("Diagnostic common-input trace requires an example fitting all variants")
+    tokenizer = load_tokenizer(config)
+    inputs = encode(tokenizer, row["text"], config.max_length)
+    trace_dir = output / "traces"
+    trace_dir.mkdir()
+    reports = {}
+    for name, path in paths.items():
+        feed = (
+            inputs
+            if name == "dynamic"
+            else pad_inputs(inputs, int(name.split("-")[1]), tokenizer.pad_token_id)
+        )
+        runtime, _ = session(
+            path, frozen["threads"], profile_prefix=trace_dir / name, allow_spinning=False
+        )
+        for _ in range(4):
+            runtime.run(["logits"], feed)
+        trace = Path(runtime.end_profiling())
+        events = read_json(trace)
+        nodes = [event for event in events if event.get("cat") == "Node"]
+        providers = sorted(
+            {
+                event.get("args", {}).get("provider")
+                for event in nodes
+                if event.get("args", {}).get("provider")
+            }
+        )
+        if providers != ["CPUExecutionProvider"]:
+            raise ValueError("Unexpected diagnostic execution provider")
+        reports[name] = {
+            "trace": trace.relative_to(output).as_posix(),
+            "model_sha256": sha256(path),
+            "input_shape": list(feed["input_ids"].shape),
+            "providers": providers,
+            "operator_calls": dict(
+                sorted(
+                    Counter(
+                        event.get("args", {}).get("op_name", "unknown") for event in nodes
+                    ).items()
+                )
+            ),
+        }
+        del runtime
+    write_json(
+        output / "operator-traces.json",
+        {
+            "purpose": "Diagnostic instrumentation after all timed runs; durations are not benchmark estimates.",
+            "threads": frozen["threads"],
+            "allow_spinning": False,
+            "common_validation_idx": row["idx"],
+            "unpadded_tokens": row["tokens"],
+            "requests_per_graph": 4,
+            "graphs": reports,
+        },
+    )
+
+
+def figures(output, confirmation, held_out, plan):
     import matplotlib
 
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
+    labels_by_method = dict(LABELS)
+    retained = "+".join(name.removeprefix("fixed-") for name in plan["policy"]["variants"])
+    labels_by_method["selected"] = f"Prior {retained}" if retained else "Prior dynamic"
     groups = {(item["method"], item["threads"]): item for item in confirmation["groups"]}
     threads = sorted({item["threads"] for item in confirmation["groups"]})
     fig, axes = plt.subplots(1, len(threads), figsize=(14, 5), sharey=True, squeeze=False)
@@ -54,8 +129,8 @@ def figures(output, confirmation, held_out):
                 [index - 0.22, index + 0.22], [median, median], color=COLORS[method], linewidth=2
             )
             ax.annotate(
-                f"{median:.1f}",
-                (index, median),
+                f"med {median:.1f}",
+                (index, max(values)),
                 xytext=(0, 9),
                 textcoords="offset points",
                 ha="center",
@@ -63,16 +138,21 @@ def figures(output, confirmation, held_out):
             )
         ax.set_title(f"{thread} intra-op thread{'s' if thread > 1 else ''}")
         ax.set_xticks(
-            range(len(METHODS)), [LABELS[method] for method in METHODS], rotation=25, ha="right"
+            range(len(METHODS)),
+            [labels_by_method[method] for method in METHODS],
+            rotation=25,
+            ha="right",
         )
-        ax.set_ylim(bottom=0)
+        ax.set_ylim(
+            0, max(value for group in groups.values() for value in group["run_p95_ms"]) * 1.18
+        )
         ax.grid(axis="y", alpha=0.15)
     axes[0, 0].set_ylabel("Per-process combined latency p95 (ms)")
     fig.suptitle("Disjoint training confirmation: individual process runs and medians")
     fig.text(
         0.5,
         0.02,
-        "128 new training examples; three randomized process blocks. Dots are runs; bars are medians, not confidence intervals.",
+        f"{plan['examples']} new training examples; {plan['blocks']} randomized process blocks. Dots are runs; bars are medians, not confidence intervals.",
         ha="center",
         fontsize=9,
     )
@@ -83,7 +163,9 @@ def figures(output, confirmation, held_out):
 
     runs = {run["method"]: run for run in held_out["runs"]}
     fig, axes = plt.subplots(1, 2, figsize=(12, 5.5))
-    labels = [f"{LABELS[method]}\n{runs[method]['accuracy']:.1%} accuracy" for method in METHODS]
+    labels = [
+        f"{labels_by_method[method]}\n{runs[method]['accuracy']:.1%} accuracy" for method in METHODS
+    ]
     x = np.arange(len(METHODS))
     for ax, values, ylabel in (
         (
@@ -124,7 +206,7 @@ def figures(output, confirmation, held_out):
     fig.text(
         0.5,
         0.02,
-        "One timing process per method. Dynamic-only deployment was chosen before validation; no latency confidence intervals.",
+        "One timing process per method. Deployment was chosen before validation; no latency confidence intervals.",
         ha="center",
         fontsize=9,
     )
@@ -139,6 +221,10 @@ def main():
     parser.add_argument("--comparison", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--ablation", type=Path)
+    parser.add_argument("--config", type=Path, default=Path("configs/default.toml"))
+    parser.add_argument(
+        "--traces", action="store_true", help="Capture CPU operator traces after timing"
+    )
     arguments = parser.parse_args()
     directory, output = arguments.comparison.resolve(), arguments.output.resolve()
     confirmation = read_json(directory / "summary.json")
@@ -174,6 +260,8 @@ def main():
     }
     if arguments.ablation:
         copies["ablation-reanalysis.json"] = arguments.ablation
+    if (directory / "prediction-smoke.json").exists():
+        copies["prediction-smoke.json"] = directory / "prediction-smoke.json"
     for name, source in copies.items():
         shutil.copyfile(source, output / name)
     for name, source in (
@@ -275,10 +363,16 @@ def main():
             "note": "Raw frozen plans preserve original host paths for audit; rerun the CLI to reproduce a new experiment.",
         },
     )
-    figures(output, confirmation, held_out)
+    figures(output, confirmation, held_out, plan)
+    if arguments.traces:
+        capture_traces(output, directory, arguments.config)
     write_json(
         output / "checksums.json",
-        {path.name: sha256(path) for path in sorted(output.iterdir()) if path.is_file()},
+        {
+            path.relative_to(output).as_posix(): sha256(path)
+            for path in sorted(output.rglob("*"))
+            if path.is_file() and path != output / "checksums.json"
+        },
     )
     print(f"Archived comparison and evaluation evidence to {output}")
 
