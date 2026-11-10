@@ -1,0 +1,380 @@
+{
+  "status": "complete",
+  "split": "train",
+  "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+  "groups": [
+    {
+      "method": "buckets",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 260.98712999999987,
+      "min_run_p95_ms": 173.88939999999974,
+      "max_run_p95_ms": 267.9267,
+      "run_p95_ms": [
+        260.98712999999987,
+        173.88939999999974,
+        267.9267
+      ],
+      "max_peak_bytes": 1767735296,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "buckets",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 131.81661499999998,
+      "min_run_p95_ms": 89.93515499999995,
+      "max_run_p95_ms": 138.2976349999999,
+      "run_p95_ms": [
+        138.2976349999999,
+        89.93515499999995,
+        131.81661499999998
+      ],
+      "max_peak_bytes": 1768873984,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "buckets",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 90.22180999999996,
+      "min_run_p95_ms": 78.83155999999998,
+      "max_run_p95_ms": 109.94394999999996,
+      "run_p95_ms": [
+        109.94394999999996,
+        90.22180999999996,
+        78.83155999999998
+      ],
+      "max_peak_bytes": 1770721280,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "dynamic",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 220.89009499999983,
+      "min_run_p95_ms": 123.29354499999997,
+      "max_run_p95_ms": 229.19116999999994,
+      "run_p95_ms": [
+        220.89009499999983,
+        229.19116999999994,
+        123.29354499999997
+      ],
+      "max_peak_bytes": 686247936,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "dynamic",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 99.07255500000001,
+      "min_run_p95_ms": 73.57331999999991,
+      "max_run_p95_ms": 104.08697999999991,
+      "run_p95_ms": [
+        99.07255500000001,
+        73.57331999999991,
+        104.08697999999991
+      ],
+      "max_peak_bytes": 686772224,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "dynamic",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 77.62639499999996,
+      "min_run_p95_ms": 65.43856999999997,
+      "max_run_p95_ms": 80.413055,
+      "run_p95_ms": [
+        65.43856999999997,
+        80.413055,
+        77.62639499999996
+      ],
+      "max_peak_bytes": 686886912,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "pytorch",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 163.7040899999999,
+      "min_run_p95_ms": 157.52612999999994,
+      "max_run_p95_ms": 190.83906999999988,
+      "run_p95_ms": [
+        190.83906999999988,
+        163.7040899999999,
+        157.52612999999994
+      ],
+      "max_peak_bytes": 545034240,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "pytorch",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 82.47776499999999,
+      "min_run_p95_ms": 80.32799999999999,
+      "max_run_p95_ms": 126.32326499999996,
+      "run_p95_ms": [
+        126.32326499999996,
+        82.47776499999999,
+        80.32799999999999
+      ],
+      "max_peak_bytes": 546271232,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "pytorch",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 75.25803499999999,
+      "min_run_p95_ms": 70.85616,
+      "max_run_p95_ms": 81.11650499999998,
+      "run_p95_ms": [
+        81.11650499999998,
+        75.25803499999999,
+        70.85616
+      ],
+      "max_peak_bytes": 544800768,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "selected",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 190.19587499999997,
+      "min_run_p95_ms": 164.84650499999998,
+      "max_run_p95_ms": 199.45463999999998,
+      "run_p95_ms": [
+        199.45463999999998,
+        164.84650499999998,
+        190.19587499999997
+      ],
+      "max_peak_bytes": 1227751424,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "selected",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 103.15258999999999,
+      "min_run_p95_ms": 98.77838,
+      "max_run_p95_ms": 128.88993499999992,
+      "run_p95_ms": [
+        128.88993499999992,
+        98.77838,
+        103.15258999999999
+      ],
+      "max_peak_bytes": 1229000704,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "selected",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 91.33301999999999,
+      "min_run_p95_ms": 74.02480999999999,
+      "max_run_p95_ms": 99.12800999999999,
+      "run_p95_ms": [
+        74.02480999999999,
+        91.33301999999999,
+        99.12800999999999
+      ],
+      "max_peak_bytes": 1230143488,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "single-16",
+      "threads": 1,
+      "runs": 3,
+      "median_run_p95_ms": 200.37103499999998,
+      "min_run_p95_ms": 195.30799999999996,
+      "max_run_p95_ms": 201.0198349999999,
+      "run_p95_ms": [
+        201.0198349999999,
+        200.37103499999998,
+        195.30799999999996
+      ],
+      "max_peak_bytes": 957767680,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "single-16",
+      "threads": 2,
+      "runs": 3,
+      "median_run_p95_ms": 111.780175,
+      "min_run_p95_ms": 71.44530499999996,
+      "max_run_p95_ms": 124.87403499999995,
+      "run_p95_ms": [
+        124.87403499999995,
+        111.780175,
+        71.44530499999996
+      ],
+      "max_peak_bytes": 958656512,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    },
+    {
+      "method": "single-16",
+      "threads": 4,
+      "runs": 3,
+      "median_run_p95_ms": 88.36950999999998,
+      "min_run_p95_ms": 59.828495,
+      "max_run_p95_ms": 89.76104999999998,
+      "run_p95_ms": [
+        89.76104999999998,
+        59.828495,
+        88.36950999999998
+      ],
+      "max_peak_bytes": 959856640,
+      "accuracy": [
+        0.9921875,
+        0.9921875,
+        0.9921875
+      ],
+      "passed": true,
+      "changed_predictions": 0
+    }
+  ],
+  "matched_block_ratios": [
+    {
+      "threads": 1,
+      "matched_blocks": [
+        0,
+        1,
+        2
+      ],
+      "ratios": [
+        1.107470325082434,
+        1.39033078074661,
+        0.6482451052106151
+      ],
+      "median_ratio": 1.107470325082434,
+      "range": [
+        0.6482451052106151,
+        1.39033078074661
+      ]
+    },
+    {
+      "threads": 2,
+      "matched_blocks": [
+        0,
+        1,
+        2
+      ],
+      "ratios": [
+        0.7686601362627739,
+        0.7448322193581218,
+        1.0090583280555527
+      ],
+      "median_ratio": 0.7686601362627739,
+      "range": [
+        0.7448322193581218,
+        1.0090583280555527
+      ]
+    },
+    {
+      "threads": 4,
+      "matched_blocks": [
+        0,
+        1,
+        2
+      ],
+      "ratios": [
+        0.8840086181916573,
+        0.8804379292396114,
+        0.7830924377479177
+      ],
+      "median_ratio": 0.8804379292396114,
+      "range": [
+        0.7830924377479177,
+        0.8840086181916573
+      ]
+    }
+  ],
+  "all_correctness_checks_passed": true,
+  "inference": "Descriptive run-level medians and ranges; no p-values or confidence intervals."
+}

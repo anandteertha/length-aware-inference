@@ -1,0 +1,10 @@
+{
+  "training_measurement_commit": "057c54080453678146e3595942b6babe247add94",
+  "evaluation_measurement_commit": "63b084d4ff7e36897679a308665d3230fbeb20fa",
+  "reporting_commit": "685cd357bfce2b30cd6f64c5d2b427b6af47363a",
+  "confirmation_processes": 45,
+  "validation_processes": 5,
+  "confirmation_requests": 5760,
+  "validation_requests": 4360,
+  "note": "Raw frozen plans preserve original host paths for audit; rerun the CLI to reproduce a new experiment."
+}

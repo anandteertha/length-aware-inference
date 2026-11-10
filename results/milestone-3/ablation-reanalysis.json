@@ -1,0 +1,274 @@
+{
+  "split": "train",
+  "source_study_sha256": "e50de4f9779d89756d52c706053565b136a03e37e1c336efe767f5573cea821f",
+  "baseline": {
+    "variants": [
+      "fixed-16",
+      "fixed-32"
+    ],
+    "p95_ms": 50.55598999999996,
+    "peak_bytes": 1288417280,
+    "changed_predictions": 0
+  },
+  "without_memory_cap": {
+    "variants": [
+      "fixed-16",
+      "fixed-32"
+    ],
+    "p95_ms": 50.55598999999996,
+    "peak_bytes": 1288417280,
+    "changed_predictions": 0
+  },
+  "without_changed_label_gate": {
+    "variants": [
+      "fixed-16",
+      "fixed-32"
+    ],
+    "p95_ms": 50.55598999999996,
+    "peak_bytes": 1288417280,
+    "changed_predictions": 0
+  },
+  "all_measured_candidates_had_zero_changed_predictions": true,
+  "memory_cap_sensitivity": [
+    {
+      "budget_mib": 512,
+      "selection": null
+    },
+    {
+      "budget_mib": 700,
+      "selection": {
+        "variants": [],
+        "p95_ms": 243.75798999999995,
+        "peak_bytes": 685654016,
+        "changed_predictions": 0
+      }
+    },
+    {
+      "budget_mib": 1024,
+      "selection": {
+        "variants": [
+          "fixed-16"
+        ],
+        "p95_ms": 149.112825,
+        "peak_bytes": 1017565184,
+        "changed_predictions": 0
+      }
+    },
+    {
+      "budget_mib": 1536,
+      "selection": {
+        "variants": [
+          "fixed-16",
+          "fixed-32"
+        ],
+        "p95_ms": 50.55598999999996,
+        "peak_bytes": 1288417280,
+        "changed_predictions": 0
+      }
+    }
+  ],
+  "frequency_sensitivity": [
+    {
+      "mixture": "empirical_lengths",
+      "selected": {
+        "variants": [
+          "fixed-16",
+          "fixed-32"
+        ],
+        "p95_ms": 52.4019,
+        "peak_bytes": 1288417280,
+        "changed_predictions": 0
+      },
+      "configuration_objectives": [
+        {
+          "variants": [],
+          "p95_ms": 246.749,
+          "peak_bytes": 685654016,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-64"
+          ],
+          "p95_ms": 367.6938,
+          "peak_bytes": 1017589760,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-16",
+            "fixed-32"
+          ],
+          "p95_ms": 52.4019,
+          "peak_bytes": 1288417280,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-16",
+            "fixed-64"
+          ],
+          "p95_ms": 316.0365,
+          "peak_bytes": 1287430144,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-128"
+          ],
+          "p95_ms": 573.943,
+          "peak_bytes": 1017131008,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-32"
+          ],
+          "p95_ms": 236.2903,
+          "peak_bytes": 1017667584,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-16"
+          ],
+          "p95_ms": 149.8974,
+          "peak_bytes": 1017565184,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-128",
+            "fixed-32"
+          ],
+          "p95_ms": 257.8064,
+          "peak_bytes": 1297203200,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-128",
+            "fixed-16"
+          ],
+          "p95_ms": 586.2136,
+          "peak_bytes": 1297387520,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-32",
+            "fixed-64"
+          ],
+          "p95_ms": 197.0349,
+          "peak_bytes": 1289490432,
+          "changed_predictions": 0
+        }
+      ]
+    },
+    {
+      "mixture": "uniform_observed_lengths",
+      "selected": {
+        "variants": [
+          "fixed-16",
+          "fixed-32"
+        ],
+        "p95_ms": 56.1792,
+        "peak_bytes": 1288417280,
+        "changed_predictions": 0
+      },
+      "configuration_objectives": [
+        {
+          "variants": [],
+          "p95_ms": 305.2712,
+          "peak_bytes": 685654016,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-64"
+          ],
+          "p95_ms": 380.8578,
+          "peak_bytes": 1017589760,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-16",
+            "fixed-32"
+          ],
+          "p95_ms": 56.1792,
+          "peak_bytes": 1288417280,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-16",
+            "fixed-64"
+          ],
+          "p95_ms": 343.5925,
+          "peak_bytes": 1287430144,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-128"
+          ],
+          "p95_ms": 581.1145,
+          "peak_bytes": 1017131008,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-32"
+          ],
+          "p95_ms": 242.4297,
+          "peak_bytes": 1017667584,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-16"
+          ],
+          "p95_ms": 169.9654,
+          "peak_bytes": 1017565184,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-128",
+            "fixed-32"
+          ],
+          "p95_ms": 569.7112,
+          "peak_bytes": 1297203200,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-128",
+            "fixed-16"
+          ],
+          "p95_ms": 591.2516,
+          "peak_bytes": 1297387520,
+          "changed_predictions": 0
+        },
+        {
+          "variants": [
+            "fixed-32",
+            "fixed-64"
+          ],
+          "p95_ms": 246.3135,
+          "peak_bytes": 1289490432,
+          "changed_predictions": 0
+        }
+      ]
+    }
+  ],
+  "frequency_quantile_estimator": "Inverse weighted empirical CDF, without interpolation, for both mixtures",
+  "limitations": [
+    "Reanalysis of the recorded training timing matrix, not new execution measurements.",
+    "All measured variants already passed checks; removing the gate cannot test a failing graph.",
+    "Uniform-length weights change the objective, without replaying changed cache/switch behavior.",
+    "The original selector used linear quantile interpolation; frequency sensitivity uses one common inverse-CDF estimator.",
+    "No ablation changes the deployed policy or uses validation outcomes."
+  ]
+}

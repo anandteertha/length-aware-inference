@@ -1,0 +1,169 @@
+{
+  "purpose": "Diagnostic instrumentation after all timed runs; durations are not benchmark estimates.",
+  "threads": 4,
+  "allow_spinning": false,
+  "common_validation_idx": 203,
+  "unpadded_tokens": 4,
+  "requests_per_graph": 4,
+  "graphs": {
+    "dynamic": {
+      "trace": "traces/dynamic_2026-11-09_19-32-15_668.json",
+      "model_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+      "input_shape": [
+        1,
+        4
+      ],
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "operator_calls": {
+        "Add": 144,
+        "And": 8,
+        "Cast": 4,
+        "Concat": 12,
+        "Div": 24,
+        "Erf": 24,
+        "Expand": 4,
+        "FusedGemm": 4,
+        "FusedMatMul": 24,
+        "Gather": 12,
+        "GatherND": 4,
+        "Gemm": 4,
+        "GreaterOrEqual": 4,
+        "MatMul": 168,
+        "Max": 4,
+        "Mul": 48,
+        "Range": 4,
+        "Reshape": 96,
+        "Shape": 8,
+        "SkipLayerNormalization": 52,
+        "Slice": 4,
+        "Softmax": 24,
+        "Squeeze": 4,
+        "Transpose": 96,
+        "Unsqueeze": 20,
+        "Where": 4
+      }
+    },
+    "fixed-16": {
+      "trace": "traces/fixed-16_2026-11-09_19-32-16_977.json",
+      "model_sha256": "2935dfb0e8dab36639d09a3ba02dd729873a7e5d9882d906086bf100787fc744",
+      "input_shape": [
+        1,
+        16
+      ],
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "operator_calls": {
+        "Add": 48,
+        "And": 4,
+        "Cast": 4,
+        "Div": 24,
+        "Erf": 24,
+        "FusedGemm": 4,
+        "FusedMatMul": 24,
+        "Gather": 8,
+        "GatherND": 4,
+        "Gemm": 148,
+        "MatMul": 24,
+        "Mul": 48,
+        "Reshape": 384,
+        "SkipLayerNormalization": 52,
+        "Softmax": 24,
+        "Transpose": 96,
+        "Where": 4
+      }
+    },
+    "fixed-32": {
+      "trace": "traces/fixed-32_2026-11-09_19-32-18_019.json",
+      "model_sha256": "3975a22ee1ae6f478199a251f30124f80058d25af7352561ce86ef3a4df8e386",
+      "input_shape": [
+        1,
+        32
+      ],
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "operator_calls": {
+        "Add": 48,
+        "And": 4,
+        "Cast": 4,
+        "Div": 24,
+        "Erf": 24,
+        "FusedGemm": 4,
+        "FusedMatMul": 24,
+        "Gather": 8,
+        "GatherND": 4,
+        "Gemm": 148,
+        "MatMul": 24,
+        "Mul": 48,
+        "Reshape": 384,
+        "SkipLayerNormalization": 52,
+        "Softmax": 24,
+        "Transpose": 96,
+        "Where": 4
+      }
+    },
+    "fixed-64": {
+      "trace": "traces/fixed-64_2026-11-09_19-32-19_022.json",
+      "model_sha256": "58da99c06c61b9b3b715438f04e0524f1a68f06c3661e97e66e0c11152b1b8e2",
+      "input_shape": [
+        1,
+        64
+      ],
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "operator_calls": {
+        "Add": 48,
+        "And": 4,
+        "Cast": 4,
+        "Div": 24,
+        "Erf": 24,
+        "FusedGemm": 4,
+        "FusedMatMul": 24,
+        "Gather": 8,
+        "GatherND": 4,
+        "Gemm": 148,
+        "MatMul": 24,
+        "Mul": 48,
+        "Reshape": 384,
+        "SkipLayerNormalization": 52,
+        "Softmax": 24,
+        "Transpose": 96,
+        "Where": 4
+      }
+    },
+    "fixed-128": {
+      "trace": "traces/fixed-128_2026-11-09_19-32-20_151.json",
+      "model_sha256": "c8179b1efb0e8301e50f632e9ac8841521f32390d6820af25d7d7369c9649a09",
+      "input_shape": [
+        1,
+        128
+      ],
+      "providers": [
+        "CPUExecutionProvider"
+      ],
+      "operator_calls": {
+        "Add": 48,
+        "And": 4,
+        "Cast": 4,
+        "Div": 24,
+        "Erf": 24,
+        "FusedGemm": 4,
+        "FusedMatMul": 24,
+        "Gather": 8,
+        "GatherND": 4,
+        "Gemm": 148,
+        "MatMul": 24,
+        "Mul": 48,
+        "Reshape": 384,
+        "SkipLayerNormalization": 52,
+        "Softmax": 24,
+        "Transpose": 96,
+        "Where": 4
+      }
+    }
+  }
+}

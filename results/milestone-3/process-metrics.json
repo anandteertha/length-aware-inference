@@ -1,0 +1,2972 @@
+[
+  {
+    "method": "buckets",
+    "threads": 4,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.6114999999999999,
+        "p95_ms": 1.516154999999999,
+        "mean_ms": 0.69627265625
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.46804999999999997,
+        "p95_ms": 0.9372749999999999,
+        "mean_ms": 0.513728125
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 54.43825,
+        "p95_ms": 108.60253499999995,
+        "mean_ms": 57.9170453125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 56.046949999999995,
+        "p95_ms": 109.94394999999996,
+        "mean_ms": 59.12704609375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317902848,
+      "sampled_peak_rss_bytes": 1767452672,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1759752192,
+      "incremental_sampled_peak_bytes": 1449549824,
+      "process_lifetime_peak_rss_bytes": 1770721280
+    },
+    "memory_for_budget_bytes": 1770721280,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 1779.4551,
+      "fixed-16": 1696.4841,
+      "fixed-32": 1776.5667,
+      "fixed-64": 1643.6335,
+      "fixed-128": 1410.4764
+    },
+    "sessions_ready_ms": 10001.675,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 2,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.43105,
+        "p95_ms": 1.1903749999999986,
+        "mean_ms": 0.5179132812499999
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0033,
+        "p95_ms": 0.008894999999999997,
+        "mean_ms": 0.00470625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 37.708600000000004,
+        "p95_ms": 98.232085,
+        "mean_ms": 46.648723437499996
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 38.1854,
+        "p95_ms": 99.07255500000001,
+        "mean_ms": 47.17134296875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318242816,
+      "sampled_peak_rss_bytes": 669020160,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 659599360,
+      "incremental_sampled_peak_bytes": 350777344,
+      "process_lifetime_peak_rss_bytes": 686772224
+    },
+    "memory_for_budget_bytes": 686772224,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 838.5148
+    },
+    "sessions_ready_ms": 2205.3088,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 4,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.45694999999999997,
+        "p95_ms": 1.0672299999999997,
+        "mean_ms": 0.5284984374999999
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.2319,
+        "p95_ms": 0.7891199999999998,
+        "mean_ms": 0.29240625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 42.7003,
+        "p95_ms": 88.87987499999998,
+        "mean_ms": 44.3150828125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 43.3973,
+        "p95_ms": 89.76104999999998,
+        "mean_ms": 45.1359875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317689856,
+      "sampled_peak_rss_bytes": 930922496,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 930922496,
+      "incremental_sampled_peak_bytes": 613232640,
+      "process_lifetime_peak_rss_bytes": 958861312
+    },
+    "memory_for_budget_bytes": 958861312,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 1150.4715,
+      "fixed-16": 779.9441
+    },
+    "sessions_ready_ms": 3007.9114,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 1,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.4952,
+        "p95_ms": 1.01436,
+        "mean_ms": 0.53865859375
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.39525,
+        "p95_ms": 0.8742299999999994,
+        "mean_ms": 0.449959375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 97.54955000000001,
+        "p95_ms": 257.2801049999999,
+        "mean_ms": 115.55785078125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 98.30600000000001,
+        "p95_ms": 260.98712999999987,
+        "mean_ms": 116.54646874999999
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318558208,
+      "sampled_peak_rss_bytes": 1755729920,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1755729920,
+      "incremental_sampled_peak_bytes": 1437171712,
+      "process_lifetime_peak_rss_bytes": 1767735296
+    },
+    "memory_for_budget_bytes": 1767735296,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 1158.2205,
+      "fixed-16": 1180.4381,
+      "fixed-32": 1126.6139,
+      "fixed-64": 1030.1197,
+      "fixed-128": 1133.2506
+    },
+    "sessions_ready_ms": 12342.1815,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 2,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.47905,
+        "p95_ms": 1.059475,
+        "mean_ms": 0.53287109375
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.3712,
+        "p95_ms": 0.60354,
+        "mean_ms": 0.36613359375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 60.2373,
+        "p95_ms": 127.8474099999999,
+        "mean_ms": 65.36080312499999
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 61.0971,
+        "p95_ms": 128.88993499999992,
+        "mean_ms": 66.25980781249999
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317751296,
+      "sampled_peak_rss_bytes": 1227739136,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1202962432,
+      "incremental_sampled_peak_bytes": 909987840,
+      "process_lifetime_peak_rss_bytes": 1228439552
+    },
+    "memory_for_budget_bytes": 1228439552,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 1128.2857,
+      "fixed-16": 1142.3724,
+      "fixed-32": 1158.0674
+    },
+    "sessions_ready_ms": 5937.2372,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 1,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.48005,
+        "p95_ms": 0.9293449999999998,
+        "mean_ms": 0.55954296875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.36060000000000003,
+        "p95_ms": 0.7579049999999997,
+        "mean_ms": 0.37489375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 98.6868,
+        "p95_ms": 197.58927,
+        "mean_ms": 114.5631046875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 99.3775,
+        "p95_ms": 199.45463999999998,
+        "mean_ms": 115.49754140625001
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317825024,
+      "sampled_peak_rss_bytes": 1218068480,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1201991680,
+      "incremental_sampled_peak_bytes": 900243456,
+      "process_lifetime_peak_rss_bytes": 1227436032
+    },
+    "memory_for_budget_bytes": 1227436032,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 1230.894,
+      "fixed-16": 969.1776,
+      "fixed-32": 1160.3689
+    },
+    "sessions_ready_ms": 8405.6101,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 1,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.53975,
+        "p95_ms": 0.97462,
+        "mean_ms": 0.5674609374999999
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0053,
+        "p95_ms": 0.007924999999999996,
+        "mean_ms": 0.00683828125
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 71.28444999999999,
+        "p95_ms": 220.0517449999998,
+        "mean_ms": 89.42178515625
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 71.98835,
+        "p95_ms": 220.89009499999983,
+        "mean_ms": 89.996084375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318242816,
+      "sampled_peak_rss_bytes": 667627520,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 658726912,
+      "incremental_sampled_peak_bytes": 349384704,
+      "process_lifetime_peak_rss_bytes": 686247936
+    },
+    "memory_for_budget_bytes": 686247936,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 1125.1007
+    },
+    "sessions_ready_ms": 4823.2938,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 4,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 0,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.34085,
+        "p95_ms": 0.9563649999999995,
+        "mean_ms": 0.424903125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0027,
+        "p95_ms": 0.0077,
+        "mean_ms": 0.00364296875
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 33.28515,
+        "p95_ms": 80.63884499999998,
+        "mean_ms": 38.76741875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 33.5366,
+        "p95_ms": 81.11650499999998,
+        "mean_ms": 39.19596484375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317575168,
+      "sampled_peak_rss_bytes": 544268288,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 531308544,
+      "incremental_sampled_peak_bytes": 226693120,
+      "process_lifetime_peak_rss_bytes": 544268288
+    },
+    "memory_for_budget_bytes": 544268288,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 830.3092
+    },
+    "sessions_ready_ms": 2162.7816,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 1,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.50615,
+        "p95_ms": 0.9400899999999998,
+        "mean_ms": 0.547828125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.314,
+        "p95_ms": 0.7200149999999995,
+        "mean_ms": 0.34727343749999995
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 98.34555,
+        "p95_ms": 199.9123949999999,
+        "mean_ms": 114.5654734375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 99.15235,
+        "p95_ms": 201.0198349999999,
+        "mean_ms": 115.460575
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317599744,
+      "sampled_peak_rss_bytes": 953348096,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 929153024,
+      "incremental_sampled_peak_bytes": 635748352,
+      "process_lifetime_peak_rss_bytes": 957419520
+    },
+    "memory_for_budget_bytes": 957419520,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 1215.9921,
+      "fixed-16": 1341.8004
+    },
+    "sessions_ready_ms": 8121.5292,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 4,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.55715,
+        "p95_ms": 1.0951649999999997,
+        "mean_ms": 0.5881890625
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0052,
+        "p95_ms": 0.008694999999999998,
+        "mean_ms": 0.00512734375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 31.66975,
+        "p95_ms": 64.50043499999997,
+        "mean_ms": 33.8271046875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 32.243249999999996,
+        "p95_ms": 65.43856999999997,
+        "mean_ms": 34.42042109375001
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318291968,
+      "sampled_peak_rss_bytes": 677019648,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 660033536,
+      "incremental_sampled_peak_bytes": 358727680,
+      "process_lifetime_peak_rss_bytes": 686788608
+    },
+    "memory_for_budget_bytes": 686788608,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 809.1304
+    },
+    "sessions_ready_ms": 1540.9161,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 2,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.5460499999999999,
+        "p95_ms": 1.0295999999999994,
+        "mean_ms": 0.57464921875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.4193,
+        "p95_ms": 0.7790499999999996,
+        "mean_ms": 0.4539640625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 63.87775,
+        "p95_ms": 137.2062799999999,
+        "mean_ms": 71.39095703125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 65.40565000000001,
+        "p95_ms": 138.2976349999999,
+        "mean_ms": 72.4195703125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318296064,
+      "sampled_peak_rss_bytes": 1756389376,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1756389376,
+      "incremental_sampled_peak_bytes": 1438093312,
+      "process_lifetime_peak_rss_bytes": 1767411712
+    },
+    "memory_for_budget_bytes": 1767411712,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 1261.9109,
+      "fixed-16": 1302.4278,
+      "fixed-32": 1484.3339,
+      "fixed-64": 1263.9602,
+      "fixed-128": 1235.9393
+    },
+    "sessions_ready_ms": 9233.0501,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 1,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 0,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.43955,
+        "p95_ms": 0.8717749999999999,
+        "mean_ms": 0.49369453125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0039,
+        "p95_ms": 0.006464999999999999,
+        "mean_ms": 0.0040578125
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 94.8889,
+        "p95_ms": 189.90056499999986,
+        "mean_ms": 103.96803984375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 95.26495,
+        "p95_ms": 190.83906999999988,
+        "mean_ms": 104.4657921875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317734912,
+      "sampled_peak_rss_bytes": 544579584,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 528912384,
+      "incremental_sampled_peak_bytes": 226844672,
+      "process_lifetime_peak_rss_bytes": 544579584
+    },
+    "memory_for_budget_bytes": 544579584,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 727.2854
+    },
+    "sessions_ready_ms": 3913.2355,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 4,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.5185,
+        "p95_ms": 0.9379649999999999,
+        "mean_ms": 0.5581203124999999
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.39385000000000003,
+        "p95_ms": 0.5917949999999997,
+        "mean_ms": 0.34881484375000005
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 42.0775,
+        "p95_ms": 72.97729999999999,
+        "mean_ms": 43.79224921875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 42.995000000000005,
+        "p95_ms": 74.02480999999999,
+        "mean_ms": 44.699184375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317493248,
+      "sampled_peak_rss_bytes": 1219256320,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1204850688,
+      "incremental_sampled_peak_bytes": 901763072,
+      "process_lifetime_peak_rss_bytes": 1229443072
+    },
+    "memory_for_budget_bytes": 1229443072,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 680.1184,
+      "fixed-16": 718.6218,
+      "fixed-32": 834.7457
+    },
+    "sessions_ready_ms": 3354.9303,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 2,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.59765,
+        "p95_ms": 1.0937299999999994,
+        "mean_ms": 0.60918125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.35525,
+        "p95_ms": 0.8039749999999998,
+        "mean_ms": 0.36491015625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 65.59379999999999,
+        "p95_ms": 123.65430999999995,
+        "mean_ms": 69.1739546875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 66.6824,
+        "p95_ms": 124.87403499999995,
+        "mean_ms": 70.14804609375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317947904,
+      "sampled_peak_rss_bytes": 945524736,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 929681408,
+      "incremental_sampled_peak_bytes": 627576832,
+      "process_lifetime_peak_rss_bytes": 958091264
+    },
+    "memory_for_budget_bytes": 958091264,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 974.4632,
+      "fixed-16": 960.1226
+    },
+    "sessions_ready_ms": 4202.2886,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 2,
+    "block": 0,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 2.86102294921875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.49165000000000003,
+        "p95_ms": 1.1843199999999987,
+        "mean_ms": 0.54809296875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.00455,
+        "p95_ms": 0.007,
+        "mean_ms": 0.0051578125
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 65.7624,
+        "p95_ms": 125.25060999999997,
+        "mean_ms": 73.55665078125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 66.23185000000001,
+        "p95_ms": 126.32326499999996,
+        "mean_ms": 74.1099015625
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318418944,
+      "sampled_peak_rss_bytes": 545755136,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 532926464,
+      "incremental_sampled_peak_bytes": 227336192,
+      "process_lifetime_peak_rss_bytes": 545755136
+    },
+    "memory_for_budget_bytes": 545755136,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 566.3486
+    },
+    "sessions_ready_ms": 2751.4078,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 2,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.38075000000000003,
+        "p95_ms": 1.169359999999999,
+        "mean_ms": 0.5914765625
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.21275,
+        "p95_ms": 0.8454199999999995,
+        "mean_ms": 0.289659375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 49.3865,
+        "p95_ms": 110.52019999999999,
+        "mean_ms": 55.625509375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 49.8391,
+        "p95_ms": 111.780175,
+        "mean_ms": 56.5066453125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317984768,
+      "sampled_peak_rss_bytes": 943169536,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 930881536,
+      "incremental_sampled_peak_bytes": 625184768,
+      "process_lifetime_peak_rss_bytes": 958656512
+    },
+    "memory_for_budget_bytes": 958656512,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 1187.7596,
+      "fixed-16": 1322.3492
+    },
+    "sessions_ready_ms": 4170.5553,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 1,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.32665,
+        "p95_ms": 1.1138449999999989,
+        "mean_ms": 0.5022078125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.23275,
+        "p95_ms": 0.6784999999999998,
+        "mean_ms": 0.28214296875
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 78.1188,
+        "p95_ms": 164.21545499999996,
+        "mean_ms": 89.78617578125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 78.7211,
+        "p95_ms": 164.84650499999998,
+        "mean_ms": 90.57052656249999
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317808640,
+      "sampled_peak_rss_bytes": 1214861312,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1201987584,
+      "incremental_sampled_peak_bytes": 897052672,
+      "process_lifetime_peak_rss_bytes": 1227751424
+    },
+    "memory_for_budget_bytes": 1227751424,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 1469.5741,
+      "fixed-16": 1603.7422,
+      "fixed-32": 1264.7152
+    },
+    "sessions_ready_ms": 8764.1126,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 1,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.6335500000000001,
+        "p95_ms": 1.2241499999999996,
+        "mean_ms": 0.68744296875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0059,
+        "p95_ms": 0.008664999999999999,
+        "mean_ms": 0.006495312499999999
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 90.44405,
+        "p95_ms": 228.51108999999994,
+        "mean_ms": 106.70238984375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 91.1817,
+        "p95_ms": 229.19116999999994,
+        "mean_ms": 107.396328125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317927424,
+      "sampled_peak_rss_bytes": 675000320,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 657924096,
+      "incremental_sampled_peak_bytes": 357072896,
+      "process_lifetime_peak_rss_bytes": 685760512
+    },
+    "memory_for_budget_bytes": 685760512,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 1266.503
+    },
+    "sessions_ready_ms": 7041.4257,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 1,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.6374,
+        "p95_ms": 1.1571749999999992,
+        "mean_ms": 0.6704125000000001
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.46945000000000003,
+        "p95_ms": 0.7948949999999998,
+        "mean_ms": 0.39821484375000005
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 127.69515,
+        "p95_ms": 199.34068,
+        "mean_ms": 132.54195546875002
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 128.61285,
+        "p95_ms": 200.37103499999998,
+        "mean_ms": 133.6105828125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317542400,
+      "sampled_peak_rss_bytes": 930545664,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 928837632,
+      "incremental_sampled_peak_bytes": 613003264,
+      "process_lifetime_peak_rss_bytes": 957767680
+    },
+    "memory_for_budget_bytes": 957767680,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 1219.5904,
+      "fixed-16": 1458.1442
+    },
+    "sessions_ready_ms": 7745.6454,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 2,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.3821,
+        "p95_ms": 0.5792999999999999,
+        "mean_ms": 0.38965859375
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.30625,
+        "p95_ms": 0.4483799999999999,
+        "mean_ms": 0.30895234375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 37.2405,
+        "p95_ms": 89.32879999999996,
+        "mean_ms": 47.37200234375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 38.1132,
+        "p95_ms": 89.93515499999995,
+        "mean_ms": 48.07061328125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318033920,
+      "sampled_peak_rss_bytes": 1757241344,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1757241344,
+      "incremental_sampled_peak_bytes": 1439207424,
+      "process_lifetime_peak_rss_bytes": 1768873984
+    },
+    "memory_for_budget_bytes": 1768873984,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 657.667,
+      "fixed-16": 597.1084,
+      "fixed-32": 647.4978,
+      "fixed-64": 655.5442,
+      "fixed-128": 703.5438
+    },
+    "sessions_ready_ms": 5753.7979,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 4,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.51115,
+        "p95_ms": 0.9245699999999996,
+        "mean_ms": 0.56065625
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.34895,
+        "p95_ms": 0.5897899999999997,
+        "mean_ms": 0.33619531249999995
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 36.6166,
+        "p95_ms": 59.078059999999994,
+        "mean_ms": 39.093678125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 37.32945,
+        "p95_ms": 59.828495,
+        "mean_ms": 39.9905296875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318464000,
+      "sampled_peak_rss_bytes": 931704832,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 931704832,
+      "incremental_sampled_peak_bytes": 613240832,
+      "process_lifetime_peak_rss_bytes": 959856640
+    },
+    "memory_for_budget_bytes": 959856640,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 619.591,
+      "fixed-16": 613.9843
+    },
+    "sessions_ready_ms": 2326.4531,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 2,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 2.86102294921875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.32494999999999996,
+        "p95_ms": 0.5754499999999998,
+        "mean_ms": 0.34673515624999995
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0026,
+        "p95_ms": 0.004994999999999998,
+        "mean_ms": 0.00304765625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 44.17615,
+        "p95_ms": 82.031415,
+        "mean_ms": 49.020347656249996
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 44.49065,
+        "p95_ms": 82.47776499999999,
+        "mean_ms": 49.37013046875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318074880,
+      "sampled_peak_rss_bytes": 546271232,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 532885504,
+      "incremental_sampled_peak_bytes": 228196352,
+      "process_lifetime_peak_rss_bytes": 546271232
+    },
+    "memory_for_budget_bytes": 546271232,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 468.7079
+    },
+    "sessions_ready_ms": 2208.3096,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 2,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.38215,
+        "p95_ms": 0.5914299999999999,
+        "mean_ms": 0.4031609375
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0032500000000000003,
+        "p95_ms": 0.0047,
+        "mean_ms": 0.003334375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 27.3006,
+        "p95_ms": 73.11021499999991,
+        "mean_ms": 32.70360546875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 27.7018,
+        "p95_ms": 73.57331999999991,
+        "mean_ms": 33.11010078125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317788160,
+      "sampled_peak_rss_bytes": 679022592,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 658968576,
+      "incremental_sampled_peak_bytes": 361234432,
+      "process_lifetime_peak_rss_bytes": 686264320
+    },
+    "memory_for_budget_bytes": 686264320,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 654.8422
+    },
+    "sessions_ready_ms": 2318.6617,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 1,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.35595,
+        "p95_ms": 0.7680199999999993,
+        "mean_ms": 0.39490156249999997
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.2666,
+        "p95_ms": 0.44266,
+        "mean_ms": 0.29703671875
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 68.35329999999999,
+        "p95_ms": 173.19092499999974,
+        "mean_ms": 88.89444140625
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 68.98349999999999,
+        "p95_ms": 173.88939999999974,
+        "mean_ms": 89.5863796875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317452288,
+      "sampled_peak_rss_bytes": 1754714112,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1754714112,
+      "incremental_sampled_peak_bytes": 1437261824,
+      "process_lifetime_peak_rss_bytes": 1766445056
+    },
+    "memory_for_budget_bytes": 1766445056,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 619.0662,
+      "fixed-16": 862.6029,
+      "fixed-32": 574.8173,
+      "fixed-64": 836.6262,
+      "fixed-128": 856.9495
+    },
+    "sessions_ready_ms": 8094.7627,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 4,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.5983,
+        "p95_ms": 1.08369,
+        "mean_ms": 0.64596796875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.43355,
+        "p95_ms": 0.7800599999999999,
+        "mean_ms": 0.45466484375
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 49.689350000000005,
+        "p95_ms": 90.453825,
+        "mean_ms": 52.134694531250005
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 51.00145,
+        "p95_ms": 91.33301999999999,
+        "mean_ms": 53.23532734375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318148608,
+      "sampled_peak_rss_bytes": 1206984704,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1205293056,
+      "incremental_sampled_peak_bytes": 888836096,
+      "process_lifetime_peak_rss_bytes": 1230143488
+    },
+    "memory_for_budget_bytes": 1230143488,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 671.796,
+      "fixed-16": 838.4063,
+      "fixed-32": 871.2508
+    },
+    "sessions_ready_ms": 4191.3024,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 1,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 0,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.39644999999999997,
+        "p95_ms": 0.6751999999999998,
+        "mean_ms": 0.40754921874999994
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.004,
+        "p95_ms": 0.0055,
+        "mean_ms": 0.00405625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 81.3786,
+        "p95_ms": 162.99557499999992,
+        "mean_ms": 91.37276718750002
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 81.84805,
+        "p95_ms": 163.7040899999999,
+        "mean_ms": 91.78437265624999
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318087168,
+      "sampled_peak_rss_bytes": 544841728,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 530944000,
+      "incremental_sampled_peak_bytes": 226754560,
+      "process_lifetime_peak_rss_bytes": 545034240
+    },
+    "memory_for_budget_bytes": 545034240,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 555.3222
+    },
+    "sessions_ready_ms": 4211.4298,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 4,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.4154,
+        "p95_ms": 0.8845449999999997,
+        "mean_ms": 0.49001484375000004
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.3266,
+        "p95_ms": 0.9535499999999999,
+        "mean_ms": 0.39272656249999993
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 33.050200000000004,
+        "p95_ms": 89.43259999999997,
+        "mean_ms": 42.037410156250004
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 33.92935,
+        "p95_ms": 90.22180999999996,
+        "mean_ms": 42.920151562499996
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317517824,
+      "sampled_peak_rss_bytes": 1768001536,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1759526912,
+      "incremental_sampled_peak_bytes": 1450483712,
+      "process_lifetime_peak_rss_bytes": 1769971712
+    },
+    "memory_for_budget_bytes": 1769971712,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 749.2742,
+      "fixed-16": 821.9952,
+      "fixed-32": 911.8775,
+      "fixed-64": 1358.9215,
+      "fixed-128": 1344.4663
+    },
+    "sessions_ready_ms": 6316.8483,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 4,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 0,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.37445,
+        "p95_ms": 0.783285,
+        "mean_ms": 0.43033125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0029,
+        "p95_ms": 0.006394999999999997,
+        "mean_ms": 0.00363125
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 38.388549999999995,
+        "p95_ms": 74.47687499999999,
+        "mean_ms": 42.27352109375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 38.7933,
+        "p95_ms": 75.25803499999999,
+        "mean_ms": 42.70748359375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317829120,
+      "sampled_peak_rss_bytes": 544571392,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 530759680,
+      "incremental_sampled_peak_bytes": 226742272,
+      "process_lifetime_peak_rss_bytes": 544571392
+    },
+    "memory_for_budget_bytes": 544571392,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 567.9217
+    },
+    "sessions_ready_ms": 1718.2364,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 2,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.4403,
+        "p95_ms": 0.917635,
+        "mean_ms": 0.49695390625
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.33599999999999997,
+        "p95_ms": 0.58511,
+        "mean_ms": 0.31732421875000005
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 50.5321,
+        "p95_ms": 97.905975,
+        "mean_ms": 59.1211421875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 51.3386,
+        "p95_ms": 98.77838,
+        "mean_ms": 59.9354203125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318308352,
+      "sampled_peak_rss_bytes": 1219280896,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1203081216,
+      "incremental_sampled_peak_bytes": 900972544,
+      "process_lifetime_peak_rss_bytes": 1229000704
+    },
+    "memory_for_budget_bytes": 1229000704,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 734.4359,
+      "fixed-16": 812.4443,
+      "fixed-32": 1086.379
+    },
+    "sessions_ready_ms": 4954.9283,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 4,
+    "block": 1,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.5983,
+        "p95_ms": 1.1632649999999998,
+        "mean_ms": 0.643284375
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0058,
+        "p95_ms": 0.0091,
+        "mean_ms": 0.0068625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 35.971000000000004,
+        "p95_ms": 79.66047,
+        "mean_ms": 39.91990625
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 36.7632,
+        "p95_ms": 80.413055,
+        "mean_ms": 40.570053124999994
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318296064,
+      "sampled_peak_rss_bytes": 666804224,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 659582976,
+      "incremental_sampled_peak_bytes": 348508160,
+      "process_lifetime_peak_rss_bytes": 686886912
+    },
+    "memory_for_budget_bytes": 686886912,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 670.0023
+    },
+    "sessions_ready_ms": 1590.4924,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 1,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 0,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.35455000000000003,
+        "p95_ms": 0.6596799999999997,
+        "mean_ms": 0.4004203125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.003,
+        "p95_ms": 0.005,
+        "mean_ms": 0.003625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 75.5404,
+        "p95_ms": 156.98234999999994,
+        "mean_ms": 87.08345859375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 75.94855,
+        "p95_ms": 157.52612999999994,
+        "mean_ms": 87.48750390625
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318095360,
+      "sampled_peak_rss_bytes": 544329728,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 530382848,
+      "incremental_sampled_peak_bytes": 226234368,
+      "process_lifetime_peak_rss_bytes": 544329728
+    },
+    "memory_for_budget_bytes": 544329728,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 498.3884
+    },
+    "sessions_ready_ms": 3925.0463,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 4,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.52225,
+        "p95_ms": 0.9974599999999997,
+        "mean_ms": 0.5504171875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0049,
+        "p95_ms": 0.008589999999999995,
+        "mean_ms": 0.006296875
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 26.80945,
+        "p95_ms": 76.81617999999996,
+        "mean_ms": 33.6525859375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 27.279049999999998,
+        "p95_ms": 77.62639499999996,
+        "mean_ms": 34.2093
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317554688,
+      "sampled_peak_rss_bytes": 672186368,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 659181568,
+      "incremental_sampled_peak_bytes": 354631680,
+      "process_lifetime_peak_rss_bytes": 686407680
+    },
+    "memory_for_budget_bytes": 686407680,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 686.4266
+    },
+    "sessions_ready_ms": 1604.9568,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 2,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 2.86102294921875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.34215,
+        "p95_ms": 0.5492349999999999,
+        "mean_ms": 0.35710859375000004
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0029,
+        "p95_ms": 0.005394999999999997,
+        "mean_ms": 0.0037445312499999996
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 44.47295,
+        "p95_ms": 79.85693499999998,
+        "mean_ms": 49.38269609375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 44.8847,
+        "p95_ms": 80.32799999999999,
+        "mean_ms": 49.74354921874999
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318214144,
+      "sampled_peak_rss_bytes": 546062336,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 532901888,
+      "incremental_sampled_peak_bytes": 227848192,
+      "process_lifetime_peak_rss_bytes": 546062336
+    },
+    "memory_for_budget_bytes": 546062336,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 440.7025
+    },
+    "sessions_ready_ms": 2129.836,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 1,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.3275,
+        "p95_ms": 0.5802849999999999,
+        "mean_ms": 0.345128125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0026,
+        "p95_ms": 0.0041,
+        "mean_ms": 0.0029257812499999996
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 41.5619,
+        "p95_ms": 122.86233999999997,
+        "mean_ms": 51.85269453125001
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 41.866550000000004,
+        "p95_ms": 123.29354499999997,
+        "mean_ms": 52.200748437499996
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318017536,
+      "sampled_peak_rss_bytes": 658485248,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 658485248,
+      "incremental_sampled_peak_bytes": 340467712,
+      "process_lifetime_peak_rss_bytes": 685940736
+    },
+    "memory_for_budget_bytes": 685940736,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 592.2868
+    },
+    "sessions_ready_ms": 3355.0813,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 2,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.35824999999999996,
+        "p95_ms": 1.7853249999999972,
+        "mean_ms": 0.544078125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0029,
+        "p95_ms": 0.007794999999999998,
+        "mean_ms": 0.00378203125
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 34.12465,
+        "p95_ms": 103.4698899999999,
+        "mean_ms": 41.99687578125
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 34.59745,
+        "p95_ms": 104.08697999999991,
+        "mean_ms": 42.5447359375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318115840,
+      "sampled_peak_rss_bytes": 658862080,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 658862080,
+      "incremental_sampled_peak_bytes": 340746240,
+      "process_lifetime_peak_rss_bytes": 686272512
+    },
+    "memory_for_budget_bytes": 686272512,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 667.1289
+    },
+    "sessions_ready_ms": 2418.0121,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 1,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.4145,
+        "p95_ms": 2.3246699999999927,
+        "mean_ms": 0.6896796875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.32789999999999997,
+        "p95_ms": 1.4788349999999988,
+        "mean_ms": 0.5072046874999999
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 96.43639999999999,
+        "p95_ms": 266.562365,
+        "mean_ms": 121.64913671875001
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 96.8872,
+        "p95_ms": 267.9267,
+        "mean_ms": 122.84602109375
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318222336,
+      "sampled_peak_rss_bytes": 1755316224,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1755316224,
+      "incremental_sampled_peak_bytes": 1437093888,
+      "process_lifetime_peak_rss_bytes": 1766838272
+    },
+    "memory_for_budget_bytes": 1766838272,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 638.9929,
+      "fixed-16": 702.5151,
+      "fixed-32": 809.2413,
+      "fixed-64": 837.4834,
+      "fixed-128": 904.0755
+    },
+    "sessions_ready_ms": 8950.5494,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 1,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.42869999999999997,
+        "p95_ms": 0.79936,
+        "mean_ms": 0.470940625
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.3527,
+        "p95_ms": 0.5750199999999992,
+        "mean_ms": 0.31658125000000004
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 83.23825,
+        "p95_ms": 188.96011499999997,
+        "mean_ms": 100.83681093749999
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 84.05105,
+        "p95_ms": 190.19587499999997,
+        "mean_ms": 101.6243328125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318316544,
+      "sampled_peak_rss_bytes": 1213476864,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1202319360,
+      "incremental_sampled_peak_bytes": 895160320,
+      "process_lifetime_peak_rss_bytes": 1227489280
+    },
+    "memory_for_budget_bytes": 1227489280,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 1162.3567,
+      "fixed-16": 1231.6135,
+      "fixed-32": 1382.7615
+    },
+    "sessions_ready_ms": 7725.5192,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 2,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.41800000000000004,
+        "p95_ms": 0.8382849999999994,
+        "mean_ms": 0.47440781249999997
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.30735,
+        "p95_ms": 0.8002049999999995,
+        "mean_ms": 0.37143906250000003
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 53.416,
+        "p95_ms": 131.033745,
+        "mean_ms": 63.59718515625
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 54.2137,
+        "p95_ms": 131.81661499999998,
+        "mean_ms": 64.44303203125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318283776,
+      "sampled_peak_rss_bytes": 1756356608,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1756356608,
+      "incremental_sampled_peak_bytes": 1438072832,
+      "process_lifetime_peak_rss_bytes": 1767686144
+    },
+    "memory_for_budget_bytes": 1767686144,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 1366.4796,
+      "fixed-16": 1159.7943,
+      "fixed-32": 1067.8614,
+      "fixed-64": 1298.9988,
+      "fixed-128": 1202.0403
+    },
+    "sessions_ready_ms": 8596.1143,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 4,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.57525,
+        "p95_ms": 1.5234349999999977,
+        "mean_ms": 0.64700546875
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.25455,
+        "p95_ms": 0.860625,
+        "mean_ms": 0.3591046875
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 52.56015,
+        "p95_ms": 87.43040499999998,
+        "mean_ms": 53.30583515625
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 53.60535,
+        "p95_ms": 88.36950999999998,
+        "mean_ms": 54.3119453125
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317616128,
+      "sampled_peak_rss_bytes": 951222272,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 931586048,
+      "incremental_sampled_peak_bytes": 633606144,
+      "process_lifetime_peak_rss_bytes": 959537152
+    },
+    "memory_for_budget_bytes": 959537152,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 939.1376,
+      "fixed-16": 1130.084
+    },
+    "sessions_ready_ms": 3481.0369,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 1,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.5869,
+        "p95_ms": 1.1491899999999997,
+        "mean_ms": 0.64626328125
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.43495,
+        "p95_ms": 0.6690649999999997,
+        "mean_ms": 0.35724296875
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 118.3373,
+        "p95_ms": 194.73624499999994,
+        "mean_ms": 122.87171015624999
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 119.412,
+        "p95_ms": 195.30799999999996,
+        "mean_ms": 123.87521640624999
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318341120,
+      "sampled_peak_rss_bytes": 957087744,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 929492992,
+      "incremental_sampled_peak_bytes": 638746624,
+      "process_lifetime_peak_rss_bytes": 957698048
+    },
+    "memory_for_budget_bytes": 957698048,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 1259.575,
+      "fixed-16": 1354.2204
+    },
+    "sessions_ready_ms": 8077.4795,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 4,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.6923999999999999,
+        "p95_ms": 1.3179899999999982,
+        "mean_ms": 0.78415
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.5283,
+        "p95_ms": 0.8248899999999997,
+        "mean_ms": 0.53542890625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 56.72755,
+        "p95_ms": 97.806185,
+        "mean_ms": 62.57015156249999
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 58.35265,
+        "p95_ms": 99.12800999999999,
+        "mean_ms": 63.88973046875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318296064,
+      "sampled_peak_rss_bytes": 1218674688,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1204711424,
+      "incremental_sampled_peak_bytes": 900378624,
+      "process_lifetime_peak_rss_bytes": 1229438976
+    },
+    "memory_for_budget_bytes": 1229438976,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 1363.8332,
+      "fixed-16": 1483.5119,
+      "fixed-32": 1601.5212
+    },
+    "sessions_ready_ms": 5795.5741,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 4,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 0,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.4211,
+        "p95_ms": 1.0433699999999995,
+        "mean_ms": 0.48732031249999996
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.0036,
+        "p95_ms": 0.006664999999999999,
+        "mean_ms": 0.00438828125
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 40.9226,
+        "p95_ms": 69.67402,
+        "mean_ms": 43.976778124999996
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 41.38205,
+        "p95_ms": 70.85616,
+        "mean_ms": 44.46848671875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317788160,
+      "sampled_peak_rss_bytes": 544800768,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 531378176,
+      "incremental_sampled_peak_bytes": 227012608,
+      "process_lifetime_peak_rss_bytes": 544800768
+    },
+    "memory_for_budget_bytes": 544800768,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 1100.6943
+    },
+    "sessions_ready_ms": 2150.1585,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "selected",
+    "threads": 2,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.4074,
+        "p95_ms": 0.7889649999999998,
+        "mean_ms": 0.45452109375
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.2963,
+        "p95_ms": 0.5700249999999999,
+        "mean_ms": 0.305465625
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 46.397149999999996,
+        "p95_ms": 101.73271,
+        "mean_ms": 54.085910937499996
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 47.15915,
+        "p95_ms": 103.15258999999999,
+        "mean_ms": 54.845897656249996
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317419520,
+      "sampled_peak_rss_bytes": 1203576832,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1203576832,
+      "incremental_sampled_peak_bytes": 886157312,
+      "process_lifetime_peak_rss_bytes": 1228754944
+    },
+    "memory_for_budget_bytes": 1228754944,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 601.6682,
+      "fixed-16": 591.4303,
+      "fixed-32": 611.1659
+    },
+    "sessions_ready_ms": 3522.219,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "single-16",
+    "threads": 2,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 6.318092346191406e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.3863,
+        "p95_ms": 0.6633799999999995,
+        "mean_ms": 0.409115625
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.27435,
+        "p95_ms": 0.439995,
+        "mean_ms": 0.24171484374999996
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 37.16735,
+        "p95_ms": 70.82600999999995,
+        "mean_ms": 42.50818984375
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 37.9202,
+        "p95_ms": 71.44530499999996,
+        "mean_ms": 43.15902031249999
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317251584,
+      "sampled_peak_rss_bytes": 938020864,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 930193408,
+      "incremental_sampled_peak_bytes": 620769280,
+      "process_lifetime_peak_rss_bytes": 958025728
+    },
+    "memory_for_budget_bytes": 958025728,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 624.573,
+      "fixed-16": 670.8248
+    },
+    "sessions_ready_ms": 2944.9542,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "buckets",
+    "threads": 4,
+    "block": 2,
+    "split": "train",
+    "examples": 128,
+    "accuracy": 0.9921875,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 4.5299530029296875e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 128,
+        "median_ms": 0.48819999999999997,
+        "p95_ms": 0.831375,
+        "mean_ms": 0.5335531250000001
+      },
+      "routing_padding_ms": {
+        "count": 128,
+        "median_ms": 0.4177,
+        "p95_ms": 0.6320099999999998,
+        "mean_ms": 0.42095312500000004
+      },
+      "inference_ms": {
+        "count": 128,
+        "median_ms": 36.1894,
+        "p95_ms": 77.67809499999998,
+        "mean_ms": 42.83609921875
+      },
+      "end_to_end_ms": {
+        "count": 128,
+        "median_ms": 37.3316,
+        "p95_ms": 78.83155999999998,
+        "mean_ms": 43.79060546875
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318046208,
+      "sampled_peak_rss_bytes": 1758302208,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1758302208,
+      "incremental_sampled_peak_bytes": 1440256000,
+      "process_lifetime_peak_rss_bytes": 1769299968
+    },
+    "memory_for_budget_bytes": 1769299968,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 652.1162,
+      "fixed-16": 594.2541,
+      "fixed-32": 643.6216,
+      "fixed-64": 645.9637,
+      "fixed-128": 630.756
+    },
+    "sessions_ready_ms": 4920.1047,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "e29c8db70164be4b7e19e3acb732aecc76d8c44aa991ea83d14be91fef19107d",
+    "references_sha256": "7c4fa5b75dbe9718e5e6187f2eca3344cc21533c5938d3cd4f50a13ed0f35810",
+    "plan_sha256": "44dc3fdcf3785d0938f20a79472e23b41b96ffdeb9bd9da816b9b583ebb180a3",
+    "phase": "confirmation"
+  },
+  {
+    "method": "pytorch",
+    "threads": 4,
+    "block": 0,
+    "split": "validation",
+    "examples": 872,
+    "accuracy": 0.9105504587155964,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 1.6987323760986328e-06,
+    "latency": {
+      "tokenization_ms": {
+        "count": 872,
+        "median_ms": 0.36119999999999997,
+        "p95_ms": 0.5467549999999998,
+        "mean_ms": 0.3841980504587156
+      },
+      "routing_padding_ms": {
+        "count": 872,
+        "median_ms": 0.0026,
+        "p95_ms": 0.003544999999999993,
+        "mean_ms": 0.0028719036697247707
+      },
+      "inference_ms": {
+        "count": 872,
+        "median_ms": 41.3648,
+        "p95_ms": 70.02714499999998,
+        "mean_ms": 44.31617155963303
+      },
+      "end_to_end_ms": {
+        "count": 872,
+        "median_ms": 41.720349999999996,
+        "p95_ms": 70.45007999999996,
+        "mean_ms": 44.70324151376147
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318664704,
+      "sampled_peak_rss_bytes": 566763520,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 558551040,
+      "incremental_sampled_peak_bytes": 248098816,
+      "process_lifetime_peak_rss_bytes": 566771712
+    },
+    "memory_for_budget_bytes": 566771712,
+    "model_size_bytes": 267832558,
+    "session_initialization_ms": {
+      "pytorch": 643.9505
+    },
+    "sessions_ready_ms": 1627.4903,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+    "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+    "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081",
+    "phase": "validation"
+  },
+  {
+    "method": "dynamic",
+    "threads": 4,
+    "block": 0,
+    "split": "validation",
+    "examples": 872,
+    "accuracy": 0.9105504587155964,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 2.047419548034668e-05,
+    "latency": {
+      "tokenization_ms": {
+        "count": 872,
+        "median_ms": 0.2457,
+        "p95_ms": 0.424425,
+        "mean_ms": 0.2681740825688073
+      },
+      "routing_padding_ms": {
+        "count": 872,
+        "median_ms": 0.0018,
+        "p95_ms": 0.003,
+        "mean_ms": 0.0020030963302752297
+      },
+      "inference_ms": {
+        "count": 872,
+        "median_ms": 16.4867,
+        "p95_ms": 30.385269999999995,
+        "mean_ms": 17.91651731651376
+      },
+      "end_to_end_ms": {
+        "count": 872,
+        "median_ms": 16.7481,
+        "p95_ms": 30.69488499999999,
+        "mean_ms": 18.18669449541284
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 317906944,
+      "sampled_peak_rss_bytes": 668094464,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 659763200,
+      "incremental_sampled_peak_bytes": 350187520,
+      "process_lifetime_peak_rss_bytes": 686563328
+    },
+    "memory_for_budget_bytes": 686563328,
+    "model_size_bytes": 268519584,
+    "session_initialization_ms": {
+      "dynamic": 589.8297
+    },
+    "sessions_ready_ms": 1299.7104,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+    "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+    "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081",
+    "phase": "validation"
+  },
+  {
+    "method": "single-16",
+    "threads": 4,
+    "block": 0,
+    "split": "validation",
+    "examples": 872,
+    "accuracy": 0.9105504587155964,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 2.047419548034668e-05,
+    "latency": {
+      "tokenization_ms": {
+        "count": 872,
+        "median_ms": 0.4075,
+        "p95_ms": 1.4062899999999998,
+        "mean_ms": 0.6836098623853211
+      },
+      "routing_padding_ms": {
+        "count": 872,
+        "median_ms": 0.0034,
+        "p95_ms": 0.6034699999999997,
+        "mean_ms": 0.10305802752293579
+      },
+      "inference_ms": {
+        "count": 872,
+        "median_ms": 30.5305,
+        "p95_ms": 125.65275499999998,
+        "mean_ms": 48.977634403669725
+      },
+      "end_to_end_ms": {
+        "count": 872,
+        "median_ms": 30.9608,
+        "p95_ms": 127.29454499999996,
+        "mean_ms": 49.764302293577984
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318091264,
+      "sampled_peak_rss_bytes": 932024320,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 932024320,
+      "incremental_sampled_peak_bytes": 613933056,
+      "process_lifetime_peak_rss_bytes": 959246336
+    },
+    "memory_for_budget_bytes": 959246336,
+    "model_size_bytes": 537037168,
+    "session_initialization_ms": {
+      "dynamic": 609.6885,
+      "fixed-16": 598.1019
+    },
+    "sessions_ready_ms": 3295.3374,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+    "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+    "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081",
+    "phase": "validation"
+  },
+  {
+    "method": "buckets",
+    "threads": 4,
+    "block": 0,
+    "split": "validation",
+    "examples": 872,
+    "accuracy": 0.9105504587155964,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 1.9073486328125e-05,
+    "latency": {
+      "tokenization_ms": {
+        "count": 872,
+        "median_ms": 0.45155,
+        "p95_ms": 0.962545,
+        "mean_ms": 0.5264009174311927
+      },
+      "routing_padding_ms": {
+        "count": 872,
+        "median_ms": 0.25105,
+        "p95_ms": 0.6106399999999998,
+        "mean_ms": 0.312793119266055
+      },
+      "inference_ms": {
+        "count": 872,
+        "median_ms": 50.6001,
+        "p95_ms": 113.60998999999987,
+        "mean_ms": 56.211088990825694
+      },
+      "end_to_end_ms": {
+        "count": 872,
+        "median_ms": 51.48235,
+        "p95_ms": 114.16495499999986,
+        "mean_ms": 57.05028302752294
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 318509056,
+      "sampled_peak_rss_bytes": 1759907840,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1759907840,
+      "incremental_sampled_peak_bytes": 1441398784,
+      "process_lifetime_peak_rss_bytes": 1769463808
+    },
+    "memory_for_budget_bytes": 1769463808,
+    "model_size_bytes": 1342590170,
+    "session_initialization_ms": {
+      "dynamic": 797.1733,
+      "fixed-16": 949.7906,
+      "fixed-32": 902.6188,
+      "fixed-64": 880.1931,
+      "fixed-128": 913.0348
+    },
+    "sessions_ready_ms": 6178.1583,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+    "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+    "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081",
+    "phase": "validation"
+  },
+  {
+    "method": "selected",
+    "threads": 4,
+    "block": 0,
+    "split": "validation",
+    "examples": 872,
+    "accuracy": 0.9105504587155964,
+    "passed": true,
+    "changed_predictions": 0,
+    "max_absolute_error": 2.047419548034668e-05,
+    "latency": {
+      "tokenization_ms": {
+        "count": 872,
+        "median_ms": 0.9129499999999999,
+        "p95_ms": 1.3520849999999993,
+        "mean_ms": 0.9832180045871559
+      },
+      "routing_padding_ms": {
+        "count": 872,
+        "median_ms": 0.50325,
+        "p95_ms": 0.8411549999999998,
+        "mean_ms": 0.3527660550458715
+      },
+      "inference_ms": {
+        "count": 872,
+        "median_ms": 87.9256,
+        "p95_ms": 116.68317499999999,
+        "mean_ms": 85.68613211009173
+      },
+      "end_to_end_ms": {
+        "count": 872,
+        "median_ms": 89.2688,
+        "p95_ms": 118.65652499999999,
+        "mean_ms": 87.02211616972475
+      }
+    },
+    "memory": {
+      "rss_before_bytes": 319008768,
+      "sampled_peak_rss_bytes": 1206005760,
+      "sampling_interval_ms": 10.0,
+      "rss_after_bytes": 1206005760,
+      "incremental_sampled_peak_bytes": 886996992,
+      "process_lifetime_peak_rss_bytes": 1230340096
+    },
+    "memory_for_budget_bytes": 1230340096,
+    "model_size_bytes": 805554752,
+    "session_initialization_ms": {
+      "dynamic": 1339.1449,
+      "fixed-16": 1490.2826,
+      "fixed-32": 1344.2757
+    },
+    "sessions_ready_ms": 6443.2004,
+    "runtime_settings": {
+      "allow_spinning": false
+    },
+    "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+    "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+    "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081",
+    "phase": "validation"
+  }
+]

@@ -12,11 +12,15 @@ PyTorch/ONNX output comparisons, mask/padding checks, and a CPU calibration benc
 Fixed 16/32/64/128-token variants now include unchanged-weight checks, output verification,
 measured routing, resident multi-session memory measurements, and bounded subset selection.
 
-Larger comparative experiments, ablations, and held-out evaluation remain. This code
-does not yet claim a held-out specialization speedup.
+The randomized confirmation and full held-out evaluation are complete. They favored
+**dynamic-only ONNX at four threads**, so the final policy retains no fixed variants.
+All methods agreed on all 872 validation predictions (794 correct; 91.06% accuracy).
+This project does not establish a general specialization speedup.
 
 The first real-model run is documented in [the milestone results](docs/milestone-1.md).
 The specialization study and archived measurements are in [milestone 2](docs/milestone-2.md).
+The [final confirmation and held-out report](docs/final-results.md) supersedes the
+earlier calibration result for deployment recommendations.
 
 ## Setup (PowerShell)
 
@@ -103,6 +107,45 @@ fixed variant is disabled, allowing verified dynamic fallback. An invalid dynami
 or incompatible policy aborts. Each prediction logs its route without storing the input
 text in `artifacts/reports/routing-decisions.jsonl`.
 
+## Confirmation and frozen held-out evaluation
+
+```powershell
+uv run etdl compare --name confirmation --limit 128 --threads 1 2 4 --blocks 3 --warmup 10
+uv run etdl freeze --comparison confirmation
+uv run etdl evaluate --comparison confirmation
+uv run etdl predict "Great service!"
+```
+
+Confirmation uses new training IDs disjoint from the initial selection set. Each
+method/thread pair runs in a fresh process in each of three randomized blocks.
+It compares PyTorch, dynamic ONNX, fixed-16 with fallback, all four smallest-fitting
+buckets, and the prior selected policy. Output comparisons occur outside timers.
+ORT idle thread spinning is explicitly disabled for this protocol. Reports use
+process-run p95 medians and ranges, not pooled requests as independent replications.
+
+`freeze` uses training results to select deployment threads and either the prior
+policy or dynamic-only execution, subject to score/label and memory checks. It hashes
+the policy and evaluation inputs before validation access. `evaluate` then runs the
+five fixed comparisons on all 872 validation examples at that thread count. The
+prior candidate stays a comparator even when rejected for deployment. There is one
+held-out timing run per method, without latency confidence intervals.
+
+`compare --resume` and `evaluate --resume` reuse only results matching the same
+immutable plan, workload and reference hashes. Do not change a frozen policy after
+seeing validation results. New comparisons require a new `--name`.
+
+`predict` prefers `artifacts/confirmation/frozen-policy.json` when present; otherwise
+it uses the initial `study-t1` policy. An explicit `--policy` selects another file.
+
+```powershell
+uv run etdl ablate --study study-t1
+uv run python tools/archive_comparison.py --comparison artifacts/confirmation --output results/your-run --ablation artifacts/reports/ablation-study-t1.json --traces
+```
+
+Ablations are explicitly labeled training-only reanalyses of recorded costs. They
+never modify deployment or use validation for selection. Diagnostic traces run after
+timing, and the archive excludes input text and model binaries.
+
 ## Outputs
 
 Generated files are local and ignored by Git:
@@ -148,14 +191,19 @@ are recorded alongside each run.
   edge-device performance. Full experiments require repeated randomized method and
   thread configurations on the actual measured hardware.
 
-## Remaining experiments
+## Limitations and follow-up work
 
-1. Expand training-only calibration and repeat randomized runs at 1/2/4 CPU threads.
-   Include PyTorch FP32, optimized dynamic
-   ONNX, one fixed variant with fallback, simple buckets, and selected variants.
-2. Evaluate once on held-out validation after freezing selection; report accuracy/changed labels, median/p95,
-   startup, disk size, resident peak memory, length breakdowns, and latency-memory
-   plots. Add the memory-cap, output-check, and length-frequency ablations.
+The final report includes all planned method comparisons, 1/2/4-thread confirmation,
+held-out accuracy and timings, sizes, startup components, resident memory, length
+metrics, traces and selector sensitivity reanalyses. It does not establish a precise
+population speedup: confirmation has three process blocks on one laptop, and held-out
+timing has one process per method. Runtime defaults and workloads differ from the
+initial calibration, so its large apparent gain is not a deployment result.
+
+Further work could refit routes separately for each thread setting using training
+data, test other graph optimizers and weight sharing, collect controlled cold-start
+measurements, repeat timings, and measure actual edge devices. Any new model selection
+needs evaluation data held out from that new tuning process.
 
 Implementation references: [PyTorch ONNX export](https://docs.pytorch.org/docs/stable/onnx.html),
 [ORT graph optimization](https://onnxruntime.ai/docs/performance/model-optimizations/graph-optimizations.html),

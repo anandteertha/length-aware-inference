@@ -1,0 +1,311 @@
+{
+  "status": "complete",
+  "split": "validation",
+  "examples": 872,
+  "timing_runs_per_method": 1,
+  "freeze_sha256": "d6dcfa85417f80e58906edf459d10754a3944bbd76a90fbc84bce44556ce2cf6",
+  "threads": 4,
+  "deployment_method": "dynamic",
+  "all_correctness_checks_passed": true,
+  "deployment_memory_within_budget": true,
+  "runs": [
+    {
+      "method": "selected",
+      "threads": 4,
+      "block": 0,
+      "split": "validation",
+      "examples": 872,
+      "accuracy": 0.9105504587155964,
+      "passed": true,
+      "changed_predictions": 0,
+      "max_absolute_error": 2.047419548034668e-05,
+      "latency": {
+        "tokenization_ms": {
+          "count": 872,
+          "median_ms": 0.9129499999999999,
+          "p95_ms": 1.3520849999999993,
+          "mean_ms": 0.9832180045871559
+        },
+        "routing_padding_ms": {
+          "count": 872,
+          "median_ms": 0.50325,
+          "p95_ms": 0.8411549999999998,
+          "mean_ms": 0.3527660550458715
+        },
+        "inference_ms": {
+          "count": 872,
+          "median_ms": 87.9256,
+          "p95_ms": 116.68317499999999,
+          "mean_ms": 85.68613211009173
+        },
+        "end_to_end_ms": {
+          "count": 872,
+          "median_ms": 89.2688,
+          "p95_ms": 118.65652499999999,
+          "mean_ms": 87.02211616972475
+        }
+      },
+      "memory": {
+        "rss_before_bytes": 319008768,
+        "sampled_peak_rss_bytes": 1206005760,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 1206005760,
+        "incremental_sampled_peak_bytes": 886996992,
+        "process_lifetime_peak_rss_bytes": 1230340096
+      },
+      "memory_for_budget_bytes": 1230340096,
+      "model_size_bytes": 805554752,
+      "session_initialization_ms": {
+        "dynamic": 1339.1449,
+        "fixed-16": 1490.2826,
+        "fixed-32": 1344.2757
+      },
+      "sessions_ready_ms": 6443.2004,
+      "runtime_settings": {
+        "allow_spinning": false
+      },
+      "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+      "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+      "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081"
+    },
+    {
+      "method": "single-16",
+      "threads": 4,
+      "block": 0,
+      "split": "validation",
+      "examples": 872,
+      "accuracy": 0.9105504587155964,
+      "passed": true,
+      "changed_predictions": 0,
+      "max_absolute_error": 2.047419548034668e-05,
+      "latency": {
+        "tokenization_ms": {
+          "count": 872,
+          "median_ms": 0.4075,
+          "p95_ms": 1.4062899999999998,
+          "mean_ms": 0.6836098623853211
+        },
+        "routing_padding_ms": {
+          "count": 872,
+          "median_ms": 0.0034,
+          "p95_ms": 0.6034699999999997,
+          "mean_ms": 0.10305802752293579
+        },
+        "inference_ms": {
+          "count": 872,
+          "median_ms": 30.5305,
+          "p95_ms": 125.65275499999998,
+          "mean_ms": 48.977634403669725
+        },
+        "end_to_end_ms": {
+          "count": 872,
+          "median_ms": 30.9608,
+          "p95_ms": 127.29454499999996,
+          "mean_ms": 49.764302293577984
+        }
+      },
+      "memory": {
+        "rss_before_bytes": 318091264,
+        "sampled_peak_rss_bytes": 932024320,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 932024320,
+        "incremental_sampled_peak_bytes": 613933056,
+        "process_lifetime_peak_rss_bytes": 959246336
+      },
+      "memory_for_budget_bytes": 959246336,
+      "model_size_bytes": 537037168,
+      "session_initialization_ms": {
+        "dynamic": 609.6885,
+        "fixed-16": 598.1019
+      },
+      "sessions_ready_ms": 3295.3374,
+      "runtime_settings": {
+        "allow_spinning": false
+      },
+      "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+      "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+      "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081"
+    },
+    {
+      "method": "pytorch",
+      "threads": 4,
+      "block": 0,
+      "split": "validation",
+      "examples": 872,
+      "accuracy": 0.9105504587155964,
+      "passed": true,
+      "changed_predictions": 0,
+      "max_absolute_error": 1.6987323760986328e-06,
+      "latency": {
+        "tokenization_ms": {
+          "count": 872,
+          "median_ms": 0.36119999999999997,
+          "p95_ms": 0.5467549999999998,
+          "mean_ms": 0.3841980504587156
+        },
+        "routing_padding_ms": {
+          "count": 872,
+          "median_ms": 0.0026,
+          "p95_ms": 0.003544999999999993,
+          "mean_ms": 0.0028719036697247707
+        },
+        "inference_ms": {
+          "count": 872,
+          "median_ms": 41.3648,
+          "p95_ms": 70.02714499999998,
+          "mean_ms": 44.31617155963303
+        },
+        "end_to_end_ms": {
+          "count": 872,
+          "median_ms": 41.720349999999996,
+          "p95_ms": 70.45007999999996,
+          "mean_ms": 44.70324151376147
+        }
+      },
+      "memory": {
+        "rss_before_bytes": 318664704,
+        "sampled_peak_rss_bytes": 566763520,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 558551040,
+        "incremental_sampled_peak_bytes": 248098816,
+        "process_lifetime_peak_rss_bytes": 566771712
+      },
+      "memory_for_budget_bytes": 566771712,
+      "model_size_bytes": 267832558,
+      "session_initialization_ms": {
+        "pytorch": 643.9505
+      },
+      "sessions_ready_ms": 1627.4903,
+      "runtime_settings": {
+        "allow_spinning": false
+      },
+      "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+      "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+      "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081"
+    },
+    {
+      "method": "buckets",
+      "threads": 4,
+      "block": 0,
+      "split": "validation",
+      "examples": 872,
+      "accuracy": 0.9105504587155964,
+      "passed": true,
+      "changed_predictions": 0,
+      "max_absolute_error": 1.9073486328125e-05,
+      "latency": {
+        "tokenization_ms": {
+          "count": 872,
+          "median_ms": 0.45155,
+          "p95_ms": 0.962545,
+          "mean_ms": 0.5264009174311927
+        },
+        "routing_padding_ms": {
+          "count": 872,
+          "median_ms": 0.25105,
+          "p95_ms": 0.6106399999999998,
+          "mean_ms": 0.312793119266055
+        },
+        "inference_ms": {
+          "count": 872,
+          "median_ms": 50.6001,
+          "p95_ms": 113.60998999999987,
+          "mean_ms": 56.211088990825694
+        },
+        "end_to_end_ms": {
+          "count": 872,
+          "median_ms": 51.48235,
+          "p95_ms": 114.16495499999986,
+          "mean_ms": 57.05028302752294
+        }
+      },
+      "memory": {
+        "rss_before_bytes": 318509056,
+        "sampled_peak_rss_bytes": 1759907840,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 1759907840,
+        "incremental_sampled_peak_bytes": 1441398784,
+        "process_lifetime_peak_rss_bytes": 1769463808
+      },
+      "memory_for_budget_bytes": 1769463808,
+      "model_size_bytes": 1342590170,
+      "session_initialization_ms": {
+        "dynamic": 797.1733,
+        "fixed-16": 949.7906,
+        "fixed-32": 902.6188,
+        "fixed-64": 880.1931,
+        "fixed-128": 913.0348
+      },
+      "sessions_ready_ms": 6178.1583,
+      "runtime_settings": {
+        "allow_spinning": false
+      },
+      "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+      "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+      "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081"
+    },
+    {
+      "method": "dynamic",
+      "threads": 4,
+      "block": 0,
+      "split": "validation",
+      "examples": 872,
+      "accuracy": 0.9105504587155964,
+      "passed": true,
+      "changed_predictions": 0,
+      "max_absolute_error": 2.047419548034668e-05,
+      "latency": {
+        "tokenization_ms": {
+          "count": 872,
+          "median_ms": 0.2457,
+          "p95_ms": 0.424425,
+          "mean_ms": 0.2681740825688073
+        },
+        "routing_padding_ms": {
+          "count": 872,
+          "median_ms": 0.0018,
+          "p95_ms": 0.003,
+          "mean_ms": 0.0020030963302752297
+        },
+        "inference_ms": {
+          "count": 872,
+          "median_ms": 16.4867,
+          "p95_ms": 30.385269999999995,
+          "mean_ms": 17.91651731651376
+        },
+        "end_to_end_ms": {
+          "count": 872,
+          "median_ms": 16.7481,
+          "p95_ms": 30.69488499999999,
+          "mean_ms": 18.18669449541284
+        }
+      },
+      "memory": {
+        "rss_before_bytes": 317906944,
+        "sampled_peak_rss_bytes": 668094464,
+        "sampling_interval_ms": 10.0,
+        "rss_after_bytes": 659763200,
+        "incremental_sampled_peak_bytes": 350187520,
+        "process_lifetime_peak_rss_bytes": 686563328
+      },
+      "memory_for_budget_bytes": 686563328,
+      "model_size_bytes": 268519584,
+      "session_initialization_ms": {
+        "dynamic": 589.8297
+      },
+      "sessions_ready_ms": 1299.7104,
+      "runtime_settings": {
+        "allow_spinning": false
+      },
+      "workload_sha256": "a3d11cb1fa87a119d4e8ac8c1182a5d4795dc91db448f76c77a34ee6f9394a81",
+      "references_sha256": "04b8ebb25f8d67e9b09b3d26b35cc68cc48be756dfac69f82c8791f6bd7c90b0",
+      "plan_sha256": "13749e452c780c1b17ea39d4a4e078ecd2ec1d73b84b939ab09cc03d3b4c3081"
+    }
+  ],
+  "limitations": [
+    "One held-out timing run per method; no latency confidence intervals.",
+    "CPU laptop results do not establish performance on other edge hardware.",
+    "Readiness excludes Python startup/imports and is not a cold device start.",
+    "Validation results did not change the frozen policy."
+  ]
+}
