@@ -105,7 +105,10 @@ def render(output, confirmation, audit, settings):
             )
         ax.set_xticks(range(len(audit)), names, rotation=18, ha="right", fontsize=8)
         ax.set_ylabel(ylabel)
-        ax.set_ylim(0, max(values) * 1.22)
+        ceiling = (
+            max(max(values), settings["budget_mib"]) if field == "max_peak_bytes" else max(values)
+        )
+        ax.set_ylim(0, ceiling * 1.22)
         ax.grid(axis="y", alpha=0.15)
     axes[1].axhline(
         settings["budget_mib"],
