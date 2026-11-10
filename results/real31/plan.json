@@ -110,11 +110,12 @@
     }
   },
   "code_sha256": {
-    "tools\\real31.py": "1fe8c855a4bc68a2adfd7d39389cf322ac2d109fdb2b0b9cdc44b3cdb4348313",
+    "tools\\real31.py": "b54f3fa832073f245cf7e14d6d916006b961957ae4c738839e679dae76fa7716",
     "src\\etdl\\runtime.py": "b285d2e6feef8c552db4643d7fa6bd677672777b94cebfd915c2c7364747c84a",
     "src\\etdl\\checks.py": "791413fc715cc7dd22a3ac9d6e044bd95b431c95c878d90b2c54080a9b9d77c8",
     "src\\etdl\\variants.py": "2341ae9f09d9f6221053ab120f2b5b3e744b2fb93531232ed65218b0cfe7aaa4",
     "src\\etdl\\data.py": "a4b30634e3f9c2fc7685b0565ce04037a3afdc0a9e9465d6feb55658f706eefd"
   },
-  "workload_sha256": "ae17adf03c663dafa6a15abbf3e51abd56c23623ac423411af84d2533f3fd938"
+  "workload_sha256": "ae17adf03c663dafa6a15abbf3e51abd56c23623ac423411af84d2533f3fd938",
+  "amendment": "Pre-timing OpenVINO precision-readback parser accepted only f32, but API returned float32. One completed ORT block was archived separately and excluded; all ten final blocks restart under this amended code hash. Measurement procedure and selected rows unchanged."
 }

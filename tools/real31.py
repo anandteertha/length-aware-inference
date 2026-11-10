@@ -178,7 +178,8 @@ def openvino_sessions(graphs):
             or settings_readback[name]["num_streams"] != 1
         ):
             raise ValueError("OpenVINO did not honor thread or stream settings")
-        if "f32" not in settings_readback[name]["inference_precision"].lower():
+        precision = settings_readback[name]["inference_precision"].lower()
+        if "f32" not in precision and "float32" not in precision:
             raise ValueError("OpenVINO did not report FP32")
     return sessions, startup, settings_readback
 
