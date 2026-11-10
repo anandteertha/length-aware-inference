@@ -4,6 +4,10 @@ Research project based on `arrao6_project_proposal.pdf`: can at most two verifie
 fixed-length DistilBERT variants reduce p95 CPU latency within a memory budget?
 The dynamic-length model remains the fallback, and choosing no variants is a valid result.
 
+Start with the [consolidated project report](docs/project-report.md) and
+[CLI demonstration guide](docs/demo.md). The report links the original validation,
+training-derived follow-up, and synthetic diagnostics to their archived evidence.
+
 ## Current milestone
 
 Implemented: reproducible training-data sampling and length counts, CPU/environment
@@ -175,6 +179,34 @@ candidate before the reserved optimization audit. It leaves the original
 validation results and default prediction policy intact. The archive contains
 request-level measurements, immutable plans, graph checks, and post-timing CPU
 traces, excluding model binaries and input text.
+
+## Matched length-boundary diagnostic
+
+The [protocol](docs/boundary-protocol.md) compares dynamic natural-length inputs,
+the same dynamic graph with bucket padding, and fixed graphs with identical padded
+inputs and masks. It uses three synthetic patterns, 13 lengths around the bucket
+boundaries, four threads, and five randomized fresh-process blocks. Pretokenized
+timings separate inference from routing/padding and make no accuracy claims.
+
+The replication completed 40 processes and 8,880 checked requests with no flagged
+telemetry gaps. At 17 tokens, padding to 32 increased dynamic execution p95 by
+about 50-68% across the two graph families. Fixed-shape execution did not
+consistently recover that cost; see the [report](docs/project-report.md) for all
+lengths, matched ratios, and limitations.
+
+```powershell
+uv run etdl boundaries --name my-boundaries
+uv run etdl boundaries --name my-boundaries --resume
+uv run python tools/archive_boundaries.py --diagnostic artifacts/my-boundaries --output results/my-boundaries
+uv run python tools/demo.py
+```
+
+Run the first command once; use `--resume` only for the same interrupted plan.
+The verified graph families from `followup` must already exist. The diagnostic
+records power snapshots and system/worker CPU use without altering system settings.
+The [timing-quality amendment](docs/boundary-amendment.md) explains why the first
+run was retained separately from its replication. Both archives preserve every
+completed process; neither run changes the frozen prediction policy.
 
 ## Outputs
 

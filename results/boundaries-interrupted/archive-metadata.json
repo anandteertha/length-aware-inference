@@ -1,0 +1,32 @@
+{
+  "measurement_code_commit": "2625099818cb8ce5e8b69e78f240ed51771529b4",
+  "reporting_commit": "e6969d38cd278b3806e8e4c584ea855a7824cdc0",
+  "processes": 40,
+  "timed_requests": 8880,
+  "all_checks_passed": true,
+  "all_power_conditions_consistent": true,
+  "telemetry_gap_threshold_seconds": 10,
+  "long_telemetry_gap_processes": [
+    {
+      "family": "transformer",
+      "capacity": 16,
+      "block": 1,
+      "max_gap_seconds": 21594.287893999834
+    },
+    {
+      "family": "standard",
+      "capacity": 64,
+      "block": 2,
+      "max_gap_seconds": 14273.761602400104
+    },
+    {
+      "family": "standard",
+      "capacity": 128,
+      "block": 2,
+      "max_gap_seconds": 6304.618466900196
+    }
+  ],
+  "max_absolute_error": 1.6033649444580078e-05,
+  "note": "Synthetic pretokenized inputs; no classification accuracy or natural-workload p95 claim.",
+  "figure_reporting_commit": "ae3c7cd312677cb6440412e537e8aecd346b93d7"
+}

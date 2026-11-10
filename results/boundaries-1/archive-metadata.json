@@ -1,0 +1,12 @@
+{
+  "measurement_code_commit": "e6969d38cd278b3806e8e4c584ea855a7824cdc0",
+  "reporting_commit": "ae3c7cd312677cb6440412e537e8aecd346b93d7",
+  "processes": 40,
+  "timed_requests": 8880,
+  "all_checks_passed": true,
+  "all_power_conditions_consistent": true,
+  "telemetry_gap_threshold_seconds": 10,
+  "long_telemetry_gap_processes": [],
+  "max_absolute_error": 1.6033649444580078e-05,
+  "note": "Synthetic pretokenized inputs; no classification accuracy or natural-workload p95 claim."
+}

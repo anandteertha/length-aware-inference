@@ -1,0 +1,9 @@
+{
+  "plan": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\boundaries\\plan.json",
+  "plan_sha256": "1d606a5ce6ca7b1eb9c15568c4c90edd3b07be7b6c5df7a8255b715e8be0877a",
+  "references": "C:\\Users\\anand\\Development\\ETDL\\project\\artifacts\\boundaries\\references.json",
+  "references_sha256": "af98df5095233f201378bca4d0ad773ff853328f08153e458190dd446f6aa3f1",
+  "family": "transformer",
+  "capacity": 64,
+  "block": 4
+}

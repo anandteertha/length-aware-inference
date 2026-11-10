@@ -160,6 +160,10 @@ def main():
             "docs/boundary-amendment.md",
             "Timing-quality amendment before original summaries were inspected",
         ),
+        "E014": (
+            (args.diagnostic / "process-metrics.json").as_posix(),
+            "CPU observations, before/after power snapshots, and all retained replication processes",
+        ),
     }
     claims = []
     paragraphs = []
@@ -201,7 +205,7 @@ def main():
     )
     literal("## Original confirmation and held-out validation")
     paragraph(
-        "Original training confirmation compared five methods at 1/2/4 threads in three randomized process blocks. It selected standard dynamic ONNX at four threads. The policy was frozen before the full 872-example GLUE SST-2 validation split was accessed; the previously fitted 16+32 policy remained a comparison after it was rejected for deployment.",
+        "Original training confirmation compared five methods at 1/2/4 threads in three randomized process blocks. Deployment selection compared dynamic ONNX and the prior 16+32 policy across those thread counts; PyTorch, single-fixed, and bucket methods were comparators. It selected standard dynamic ONNX at four threads. The policy was frozen before the full 872-example GLUE SST-2 validation split was accessed; the previously fitted 16+32 policy remained a comparison after it was rejected for deployment.",
         ["E002", "E003", "E004", "E011"],
     )
     paragraph(
@@ -261,7 +265,7 @@ def main():
     )
     paragraph(
         f"The final diagnostic used {diagnostic['processes']} fresh processes in {plan['blocks']} randomized blocks at {plan['threads']} threads, with {diagnostic['timed_requests']:,} timed requests. Thirty-nine synthetic pretokenized inputs covered three token patterns and lengths 9, 15/16/17, 31/32/33, 63/64/65, and 127/128/129. Every input/path was checked against separately generated PyTorch FP32 references. These are execution probes without task labels or accuracy claims.",
-        ["E006", "E007", "E010"],
+        ["E006", "E007", "E010", "E014"],
     )
     paragraph(
         "For lengths up to 128, each process compared dynamic natural-length execution, dynamic execution padded to the smallest fitting bucket, and the matching fixed graph with identical padded token IDs and masks. Length 129 exercised dynamic fallback. Routing/padding and inference were timed separately; their sum excludes tokenization and is not text-to-label end-to-end latency. Both dynamic and fixed sessions were resident in each process. Lengths assigned to different capacities were measured in different fresh processes, so cross-length curves also contain process variation; the ratios compare matched paths within the same process.",
@@ -303,6 +307,15 @@ def main():
         ["E006", "E010"],
     )
     for family in ("standard", "transformer"):
+        padding = {
+            ratio["length"]: ratio["median_ratio"]
+            for ratio in diagnostic["paired_ratios"]
+            if ratio["family"] == family and ratio["contrast"] == "padding_cost"
+        }
+        paragraph(
+            f"For the {family} family, padding immediately above bucket boundaries increased dynamic-graph p95 by paired median factors of {padding[17]:.3f} at 17-to-32 tokens, {padding[33]:.3f} at 33-to-64 tokens, and {padding[65]:.3f} at 65-to-128 tokens. At nine tokens, padding to 16 had a paired median factor of {padding[9]:.3f}. These ratios compare the same dynamic graph and token pattern within each process, with padding masked and outputs checked.",
+            ["E006", "E007", "E010"],
+        )
         for contrast, description in (
             ("fixed_shape_effect", "fixed versus dynamic execution with identical padding"),
             ("net_fixed_effect", "fixed padded execution versus natural-length dynamic execution"),
@@ -319,12 +332,27 @@ def main():
                 f"For the {family} family, considering {description}, fixed execution had lower p95 in every block at {faster} of {len(comparisons)} lengths, higher p95 in every block at {slower} lengths, and mixed or tied directions at {mixed} lengths. This summarizes the observed blocks only and is not a significance test or a guarantee for natural messages.",
                 ["E006"],
             )
+    paragraph(
+        "These matched contrasts separate the added cost of padding from the effect of fixing a graph shape at the same padded input size. Where padding costs more than fixed-shape execution saves, the fixed variant loses to natural-length dynamic execution. This provides a testable explanation for the observed pattern rather than attributing all latency differences to routing or to an individual fused operator. It does not prove that the same mechanism explains every earlier natural-workload timing difference.",
+        ["E006", "E007", "E010"],
+    )
     literal(
         "![Latency by natural length](../results/boundaries-1/length-latency.png)\n\n![Matched padding and fixed-shape ratios](../results/boundaries-1/paired-ratios.png)"
     )
+    maximum_preparation = max(
+        group["latency"]["routing_padding_ms"]["median_run_p95_ms"]
+        for group in diagnostic["groups"]
+    )
+    paragraph(
+        f"The largest median process-run routing/padding p95 across diagnostic conditions was {maximum_preparation:.3f} ms. The separate inference measurements and padding contrasts therefore help distinguish input preparation from the model execution cost of a padded shape. This is the diagnostic bucket lookup and padding path, not a measurement of the learned production router. Per-request component times add, but separately aggregated component p95 values need not add to the prepared-input p95.",
+        ["E006", "E007", "E010"],
+    )
+    literal(
+        "![Diagnostic routing and padding preparation](../results/boundaries-1/preparation-cost.png)"
+    )
     paragraph(
         "Before/after AC connection and Windows power-scheme snapshots matched the recorded plan in every replication process. System and worker CPU load were recorded, and no replication process was excluded based on its performance. Snapshots cannot guarantee constant conditions between observations. System utilization includes the benchmark worker. Temperature, watts, clock speed, and affinity were not controlled; fixed two-second rests do not guarantee equal temperatures or repair earlier timing drift.",
-        ["E006", "E007", "E010"],
+        ["E006", "E007", "E010", "E014"],
     )
     literal("![Observed system CPU utilization](../results/boundaries-1/system-load.png)")
     literal("## Reproduction and functional demonstration")
@@ -367,6 +395,7 @@ def main():
         "document_type": "Repository systems-benchmark project report",
         "reporting_guidance": "Study-specific recorded protocols; no clinical reporting guideline applies.",
         "report_sha256": sha256(args.report),
+        "builder_sha256": sha256(Path(__file__)),
         "local_audit_by": "Codex",
         "local_audit_at_utc": datetime.now(UTC).isoformat(),
         "human_verification": "pending",

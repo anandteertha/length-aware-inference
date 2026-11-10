@@ -1,0 +1,37 @@
+{
+  "purpose": "Functional demonstration; not an accuracy or latency benchmark.",
+  "policy_sha256": "73f0befa68ee36aa014af672dc70302767f31f2a4a714fbbeae61a969d2c5864",
+  "threads": 4,
+  "retained_variants": [],
+  "ready_ms": 11968.2466,
+  "predictions": [
+    {
+      "text": "Great service!",
+      "prediction": 1,
+      "label": "positive",
+      "logits": [
+        -4.278159141540527,
+        4.6214752197265625
+      ],
+      "tokens": 5,
+      "route": "dynamic",
+      "disabled_variants": {},
+      "end_to_end_ms": 33.2273,
+      "created_at_utc": "2026-11-10T21:14:32.445531+00:00"
+    },
+    {
+      "text": "This was a terrible movie.",
+      "prediction": 0,
+      "label": "negative",
+      "logits": [
+        4.3998236656188965,
+        -3.652174949645996
+      ],
+      "tokens": 8,
+      "route": "dynamic",
+      "disabled_variants": {},
+      "end_to_end_ms": 17.8283,
+      "created_at_utc": "2026-11-10T21:14:32.466856+00:00"
+    }
+  ]
+}

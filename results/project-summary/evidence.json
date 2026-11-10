@@ -1,0 +1,629 @@
+{
+  "document_type": "Repository systems-benchmark project report",
+  "reporting_guidance": "Study-specific recorded protocols; no clinical reporting guideline applies.",
+  "report_sha256": "09639fe3be0a7e19669daec75230bcac8a62946a694ef44453d67511a0ebb058",
+  "builder_sha256": "c2adc029909bdd07f210173be29ceeef1b6402a7c076de0555e9301746acbe01",
+  "local_audit_by": "Codex",
+  "local_audit_at_utc": "2026-11-10T21:17:26.086406+00:00",
+  "human_verification": "pending",
+  "author_approval": "not asserted",
+  "sources": {
+    "E001": {
+      "path": "arrao6_project_proposal.pdf",
+      "sha256": "1d18b2a9570d2e95a98469c6e4d54c5e1d74746991a3cf1829a8fd09446e9778",
+      "locator": "Pages 1-2: question, fixed variants, fallback, valid dynamic-only outcome",
+      "human_verification": "pending"
+    },
+    "E002": {
+      "path": "results/milestone-3/confirmation-summary.json",
+      "sha256": "abb30ea686c4edaece1be8325ea11783e6eceaa516c9ba11afecdcf76abbc712",
+      "locator": "groups: original training-confirmation process summaries",
+      "human_verification": "pending"
+    },
+    "E003": {
+      "path": "results/milestone-3/held-out-summary.json",
+      "sha256": "5184bae2bd8c90eaa1517fc7e4c6ab40a12b628d52e86bde6423de66e55be37a",
+      "locator": "examples, threads, runs[*].accuracy/latency/memory/changed_predictions",
+      "human_verification": "pending"
+    },
+    "E004": {
+      "path": "results/milestone-3/frozen-policy.json",
+      "sha256": "73f0befa68ee36aa014af672dc70302767f31f2a4a714fbbeae61a969d2c5864",
+      "locator": "threads, variants, model_source, hardware_key, runtime_settings",
+      "human_verification": "pending"
+    },
+    "E005": {
+      "path": "results/followup-1/summary.json",
+      "sha256": "fc214e8ab14ab4ec724b7732f296bae6cff38d01216fa4a388cb8c31b33ec23b",
+      "locator": "chosen_before_audit, audit_groups, limitations",
+      "human_verification": "pending"
+    },
+    "E006": {
+      "path": "results/boundaries-1/summary.json",
+      "sha256": "3d421d29b0b9e046638e9770943e546649b2ee7c41d33da23dbf358c9052218c",
+      "locator": "groups, paired_ratios, checks, process/request counts",
+      "human_verification": "pending"
+    },
+    "E007": {
+      "path": "results/boundaries-1/plan.json",
+      "sha256": "464c1520d6a77495e55983042704de87ac65c7820f0ced80271b066b19792ba5",
+      "locator": "cases, power, environment, blocks, threads, repeats, code hashes",
+      "human_verification": "pending"
+    },
+    "E008": {
+      "path": "results/project-summary/demo.json",
+      "sha256": "b91c678dfa79b845926f74ffd2fee9bc5f3fb189dec5725d6afb55adda82a50c",
+      "locator": "Functional predictions and frozen-policy digest",
+      "human_verification": "pending"
+    },
+    "E009": {
+      "path": "docs/followup-results.md",
+      "sha256": "185ec7674c6b3224bebf649ad50002392c08081f524ec5cc7b03452ddb6e53b3",
+      "locator": "Methods, natural token lengths and interpretation limits",
+      "human_verification": "pending"
+    },
+    "E010": {
+      "path": "docs/boundary-protocol.md",
+      "sha256": "cdeb8f8e360771b4fa012fa34f24d94bac90a94e9b3922fcb450a1d2ad575682",
+      "locator": "Prespecified synthetic diagnostic and descriptive reporting",
+      "human_verification": "pending"
+    },
+    "E011": {
+      "path": "docs/final-results.md",
+      "sha256": "f948ae454eecc77a389335ec42ff7504a821ed0227adb1d778a276a541f73924",
+      "locator": "Original protocol, confirmation, frozen evaluation, runtime settings, and limitations",
+      "human_verification": "pending"
+    },
+    "E012": {
+      "path": "results/boundaries-interrupted/archive-metadata.json",
+      "sha256": "d72e28875605330459b5bad919aac34f832c7370df3bec8017ed5d85918d2873",
+      "locator": "Original diagnostic counts, checks, and objective long-telemetry-gap flags",
+      "human_verification": "pending"
+    },
+    "E013": {
+      "path": "docs/boundary-amendment.md",
+      "sha256": "b811b02cbef6c5e680dfec9e3582d08a91b711e5929c0176800915d3a432838a",
+      "locator": "Timing-quality amendment before original summaries were inspected",
+      "human_verification": "pending"
+    },
+    "E014": {
+      "path": "results/boundaries-1/process-metrics.json",
+      "sha256": "6a58987ac566e89c4ff8aa67cf8c480cc5bb5b34d412264d5120ee32c6629faf",
+      "locator": "CPU observations, before/after power snapshots, and all retained replication processes",
+      "human_verification": "pending"
+    }
+  },
+  "claims": [
+    {
+      "id": "C001",
+      "text_sha256": "34c4f5b7cae832b130bc557d0e73969e42831cba818610d0f27b436c78d12776",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E004",
+        "E005"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C002",
+      "text_sha256": "574fd9fa11444cba4891001877a701917e1a10c94e6934352e0f0d0112641ca0",
+      "evidence_ids": [
+        "E001",
+        "E004"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C003",
+      "text_sha256": "9114f33b62548c3080747a88ffb889a0b69d678e51b8ef21e45c0da990edac55",
+      "evidence_ids": [
+        "E004",
+        "E009",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C004",
+      "text_sha256": "be98ec6fef949eebe10414059849c3173fb28097df2a63418f953919279b210d",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E004",
+        "E011"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C005",
+      "text_sha256": "5b50cf7d4097fe6228d174b1d04b3b09125c422757fe32b6a2528089308b613b",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C006",
+      "text_sha256": "88725756261b6292b4e4e8c7816d7f43d46e42f7c4eee0a2434a467ea8f83541",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C007",
+      "text_sha256": "ad0f7f0aeb5038825a096baf26f479609114dba5b65bbb873dd1f79b5792454c",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C008",
+      "text_sha256": "9d9798c8961908b8912425f79c20d572f5d577efa26d23dd5e071ffcb061e144",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C009",
+      "text_sha256": "a88eaf12429bdcecc8731c21906752c45096b1a6c8d99a1d32de0c0d1bb0e5a2",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C010",
+      "text_sha256": "a9a513f21e1f36aae4112642d186ee97b9d12ab8215d023272e4ce5661d1b55c",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C011",
+      "text_sha256": "75656fbe4bb36a5d983ef679d91d34837ccaf74a94ad0d0bf4f86257f0ce530e",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C012",
+      "text_sha256": "6c4e548710a282c5d8bbf7299dd5069ca8829cfb876420a1502b0a798f4a8d34",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C013",
+      "text_sha256": "35c814700336da9aeec88b126bb08ad82382cc4a4cbd4acca2ccc973bf98b4c8",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C014",
+      "text_sha256": "022ed6be429bf676cb6fbc187b1f307ca70458e570e555c7847269b744b2cfea",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C015",
+      "text_sha256": "5e2e58c91d6220219b3accf5713cdac194815ba518502b1b2329a70cf2d1c89e",
+      "evidence_ids": [
+        "E003"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C016",
+      "text_sha256": "3d89ac30a696cea500e3598e05bdaa7607bd3765fdab909e0b7b3552922eb684",
+      "evidence_ids": [
+        "E003",
+        "E011"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C017",
+      "text_sha256": "d79eba9e1234594267f62b1341a0ce5f9f21b36d3eed2946061e0c216e78b0f8",
+      "evidence_ids": [
+        "E003",
+        "E005",
+        "E009"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C018",
+      "text_sha256": "92b8cbe9ac77c229e9725a6481dd6a830065d0c9fd8be2d46c8869247ab26fe2",
+      "evidence_ids": [
+        "E005",
+        "E009"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C019",
+      "text_sha256": "232a4c1cb54a1afaed7fcdf0ef78e36262a0a1af226a3daf3eba6f9a3fa896cb",
+      "evidence_ids": [
+        "E004",
+        "E005"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C020",
+      "text_sha256": "b2b67a8dc57129ae2c23f5c9e596b8ab52499a47c440a6783640f404c9eaaaa3",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E012",
+        "E013"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C021",
+      "text_sha256": "bb7be2573bbbf3ea9c90545301c2682368c34a63508df812b984b678c3e78450",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E010",
+        "E014"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C022",
+      "text_sha256": "84e512ff399ea74db8f27a4e0f4565828f050369897840c8931802cedc7c9ff0",
+      "evidence_ids": [
+        "E007",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C023",
+      "text_sha256": "b39d5f3226b2bf5ada1c138bce58c45e06bdaae5517966cafb5ae24f6cdb989d",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C024",
+      "text_sha256": "27e84508df145b49c341a7941014d27f659b692d679146b06db35d0c0359401c",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C025",
+      "text_sha256": "d30211c77bfeed9a4bc082891a0e4cf558903eae397c30991462b495fd60778c",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C026",
+      "text_sha256": "31f066574e3a0bb26e707d48d6612736bd3c351cff5be9d0b03f232338dc088b",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C027",
+      "text_sha256": "8cd41f243a5bf317a77c207e3e83d68de0fa020e57909a4e3585f24ad7b26d8e",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C028",
+      "text_sha256": "a6b5cd694727bcd6b3918858eaa46c56842d866df091324006c523db04fd4109",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C029",
+      "text_sha256": "ca9702b8a1c48ccb7381c4a451800035e525732b18f008db79a90799d58e7d60",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C030",
+      "text_sha256": "10c35224e81f7c46e839757c9153a89ae7ef67e2582878d357086c4bbea6b0be",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C031",
+      "text_sha256": "ba7b4ee9037cb844ff7e460bd7e6d9823a9fce117505e9b89e35bade7a7267d9",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C032",
+      "text_sha256": "d8e5d3da9477f16f2d753b2a8fce61bfaa4c89e4223ac49d65bf9802743522b4",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C033",
+      "text_sha256": "f244edbb6213453a17489aa856cd7ac45f9a10a4bc3b3efd1750ca382ec6bdfb",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C034",
+      "text_sha256": "ed1b9c7c7f05649babb633a03ec00b8af2f0e2d77b0ab3b481c4599e5035e77b",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C035",
+      "text_sha256": "c4d847738026ba9a81e13955424db21ab9aa35ab5263bf5bd22c83ff9342f0b8",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C036",
+      "text_sha256": "30f0289e7728dccfc59d2c93db915bbe41398a1621d135e99ad69f3e63a9028e",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C037",
+      "text_sha256": "7334cfefe585395207d6ab1bdb87831cf3e59aa69f9288e3daeabbcc752ff625",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C038",
+      "text_sha256": "6ae8a45c50c0b0bb94d82ead5efe6e206a05284023255097d2fef088d3b24db0",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C039",
+      "text_sha256": "018ef2ae5d4337c43faa86d2d669aa29113bf4dc74225e3fb8d8fca49b801e5c",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C040",
+      "text_sha256": "a3dfe0ad596b1155d0551bbab7a7c98b61b446d3c60402a0e608edcaf0d66cd5",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C041",
+      "text_sha256": "751ed40e11525576062a084e5169270a2509edb478392a1534fa1d417e74bdd0",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C042",
+      "text_sha256": "d5a9f96ad6df233b677ba094e7d3395794645c48f83368a354028317e2ecf994",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C043",
+      "text_sha256": "5e0329c1da11eeeec54bff7c2eeb90bb68d2d2db102df9f554aeee33e3e0a395",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C044",
+      "text_sha256": "1091628ccb7b77174b9ed834cdf929705b873c2d8b3e8f7921bf047b4346f432",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C045",
+      "text_sha256": "e47469ccea59ee305dd3a3af1886a9ab0a0b81b101c632477dac6ccb5a7579a0",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C046",
+      "text_sha256": "8483070859372a7c5c6aca2d2e0d9945a600d981d71c970c7bbb47a0a0e5589b",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C047",
+      "text_sha256": "f778a41a801afdf0d751003e0c3c009e4537f9b742d3891d53d0c7b825c37d6b",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C048",
+      "text_sha256": "2ceec54a6ad7c274a6affa66d76a51303b239da06bb33e4d28a7e9558881cc9d",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C049",
+      "text_sha256": "211d7ca48eb828c5ee854ee400799d7d4e9b5f400a807a8b4a750b0f1c444f7f",
+      "evidence_ids": [
+        "E006",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C050",
+      "text_sha256": "633054629887a50bbc0d72351d07033b410a724e61bec8c49e30d60541d5c166",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C051",
+      "text_sha256": "889f6744472e07872abfd262e62a2ea92df60acef7f5b1671a9c3a6d18ec817e",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C052",
+      "text_sha256": "f1ba51488ef2a4fec4b5c083a20ba3f64ced2a8d2a7e25c432696cb3afd4dccc",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C053",
+      "text_sha256": "cd25009f060dcf664c30a4b0b2e43cf1c9f80ab42d20812967d7a36a73f36843",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C054",
+      "text_sha256": "5928aafaccf84d5b72b0f9cda857ef6d191e91160aa26e0a857178af74ba3153",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C055",
+      "text_sha256": "38ee4bdcc3344532c6236a1a859af9f418dc3227b268fe99c3fbd60b00039eed",
+      "evidence_ids": [
+        "E006"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C056",
+      "text_sha256": "a311d16d619519357d7992b072984f95d1b5a020e2fcac08e5d75441dcca96e6",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C057",
+      "text_sha256": "2b7efd0b11dd19d4ba30148bd7a075f01bc466f8e8e49fd39851fa4b02e4df15",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C058",
+      "text_sha256": "57b6a176f1a1cb06de71869e3c66413b11934a80a970105a8dd6bae5aff69885",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E010",
+        "E014"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C059",
+      "text_sha256": "0a16d28d134db2d8acaff9fa4f03b9abf9c0dc4cdf00061cf70fac86a0e14790",
+      "evidence_ids": [
+        "E004",
+        "E008"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C060",
+      "text_sha256": "23993df80a0cb1a201c6d5ac312378aea47417dec1829c937514337d194d5284",
+      "evidence_ids": [
+        "E003",
+        "E005",
+        "E006",
+        "E009",
+        "E010"
+      ],
+      "human_verification": "pending"
+    },
+    {
+      "id": "C061",
+      "text_sha256": "23bebbb481d018ab964f81416fedfec6c751406a09bfa38bb427e3a75d9bd343",
+      "evidence_ids": [
+        "E001",
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006"
+      ],
+      "human_verification": "pending"
+    }
+  ]
+}
