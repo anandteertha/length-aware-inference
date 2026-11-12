@@ -11,6 +11,8 @@ The later [fresh 31-token and OpenVINO report](docs/real31-results.md) tests the
 synthetic lead on unused real training text and records a separate backend diagnostic.
 The [real-text break-even map](docs/breakeven-map-results.md) measures padding cost,
 same-input fixed-shape gain, and their net effect at eleven token lengths.
+The [proposed training-based continuation](docs/training-pivot-plan.md) uses these
+results to motivate a compact student model and a length-aware escalation gate.
 
 ## Current milestone
 
