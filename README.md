@@ -9,6 +9,8 @@ Start with the [consolidated project report](docs/project-report.md) and
 training-derived follow-up, and synthetic diagnostics to their archived evidence.
 The later [fresh 31-token and OpenVINO report](docs/real31-results.md) tests the
 synthetic lead on unused real training text and records a separate backend diagnostic.
+The [real-text break-even map](docs/breakeven-map-results.md) measures padding cost,
+same-input fixed-shape gain, and their net effect at eleven token lengths.
 
 ## Current milestone
 
@@ -42,6 +44,14 @@ process blocks (median 1.005). OpenVINO's standard fixed-32 graph did beat its
 dynamic graph on identical padded inputs in all five blocks (median ratio 1.073),
 but beat natural-length dynamic in only four (median 1.024), with large absolute
 latency variation. This does not change the frozen dynamic-only deployment policy.
+
+The subsequent break-even map tested 24 new real sentences at each of eleven
+exact lengths from 9 to 48 tokens in both ORT and OpenVINO. **No length passed
+the frozen screen for a fixed-route confirmation.** In particular, both backends
+favored natural dynamic in all process blocks immediately after the 16- and
+32-token bucket boundaries. Near 31–32, OpenVINO results were mixed across
+blocks. The [chart and full records](results/breakeven-map/summary.json) show
+the measured lengths and process variation; the deployment policy remains dynamic-only.
 
 ## Setup (PowerShell)
 

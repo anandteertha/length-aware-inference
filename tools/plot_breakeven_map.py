@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DIRECTORY = ROOT / "artifacts/breakeven-map"
 
 
-def errorbar(axis, rows, field, color, marker, label, shift=0.0):
-    x = np.asarray([row["length"] + shift for row in rows], dtype=float)
+def errorbar(axis, rows, positions, field, color, marker, label, shift=0.0):
+    x = np.asarray([positions[row["length"]] + shift for row in rows], dtype=float)
     middle = np.asarray([row["median"][field] for row in rows], dtype=float)
     lower = np.asarray([row["range"][field][0] for row in rows], dtype=float)
     upper = np.asarray([row["range"][field][1] for row in rows], dtype=float)
@@ -34,22 +34,25 @@ def errorbar(axis, rows, field, color, marker, label, shift=0.0):
 def main():
     summary = read_json(DIRECTORY / "summary.json")
     lengths = sorted({row["length"] for row in summary["map"]})
+    positions = {length: index for index, length in enumerate(lengths)}
     figure, axes = plt.subplots(2, 2, figsize=(13, 8), sharex=True, layout="constrained")
     for line, backend in enumerate(("ort", "openvino")):
         rows = [row for row in summary["map"] if row["backend"] == backend]
         components, net = axes[line]
-        errorbar(components, rows, "padding_cost_ms", "#d95f02", "o", "Padding cost", -0.16)
-        errorbar(components, rows, "shape_gain_ms", "#1b9e77", "s", "Shape gain", 0.16)
-        errorbar(net, rows, "net_fixed_gain_ms", "#253b6e", "o", "Net fixed gain")
+        errorbar(
+            components, rows, positions, "padding_cost_ms", "#d95f02", "o", "Padding cost", -0.16
+        )
+        errorbar(components, rows, positions, "shape_gain_ms", "#1b9e77", "s", "Shape gain", 0.16)
+        errorbar(net, rows, positions, "net_fixed_gain_ms", "#253b6e", "o", "Net fixed gain")
         for axis in (components, net):
             axis.axhline(0, color="#444444", linewidth=0.9)
-            axis.axvline(16.5, color="#aaaaaa", linestyle=":", linewidth=0.8)
-            axis.axvline(32.5, color="#aaaaaa", linestyle=":", linewidth=0.8)
+            axis.axvline(2.5, color="#aaaaaa", linestyle=":", linewidth=0.8)
+            axis.axvline(7.5, color="#aaaaaa", linestyle=":", linewidth=0.8)
             axis.grid(axis="y", alpha=0.22)
-            axis.set_xticks(lengths)
+            axis.set_xticks(range(len(lengths)), labels=lengths)
             axis.set_ylabel("Difference in p95 (ms)")
         components.set_title(f"{backend.upper()}: components")
-        net.set_title(f"{backend.upper()}: deployable net effect")
+        net.set_title(f"{backend.upper()}: net fixed effect")
         components.legend(loc="best", frameon=False, fontsize=9)
         net.legend(loc="best", frameon=False, fontsize=9)
     for axis in axes[-1]:
