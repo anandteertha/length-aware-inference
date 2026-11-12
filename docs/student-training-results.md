@@ -1,6 +1,6 @@
 # Trained-student study: first accuracy and export results
 
-**Status:** accuracy, ONNX export, and student-only CPU timing are complete. The routing-gate analysis is the next step. Do not infer a cascade speedup from student-only timing.
+**Status:** accuracy, ONNX export, and student-only CPU timing are complete. The subsequent [frozen-gate study](gate-results.md) measures the resident cascade. Do not infer a cascade speedup from student-only timing.
 
 The course presentation is November 23, 2026; the report is due November 30. This study follows the [predeclared training pivot](training-pivot-plan.md). The original fixed-shape study remains the baseline finding. All model choices below were made using SST-2 training-derived partitions; the released teacher had already been fine-tuned on the SST-2 training split. The 872-row GLUE validation set was previously used for aggregate reporting in the original project, but these student checkpoints and thresholds were not chosen on its labels.
 
@@ -44,4 +44,4 @@ The four-layer student was faster in all three matched blocks, but its p95 compa
 
 All three trained students exported to dynamic FP32 ONNX. On 16 training rows per model, ONNX and PyTorch logits passed `atol=rtol=1e-4`; there were zero changed labels and maximum absolute logit error below `5.1e-6`. The [export archive](../results/student-study/onnx-export-summary.json) records model hashes and sizes. The three-layer ONNX graphs are about 183 MB, the four-layer graph about 212 MB, and the full teacher graph about 269 MB. Weight size falls less than layer count because embeddings are shared across depths.
 
-The next result must test whether a length-and-confidence gate can regain accuracy without paying too often for both student and teacher. Report median, mean, p95, resident memory, and the full accuracy-latency curve. A student-only speedup is not evidence that a student-first cascade wins.
+The [gate results](gate-results.md) test whether length and confidence can regain accuracy without paying too often for both student and teacher. They report median, mean, p95, resident memory, and the full accuracy-latency curve. A student-only speedup by itself is not evidence that a student-first cascade wins.

@@ -25,6 +25,14 @@ when the prespecified development gap triggers it. Training writes ignored
 checkpoints to `artifacts/student-study/`. The GLUE validation split is excluded
 from all training commands.
 
+`scripts/evaluate_students.py` audits paired validation errors;
+`scripts/export_students.py` checks dynamic ONNX outputs; and
+`scripts/benchmark_students.py` measures each model in fresh CPU processes.
+`scripts/fit_gate.py` freezes a teacher-benefit gate using designated training
+rows. `scripts/evaluate_gate.py` applies it to validation, and
+`scripts/benchmark_cascade.py` times both models resident together.
+`scripts/plot_student_study.py` renders the archived accuracy-latency figure.
+
 ```powershell
 uv run python scripts/training_feasibility.py
 uv run python scripts/train_students.py
@@ -32,13 +40,20 @@ uv run python scripts/train_capacity.py
 uv run python scripts/evaluate_students.py
 uv run python scripts/export_students.py
 uv run python scripts/benchmark_students.py
+uv run python scripts/fit_gate.py
+uv run python scripts/evaluate_gate.py
+uv run python scripts/benchmark_cascade.py
+uv run python scripts/plot_student_study.py
 ```
 
 `train_capacity.py` is conditional and raises an error if its development trigger
 is not met. Training, export, and benchmark commands refuse to overwrite their
 existing output directories. The
 [student results](docs/student-training-results.md) report validation accuracy and
-three-block CPU timing; the learned routing gate is the next experiment. See the
+three-block CPU timing. The [frozen-gate results](docs/gate-results.md) report the
+length-and-cost method, confidence-only control, and resident cascade timing. The
+[presentation figure](results/student-study/accuracy-latency.png) shows both
+single-model and resident-cascade tradeoffs. See the
 [course delivery plan](docs/training-pivot-plan.md) for presentation and report
 milestones. Do not treat training-partition accuracy as final model accuracy.
 

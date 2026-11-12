@@ -127,6 +127,28 @@ def main():
             ("33+", np.asarray([row["tokens"] >= 33 for row in records])),
         )
     }
+    confidence_candidates = [
+        (point["estimated_extra_teacher_ms_per_request"], index)
+        for index, point in enumerate(plan["curves"]["confidence"])
+        if point["calibration_accuracy"] >= plan["teacher_calibration_accuracy"] - 0.01
+    ]
+    _, confidence_index = min(confidence_candidates)
+    confidence_point = plan["curves"]["confidence"][confidence_index]
+    confidence_fallback = route(
+        score(records, "confidence", plan["parameters"]), confidence_point
+    )
+    confidence_correct = np.where(confidence_fallback, teacher, student) == labels
+    confidence_control = {
+        "point_index": confidence_index,
+        "correct": int(np.sum(confidence_correct)),
+        "fallback_count": int(np.sum(confidence_fallback)),
+        "paired_accuracy_difference_vs_teacher": float(
+            np.mean(confidence_correct.astype(float) - teacher_correct.astype(float))
+        ),
+        "paired_bootstrap_95pct_ci": paired_bootstrap_ci(
+            confidence_correct, teacher_correct
+        ),
+    }
     report = {
         "status": "frozen-gate validation; estimated cost only, not measured cascade latency",
         "gate_plan_sha256": sha256(plan_path),
@@ -135,6 +157,7 @@ def main():
         "student_only_correct": int(np.sum(student_correct)),
         "teacher_only_correct": int(np.sum(teacher_correct)),
         "selected": selected_result,
+        "confidence_control": confidence_control,
         "curves": curves,
     }
     write_json(output, report)

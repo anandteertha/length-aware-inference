@@ -1,0 +1,22 @@
+{
+  "gate_plan_sha256": "07c9e9417fce272e018fe48e3a5549c0980294834c4fb8cf933651990306849a",
+  "selected_policy": "joint_per_cost",
+  "selected_point": {
+    "requested_fallback_fraction": 0.1,
+    "route_mode": "threshold",
+    "threshold": 0.007129044938226776,
+    "calibration_accuracy": 0.97265625,
+    "calibration_fallback_fraction": 0.1005859375,
+    "estimated_extra_teacher_ms_per_request": 1.1322917968749997
+  },
+  "confidence_point": {
+    "requested_fallback_fraction": 0.1,
+    "route_mode": "threshold",
+    "threshold": 0.0909053777761831,
+    "calibration_accuracy": 0.9697265625,
+    "calibration_fallback_fraction": 0.1005859375,
+    "estimated_extra_teacher_ms_per_request": 1.2860978027343748
+  },
+  "confidence_selection_rule": "same calibration accuracy budget and minimum added teacher time within confidence policy",
+  "validation_logits_sha256": "5863824e658d95f84d98d4aa1c23d1c0f1679a810dc70f4075ad21bc0fa5c9f4"
+}

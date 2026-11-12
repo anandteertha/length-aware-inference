@@ -1,0 +1,355 @@
+{
+  "status": "frozen-gate validation; estimated cost only, not measured cascade latency",
+  "gate_plan_sha256": "07c9e9417fce272e018fe48e3a5549c0980294834c4fb8cf933651990306849a",
+  "validation_logits_sha256": "5863824e658d95f84d98d4aa1c23d1c0f1679a810dc70f4075ad21bc0fa5c9f4",
+  "examples": 872,
+  "student_only_correct": 765,
+  "teacher_only_correct": 794,
+  "selected": {
+    "policy": "joint_per_cost",
+    "point_index": 1,
+    "requested_fallback_fraction": 0.1,
+    "actual_fallback_fraction": 0.13876146788990826,
+    "correct": 779,
+    "accuracy": 0.893348623853211,
+    "teacher_corrects_student_on_fallback": 24,
+    "teacher_harms_student_on_fallback": 10,
+    "estimated_extra_teacher_ms_per_request": 2.3195169151376143,
+    "paired_accuracy_difference_vs_teacher": -0.017201834862385322,
+    "paired_bootstrap_95pct_ci": [
+      -0.03096330275229358,
+      -0.0034403669724770644
+    ],
+    "length_strata": {
+      "3-16": {
+        "examples": 197,
+        "fallback": 33,
+        "student_correct": 185,
+        "teacher_correct": 183,
+        "cascade_correct": 182
+      },
+      "17-32": {
+        "examples": 467,
+        "fallback": 75,
+        "student_correct": 406,
+        "teacher_correct": 425,
+        "cascade_correct": 418
+      },
+      "33+": {
+        "examples": 208,
+        "fallback": 13,
+        "student_correct": 174,
+        "teacher_correct": 186,
+        "cascade_correct": 179
+      }
+    }
+  },
+  "confidence_control": {
+    "point_index": 1,
+    "correct": 789,
+    "fallback_count": 161,
+    "paired_accuracy_difference_vs_teacher": -0.005733944954128441,
+    "paired_bootstrap_95pct_ci": [
+      -0.016055045871559634,
+      0.0045871559633027525
+    ]
+  },
+  "curves": {
+    "confidence": [
+      {
+        "requested_fallback_fraction": 0.0,
+        "actual_fallback_fraction": 0.0,
+        "correct": 765,
+        "accuracy": 0.8772935779816514,
+        "teacher_corrects_student_on_fallback": 0,
+        "teacher_harms_student_on_fallback": 0,
+        "estimated_extra_teacher_ms_per_request": 0.0
+      },
+      {
+        "requested_fallback_fraction": 0.1,
+        "actual_fallback_fraction": 0.18463302752293578,
+        "correct": 789,
+        "accuracy": 0.9048165137614679,
+        "teacher_corrects_student_on_fallback": 37,
+        "teacher_harms_student_on_fallback": 13,
+        "estimated_extra_teacher_ms_per_request": 3.657575630733945
+      },
+      {
+        "requested_fallback_fraction": 0.2,
+        "actual_fallback_fraction": 0.3268348623853211,
+        "correct": 791,
+        "accuracy": 0.9071100917431193,
+        "teacher_corrects_student_on_fallback": 43,
+        "teacher_harms_student_on_fallback": 17,
+        "estimated_extra_teacher_ms_per_request": 6.442924082568807
+      },
+      {
+        "requested_fallback_fraction": 0.3,
+        "actual_fallback_fraction": 0.44839449541284404,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 18,
+        "estimated_extra_teacher_ms_per_request": 8.710602752293578
+      },
+      {
+        "requested_fallback_fraction": 0.4,
+        "actual_fallback_fraction": 0.5435779816513762,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 18,
+        "estimated_extra_teacher_ms_per_request": 10.578216857798164
+      },
+      {
+        "requested_fallback_fraction": 0.5,
+        "actual_fallback_fraction": 0.606651376146789,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 19,
+        "estimated_extra_teacher_ms_per_request": 11.749425573394497
+      },
+      {
+        "requested_fallback_fraction": 0.7,
+        "actual_fallback_fraction": 0.7580275229357798,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 20,
+        "estimated_extra_teacher_ms_per_request": 14.404738417431192
+      },
+      {
+        "requested_fallback_fraction": 1.0,
+        "actual_fallback_fraction": 1.0,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 21,
+        "estimated_extra_teacher_ms_per_request": 18.40485126146789
+      }
+    ],
+    "length": [
+      {
+        "requested_fallback_fraction": 0.0,
+        "actual_fallback_fraction": 0.0,
+        "correct": 765,
+        "accuracy": 0.8772935779816514,
+        "teacher_corrects_student_on_fallback": 0,
+        "teacher_harms_student_on_fallback": 0,
+        "estimated_extra_teacher_ms_per_request": 0.0
+      },
+      {
+        "requested_fallback_fraction": 0.1,
+        "actual_fallback_fraction": 0.3841743119266055,
+        "correct": 782,
+        "accuracy": 0.8967889908256881,
+        "teacher_corrects_student_on_fallback": 25,
+        "teacher_harms_student_on_fallback": 8,
+        "estimated_extra_teacher_ms_per_request": 9.248243119266055
+      },
+      {
+        "requested_fallback_fraction": 0.2,
+        "actual_fallback_fraction": 0.6754587155963303,
+        "correct": 791,
+        "accuracy": 0.9071100917431193,
+        "teacher_corrects_student_on_fallback": 41,
+        "teacher_harms_student_on_fallback": 15,
+        "estimated_extra_teacher_ms_per_request": 14.466195412844039
+      },
+      {
+        "requested_fallback_fraction": 0.3,
+        "actual_fallback_fraction": 0.8004587155963303,
+        "correct": 797,
+        "accuracy": 0.9139908256880734,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 16,
+        "estimated_extra_teacher_ms_per_request": 16.48648130733945
+      },
+      {
+        "requested_fallback_fraction": 0.4,
+        "actual_fallback_fraction": 0.9139908256880734,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 19,
+        "estimated_extra_teacher_ms_per_request": 17.577967660550456
+      },
+      {
+        "requested_fallback_fraction": 0.5,
+        "actual_fallback_fraction": 0.9587155963302753,
+        "correct": 793,
+        "accuracy": 0.9094036697247706,
+        "teacher_corrects_student_on_fallback": 49,
+        "teacher_harms_student_on_fallback": 21,
+        "estimated_extra_teacher_ms_per_request": 18.00794713302752
+      },
+      {
+        "requested_fallback_fraction": 0.7,
+        "actual_fallback_fraction": 0.9942660550458715,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 21,
+        "estimated_extra_teacher_ms_per_request": 18.349725688073395
+      },
+      {
+        "requested_fallback_fraction": 1.0,
+        "actual_fallback_fraction": 1.0,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 21,
+        "estimated_extra_teacher_ms_per_request": 18.40485126146789
+      }
+    ],
+    "joint": [
+      {
+        "requested_fallback_fraction": 0.0,
+        "actual_fallback_fraction": 0.0,
+        "correct": 765,
+        "accuracy": 0.8772935779816514,
+        "teacher_corrects_student_on_fallback": 0,
+        "teacher_harms_student_on_fallback": 0,
+        "estimated_extra_teacher_ms_per_request": 0.0
+      },
+      {
+        "requested_fallback_fraction": 0.1,
+        "actual_fallback_fraction": 0.2775229357798165,
+        "correct": 793,
+        "accuracy": 0.9094036697247706,
+        "teacher_corrects_student_on_fallback": 42,
+        "teacher_harms_student_on_fallback": 14,
+        "estimated_extra_teacher_ms_per_request": 5.693047878440367
+      },
+      {
+        "requested_fallback_fraction": 0.2,
+        "actual_fallback_fraction": 0.3922018348623853,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 46,
+        "teacher_harms_student_on_fallback": 17,
+        "estimated_extra_teacher_ms_per_request": 7.786160951834862
+      },
+      {
+        "requested_fallback_fraction": 0.3,
+        "actual_fallback_fraction": 0.4713302752293578,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 18,
+        "estimated_extra_teacher_ms_per_request": 9.26935877293578
+      },
+      {
+        "requested_fallback_fraction": 0.4,
+        "actual_fallback_fraction": 0.551605504587156,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 19,
+        "estimated_extra_teacher_ms_per_request": 10.74662998853211
+      },
+      {
+        "requested_fallback_fraction": 0.5,
+        "actual_fallback_fraction": 0.5963302752293578,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 19,
+        "estimated_extra_teacher_ms_per_request": 11.551302637614679
+      },
+      {
+        "requested_fallback_fraction": 0.7,
+        "actual_fallback_fraction": 0.7041284403669725,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 20,
+        "estimated_extra_teacher_ms_per_request": 13.278083314220183
+      },
+      {
+        "requested_fallback_fraction": 1.0,
+        "actual_fallback_fraction": 1.0,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 21,
+        "estimated_extra_teacher_ms_per_request": 18.40485126146789
+      }
+    ],
+    "joint_per_cost": [
+      {
+        "requested_fallback_fraction": 0.0,
+        "actual_fallback_fraction": 0.0,
+        "correct": 765,
+        "accuracy": 0.8772935779816514,
+        "teacher_corrects_student_on_fallback": 0,
+        "teacher_harms_student_on_fallback": 0,
+        "estimated_extra_teacher_ms_per_request": 0.0
+      },
+      {
+        "requested_fallback_fraction": 0.1,
+        "actual_fallback_fraction": 0.13876146788990826,
+        "correct": 779,
+        "accuracy": 0.893348623853211,
+        "teacher_corrects_student_on_fallback": 24,
+        "teacher_harms_student_on_fallback": 10,
+        "estimated_extra_teacher_ms_per_request": 2.3195169151376143
+      },
+      {
+        "requested_fallback_fraction": 0.2,
+        "actual_fallback_fraction": 0.28325688073394495,
+        "correct": 789,
+        "accuracy": 0.9048165137614679,
+        "teacher_corrects_student_on_fallback": 40,
+        "teacher_harms_student_on_fallback": 16,
+        "estimated_extra_teacher_ms_per_request": 5.089069438073394
+      },
+      {
+        "requested_fallback_fraction": 0.3,
+        "actual_fallback_fraction": 0.39105504587155965,
+        "correct": 793,
+        "accuracy": 0.9094036697247706,
+        "teacher_corrects_student_on_fallback": 46,
+        "teacher_harms_student_on_fallback": 18,
+        "estimated_extra_teacher_ms_per_request": 7.273669323394495
+      },
+      {
+        "requested_fallback_fraction": 0.4,
+        "actual_fallback_fraction": 0.4873853211009174,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 18,
+        "estimated_extra_teacher_ms_per_request": 9.213133428899082
+      },
+      {
+        "requested_fallback_fraction": 0.5,
+        "actual_fallback_fraction": 0.569954128440367,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 48,
+        "teacher_harms_student_on_fallback": 18,
+        "estimated_extra_teacher_ms_per_request": 10.85291479357798
+      },
+      {
+        "requested_fallback_fraction": 0.7,
+        "actual_fallback_fraction": 0.7190366972477065,
+        "correct": 795,
+        "accuracy": 0.911697247706422,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 20,
+        "estimated_extra_teacher_ms_per_request": 13.647531766055046
+      },
+      {
+        "requested_fallback_fraction": 1.0,
+        "actual_fallback_fraction": 1.0,
+        "correct": 794,
+        "accuracy": 0.9105504587155964,
+        "teacher_corrects_student_on_fallback": 50,
+        "teacher_harms_student_on_fallback": 21,
+        "estimated_extra_teacher_ms_per_request": 18.40485126146789
+      }
+    ]
+  }
+}
