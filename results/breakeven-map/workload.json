@@ -1,0 +1,1589 @@
+{
+  "split": "train",
+  "rows": [
+    {
+      "idx": 12814,
+      "text": "woefully hackneyed movie ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 63465,
+      "text": "a particularly nightmarish fairytale ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 37277,
+      "text": "loves its characters and communicates something ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 4427,
+      "text": "a flawed but engrossing thriller ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 39281,
+      "text": "its elegantly colorful look and sound ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 16928,
+      "text": "gentle , mesmerizing portrait ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 8680,
+      "text": ", inner-city autistic ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 64716,
+      "text": "shakespeare 's eloquent language ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 46890,
+      "text": "as scary-funny as tremors ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 50164,
+      "text": "labored and unfunny ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 54452,
+      "text": "to bring something new into the mix ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 45776,
+      "text": "fails to spark this leaden comedy ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 50250,
+      "text": "intimidated by both her subject matter and ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 26497,
+      "text": "one summer film that satisfies ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 35967,
+      "text": "the obnoxious special effects , ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 163,
+      "text": "most audacious , outrageous , ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 30619,
+      "text": "be an attempt at hardass american ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 26394,
+      "text": "is sympathetic without being gullible ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 5168,
+      "text": "the hype , the celebrity , ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 32575,
+      "text": "an enthralling aesthetic experience ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 8783,
+      "text": "stilted and unconvincing ",
+      "label": 0,
+      "tokens": 9
+    },
+    {
+      "idx": 8569,
+      "text": "something hip and transgressive ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 10996,
+      "text": "laugh-out-loud lunacy ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 46253,
+      "text": "delightful , well-crafted family film ",
+      "label": 1,
+      "tokens": 9
+    },
+    {
+      "idx": 58281,
+      "text": "in his debut as a director , washington has a sure hand . ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 2503,
+      "text": "surrounded by 86 minutes of overly-familiar and poorly-constructed comedy ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 2850,
+      "text": "knows how to inflate the mundane into the scarifying , ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 16102,
+      "text": "'s depressing to see how far herzog has fallen . ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 26511,
+      "text": "very obviously mark him as a video helmer making his feature debut ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 5477,
+      "text": "much to absorb and even more to think about after the final frame ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 11425,
+      "text": "bordering on offensive , waste of time , money and celluloid ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 42098,
+      "text": "rushed , slapdash , sequel-for-the-sake ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 11757,
+      "text": "what a concept , what an idea , what a thrill ride . ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 64932,
+      "text": "makes the silly , over-the-top coda especially disappointing ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 54047,
+      "text": "with flashbulb editing as cover for the absence of narrative continuity ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 37927,
+      "text": "on people , a project in which the script and characters hold sway ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 22637,
+      "text": "clockstoppers if you have nothing better to do with 94 minutes ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 7558,
+      "text": "there are laughs aplenty , and , as a bonus , ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 34950,
+      "text": "turn this fairly parochial melodrama into something really rather special . ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 7089,
+      "text": "of the idealistic kid who chooses to champion his ultimately losing cause ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 6500,
+      "text": "analyze this movie in three words : thumbs friggin ' down ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 19346,
+      "text": "it 's a talking head documentary , but a great one . ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 49845,
+      "text": "has crafted here a worldly-wise and very funny script . ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 44673,
+      "text": "'s hard to imagine a more generic effort in the genre . ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 1592,
+      "text": "inspire anything more than a visit to mcdonald 's , let alone ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 8823,
+      "text": "that did n't sell many records but helped change a nation ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 4525,
+      "text": "to give the audience a reason to want to put for that effort ",
+      "label": 1,
+      "tokens": 15
+    },
+    {
+      "idx": 6454,
+      "text": "can drown out the tinny self-righteousness of his voice ",
+      "label": 0,
+      "tokens": 15
+    },
+    {
+      "idx": 28631,
+      "text": "often look smeary and blurry , to the point of distraction ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 39109,
+      "text": "is n't one moment in the film that surprises or delights ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 60239,
+      "text": "go see this unique and entertaining twist on the classic whale 's tale ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 58836,
+      "text": "invites unflattering comparisons to other installments in the ryan series ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 47648,
+      "text": "is standard crime drama fare ... instantly forgettable and thoroughly dull ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 11485,
+      "text": "narcissism and self-congratulation disguised as a tribute ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 46136,
+      "text": "the satire is unfocused , while the story goes nowhere . ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 17778,
+      "text": "even as i valiantly struggled to remain interested , or at least conscious ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 3169,
+      "text": "dissing the film that they did n't mind the ticket cost ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 62704,
+      "text": "does n't deserve a passing grade ( even on a curve ) ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 12231,
+      "text": "savor whenever the film 's lamer instincts are in the saddle ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 61448,
+      "text": "steve oedekerk is , alas , no woody allen . ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 55122,
+      "text": "it 's mildly entertaining , especially if you find comfort in familiarity . ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 47974,
+      "text": "for that reason it may be the most oddly honest hollywood document of all ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 21472,
+      "text": "because the film deliberately lacks irony , it has a genuine dramatic impact ; ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 16031,
+      "text": "understand why this did n't connect with me would require another viewing ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 35590,
+      "text": "raise audience 's spirits and leave them singing long after the credits roll ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 16701,
+      "text": "idea ( of middle-aged romance ) is not handled well and , ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 22797,
+      "text": "eloquent ( meditation ) on death and that most elusive of passions ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 39887,
+      "text": "love a disney pic with as little cleavage as this one has , and ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 10361,
+      "text": "energy , intelligence and verve , enhanced by a surplus of vintage archive footage ",
+      "label": 1,
+      "tokens": 16
+    },
+    {
+      "idx": 48201,
+      "text": "to grab us , only to keep letting go at all the wrong moments ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 47553,
+      "text": "the lack of naturalness makes everything seem self-consciously poetic and forced ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 18751,
+      "text": "is clear : not easily and , in the end , not well enough ",
+      "label": 0,
+      "tokens": 16
+    },
+    {
+      "idx": 10555,
+      "text": ", he showcases davies as a young woman of great charm , generosity and diplomacy ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 57646,
+      "text": "continues her exploration of the outer limits of raunch with considerable brio ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 43303,
+      "text": "worth a salute just for trying to be more complex than your average film . ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 59561,
+      "text": "a fairly enjoyable mixture of longest yard ... and the 1999 guy ritchie ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 49995,
+      "text": ", but he appears miserable throughout as he swaggers through his scenes . ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 28987,
+      "text": "brosnan is more feral in this film than i 've seen him before ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 16161,
+      "text": "as for children , they wo n't enjoy the movie at all . ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 61457,
+      "text": "a winning comedy that excites the imagination and tickles the funny bone ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 36735,
+      "text": "like heathers , then becomes bring it on , then becomes unwatchable ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 50801,
+      "text": "just wants to be liked by the people who can still give him work . ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 29426,
+      "text": "you wo n't be talking about the film once you exit the theater ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 37000,
+      "text": "something , one that attempts and often achieves a level of connection and concern ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 24688,
+      "text": "( lin chung 's ) voice is rather unexceptional , even ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 10341,
+      "text": "disney 's cinderella proved that ' a dream is a wish your heart makes ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 20993,
+      "text": "the film high above run-of-the-filth gangster flicks ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 5040,
+      "text": "a rambling ensemble piece with loosely connected characters and plots that never quite gel ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 58889,
+      "text": "a solid , spooky entertainment worthy of the price of a ticket . ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 55463,
+      "text": "'s hard to believe that something so short could be so flabby ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 25748,
+      "text": "ash wednesday is essentially devoid of interesting characters or even a halfway intriguing plot . ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 66808,
+      "text": "( frames ) profound ethical and philosophical questions in the form of dazzling pop entertainment ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 17103,
+      "text": "too-hot-for-tv direct-to-video/dvd category ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 8259,
+      "text": "works beautifully as a movie without sacrificing the integrity of the opera ",
+      "label": 1,
+      "tokens": 17
+    },
+    {
+      "idx": 64132,
+      "text": "a fascinating curiosity piece -- fascinating , that is , for about ten minutes ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 29897,
+      "text": "echoes the by now intolerable morbidity of so many recent movies ",
+      "label": 0,
+      "tokens": 17
+    },
+    {
+      "idx": 50944,
+      "text": "'m just about ready to go to the u.n. and ask permission for a preemptive strike ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 60684,
+      "text": "as a good old-fashioned adventure for kids , spirit : stallion of the cimarron is a winner . ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 19436,
+      "text": "nothing more than four or five mild chuckles surrounded by 86 minutes of overly-familiar and poorly-constructed comedy . ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 23603,
+      "text": "do anything as stomach-turning as the way adam sandler 's new movie rapes , pillages and ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 52879,
+      "text": "about refracting all of world war ii through the specific conditions of one man , and more about that man ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 61840,
+      "text": "can be gleaned from this three-hour endurance test built around an hour 's worth of actual material ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 14969,
+      "text": "fontaine 's direction , especially her agreeably startling use of close-ups and her grace with a moving camera ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 55620,
+      "text": "the solemnity with which it tries to pump life into overworked elements from eastwood 's dirty harry period ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 56350,
+      "text": "hoary dialogue , fluxing accents , and -- worst of all -- silly-looking morlocks ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 56045,
+      "text": "the story is lacking any real emotional impact , and the plot is both contrived and cliched . ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 49728,
+      "text": "as claustrophic , suffocating and chilly as the attics to which they were inevitably consigned ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 46732,
+      "text": "except that the chelsea hotel today is populated by whiny , pathetic , starving and untalented artistes ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 35876,
+      "text": "featuring reams of flatly delivered dialogue and a heroine who comes across as both shallow and dim-witted . ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 66323,
+      "text": ", the movie has a cinematic fluidity and sense of intelligence that makes it work more than it probably should . ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 45358,
+      "text": "that has been overexposed , redolent of a thousand cliches , and yet remains uniquely itself ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 23425,
+      "text": "will indie filmmakers subject us to boring , self-important stories of how horrible we are to ourselves and each other ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 36838,
+      "text": "when you find yourself rooting for the monsters in a horror movie , you know the picture is in trouble . ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 35078,
+      "text": "offer a fascinating glimpse into the subculture of extreme athletes whose derring-do puts the x into the games ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 40042,
+      "text": "a sobering and powerful documentary about the most severe kind of personal loss : rejection by one 's mother . ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 2548,
+      "text": "like an afterschool special with costumes by gianni versace , mad love looks better than it feels . ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 36135,
+      "text": "a high-spirited buddy movie about the reunion of berlin anarchists who face arrest 15 years after their crime . ",
+      "label": 1,
+      "tokens": 24
+    },
+    {
+      "idx": 15291,
+      "text": "lax and limp a comedy as i 've seen in a while , a meander through worn-out material ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 56485,
+      "text": "watch witherspoon 's talents wasting away inside unnecessary films like legally blonde and sweet home abomination ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 17741,
+      "text": "nothing funny in this every-joke-has - been-told-a - thousand-times - before movie ",
+      "label": 0,
+      "tokens": 24
+    },
+    {
+      "idx": 35622,
+      "text": "that he 's going to make a splash even greater than arnold schwarzenegger , jean-claud van damme or steven segal ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 9895,
+      "text": "got some good , organic character work , lots of obvious political insights and little room for engaging , imaginative filmmaking in its nearly 2 1/2 ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 65769,
+      "text": "it 's far from a frothy piece , and the characters are complex , laden with plenty of baggage and tinged with tragic undertones ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 14481,
+      "text": "is n't a terrible movie , just a stultifyingly obvious one -- an unrewarding collar for a murder mystery . ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 9884,
+      "text": "repellent to fully endear itself to american art house audiences , but it is notable for its stylistic austerity and forcefulness . ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 8460,
+      "text": "the film 's drumbeat about authenticity , given the stale plot and pornographic way the film revels in swank apartments , clothes and parties ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 1410,
+      "text": "is an accuracy of observation in the work of the director , frank novak , that keeps the film grounded in an undeniable social realism . ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 45547,
+      "text": "not everything in this ambitious comic escapade works , but coppola , along with his sister , sofia , is a real filmmaker . ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 12151,
+      "text": "if you 're looking for an intelligent movie in which you can release your pent up anger , enough is just the ticket you need . ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 67257,
+      "text": "a transparently hypocritical work that feels as though it 's trying to set the women 's liberation movement back 20 years ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 15491,
+      "text": "more of a poetic than a strict reality , creating an intriguing species of artifice that gives the lady and the duke something of a theatrical air ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 2073,
+      "text": "an intriguing look at the french film industry during the german occupation ; its most delightful moments come when various characters express their quirky inner selves ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 6361,
+      "text": "represents the worst kind of filmmaking , the kind that pretends to be passionate and truthful but is really frustratingly timid and soggy ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 28925,
+      "text": "nothing more than an amiable but unfocused bagatelle that plays like a loosely-connected string of acting-workshop exercises . ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 44273,
+      "text": "two big things are missing -- anything approaching a visceral kick , and anything approaching even a vague reason to sit through it all . ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 16622,
+      "text": "casting shatner as a legendary professor and kunis as a brilliant college student -- where 's pauly shore as the rocket scientist ? ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 16625,
+      "text": "the only young people who possibly will enjoy it are infants ... who might be distracted by the movie 's quick movements and sounds . ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 65186,
+      "text": "the result is somewhat satisfying -- it still comes from spielberg , who has never made anything that was n't at least watchable . ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 47798,
+      "text": "in all , an interesting look at the life of the campaign-trail press , especially ones that do n't really care for the candidate ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 64777,
+      "text": "covers this territory with wit and originality , suggesting that with his fourth feature -- the first to be released in the u.s. ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 34226,
+      "text": "forget the psychology 101 study of romantic obsession and just watch the procession of costumes in castles and this wo n't seem like such a bore ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 36162,
+      "text": "it gives poor dana carvey nothing to do that is really funny , and then expects us to laugh because he acts so goofy all the time ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 53472,
+      "text": "airs just about every cliche in the war movie compendium across its indulgent two-hour-and-fifteen-minute length ",
+      "label": 0,
+      "tokens": 30
+    },
+    {
+      "idx": 18999,
+      "text": "a completely spooky piece of business that gets under your skin and , some plot blips aside , stays there for the duration . ",
+      "label": 1,
+      "tokens": 30
+    },
+    {
+      "idx": 35092,
+      "text": "one problem with the movie , directed by joel schumacher , is that it jams too many prefabricated story elements into the running time . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 65912,
+      "text": "in the book-on-tape market , the film of `` the kid stays in the picture '' would be an abridged edition ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 13762,
+      "text": "a worthwhile documentary , whether you 're into rap or not , even if it may still leave you wanting more answers as the credits roll . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 44706,
+      "text": "for a film about action , ultimate x is the gabbiest giant-screen movie ever , bogging down in a barrage of hype . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 32175,
+      "text": "is a rambling examination of american gun culture that uses his usual modus operandi of crucifixion through juxtaposition . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 16207,
+      "text": "reveals the ways in which a sultry evening or a beer-fueled afternoon in the sun can inspire even the most retiring heart to venture forth . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 705,
+      "text": "might want to take a reality check before you pay the full ticket price to see `` simone , '' and consider a dvd rental instead . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 462,
+      "text": "the weird thing about the santa clause 2 , purportedly a children 's movie , is that there is nothing in it to engage children emotionally . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 30242,
+      "text": "fondly remembered as roman coppola 's brief pretentious period before going on to other films that actually tell a story worth caring about ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 43905,
+      "text": "weird / thinking about all the bad things in the world / like puppies with broken legs / and butterflies that die / and movies starring pop queens ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 50798,
+      "text": "it has its faults , but it is a kind , unapologetic , sweetheart of a movie , and mandy moore leaves a positive impression . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 43663,
+      "text": "you can enjoy much of jonah simply , and gratefully , as laugh-out-loud lunacy with a pronounced monty pythonesque flavor . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 42202,
+      "text": "does n't tell you anything except that the chelsea hotel today is populated by whiny , pathetic , starving and untalented artistes ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 16541,
+      "text": "to see if stupid americans will get a kick out of goofy brits with cute accents performing ages-old slapstick and unfunny tricks ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 52404,
+      "text": "offers chills much like those that you get when sitting around a campfire around midnight , telling creepy stories to give each other the willies . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 55738,
+      "text": "smith examines the intimate , unguarded moments of folks who live in unusual homes -- which pop up in nearly every corner of the country . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 18782,
+      "text": "with all the stomach-turning violence , colorful new york gang lore and other hallmarks of his personal cinema painted on their largest-ever historical canvas ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 46598,
+      "text": "it 's a drag how nettelbeck sees working women -- or at least this working woman -- for whom she shows little understanding . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 36471,
+      "text": "reacting to it - feeling a part of its grand locations , thinking urgently as the protagonists struggled , feeling at the mercy of its inventiveness ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 61583,
+      "text": "'s difficult to conceive of anyone who has reached puberty actually finding the characters in slackers or their antics amusing , let alone funny ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 25191,
+      "text": ", you 'll swear that you 've seen it all before , even if you 've never come within a mile of the longest yard . ",
+      "label": 0,
+      "tokens": 31
+    },
+    {
+      "idx": 1324,
+      "text": "with ` bowling for columbine , ' michael moore gives us the perfect starting point for a national conversation about guns , violence , and fear . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 5733,
+      "text": "cold , oddly colorful and just plain otherworldly , a freaky bit of art that 's there to scare while we delight in the images ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 38518,
+      "text": "a raunchy and frequently hilarious follow-up to the gifted korean american stand-up 's i 'm the one that i want . ",
+      "label": 1,
+      "tokens": 31
+    },
+    {
+      "idx": 21974,
+      "text": "'s something poignant about an artist of 90-plus years taking the effort to share his impressions of life and loss and time and art with us ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 64507,
+      "text": "the saigon of 1952 is an uneasy mix of sensual delights and simmering violence , and the quiet american brings us right into the center of that world ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 39293,
+      "text": "'s lost the politics and the social observation and become just another situation romance about a couple of saps stuck in an inarticulate screenplay . ",
+      "label": 0,
+      "tokens": 32
+    },
+    {
+      "idx": 14838,
+      "text": "one of the best films of the year with its exquisite acting , inventive screenplay , mesmerizing music , and many inimitable scenes ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 48803,
+      "text": "like they were lifted from terry gilliam 's subconscious , pressed through kafka 's meat grinder and into bu\u00f1uel 's casings ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 9726,
+      "text": "yes , mibii is rote work and predictable , but with a philosophical visual coming right at the end that extravagantly redeems it . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 7306,
+      "text": "watching `` ending '' is too often like looking over the outdated clothes and plastic knickknacks at your neighbor 's garage sale . ",
+      "label": 0,
+      "tokens": 32
+    },
+    {
+      "idx": 61703,
+      "text": "is how a rich historical subject , combined with so much first-rate talent ... could have yielded such a flat , plodding picture . ",
+      "label": 0,
+      "tokens": 32
+    },
+    {
+      "idx": 32455,
+      "text": "director doug liman and his colleagues have managed to pack it with enough action to satisfy the boom-bam crowd without a huge sacrifice of character and mood ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 16591,
+      "text": "this is popcorn movie fun with equal doses of action , cheese , ham and cheek ( as well as a serious debt to the road warrior ) , but ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 15865,
+      "text": ", there is an accuracy of observation in the work of the director , frank novak , that keeps the film grounded in an undeniable social realism . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 27498,
+      "text": "writer / director m. night shyamalan 's ability to pull together easily accessible stories that resonate with profundity is undeniable . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 32838,
+      "text": "something has been lost in the translation ... another routine hollywood frightfest in which the slack execution italicizes the absurdity of the premise . ",
+      "label": 0,
+      "tokens": 32
+    },
+    {
+      "idx": 21583,
+      "text": "even if it pushes its agenda too forcefully , this remains a film about something , one that attempts and often achieves a level of connection and concern . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 15178,
+      "text": "try as you might to resist , if you 've got a place in your heart for smokey robinson , this movie will worm its way there . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 8613,
+      "text": "made to be jaglomized is the cannes film festival , the annual riviera spree of flesh , buzz , blab and money . ",
+      "label": 0,
+      "tokens": 32
+    },
+    {
+      "idx": 61535,
+      "text": "as aimless as an old pickup skidding completely out of control on a long patch of black ice , the movie makes two hours feel like four . ",
+      "label": 0,
+      "tokens": 32
+    },
+    {
+      "idx": 64691,
+      "text": "a powerful performance from mel gibson and a brutal 90-minute battle sequence that does everything but issue you a dog-tag and an m-16 . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 61859,
+      "text": "infuses hubert with a mixture of deadpan cool , wry humor and just the measure of tenderness required to give this comic slugfest some heart . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 38056,
+      "text": "the best comedy concert movie i 've seen since cho 's previous concert comedy film , i 'm the one that i want , in 2000 . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 38936,
+      "text": "that explores the monster 's psychology not in order to excuse him but rather to demonstrate that his pathology evolved from human impulses that grew hideously twisted ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 4784,
+      "text": "lawrence unleashes his trademark misogyny -- er , comedy -- like a human volcano or an overflowing septic tank , ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 3446,
+      "text": "traveled to places in the world devastated by war , famine and poverty and documented the cruelty and suffering he has found with an devastating , eloquent clarity ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 47776,
+      "text": "trapped wo n't score points for political correctness , but it may cause parents a few sleepless hours -- a sign of its effectiveness . ",
+      "label": 1,
+      "tokens": 32
+    },
+    {
+      "idx": 34390,
+      "text": "'s something poignant about an artist of 90-plus years taking the effort to share his impressions of life and loss and time and art with us . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 25235,
+      "text": "expect no major discoveries , nor any stylish sizzle , but the film sits with square conviction and touching good sense on the experience of its women . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 18458,
+      "text": "unsurprisingly , the way this all works out makes the women look more like stereotypical caretakers and moral teachers , instead of serious athletes . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 30183,
+      "text": "in comparison to his earlier films it seems a disappointingly thin slice of lower-class london life ; despite the title ... amounts to surprisingly little . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 5200,
+      "text": "is without doubt an artist of uncompromising vision , but that vision is beginning to feel , if not morally bankrupt , at least terribly monotonous . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 55654,
+      "text": "this painfully unfunny farce traffics in tired stereotypes and encumbers itself with complications ... that have no bearing on the story . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 50931,
+      "text": "watching junk like this induces a kind of abstract guilt , as if you were paying dues for good books unread , fine music never heard . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 44178,
+      "text": "a bizarre piece of work , with premise and dialogue at the level of kids ' television and plot threads as morose as teen pregnancy , rape and suspected murder ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 45670,
+      "text": "a live-action cartoon , a fast-moving and cheerfully simplistic 88 minutes of exaggerated action put together with the preteen boy in mind . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 30077,
+      "text": "it feels like very light errol morris , focusing on eccentricity but failing , ultimately , to make something bigger out of its scrapbook of oddballs . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 25897,
+      "text": "-- like a rather unbelievable love interest and a meandering ending -- this '60s caper film is a riveting , brisk delight . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 38701,
+      "text": "a low rate annie featuring some kid who ca n't act , only echoes of jordan , and weirdo actor crispin glover screwing things up old school ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 39323,
+      "text": "its use of the thriller form to examine the labyrinthine ways in which people 's lives cross and change , buffeted by events seemingly out of their control ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 14278,
+      "text": "take on courtroom movies , a few nifty twists that are so crucial to the genre and another first-rate performance by top-billed star bruce willis ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 13619,
+      "text": "without you has a bracing truth that 's refreshing after the phoniness of female-bonding pictures like divine secrets of the ya-ya sisterhood . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 2899,
+      "text": "`` spider-man is better than any summer blockbuster we had to endure last summer , and hopefully , sets the tone for a summer of good stuff . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 62682,
+      "text": "hitchens ' obsession with kissinger is , at bottom , a sophisticated flower child 's desire to purge the world of the tooth and claw of human power ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 27720,
+      "text": "all the sensuality , all the eroticism of a good vampire tale has been , pardon the pun , sucked out and replaced by goth goofiness . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 4299,
+      "text": ", it is also elevated by it -- the kind of movie that you enjoy more because you 're one of the lucky few who sought it out . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 9751,
+      "text": "mattei so completely loses himself to the film 's circular structure to ever offer any insightful discourse on , well , love in the time of money . ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 23500,
+      "text": "some of the characters die and others do n't , and the film pretends that those living have learned some sort of lesson , and , really , ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 63243,
+      "text": "a delightful little film that revels in its own simplicity , mostly martha will leave you with a smile on your face and a grumble in your stomach . ",
+      "label": 1,
+      "tokens": 33
+    },
+    {
+      "idx": 48323,
+      "text": "a low-budget affair , tadpole was shot on digital video , and the images often look smeary and blurry , to the point of distraction ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 50511,
+      "text": "with a contemptible imitator starring a `` snl '' has-been acting like an 8-year-old channeling roberto benigni ",
+      "label": 0,
+      "tokens": 33
+    },
+    {
+      "idx": 63162,
+      "text": "the determination of pinochet 's victims to seek justice , and their often heartbreaking testimony , spoken directly into director patricio guzman 's camera , pack a powerful emotional wallop ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 40681,
+      "text": "if nothing else , `` rollerball '' 2002 may go down in cinema history as the only movie ever in which the rest of the cast was outshined by ll cool j. ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 31357,
+      "text": "sparkling , often hilarious romantic jealousy comedy ... attal looks so much like a young robert deniro that it seems the film should instead be called ` my husband is travis bickle ' ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 60167,
+      "text": "you can sip your vintage wines and watch your merchant ivory productions ; i 'll settle for a nice cool glass of iced tea and a jerry bruckheimer flick any day of the week . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 21385,
+      "text": "... a rich and intelligent film that uses its pulpy core conceit to probe questions of attraction and interdependence and how the heart accomodates practical needs . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 7820,
+      "text": "if a big musical number like ` praise the lord , he 's the god of second chances ' does n't put you off , this will be an enjoyable choice for younger kids . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 35496,
+      "text": "to say that the film makes the viewer feel like the movie 's various victimized audience members after a while , but it also happens to be the movie 's most admirable quality ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 30330,
+      "text": "it 's a long way from orwell 's dark , intelligent warning cry ( 1984 ) to the empty stud knockabout of equilibrium , and what once was conviction is now affectation ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 2482,
+      "text": ", ballistic : ecks vs. sever also features terrible , banal dialogue ; convenient , hole-ridden plotting ; superficial characters and a rather dull , unimaginative car chase . ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 22157,
+      "text": "no amount of nostalgia for carvey 's glory days can disguise the fact that the new film is a lame kiddie flick and that carvey 's considerable talents are wasted in it . ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 12415,
+      "text": "as is often the case with ambitious , eager first-time filmmakers , mr. murray , a prolific director of music videos , stuffs his debut with more plot than it can comfortably hold . ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 18515,
+      "text": "( leigh ) has a true talent for drawing wrenching performances from his actors ( improvised over many months ) and for conveying the way tiny acts of kindness make ordinary life survivable . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 56743,
+      "text": "bolstered by an astonishing voice cast ( excepting love hewitt ) , an interesting racial tension , and a storyline that i have n't encountered since at least pete 's dragon . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 66585,
+      "text": "the hard-to-predict and absolutely essential chemistry between the down-to-earth bullock and the nonchalant grant proves to be sensational , and everything meshes in this elegant entertainment ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 44446,
+      "text": "as gory as the scenes of torture and self-mutilation may be , they are pitted against shimmering cinematography that lends the setting the ethereal beauty of an asian landscape painting . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 52285,
+      "text": "producer john penotti surveyed high school students ... and came back with the astonishing revelation that `` they wanted to see something that did n't talk down to them . '' ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 66817,
+      "text": "it 's as if solondz had two ideas for two movies , could n't really figure out how to flesh either out , so he just slopped ` em together here . ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 24580,
+      "text": ", the only way for a reasonably intelligent person to get through the country bears is to ponder how a whole segment of pop-music history has been allowed to get wet , fuzzy and sticky . ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 53038,
+      "text": "( hayek ) throws herself into this dream hispanic role with a teeth-clenching gusto , she strikes a potent chemistry with molina and she gradually makes us believe she is kahlo . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 23003,
+      "text": "a cheap scam put together by some cynical creeps at revolution studios and imagine entertainment to make the suckers out there surrender $ 9 and 93 minutes of unrecoverable life . ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 19863,
+      "text": "one of those films where the characters inhabit that special annex of hell where adults behave like kids , children behave like adults and everyone screams at the top of their lungs no matter what the situation . ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 305,
+      "text": "can only love the players it brings to the fore for the gifted but no-nonsense human beings they are and for the still-inestimable contribution they have made to our shared history ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 4248,
+      "text": "the good and different idea ( of middle-aged romance ) is not handled well and , except for the fine star performances , there is little else to recommend `` never again . '' ",
+      "label": 0,
+      "tokens": 40
+    },
+    {
+      "idx": 21961,
+      "text": "as antonia is assimilated into this newfangled community , the film settles in and becomes compulsively watchable in a guilty-pleasure , daytime-drama sort of fashion . ",
+      "label": 1,
+      "tokens": 40
+    },
+    {
+      "idx": 41094,
+      "text": "the bourne identity should n't be half as entertaining as it is , but director doug liman and his colleagues have managed to pack it with enough action to satisfy the boom-bam crowd without a huge sacrifice of character and mood ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 56407,
+      "text": "thinking not only that kate is n't very bright , but that she has n't been worth caring about and that maybe she , janine and molly -- an all-woman dysfunctional family -- deserve one another ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 29795,
+      "text": "normally , rohmer 's talky films fascinate me , but when he moves his setting to the past , and relies on a historical text , he loses the richness of characterization that makes his films so memorable . ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 57671,
+      "text": "the best didacticism is one carried by a strong sense of humanism , and bertrand tavernier 's oft-brilliant safe conduct ( `` laissez-passer '' ) wears its heart on its sleeve ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 48878,
+      "text": "so meditative and lyrical about babak payami 's boldly quirky iranian drama secret ballot ... a charming and evoking little ditty that manages to show the gentle and humane side of middle eastern world politics ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 32335,
+      "text": "birot creates a drama with such a well-defined sense of place and age -- as in , 15 years old -- that the torments and angst become almost as operatic to us as they are to her characters . ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 17589,
+      "text": "to steal a movie not only from charismatic rising star jake gyllenhaal but also from accomplished oscar winners susan sarandon , dustin hoffman and holly hunter , yet newcomer ellen pompeo pulls off the feat with aplomb ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 16284,
+      "text": ", i 'd take ( its ) earnest errors and hard-won rewards over the bombastic self-glorification of other feel-good fiascos like antwone fisher or the emperor 's club any time . ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 43764,
+      "text": "... a plotline that 's as lumpy as two-day old porridge ... the filmmakers ' paws , sad to say , were all over this `` un-bear-able '' project ! ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 61654,
+      "text": "attal 's hang-ups surrounding infidelity are so old-fashioned and , dare i say , outdated , it 's a wonder that he could n't have brought something fresher to the proceedings simply by accident ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 58661,
+      "text": "star/producer salma hayek and director julie taymor have infused frida with a visual style unique and inherent to the titular character 's paintings and in the process created a masterful work of art of their own . ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 59146,
+      "text": "tongue-in-cheek preposterousness has always been part of for the most part wilde 's droll whimsy helps `` being earnest '' overcome its weaknesses and parker 's creative interference ... ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 1529,
+      "text": "'s both degrading and strangely liberating to see people working so hard at leading lives of sexy intrigue , only to be revealed by the dispassionate gantz brothers as ordinary , pasty lumpen ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 10229,
+      "text": "inherently caustic and oddly whimsical , the film chimes in on the grieving process and strangely draws the audience into the unexplainable pain and eccentricities that are attached to the concept of loss . ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 7828,
+      "text": "has created a predictably efficient piece of business notable largely for its overwhelming creepiness , for an eagerness to create images you wish you had n't seen , which , in this day and age , is of course the point ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 7873,
+      "text": "rifkin no doubt fancies himself something of a hubert selby jr. , but there is n't an ounce of honest poetry in his entire script ; it 's simply crude and unrelentingly exploitative . ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 32550,
+      "text": "`` real women have curves '' is a sweet , honest , and enjoyable comedy-drama about a young woman who wants many things in life , but fears she 'll become her mother before she gets to fulfill her dreams . ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 20923,
+      "text": "is a variant of the nincompoop benigni persona , here a more annoying , though less angry version of the irresponsible sandlerian manchild , undercut by the voice of the star of road trip . ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 19169,
+      "text": "... a sour little movie at its core ; an exploration of the emptiness that underlay the relentless gaiety of the 1920 's ... the film 's ending has a `` what was it all for ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 56262,
+      "text": "even if you do n't know the band or the album 's songs by heart , you will enjoy seeing how both evolve , and you will also learn a good deal about the state of the music business in the 21st century ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 38587,
+      "text": "only of one man 's quest to be president , but of how that man single-handedly turned a plane full of hard-bitten , cynical journalists into what was essentially , by campaign 's end , an extended publicity department ",
+      "label": 1,
+      "tokens": 48
+    },
+    {
+      "idx": 911,
+      "text": "not only are the film 's sopranos gags incredibly dated and unfunny , they also demonstrate how desperate the makers of this ` we 're - doing-it-for - the-cash ' sequel were . ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 33255,
+      "text": "we have poignancy jostling against farce , thoughtful dialogue elbowed aside by one-liners , and a visual style that incorporates rotoscope animation for no apparent reason except , maybe , that it looks neat . ",
+      "label": 0,
+      "tokens": 48
+    },
+    {
+      "idx": 14421,
+      "text": "the film is filled with humorous observations about the general absurdity of modern life as seen through the eyes outsiders , but deftly manages to avoid many of the condescending stereotypes that so often plague films dealing with the mentally ill . ",
+      "label": 1,
+      "tokens": 48
+    }
+  ]
+}
