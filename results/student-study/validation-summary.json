@@ -1,0 +1,68 @@
+{
+  "dataset_revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+  "split": "validation",
+  "examples": 872,
+  "prior_project_use": "aggregate validation accuracy reported for original inference study",
+  "selection_policy": "no checkpoint or threshold selected from these validation labels",
+  "validation_logits_sha256": "5863824e658d95f84d98d4aa1c23d1c0f1679a810dc70f4075ad21bc0fa5c9f4",
+  "metrics": {
+    "teacher": {
+      "correct": 794,
+      "accuracy": 0.9105504587155964
+    },
+    "untrained": {
+      "correct": 645,
+      "accuracy": 0.7396788990825688,
+      "teacher_corrects_student": 188,
+      "student_corrects_teacher": 39,
+      "prediction_agreement": 0.7396788990825688
+    },
+    "supervised": {
+      "correct": 735,
+      "accuracy": 0.8428899082568807,
+      "teacher_corrects_student": 84,
+      "student_corrects_teacher": 25,
+      "prediction_agreement": 0.875
+    },
+    "distilled": {
+      "correct": 739,
+      "accuracy": 0.8474770642201835,
+      "teacher_corrects_student": 81,
+      "student_corrects_teacher": 26,
+      "prediction_agreement": 0.8772935779816514
+    },
+    "four_layer_distilled": {
+      "correct": 765,
+      "accuracy": 0.8772935779816514,
+      "teacher_corrects_student": 50,
+      "student_corrects_teacher": 21,
+      "prediction_agreement": 0.9185779816513762
+    }
+  },
+  "length_strata": {
+    "3-16": {
+      "examples": 197,
+      "teacher_correct": 183,
+      "untrained_correct": 166,
+      "supervised_correct": 179,
+      "distilled_correct": 182,
+      "four_layer_distilled_correct": 185
+    },
+    "17-32": {
+      "examples": 467,
+      "teacher_correct": 425,
+      "untrained_correct": 344,
+      "supervised_correct": 396,
+      "distilled_correct": 397,
+      "four_layer_distilled_correct": 406
+    },
+    "33+": {
+      "examples": 208,
+      "teacher_correct": 186,
+      "untrained_correct": 135,
+      "supervised_correct": 160,
+      "distilled_correct": 160,
+      "four_layer_distilled_correct": 174
+    }
+  }
+}

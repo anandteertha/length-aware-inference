@@ -1,0 +1,20 @@
+{
+  "method": "teacher",
+  "block": 0,
+  "examples": 872,
+  "threads": 4,
+  "model_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+  "startup_ms": 610.6214,
+  "correct": 794,
+  "accuracy": 0.9105504587155964,
+  "changed_vs_pytorch": 0,
+  "inference_median_ms": 19.498649999999998,
+  "inference_p95_ms": 33.56618999999998,
+  "end_to_end_mean_ms": 20.897252064220183,
+  "end_to_end_median_ms": 19.83135,
+  "end_to_end_p95_ms": 33.95417999999998,
+  "observed_max_rss_mib": 644.9921875,
+  "process_peak_wset_mib": 723.05859375,
+  "power_plugged_start": true,
+  "power_plugged_end": true
+}

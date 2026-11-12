@@ -1,0 +1,38 @@
+{
+  "supervised": {
+    "checkpoint_sha256": "20a534680a539362cc5b3013a31871d390cb390252560fa808cf49df39dba8b2",
+    "onnx_sha256": "29490c2d9ee4ec3456d019155284236c03c84376077f931962b0a53864ecffb9",
+    "onnx_bytes": 183140122,
+    "optimized_sha256": "b4230b9416cff6d97f29e95d2e3c346f9bf04c8c4eaa7c588a9d9df371a1346e",
+    "optimized_bytes": 182792957,
+    "export_and_check_seconds": 19.9,
+    "session_startup_ms": 1442.7,
+    "checked_training_rows": 16,
+    "max_absolute_logit_error": 2.384185791015625e-06,
+    "changed_labels": 0
+  },
+  "distilled": {
+    "checkpoint_sha256": "382ce62d813668b1c79ca6030c250a081298f5729b6ba07d2bf18b8b01c0e6a0",
+    "onnx_sha256": "0ab27da028fe3c82ff3049ea0bb0e7fbb0ec90b3b3b13db825957dfdf28244b1",
+    "onnx_bytes": 183140122,
+    "optimized_sha256": "391db015db8ba4b25078b690fb06a10d19867b02c2177dfe260c782628c5d669",
+    "optimized_bytes": 182792957,
+    "export_and_check_seconds": 12.9,
+    "session_startup_ms": 1987.4,
+    "checked_training_rows": 16,
+    "max_absolute_logit_error": 3.5762786865234375e-06,
+    "changed_labels": 0
+  },
+  "four_layer_distilled": {
+    "checkpoint_sha256": "570ac42d935faa0c0d0223308171f8a2fb990f51829a16a2ba6b5a3cea57ab09",
+    "onnx_sha256": "108f540e639fa460b170a1d124c81c8372e296e2d6748ea7b86fc72d8a952058",
+    "onnx_bytes": 211597863,
+    "optimized_sha256": "641c38fed2f2f109c8ae35597eee9627907b3b28bc886c8936ed88ae2a4ace1f",
+    "optimized_bytes": 211150456,
+    "export_and_check_seconds": 14.5,
+    "session_startup_ms": 1603.1,
+    "checked_training_rows": 16,
+    "max_absolute_logit_error": 5.0067901611328125e-06,
+    "changed_labels": 0
+  }
+}

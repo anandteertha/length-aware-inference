@@ -14,24 +14,33 @@ same-input fixed-shape gain, and their net effect at eleven token lengths.
 The [proposed training-based continuation](docs/training-pivot-plan.md) uses these
 results to motivate a compact student model and a length-aware escalation gate.
 
-## Training-based continuation (in progress)
+## Training-based continuation
 
 `scripts/training_feasibility.py` checks that a three-layer student can take CPU
 gradient steps. Its [archived pilot](results/training-feasibility.json) is a timing
-and memory check, not an accuracy result. `scripts/train_students.py` makes fixed,
-disjoint SST-2 training partitions, caches the teacher's logits, and trains two
-student arms: supervised-only and uniform knowledge distillation. It writes an
-ignored `artifacts/student-study/` directory with partition IDs, training curves,
-and checkpoints. The GLUE validation split is excluded from this training command.
+and memory check. `scripts/train_students.py` makes fixed, disjoint SST-2 training
+partitions, caches teacher logits, and trains supervised and distilled three-layer
+students. `scripts/train_capacity.py` trains one four-layer distilled student only
+when the prespecified development gap triggers it. Training writes ignored
+checkpoints to `artifacts/student-study/`. The GLUE validation split is excluded
+from all training commands.
 
 ```powershell
 uv run python scripts/training_feasibility.py
 uv run python scripts/train_students.py
+uv run python scripts/train_capacity.py
+uv run python scripts/evaluate_students.py
+uv run python scripts/export_students.py
+uv run python scripts/benchmark_students.py
 ```
 
-The student-training study is in progress. See the [course delivery and experiment
-plan](docs/training-pivot-plan.md) for the November 23 presentation and November 30
-report milestones. Do not treat training-partition accuracy as final model accuracy.
+`train_capacity.py` is conditional and raises an error if its development trigger
+is not met. Training, export, and benchmark commands refuse to overwrite their
+existing output directories. The
+[student results](docs/student-training-results.md) report validation accuracy and
+three-block CPU timing; the learned routing gate is the next experiment. See the
+[course delivery plan](docs/training-pivot-plan.md) for presentation and report
+milestones. Do not treat training-partition accuracy as final model accuracy.
 
 ## Current milestone
 

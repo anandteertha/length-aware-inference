@@ -1,0 +1,27 @@
+{
+  "reason": "best three-layer development accuracy >3 percentage points below teacher",
+  "teacher_dev_accuracy": 0.98828125,
+  "best_three_layer_dev_accuracy": 0.94140625,
+  "trigger_gap": 0.046875,
+  "student_layers": 4,
+  "student_parameters": 52779266,
+  "best_dev_accuracy": 0.9599609375,
+  "best_epoch": 1,
+  "history": [
+    {
+      "epoch": 1,
+      "mean_train_loss": 0.25904865392476495,
+      "student_dev_accuracy": 0.9599609375,
+      "epoch_seconds": 556.0
+    },
+    {
+      "epoch": 2,
+      "mean_train_loss": 0.09422017183442222,
+      "student_dev_accuracy": 0.9560546875,
+      "epoch_seconds": 577.2
+    }
+  ],
+  "seconds": 1133.6,
+  "checkpoint_sha256": "570ac42d935faa0c0d0223308171f8a2fb990f51829a16a2ba6b5a3cea57ab09",
+  "checkpoint_bytes": 211146241
+}

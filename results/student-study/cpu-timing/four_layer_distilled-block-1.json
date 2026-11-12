@@ -1,0 +1,20 @@
+{
+  "method": "four_layer_distilled",
+  "block": 1,
+  "examples": 872,
+  "threads": 4,
+  "model_sha256": "108f540e639fa460b170a1d124c81c8372e296e2d6748ea7b86fc72d8a952058",
+  "startup_ms": 313.3921,
+  "correct": 765,
+  "accuracy": 0.8772935779816514,
+  "changed_vs_pytorch": 0,
+  "inference_median_ms": 13.20375,
+  "inference_p95_ms": 24.98550499999999,
+  "end_to_end_mean_ms": 14.763592201834863,
+  "end_to_end_median_ms": 13.5256,
+  "end_to_end_p95_ms": 25.483679999999996,
+  "observed_max_rss_mib": 586.8828125,
+  "process_peak_wset_mib": 666.98046875,
+  "power_plugged_start": true,
+  "power_plugged_end": true
+}

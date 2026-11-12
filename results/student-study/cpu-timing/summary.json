@@ -1,0 +1,109 @@
+{
+  "validation_inputs_sha256": {
+    "teacher": "f6c41620bae4ea6087e12eb41044f90082bb9bc6cb3a159eb8bc0c4719e86047",
+    "supervised": "8d8c7e0680202f18255e135b3cc6ddedad89b0f707f19c2a2324b036b6e283e0",
+    "distilled": "a7826b6b71ec5ca3276e3a537376769f023b99d8babeac06a19c2546fe326f31",
+    "four_layer_distilled": "315904fdccf032144466f2d6259afe4861766c8a1d4d50dc96359e0e341fced5"
+  },
+  "dataset_revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+  "model_export_summary_sha256": "7364c970f21b157b7d64f08ee29a5c62ad87060fb0889f4738b52fb9d0c9645b",
+  "threads": 4,
+  "examples_per_method_per_block": 872,
+  "warmup_requests": 32,
+  "methods": {
+    "teacher": {
+      "blocks": 3,
+      "accuracy": [
+        0.9105504587155964,
+        0.9105504587155964,
+        0.9105504587155964
+      ],
+      "changed_vs_pytorch": [
+        0,
+        0,
+        0
+      ],
+      "median_of_end_to_end_medians_ms": 19.83135,
+      "median_of_end_to_end_p95_ms": 33.95417999999998,
+      "end_to_end_median_range_ms": [
+        14.83955,
+        21.55735
+      ],
+      "max_observed_rss_mib": 644.9921875
+    },
+    "supervised": {
+      "blocks": 3,
+      "accuracy": [
+        0.8428899082568807,
+        0.8428899082568807,
+        0.8428899082568807
+      ],
+      "changed_vs_pytorch": [
+        0,
+        0,
+        0
+      ],
+      "median_of_end_to_end_medians_ms": 9.67895,
+      "median_of_end_to_end_p95_ms": 15.219514999999998,
+      "end_to_end_median_range_ms": [
+        7.45495,
+        10.074950000000001
+      ],
+      "max_observed_rss_mib": 562.08984375
+    },
+    "distilled": {
+      "blocks": 3,
+      "accuracy": [
+        0.8474770642201835,
+        0.8474770642201835,
+        0.8474770642201835
+      ],
+      "changed_vs_pytorch": [
+        0,
+        0,
+        0
+      ],
+      "median_of_end_to_end_medians_ms": 10.56915,
+      "median_of_end_to_end_p95_ms": 24.22798999999996,
+      "end_to_end_median_range_ms": [
+        9.12765,
+        14.227799999999998
+      ],
+      "max_observed_rss_mib": 562.8671875
+    },
+    "four_layer_distilled": {
+      "blocks": 3,
+      "accuracy": [
+        0.8772935779816514,
+        0.8772935779816514,
+        0.8772935779816514
+      ],
+      "changed_vs_pytorch": [
+        0,
+        0,
+        0
+      ],
+      "median_of_end_to_end_medians_ms": 13.5256,
+      "median_of_end_to_end_p95_ms": 25.483679999999996,
+      "end_to_end_median_range_ms": [
+        12.08435,
+        17.1157
+      ],
+      "max_observed_rss_mib": 589.5390625
+    }
+  },
+  "process_order": [
+    "distilled-block-0",
+    "four_layer_distilled-block-0",
+    "supervised-block-0",
+    "teacher-block-0",
+    "supervised-block-1",
+    "four_layer_distilled-block-1",
+    "teacher-block-1",
+    "distilled-block-1",
+    "distilled-block-2",
+    "teacher-block-2",
+    "supervised-block-2",
+    "four_layer_distilled-block-2"
+  ]
+}

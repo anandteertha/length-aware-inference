@@ -1,0 +1,54 @@
+{
+  "purpose": "student training; train-derived development only, not final classifier evidence",
+  "manifest_sha256": "53cf58cd37bcf85db529c56e5c77448ac5995ddb439f4e9a58eb957c2012ea62",
+  "teacher_accuracy_on_train_partitions": {
+    "student_fit": 0.9886474609375,
+    "student_dev": 0.98828125,
+    "gate_fit": 0.9892578125,
+    "gate_calibration": 0.9765625
+  },
+  "student_arms": {
+    "supervised": {
+      "best_student_dev_accuracy": 0.9384765625,
+      "best_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "mean_train_loss": 0.241851798571588,
+          "student_dev_accuracy": 0.9384765625,
+          "epoch_seconds": 404.9
+        },
+        {
+          "epoch": 2,
+          "mean_train_loss": 0.11437966897847218,
+          "student_dev_accuracy": 0.935546875,
+          "epoch_seconds": 400.3
+        }
+      ],
+      "checkpoint_sha256": "20a534680a539362cc5b3013a31871d390cb390252560fa808cf49df39dba8b2",
+      "checkpoint_bytes": 182787765
+    },
+    "distilled": {
+      "best_student_dev_accuracy": 0.94140625,
+      "best_epoch": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "mean_train_loss": 0.4676011112314882,
+          "student_dev_accuracy": 0.94140625,
+          "epoch_seconds": 432.7
+        },
+        {
+          "epoch": 2,
+          "mean_train_loss": 0.19610327306418185,
+          "student_dev_accuracy": 0.9384765625,
+          "epoch_seconds": 453.4
+        }
+      ],
+      "checkpoint_sha256": "382ce62d813668b1c79ca6030c250a081298f5729b6ba07d2bf18b8b01c0e6a0",
+      "checkpoint_bytes": 182787703
+    }
+  },
+  "total_seconds": 1986.4,
+  "observed_rss_mib": 1570.4
+}

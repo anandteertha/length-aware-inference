@@ -1,0 +1,20 @@
+{
+  "method": "supervised",
+  "block": 0,
+  "examples": 872,
+  "threads": 4,
+  "model_sha256": "29490c2d9ee4ec3456d019155284236c03c84376077f931962b0a53864ecffb9",
+  "startup_ms": 350.9219,
+  "correct": 735,
+  "accuracy": 0.8428899082568807,
+  "changed_vs_pytorch": 0,
+  "inference_median_ms": 9.7751,
+  "inference_p95_ms": 16.568315,
+  "end_to_end_mean_ms": 10.58405114678899,
+  "end_to_end_median_ms": 10.074950000000001,
+  "end_to_end_p95_ms": 16.925575,
+  "observed_max_rss_mib": 562.08984375,
+  "process_peak_wset_mib": 640.30078125,
+  "power_plugged_start": true,
+  "power_plugged_end": true
+}
