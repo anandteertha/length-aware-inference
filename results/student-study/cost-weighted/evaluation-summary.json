@@ -1,0 +1,117 @@
+{
+  "status": "external IMDb primary; reused SST-2 validation exploratory",
+  "external_selection_sha256": "83e42a30fcade05d7877d9d7b263622e49786309925bb80b9df6e134c305b174",
+  "external_logits_sha256": "c8aaf715f6997cdd869be0bd5929d6f1b475763dba62edd1c4b8d8608def33eb",
+  "uniform_checkpoint_sha256": "570ac42d935faa0c0d0223308171f8a2fb990f51829a16a2ba6b5a3cea57ab09",
+  "weighted_checkpoint_sha256": "1a31192306fdce1be994310d474082862b9ab3bd34ef5622a1fab08570d1eeb0",
+  "external": {
+    "metrics": {
+      "teacher": {
+        "correct": 895,
+        "accuracy": 0.895
+      },
+      "uniform_four_layer": {
+        "correct": 843,
+        "accuracy": 0.843
+      },
+      "cost_weighted_four_layer": {
+        "correct": 832,
+        "accuracy": 0.832
+      },
+      "weighted_minus_uniform": {
+        "paired_accuracy_difference": -0.011,
+        "paired_bootstrap_95pct_ci": [
+          -0.026,
+          0.004
+        ],
+        "weighted_correct_uniform_wrong": 23,
+        "uniform_correct_weighted_wrong": 34
+      }
+    },
+    "length_strata": {
+      "17-32": {
+        "examples": 1,
+        "interpret_rates": false,
+        "teacher_correct": 1,
+        "uniform_correct": 1,
+        "weighted_correct": 1
+      },
+      "33-64": {
+        "examples": 32,
+        "interpret_rates": true,
+        "teacher_correct": 30,
+        "uniform_correct": 30,
+        "weighted_correct": 29
+      },
+      "65-128": {
+        "examples": 112,
+        "interpret_rates": true,
+        "teacher_correct": 104,
+        "uniform_correct": 97,
+        "weighted_correct": 95
+      },
+      "129-256": {
+        "examples": 509,
+        "interpret_rates": true,
+        "teacher_correct": 457,
+        "uniform_correct": 422,
+        "weighted_correct": 418
+      },
+      "257-512": {
+        "examples": 346,
+        "interpret_rates": true,
+        "teacher_correct": 303,
+        "uniform_correct": 293,
+        "weighted_correct": 289
+      }
+    }
+  },
+  "sst2_validation_exploratory": {
+    "metrics": {
+      "teacher": {
+        "correct": 794,
+        "accuracy": 0.9105504587155964
+      },
+      "uniform_four_layer": {
+        "correct": 765,
+        "accuracy": 0.8772935779816514
+      },
+      "cost_weighted_four_layer": {
+        "correct": 770,
+        "accuracy": 0.8830275229357798
+      },
+      "weighted_minus_uniform": {
+        "paired_accuracy_difference": 0.005733944954128441,
+        "paired_bootstrap_95pct_ci": [
+          -0.0034403669724770644,
+          0.014908256880733946
+        ],
+        "weighted_correct_uniform_wrong": 11,
+        "uniform_correct_weighted_wrong": 6
+      }
+    },
+    "length_strata": {
+      "3-16": {
+        "examples": 197,
+        "interpret_rates": true,
+        "teacher_correct": 183,
+        "uniform_correct": 185,
+        "weighted_correct": 186
+      },
+      "17-32": {
+        "examples": 467,
+        "interpret_rates": true,
+        "teacher_correct": 425,
+        "uniform_correct": 406,
+        "weighted_correct": 413
+      },
+      "33-64": {
+        "examples": 208,
+        "interpret_rates": true,
+        "teacher_correct": 186,
+        "uniform_correct": 174,
+        "weighted_correct": 171
+      }
+    }
+  }
+}

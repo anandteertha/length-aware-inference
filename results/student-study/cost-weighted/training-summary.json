@@ -1,0 +1,47 @@
+{
+  "status": "preregistered extension; original SST-2 validation already inspected",
+  "source_manifest_sha256": "53cf58cd37bcf85db529c56e5c77448ac5995ddb439f4e9a58eb957c2012ea62",
+  "source_gate_plan_sha256": "07c9e9417fce272e018fe48e3a5549c0980294834c4fb8cf933651990306849a",
+  "uniform_checkpoint_sha256": "570ac42d935faa0c0d0223308171f8a2fb990f51829a16a2ba6b5a3cea57ab09",
+  "teacher_cost_raw_median_ms": {
+    "3-16": 9.6139,
+    "17-32": 17.9136,
+    "33+": 27.833849999999998
+  },
+  "cost_normalizer_ms": 17.9136,
+  "cost_bin_weights": {
+    "3-16": 0.5366816273669167,
+    "17-32": 1.0,
+    "33+": 1.5537831591639872
+  },
+  "fit_bin_counts": {
+    "3-16": 5885,
+    "17-32": 1855,
+    "33+": 452
+  },
+  "student_layers": 4,
+  "student_parameters": 52779266,
+  "seed": 2027,
+  "epochs": 2,
+  "batch_size": 16,
+  "learning_rate": 2e-05,
+  "best_dev_accuracy": 0.9560546875,
+  "best_epoch": 1,
+  "history": [
+    {
+      "epoch": 1,
+      "mean_train_loss": 0.21635373848312156,
+      "student_dev_accuracy": 0.9560546875,
+      "epoch_seconds": 508.5
+    },
+    {
+      "epoch": 2,
+      "mean_train_loss": 0.07939297743814677,
+      "student_dev_accuracy": 0.955078125,
+      "epoch_seconds": 508.6
+    }
+  ],
+  "seconds": 1017.4,
+  "checkpoint_sha256": "1a31192306fdce1be994310d474082862b9ab3bd34ef5622a1fab08570d1eeb0",
+  "checkpoint_bytes": 211146617
+}

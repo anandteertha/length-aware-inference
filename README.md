@@ -1,18 +1,22 @@
 # Matching CPU computation to message length
 
-Research project based on `arrao6_project_proposal.pdf`: can at most two verified,
-fixed-length DistilBERT variants reduce p95 CPU latency within a memory budget?
-The dynamic-length model remains the fallback, and choosing no variants is a valid result.
+This ECE 592 / CSC 591 project studies CPU sentiment inference under accuracy,
+latency, and resident-memory constraints. The proposal in
+`arrao6_project_proposal.pdf` began with fixed-length DistilBERT variants. The
+[break-even map](docs/breakeven-map-results.md) found no robust fixed-shape route,
+so the subsequent study trained compact students and measured a student-first
+teacher cascade. The [student results](docs/student-training-results.md) and
+[frozen-gate results](docs/gate-results.md) are the current primary evidence:
+a confidence-only cascade was 90.48% accurate on 872 SST-2 validation examples
+versus 91.06% for the teacher, with a 24.1% median reduction in matched CPU
+process-block median time. A learned length-and-cost gate did worse on this
+evaluation (89.33%). These are observed results on one laptop and one split;
+the accuracy interval does not establish population noninferiority.
 
-Start with the [consolidated project report](docs/project-report.md) and
-[CLI demonstration guide](docs/demo.md). The report links the original validation,
-training-derived follow-up, and synthetic diagnostics to their archived evidence.
-The later [fresh 31-token and OpenVINO report](docs/real31-results.md) tests the
-synthetic lead on unused real training text and records a separate backend diagnostic.
-The [real-text break-even map](docs/breakeven-map-results.md) measures padding cost,
-same-input fixed-shape gain, and their net effect at eleven token lengths.
-The [proposed training-based continuation](docs/training-pivot-plan.md) uses these
-results to motivate a compact student model and a length-aware escalation gate.
+The [presentation outline](docs/presentation-outline.md) and
+[Q&A sheet](docs/presentation-qa.md) turn those findings into a 10-minute course
+talk. The [original fixed-shape report](docs/project-report.md) and
+[CLI demonstration guide](docs/demo.md) preserve the earlier study.
 
 ## Training-based continuation
 
@@ -32,6 +36,17 @@ from all training commands.
 rows. `scripts/evaluate_gate.py` applies it to validation, and
 `scripts/benchmark_cascade.py` times both models resident together.
 `scripts/plot_student_study.py` renders the archived accuracy-latency figure.
+`scripts/train_cost_weighted.py` trains a controlled four-layer student with
+distillation loss weighted by measured teacher cost; `scripts/evaluate_cost_extension.py`
+compares its frozen checkpoint with uniform distillation on a pinned, balanced
+1,000-review IMDb test sample. This [extension protocol](docs/cost-weighted-extension-plan.md)
+was fixed before the external evaluation. IMDb is a separate review domain, not
+an estimate for SST-2 sentence deployment. The
+[extension result](docs/cost-weighted-extension-results.md) found 832/1,000 correct
+for weighted versus 843/1,000 for uniform distillation; the paired 95% interval
+includes zero. On reused SST-2 validation, weighted gained five examples, but
+lost three in the targeted longest bin. The weighted model has no new ONNX timing
+claim.
 
 ```powershell
 uv run python scripts/training_feasibility.py
@@ -44,6 +59,8 @@ uv run python scripts/fit_gate.py
 uv run python scripts/evaluate_gate.py
 uv run python scripts/benchmark_cascade.py
 uv run python scripts/plot_student_study.py
+uv run python scripts/train_cost_weighted.py
+uv run python scripts/evaluate_cost_extension.py
 ```
 
 `train_capacity.py` is conditional and raises an error if its development trigger
@@ -57,7 +74,32 @@ single-model and resident-cascade tradeoffs. See the
 [course delivery plan](docs/training-pivot-plan.md) for presentation and report
 milestones. Do not treat training-partition accuracy as final model accuracy.
 
-## Current milestone
+## Project status and code ownership
+
+The original fixed-shape study, compact-student training, frozen gate evaluation,
+resident CPU benchmark, and cost-weighted external extension are complete. The
+November 23 presentation slides and November 30 NeurIPS-format final report are
+still to be produced. The code and archived measurements support those deliverables;
+they do not constitute a submitted course project by themselves.
+
+The project-specific code in `src/etdl/`, `scripts/`, and `tools/` was developed
+for this repository. It uses the external pretrained DistilBERT checkpoint,
+Hugging Face datasets, PyTorch, ONNX Runtime, and standard Python packages; it
+does not implement or claim ownership of those upstream models or libraries.
+`src/etdl/` contains the original inference pipeline: `data.py` and `model.py`
+pin and load inputs/models; `runtime.py`, `benchmark.py`, and `worker.py` execute
+CPU measurements; `checks.py` verifies outputs; `variants.py`, `router.py`,
+`selection.py`, and `study.py` build and select fixed-shape routes; `comparison.py`,
+`followup.py`, `boundaries.py`, and `ablations.py` run subsequent diagnostics;
+`config.py`, `io.py`, and `cli.py` handle settings, records, and commands.
+The `scripts/` commands above implement student fitting, evaluation, export,
+gate fitting, timing, and plots. `tools/` contains archival, break-even-map,
+report, and demonstration utilities. `tests/` checks inference contracts,
+selection, comparisons, and archives. The named functions in these files
+correspond to their command stages; entry-point `main` functions parse arguments,
+validate inputs, and write reproducible output records.
+
+## Original fixed-shape study
 
 Implemented: reproducible training-data sampling and length counts, CPU/environment
 inventory, dynamic FP32 ONNX export, ORT graph optimization and operator inventory,

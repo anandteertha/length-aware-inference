@@ -1,10 +1,10 @@
 # November 23 Q&A sheet
 
-Use these as evidence-backed speaking notes, not memorized scripts. The [student results](student-training-results.md), [gate results](gate-results.md), and [figure](../results/student-study/accuracy-latency.png) contain the exact denominators and timing blocks.
+Use these as evidence-backed speaking notes, not memorized scripts. The [student results](student-training-results.md), [gate results](gate-results.md), [cost-weighted extension](cost-weighted-extension-results.md), and [figure](../results/student-study/accuracy-latency.png) contain the exact denominators and timing blocks.
 
 ## Likely questions and short answers
 
-**What is novel?** Knowledge distillation, early exits, and cascades are established ([DeeBERT](https://aclanthology.org/2020.acl-main.204/), [CascadeBERT](https://aclanthology.org/2021.findings-emnlp.43/)). Our course contribution is the controlled CPU study motivated by a failed fixed-shape hypothesis: we trained compact students, tested a length-and-cost teacher-benefit gate against confidence-only routing, and measured both models resident. The length-and-cost gate did **not** beat the simpler baseline on the accuracy target. Do not claim a new general-purpose cascade algorithm.
+**What is novel?** Knowledge distillation, early exits, cascades, and cost-aware training are established ([DeeBERT](https://aclanthology.org/2020.acl-main.204/), [CascadeBERT](https://aclanthology.org/2021.findings-emnlp.43/), [cascade-aware training](https://arxiv.org/abs/2406.00060)). Our course contribution is a controlled CPU study motivated by a failed fixed-shape hypothesis: we trained compact students, tested a length-and-cost teacher-benefit gate against confidence-only routing, measured both models resident, and evaluated a cost-weighted training ablation on external reviews. Neither length-cost modification beat its simpler control in the prespecified comparison. Do not claim a new general-purpose cascade algorithm.
 
 **Where is the actual training?** We copied teacher embeddings, three or four transformer layers, and classifier weights into student models, then updated their weights with AdamW for two epochs on 8,192 labeled SST-2 sentences. The three-layer truncation without student updates got 645/872 correct; supervised training got 735/872, and distillation got 739/872. That large difference demonstrates learned adaptation rather than inference-only graph changes.
 
@@ -26,7 +26,9 @@ Use these as evidence-backed speaking notes, not memorized scripts. The [student
 
 **Why did the original fixed-shape approach fail?** Fixed shapes can reduce some graph overhead, but routing shorter text into a fixed capacity pads the sequence and adds computation. Across the broad workload and the real-text break-even map, the net effect did not support a reliable fixed route. That motivated changing *model depth* according to predicted need instead of changing only input shape.
 
-**What would you test next?** The planned extension is cost-weighted distillation: train the student to match the teacher more strongly where fallback is expensive, then compare it with uniform distillation and the confidence cascade under a separately frozen evaluation. A shared multi-exit model could avoid recomputing the first layers, but it is established prior work and requires a distinct experiment. We should report any extension as exploratory if it is designed after these validation results.
+**What happened in cost-weighted distillation?** We increased the distillation weight for 33+ token SST-2 fitting examples from 1.0 to 1.554 using measured teacher CPU cost, with all other training choices matched to uniform four-layer distillation. On a pinned, balanced 1,000-review IMDb test sample, the weighted model got 832 correct versus 843 for uniform; paired bootstrap 95% interval for the -1.1-point difference was -2.6 to +0.4 points. On reused SST-2 validation it got five more correct overall, but three fewer in the targeted longest bin. The IMDb result does not prove a population loss, and the SST-2 reuse is exploratory. There is no weighted-model ONNX timing claim.
+
+**What would you test next?** First complete the slides, NeurIPS-format report, and reproducibility instructions for this controlled study. If time remains, a separately designed shared multi-exit model could avoid recomputing early layers on fallback, but that is established prior work and would need a new protocol and holdout. Do not adjust the current gate or weighted loss after seeing these validation and IMDb results and call the same examples confirmatory.
 
 ## Three-minute Q&A practice
 
