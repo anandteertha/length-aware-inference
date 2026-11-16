@@ -6,6 +6,7 @@ __pycache__/
 .ruff_cache/
 artifacts/
 tmp/
+.codex-build/
 .env
 .env.*
 !.env.example

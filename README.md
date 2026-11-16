@@ -13,7 +13,8 @@ process-block median time. A learned length-and-cost gate did worse on this
 evaluation (89.33%). These are observed results on one laptop and one split;
 the accuracy interval does not establish population noninferiority.
 
-The [presentation outline](docs/presentation-outline.md) and
+The [NC State presentation](presentation/nc-state-etdl-project.pptx),
+[presentation outline](docs/presentation-outline.md), and
 [Q&A sheet](docs/presentation-qa.md) turn those findings into a 10-minute course
 talk. The [original fixed-shape report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md) preserve the earlier study.
@@ -78,9 +79,12 @@ milestones. Do not treat training-partition accuracy as final model accuracy.
 
 The original fixed-shape study, compact-student training, frozen gate evaluation,
 resident CPU benchmark, and cost-weighted external extension are complete. The
-November 23 presentation slides and November 30 NeurIPS-format final report are
-still to be produced. The code and archived measurements support those deliverables;
-they do not constitute a submitted course project by themselves.
+November 23 slide deck is drafted using NC State's official 16:9 PowerPoint
+template; timed rehearsal, final revisions, and the November 30 NeurIPS-format
+report remain. The code and archived measurements support those deliverables;
+they do not constitute a submitted course project by themselves. The editable
+deck can be rebuilt with `powershell -File presentation/build_deck.ps1` on a
+Windows machine with PowerPoint installed.
 
 The project-specific code in `src/etdl/`, `scripts/`, and `tools/` was developed
 for this repository. It uses the external pretrained DistilBERT checkpoint,

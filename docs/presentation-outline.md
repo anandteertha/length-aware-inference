@@ -1,6 +1,6 @@
 # November 23 presentation outline (10 minutes + 3 minutes Q&A)
 
-**Status:** structure with verified results. Anandteertha's November 23 slot is 0:39-0:52 from class start, with Xiangyu Wen and Charlie Austin assigned as questioners. Keep every number tied to the [student results](student-training-results.md), [gate results](gate-results.md), or [cost-weighted extension](cost-weighted-extension-results.md). The course requires about 8-10 content slides, plus title and closing slides.
+**Status:** the [editable NC State deck](../presentation/nc-state-etdl-project.pptx) now follows this structure. Anandteertha's November 23 slot is 0:39-0:52 from class start, with Xiangyu Wen and Charlie Austin assigned as questioners. Keep every number tied to the [student results](student-training-results.md), [gate results](gate-results.md), or [cost-weighted extension](cost-weighted-extension-results.md). The course requires about 8-10 content slides, plus title and closing slides.
 
 | Slide | Time | Required section | Core visual or claim |
 | --- | --- | --- | --- |
