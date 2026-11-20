@@ -75,6 +75,29 @@ single-model and resident-cascade tradeoffs. See the
 [course delivery plan](docs/training-pivot-plan.md) for presentation and report
 milestones. Do not treat training-partition accuracy as final model accuracy.
 
+## INT8 ONNX student extension (pending AC run)
+
+The [fixed protocol](docs/int8-student-extension-plan.md) tests one dynamic INT8
+quantization of the verified four-layer student against its FP32 graph. The
+[runner](scripts/run_int8_extension.py) audits SST-2 and the already selected IMDb
+reviews, then benchmarks student-only and frozen-confidence cascades in three
+matched CPU blocks with both student and teacher resident. These datasets have
+already been inspected, so the follow-up is exploratory. The script does not
+retune the confidence threshold.
+
+On Windows, with the laptop connected to AC and the terminal kept open:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_int8_extension.ps1
+```
+
+The wrapper checks power before starting and writes a console transcript to
+`artifacts/student-study/int8-extension-console.log`. Results are written to
+`artifacts/student-study/int8-extension/summary.json`; no result exists until the
+run completes. For an input-only check, add `-CheckOnly` (AC is not required).
+If the run stops after creating its output directory, rerun with `-Resume` after
+restoring AC. The runner verifies completed blocks before reusing them.
+
 ## Project status and code ownership
 
 The original fixed-shape study, compact-student training, frozen gate evaluation,
