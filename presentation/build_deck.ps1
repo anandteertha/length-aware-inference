@@ -7,7 +7,7 @@ $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $build = Join-Path $root '.codex-build\presentation'
 $render = Join-Path $build 'render-v2'
 $template = Join-Path $build 'ncstate-template.potx'
-$output = Join-Path $PSScriptRoot 'nc-state-etdl-project-revised.pptx'
+$output = Join-Path $PSScriptRoot 'nc-state-etdl-project-guideline-aligned.pptx'
 
 if (Get-Process POWERPNT -ErrorAction SilentlyContinue) {
     throw 'Close PowerPoint before building the deck; this script uses an isolated PowerPoint COM session.'
@@ -156,20 +156,24 @@ try {
         Add-Text $s "Prior name $i" $prior[$i][0] 57 $y 220 28 19 $black $true | Out-Null
         Add-Text $s "Prior description $i" $prior[$i][1] 286 $y 380 48 16 $dark | Out-Null
     }
-    Add-Text $s 'Study question' 'Our study: does length help beyond confidence alone?' 40 321 640 25 17 $red $true | Out-Null
+    Add-Text $s 'Study question' 'My question: does length help beyond confidence alone?' 40 321 640 25 17 $red $true | Out-Null
     Add-Source $s 'Hinton et al. 2015; DeeBERT 2020; CascadeBERT 2021.'
 
-    # 3. Original limitation
-    $s = Add-ContentSlide $deck 'Fixed shapes did not pay off on real text' 'The original project tested verified fixed 16/32/64/128-token DistilBERT variants and a real-text break-even map at 11 exact lengths. No length passed the prespecified screen for a fixed-route confirmation. See docs/final-results.md and docs/breakeven-map-results.md. This is a bounded CPU finding, not a statement that fixed shapes never help.'
-    Add-Text $s 'Input token count' '17 tokens' 42 151 180 42 28 $black $true | Out-Null
-    Add-Text $s 'Arrow' '→' 227 150 60 42 30 $red $true 2 | Out-Null
-    Add-Text $s 'Bucket size' '32-token slot' 297 151 280 42 28 $black $true | Out-Null
-    Add-Rect $s 'Real tokens' 40 213 330 30 $red | Out-Null
-    Add-Rect $s 'Padding tokens' 370 213 290 30 $light | Out-Null
-    Add-Text $s 'Real token label' '17 real tokens' 46 218 318 23 15 $white $true 2 | Out-Null
-    Add-Text $s 'Padding label' '15 padded positions' 378 218 274 23 15 $dark $true 2 | Out-Null
-    Add-Text $s 'Screen result' '0 of 11 tested lengths passed the fixed-route screen' 40 277 640 41 23 $red $true | Out-Null
-    Add-Source $s 'Fixed-route screen: 11 real-text lengths, 9–48 tokens; dynamic ONNX retained.'
+    # 3. Limitations of existing approaches
+    $s = Add-ContentSlide $deck 'Limitations of existing approaches' 'Fixed shapes can require padding; a short input can pay for a longer bucket. Distillation makes a smaller student possible, but a student alone can lose accuracy. A confidence-only cascade responds to uncertainty without directly accounting for length-dependent teacher cost. These limitations motivate the study question, not a claim that all prior methods ignore cost. My fixed-shape CPU screen found no passing route among 11 real-text lengths. See docs/final-results.md, docs/breakeven-map-results.md, and docs/gate-results.md.'
+    $limits = @(
+        @('Fixed shapes', 'Padding can erase the runtime gain on short texts.'),
+        @('Distillation', 'A smaller student may be faster but less accurate.'),
+        @('Confidence-only cascades', 'Uncertainty alone does not tell the cost of a fallback.')
+    )
+    for ($i=0; $i -lt 3; $i++) {
+        $y = 134 + 62*$i
+        Add-Rect $s "Limitation accent $i" 39 $y 5 48 $red | Out-Null
+        Add-Text $s "Limitation name $i" $limits[$i][0] 57 $y 220 48 18 $black $true | Out-Null
+        Add-Text $s "Limitation detail $i" $limits[$i][1] 286 $y 380 48 16 $dark | Out-Null
+    }
+    Add-Text $s 'Fixed-shape evidence' 'My fixed-shape screen: 0 of 11 lengths passed on this CPU.' 40 322 640 25 17 $red $true | Out-Null
+    Add-Source $s 'Limitations motivate the student and fallback method; fixed-shape result is laptop-specific.'
 
     # 4. Challenges
     $s = Add-ContentSlide $deck 'Why student-first routing is difficult' 'A teacher fallback incurs both the student and teacher on that request. The teacher can correct or harm a student prediction. The teacher cost rises with token length. Tail latency therefore may differ from median latency. See docs/gate-results.md.'
@@ -264,18 +268,22 @@ try {
     Add-Text $s 'Gate takeaway' 'Within 0.57 accuracy points; 24.1% paired median reduction; ~852 MiB RSS.' 40 326 635 23 16 $red $true | Out-Null
     Add-Source $s 'SST-2 n=872; three paired CPU blocks. p95 direction mixed; accuracy interval exceeds 1-point loss.'
 
-    # 9. Transfer result
-    $s = Add-ContentSlide $deck 'Cost-weighted training did not transfer' 'Protocol and evaluator were committed before external prediction. Same four-layer model, initialization, data, seed and budget; only KL loss weights changed. On reused SST-2 validation uniform 765/872, weighted 770/872 (exploratory). On pinned, balanced IMDb test n=1000, teacher 895, uniform 843, weighted 832; paired weighted-minus-uniform difference -1.1 points, 95% bootstrap interval [-2.6,+0.4]. The weighted student lost three correct examples in the targeted longest SST-2 stratum. IMDb median 211 tokens, 855/1000 129–512 tokens. Weighted checkpoint was not benchmarked for latency. See docs/cost-weighted-extension-results.md.'
-    Add-Text $s 'SST2 heading' 'SST-2 validation (reused)' 40 140 290 28 20 $black $true | Out-Null
-    Add-Text $s 'SST2 comparison' '765  →  770' 40 180 290 47 31 $red $true | Out-Null
-    Add-Text $s 'SST2 descriptor' 'uniform       weighted   (+5)' 40 226 290 29 15 $dark | Out-Null
-    Add-Line $s 'Transfer divider' 357 141 357 273 $line 1.2 | Out-Null
-    Add-Text $s 'IMDb heading' 'IMDb test (new domain)' 391 140 290 28 20 $black $true | Out-Null
-    Add-Text $s 'IMDb comparison' '843  →  832' 391 180 290 47 31 $black $true | Out-Null
-    Add-Text $s 'IMDb descriptor' 'uniform       weighted   (−11)' 391 226 290 29 15 $dark | Out-Null
-    Add-Rect $s 'Transfer result band' 40 282 640 53 $light | Out-Null
-    Add-Text $s 'Transfer result text' 'External difference: −1.1 points  |  95% interval: −2.6 to +0.4' 52 293 616 33 17 $red $true | Out-Null
-    Add-Source $s 'IMDb n=1,000 balanced, ≤512 tokens. No weighted-model ONNX latency measured.'
+    # 9. Future work following the two result slides
+    $s = Add-ContentSlide $deck 'Where I would take this next' 'The cost-weighted student did not improve external IMDb accuracy: 832/1,000 versus 843/1,000 for uniform distillation. That motivates testing the actual inference stack instead of assuming training weights help. The prepared INT8 ONNX extension will compare accuracy, median/p95 request time, and resident memory against the FP32 cascade for the final report. Longer-term: fit/calibrate a gate on teacher-unseen examples and test on longer texts, another seed, and other CPU hardware. Do not present the pending INT8 run as a result. See docs/cost-weighted-extension-results.md and docs/int8-student-extension-plan.md.'
+    Add-Text $s 'Future context' 'Cost-weighted student: 83.2% vs 84.3% for uniform on IMDb.' 40 126 640 48 19 $red $true | Out-Null
+    $next = @(
+        @('INT8 ONNX', 'Measure accuracy, request time, and memory for a quantized cascade.'),
+        @('Gate calibration', 'Fit on examples the teacher has not seen during training.'),
+        @('Robustness', 'Test longer reviews, another seed, and more CPU hardware.')
+    )
+    for ($i=0; $i -lt 3; $i++) {
+        $y = 183 + 51*$i
+        Add-Text $s "Next number $i" ('0' + ($i+1)) 41 $y 45 34 22 $red $true | Out-Null
+        Add-Text $s "Next name $i" $next[$i][0] 94 $y 185 34 19 $black $true | Out-Null
+        Add-Text $s "Next description $i" $next[$i][1] 282 $y 390 41 15 $dark | Out-Null
+        if ($i -lt 2) { Add-Line $s "Next rule $i" 40 ($y+44) 672 ($y+44) $line | Out-Null }
+    }
+    Add-Source $s 'Planned for final report: INT8 ONNX accuracy, latency, and memory comparison.'
 
     # Closing
     $s = Add-ContentSlide $deck 'What the evidence supports' 'Answer the success question directly. The course project has a positive observed efficiency result: confidence-gated four-layer student gets 789/872 versus teacher 794/872 with median paired latency reduction 24.1% and resident RSS about 852 MiB under 1,536 MiB. The proposed length/cost gate misses one-point accuracy target and cost-weighted training does not improve external accuracy. These are bounded observations on one laptop, one SST-2 validation split, one training seed and one external sample. Population noninferiority is unproved and p95 timing is mixed. Distillation and cascades are prior art, so claim a careful experimental study rather than a novel algorithm. Source: docs/gate-results.md; docs/cost-weighted-extension-results.md.'
