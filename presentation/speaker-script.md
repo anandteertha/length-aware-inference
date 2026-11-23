@@ -1,6 +1,6 @@
 # Speaker script — November 23, 2026
 
-Use with [the guideline-aligned NC State deck](nc-state-etdl-project-guideline-aligned.pptx). Aim for a 9½- to 10-minute talk, leaving the scheduled three minutes for questions. The text below is spoken; slide changes occur between sections. Pause briefly after the main number on slides 8 and 9.
+Use with [the guideline-aligned NC State deck](nc-state-etdl-project-guideline-aligned.pptx). Aim for a 9½- to 10-minute talk, leaving the scheduled three minutes for questions. The paragraphs below are spoken; the slide 12 cue is not. Pause briefly after the main number on slides 8 and 9.
 
 ## Slide 1 — When is a smaller model enough?
 
@@ -77,3 +77,7 @@ Third, I would repeat the study on longer reviews and another CPU, especially th
 On this CPU, a trained student with a confidence fallback kept accuracy close to the teacher and reduced median request time by 24.1%. The length-and-cost rule routed fewer reviews to the teacher, but missed my accuracy target. I used one training seed and one laptop, so more runs are needed.
 
 My contribution is an end-to-end CPU comparison of fixed shapes, student training, and fallback rules. Thank you. I’m happy to take questions.
+
+## Slide 12 — Questions?
+
+[Advance after the final sentence on slide 11. Keep this slide visible during Q&A; there is no additional scripted speech.]

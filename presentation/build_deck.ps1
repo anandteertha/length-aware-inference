@@ -294,7 +294,13 @@ try {
     Add-Text $s 'Conclusion 3' 'I measured this on one laptop and one seed; slow-request latency remains uncertain.' 41 307 637 42 18 $dark | Out-Null
     Add-Source $s 'Code and full protocols: github.com/anandteertha/length-aware-inference'
 
-    if ($deck.Slides.Count -ne 11) { throw "Expected 11 slides, got $($deck.Slides.Count)" }
+    # Q&A holding slide
+    $s = Add-ContentSlide $deck 'Questions?' 'Hold this slide during the three-minute question period. The spoken closing is on slide 11.'
+    Add-Text $s 'Q&A thanks' 'Thank you.' 40 181 640 58 33 $red $true 2 | Out-Null
+    Add-Text $s 'Q&A name' 'Anandteertha Rao' 40 245 640 30 18 $dark $false 2 | Out-Null
+    Add-Source $s 'Code and full protocols: github.com/anandteertha/length-aware-inference'
+
+    if ($deck.Slides.Count -ne 12) { throw "Expected 12 slides, got $($deck.Slides.Count)" }
     for ($i=1; $i -le $deck.Slides.Count; $i++) {
         $deck.Slides.Item($i).Export((Join-Path $render ('slide-{0:D2}.png' -f $i)), 'PNG', 1600, 900)
     }
