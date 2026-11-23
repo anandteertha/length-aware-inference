@@ -269,12 +269,12 @@ try {
     Add-Source $s 'SST-2 n=872; three paired CPU blocks. p95 direction mixed; accuracy interval exceeds 1-point loss.'
 
     # 9. Future work following the two result slides
-    $s = Add-ContentSlide $deck 'Where I would take this next' 'The cost-weighted student did not improve external IMDb accuracy: 832/1,000 versus 843/1,000 for uniform distillation. That motivates testing the actual inference stack instead of assuming training weights help. The prepared INT8 ONNX extension will compare accuracy, median/p95 request time, and resident memory against the FP32 cascade for the final report. Longer-term: fit/calibrate a gate on teacher-unseen examples and test on longer texts, another seed, and other CPU hardware. Do not present the pending INT8 run as a result. See docs/cost-weighted-extension-results.md and docs/int8-student-extension-plan.md.'
-    Add-Text $s 'Future context' 'Cost-weighted student: 83.2% vs 84.3% for uniform on IMDb.' 40 126 640 48 19 $red $true | Out-Null
+    $s = Add-ContentSlide $deck 'What I would test next' 'The confidence-gated cascade met the observed target on one CPU. First, the prepared INT8 ONNX extension will compare accuracy, median/p95 request time, and resident memory against the FP32 cascade for the final report. Second, choose the fallback cutoff using fresh labeled reviews outside the teacher training data; the current gate calibration used SST-2 training examples already seen by the released teacher. Third, repeat on longer reviews, another training seed, and another CPU. INT8 is pending, not an observed result. See docs/int8-student-extension-plan.md.'
+    Add-Text $s 'Future context' 'The confidence gate met my observed target on one CPU.' 40 126 640 48 19 $red $true | Out-Null
     $next = @(
-        @('INT8 ONNX', 'Measure accuracy, request time, and memory for a quantized cascade.'),
-        @('Gate calibration', 'Fit on examples the teacher has not seen during training.'),
-        @('Robustness', 'Test longer reviews, another seed, and more CPU hardware.')
+        @('INT8 ONNX', 'Test speed, memory, and accuracy after quantizing the student.'),
+        @('Fresh calibration', 'Choose the cutoff on new labeled reviews the teacher did not train on.'),
+        @('Replication', 'Repeat on longer reviews and another CPU; check slow requests.')
     )
     for ($i=0; $i -lt 3; $i++) {
         $y = 183 + 51*$i
@@ -283,15 +283,15 @@ try {
         Add-Text $s "Next description $i" $next[$i][1] 282 $y 390 41 15 $dark | Out-Null
         if ($i -lt 2) { Add-Line $s "Next rule $i" 40 ($y+44) 672 ($y+44) $line | Out-Null }
     }
-    Add-Source $s 'Planned for final report: INT8 ONNX accuracy, latency, and memory comparison.'
+    Add-Source $s 'Planned for final report: INT8 accuracy, latency, and memory comparison.'
 
     # Closing
-    $s = Add-ContentSlide $deck 'What the evidence supports' 'Answer the success question directly. The course project has a positive observed efficiency result: confidence-gated four-layer student gets 789/872 versus teacher 794/872 with median paired latency reduction 24.1% and resident RSS about 852 MiB under 1,536 MiB. The proposed length/cost gate misses one-point accuracy target and cost-weighted training does not improve external accuracy. These are bounded observations on one laptop, one SST-2 validation split, one training seed and one external sample. Population noninferiority is unproved and p95 timing is mixed. Distillation and cascades are prior art, so claim a careful experimental study rather than a novel algorithm. Source: docs/gate-results.md; docs/cost-weighted-extension-results.md.'
-    Add-Text $s 'Conclusion 1' 'Yes: an observed CPU efficiency win with a trained student and simple gate.' 41 140 637 55 22 $red $true | Out-Null
+    $s = Add-ContentSlide $deck 'What I learned' 'The four-layer student with a confidence fallback scored 789/872 (90.48%) versus 794/872 (91.06%) for the teacher, with a 24.1% paired median latency reduction across three CPU timing blocks. The length-and-cost gate saved time but missed the predeclared one-point accuracy target. These are observations on one laptop and one training seed; the p95 direction was mixed and population noninferiority was not established. Distillation and cascades are established methods. My contribution is a reproducible end-to-end CPU comparison of fixed shapes, student training, and fallback policies. See docs/gate-results.md.'
+    Add-Text $s 'Conclusion 1' 'On this CPU, confidence routing reached 90.48% accuracy with 24.1% lower median time.' 41 140 637 55 22 $red $true | Out-Null
     Add-Line $s 'Close rule 1' 41 204 678 204 $line | Out-Null
-    Add-Text $s 'Conclusion 2' 'The length-and-cost gate missed the accuracy target; weighted training did not improve external accuracy.' 41 220 637 60 19 $black | Out-Null
+    Add-Text $s 'Conclusion 2' 'Length-and-cost routing saved time but missed the accuracy target.' 41 220 637 60 19 $black | Out-Null
     Add-Line $s 'Close rule 2' 41 292 678 292 $line | Out-Null
-    Add-Text $s 'Conclusion 3' 'Scope: one laptop, one seed, mixed p95, and no general algorithm novelty claim.' 41 307 637 42 18 $dark | Out-Null
+    Add-Text $s 'Conclusion 3' 'I measured this on one laptop and one seed; slow-request latency remains uncertain.' 41 307 637 42 18 $dark | Out-Null
     Add-Source $s 'Code and full protocols: github.com/anandteertha/length-aware-inference'
 
     if ($deck.Slides.Count -ne 11) { throw "Expected 11 slides, got $($deck.Slides.Count)" }
