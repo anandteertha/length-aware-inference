@@ -7,7 +7,7 @@ $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $build = Join-Path $root '.codex-build\presentation'
 $render = Join-Path $build 'render-v2'
 $template = Join-Path $build 'ncstate-template.potx'
-$output = Join-Path $PSScriptRoot 'nc-state-etdl-project.pptx'
+$output = Join-Path $PSScriptRoot 'nc-state-etdl-project-revised.pptx'
 
 if (Get-Process POWERPNT -ErrorAction SilentlyContinue) {
     throw 'Close PowerPoint before building the deck; this script uses an isolated PowerPoint COM session.'
@@ -202,22 +202,24 @@ try {
     Add-Source $s 'SST-2 train partitions only; best checkpoint chosen on development accuracy.'
 
     # 6. Routing method
-    $s = Add-ContentSlide $deck 'Freeze the teacher fallback rule' 'Four-layer student logits and token length form gate features. A ridge fit predicts teacher incremental correctness on 2,048 gate-fit rows. Cost-aware score divides predicted benefit by measured teacher time. Thresholds are selected on a separate 1,024-row gate-calibration partition, then applied unchanged to 872 validation rows. Confidence-only is the simple control. The released teacher was trained on SST-2 training data, which makes gate training/calibration optimistic. See docs/gate-results.md.'
+    $s = Add-ContentSlide $deck 'When should I call the teacher?' 'Every request runs the student first. Compare a confidence-only baseline with a proposed confidence, length, and teacher-cost gate. A ridge fit predicts teacher incremental correctness on 2,048 gate-fit rows. For each rule, choose on 1,024 separate calibration rows the cutoff with the least added teacher time while accuracy stays within one percentage point of the teacher. Apply each fixed cutoff to 872 validation rows. The released teacher was trained on SST-2 training data, which makes gate training/calibration optimistic. See docs/gate-results.md.'
+    Add-Text $s 'Routing question' 'Can the teacher improve this answer enough to justify its time?' 40 115 635 27 18 $red $true | Out-Null
     Add-Rect $s 'Student node' 40 153 145 56 $light | Out-Null
     Add-Text $s 'Student node text' 'Student' 49 164 127 34 21 $black $true 2 | Out-Null
     Add-Text $s 'Gate arrow 1' '→' 193 163 44 37 26 $red $true 2 | Out-Null
     Add-Rect $s 'Gate node' 244 153 177 56 $light | Out-Null
-    Add-Text $s 'Gate node text' 'Gate: confidence + length' 252 162 160 40 17 $black $true 2 | Out-Null
+    Add-Text $s 'Gate node text' 'Fallback rule' 252 162 160 40 17 $black $true 2 | Out-Null
     Add-Text $s 'Gate arrow 2' '→' 429 163 42 37 26 $red $true 2 | Out-Null
     Add-Rect $s 'Teacher node' 478 153 195 56 $light | Out-Null
     Add-Text $s 'Teacher node text' 'Teacher if selected' 485 164 180 34 19 $black $true 2 | Out-Null
-    Add-Text $s 'Fit label' 'FIT' 45 252 132 24 14 $red $true | Out-Null
-    Add-Text $s 'Fit rows' '2,048 gate rows' 45 277 179 26 17 $black $true | Out-Null
-    Add-Text $s 'Cal label' 'CALIBRATE' 262 252 150 24 14 $red $true | Out-Null
-    Add-Text $s 'Cal rows' '1,024 other rows' 262 277 180 26 17 $black $true | Out-Null
-    Add-Text $s 'Eval label' 'EVALUATE' 488 252 150 24 14 $red $true | Out-Null
-    Add-Text $s 'Eval rows' '872 validation rows' 488 277 190 26 17 $black $true | Out-Null
-    Add-Source $s 'Thresholds frozen before validation; teacher pretraining on SST-2 train limits calibration.'
+    Add-Text $s 'Rule comparison' 'Compare confidence alone with confidence + length / teacher cost.' 45 218 630 22 14 $dark | Out-Null
+    Add-Text $s 'Fit label' 'FIT: 2,048 examples' 45 251 190 24 14 $red $true | Out-Null
+    Add-Text $s 'Fit rows' 'Learn when the teacher improves the student answer' 45 276 190 58 15 $black | Out-Null
+    Add-Text $s 'Cal label' 'CALIBRATE: 1,024' 262 251 190 24 14 $red $true | Out-Null
+    Add-Text $s 'Cal rows' 'Least teacher time while within 1 point of teacher accuracy' 262 276 190 58 15 $black | Out-Null
+    Add-Text $s 'Eval label' 'TEST: 872 examples' 488 251 190 24 14 $red $true | Out-Null
+    Add-Text $s 'Eval rows' 'Apply the fixed cutoff to validation examples' 488 276 190 58 15 $black | Out-Null
+    Add-Source $s 'Calibration uses SST-2 training rows already seen by the released teacher.'
 
     # 7. Training result
     $s = Add-ContentSlide $deck 'Training matters more than truncation' 'Exact 872-row SST-2 validation counts: untrained 3-layer 645 (73.97%); supervised 3-layer 735 (84.29%); distilled 3-layer 739 (84.75%); distilled 4-layer 765 (87.73%); full teacher 794 (91.06%). Distillation adds only four examples under one seed. See docs/student-training-results.md.'
