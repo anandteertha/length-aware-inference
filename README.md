@@ -17,7 +17,8 @@ The [NC State presentation](presentation/nc-state-etdl-project-guideline-aligned
 [speaker script](presentation/speaker-script.md),
 [printable speaker script](output/pdf/speaker-script.pdf),
 [presentation outline](docs/presentation-outline.md), and
-[Q&A sheet](docs/presentation-qa.md) turn those findings into a 10-minute course
+[Q&A sheet](docs/presentation-qa.md), and
+[slide-by-slide Q&A rehearsal](docs/presentation-qa-slide-by-slide.md) turn those findings into a 10-minute course
 talk. The [original fixed-shape report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md) preserve the earlier study.
 

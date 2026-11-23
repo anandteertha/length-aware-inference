@@ -1,6 +1,6 @@
 # November 23 Q&A sheet
 
-Use these as evidence-backed speaking notes, not memorized scripts. The [student results](student-training-results.md), [gate results](gate-results.md), [cost-weighted extension](cost-weighted-extension-results.md), and [figure](../results/student-study/accuracy-latency.png) contain the exact denominators and timing blocks.
+Use these as evidence-backed speaking notes, not memorized scripts. The [slide-by-slide rehearsal](presentation-qa-slide-by-slide.md) adds questions a new reader could raise from any slide, especially teacher provenance and calibration overlap. The [student results](student-training-results.md), [gate results](gate-results.md), [cost-weighted extension](cost-weighted-extension-results.md), and [figure](../results/student-study/accuracy-latency.png) contain the exact denominators and timing blocks.
 
 ## Likely questions and short answers
 
