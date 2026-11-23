@@ -1,6 +1,6 @@
 # Speaker script — November 23, 2026
 
-Use with [the guideline-aligned NC State deck](nc-state-etdl-project-guideline-aligned.pptx). Aim for a 9½- to 10-minute talk, leaving the scheduled three minutes for questions. The paragraphs below are spoken; the slide 12 cue is not. Pause briefly after the main number on slides 8 and 9.
+Use with [the NC State Google Slides deck](https://docs.google.com/presentation/d/1KUcHNqkZq0ZBhR7YN_XlJWL15THyl5k6vbDh8RF2TCM/edit). Aim for a 9½- to 10-minute talk, leaving the scheduled three minutes for questions. Slides 1–11 are the talk. Slide 12 is a cue, and slides 13–15 are optional answers for Q&A. Pause briefly after the main number on slides 8 and 9.
 
 ## Slide 1 — When is a smaller model enough?
 
@@ -81,3 +81,15 @@ My contribution is an end-to-end CPU comparison of fixed shapes, student trainin
 ## Slide 12 — Questions?
 
 [Advance after the final sentence on slide 11. Keep this slide visible during Q&A; there is no additional scripted speech.]
+
+## Slide 13 — Appendix: one request through the gate
+
+[Use only if asked how the proposed gate routes a request.] I run the student first and record its logits and the review’s token count. The gate predicts the teacher’s net accuracy benefit, G of x, and looks up the teacher’s estimated time for that length, C of length. If G of x divided by C of length meets the calibrated cutoff, I run the teacher. Otherwise, I keep the student’s answer. Student runtime is included in the full request measurement, but it is not the routing trigger.
+
+## Slide 14 — Appendix: estimate teacher benefit
+
+[Use only if asked how teacher accuracy is estimated.] I do not predict the teacher’s absolute accuracy on a new review. On 2,048 labeled examples, I compare whether the student and teacher are correct. The training target is plus one when the teacher fixes a student error, minus one when it spoils a correct student answer, and zero when both have the same correctness. A ridge model predicts that net benefit from the student’s logit margin, log base two of token length, and their interaction. For a new review, the gate needs only the student’s output and length to make this estimate.
+
+## Slide 15 — Appendix: estimate teacher time
+
+[Use only if asked about cost or calibration.] I measured teacher ONNX inference time on the gate-fit examples and grouped reviews by token length. The median teacher times were 9.61, 17.91, and 27.83 milliseconds for short, medium, and long reviews. For a new review, its length group supplies C of length. On 1,024 separate calibration reviews, I tried candidate cutoffs, kept those whose accuracy was within one percentage point of the teacher, and chose the one with the lowest mean added teacher time. I froze that cutoff before the final 872-review validation. The 15% full-request latency target is checked afterward; it is not the gate’s per-request threshold.
