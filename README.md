@@ -14,6 +14,7 @@ evaluation (89.33%). These are observed results on one laptop and one split;
 the accuracy interval does not establish population noninferiority.
 
 The [NC State presentation](presentation/nc-state-etdl-project-guideline-aligned.pptx),
+[speaker script](presentation/speaker-script.md),
 [presentation outline](docs/presentation-outline.md), and
 [Q&A sheet](docs/presentation-qa.md) turn those findings into a 10-minute course
 talk. The [original fixed-shape report](docs/project-report.md) and
