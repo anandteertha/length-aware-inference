@@ -48,7 +48,7 @@ Every review goes through the student first. A fallback rule either keeps its an
 
 I compared two rules. The baseline uses student confidence. My proposed rule also uses text length and measured teacher cost. It estimates where the teacher’s likely improvement justifies that cost.
 
-I used 2,048 examples to fit the proposed rule. On 1,024 separate examples, I chose the cutoff with the least teacher time while staying within one accuracy point of the teacher. I calibrated the confidence rule the same way. Then I froze both cutoffs and tested them on 872 validation examples. Before comparing the gates, I checked how much student training helped.
+I fitted the proposed rule on 2,048 SST-2 training examples. On 1,024 different training examples, I chose the lowest-cost cutoff within one accuracy point of the teacher; I calibrated the confidence rule the same way. I froze both cutoffs before testing on 872 separate validation examples. Before comparing the gates, I checked how much student training helped.
 
 ## Slide 8 — Training matters more than truncation
 
@@ -68,7 +68,7 @@ The simpler confidence gate called the teacher on 161 reviews. It reached 90.48%
 
 First, I plan to compare INT8 ONNX with the current model. Quantization may reduce CPU work and memory, but I need to measure its effect on accuracy and full request time. I plan to add those results to the final report.
 
-Second, I would choose the fallback cutoff on new labeled reviews. The current calibration used examples the teacher had seen during training, which may make fallbacks look more helpful than they are on new data.
+Second, I would compare one global confidence cutoff with separate cutoffs for short, medium, and long reviews. That would test whether length helps without penalizing long reviews simply because the teacher takes more time on them.
 
 Third, I would repeat the study on longer reviews and another CPU, especially the slowest requests. Let me close with what I learned.
 
