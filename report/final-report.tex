@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage[preprint]{neurips_2024}
+\usepackage{amsmath,amssymb,booktabs,graphicx}
+\usepackage[hidelinks]{hyperref}
+\makeatletter
+\renewcommand{\@noticestring}{ECE 592 / CSC 591 / ECE 492 course project report, Fall 2026.}
+\makeatother
+
+\title{When Is a Smaller Model Enough?\\Training and Routing for CPU Sentiment Inference}
+\author{Anandteertha Rao\\North Carolina State University}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A sentiment classifier can save CPU time by running a small student first and calling a larger teacher selectively. I study this tradeoff for single-request sentiment classification on SST-2. An initial screen of fixed ONNX input shapes found no qualifying route among 11 tested lengths, so I retained dynamic shapes and trained smaller DistilBERT students. On 872 SST-2 validation examples, a four-layer student with confidence-based fallback scored 90.48\% versus 91.06\% for the six-layer teacher, with a 24.1\% paired median request-time reduction across three timing blocks. A gate that ranked predicted teacher benefit per millisecond called the teacher fewer times and reached 89.33\%, missing the one-percentage-point accuracy target. These are observations on one CPU and validation split. Code, protocols, and measurements are available in the \href{https://github.com/anandteertha/length-aware-inference}{project repository}.
+\end{abstract}
+
+\section{Introduction}
+On a CPU serving one sentence at a time, padding, model depth, and the cost of an extra model call can all affect latency. Fixing the input shape may help a runtime optimize a graph, but a graph sized for the next supported length may process more positions than a dynamic graph. Reducing the number of transformer layers removes work on every request, but can reduce accuracy. A cascade can recover some accuracy when its fallback rule identifies requests on which the teacher will help.
+
+I study binary movie-review sentiment classification on GLUE SST-2 \citep{wang2018,socher2013}. The project targets were at most one percentage point of observed accuracy loss relative to the teacher, at least 15\% lower median end-to-end request time, and a peak resident-memory budget of 1,536 MiB. The challenge is that calling the teacher incurs a second inference and can replace a correct student prediction with a wrong one. Text length can influence both the benefit and the cost of that call.
+
+This study makes three contributions.
+\begin{itemize}
+  \item A fixed-shape screen that measures the padding cost and the gain from specializing an equally padded ONNX graph separately.
+  \item A training comparison of truncation, supervised fine-tuning, and distillation, followed by a comparison of student-first cascades with both models resident.
+  \item An evaluation of a gate using confidence, length, and measured CPU cost, with confidence-only routing as a control and separate experiments on cost-weighted training and INT8 inference.
+\end{itemize}
+
+\section{Methods}
+\subsection{Input shape and the teacher baseline}
+The teacher is the public six-layer DistilBERT sentiment classifier fine-tuned on SST-2 \citep{sanh2019,checkpoint}. I pinned the checkpoint and tokenizer revision and used its dynamic FP32 ONNX export as the deployment baseline. Fixed variants use the same weights. The break-even screen used 24 previously unused SST-2 training examples at each of 11 exact lengths and three process blocks per backend and fixed capacity. I compared natural-length dynamic, bucket-padded dynamic, and equally padded fixed graphs in ONNX Runtime (ORT) and OpenVINO. Within a block, subtract the natural-length dynamic p95 from the padded dynamic p95 to obtain padding cost, and subtract the fixed p95 from the padded dynamic p95 to obtain the gain from specialization. The net gain is the latter minus the former. The screen required positive net gain in every block and at least 5\% median paired p95 reduction, with numerical and resource checks passing.
+
+\subsection{Student training}
+The three- and four-layer students start with the teacher's embeddings, the first three or four transformer layers, and its classifier. The three-layer control keeps the copied weights unchanged. The supervised run updates weights using cross-entropy with the true label. For the distilled students I use
+\begin{equation}
+ \mathcal L = \tfrac12 \operatorname{CE}(y,p_s)
+ + \tfrac12 T^2\,D_{\mathrm{KL}}\!\left(
+     \operatorname{softmax}(z_t/T)\,\Vert\,\operatorname{softmax}(z_s/T)\right),
+ \qquad T=2.
+\end{equation}
+Here \(z_s,z_t\) are the student and teacher logits and \(p_s=\operatorname{softmax}(z_s)\). Training used 8,192 examples, batch size 16, AdamW with learning rate \(2\times10^{-5}\), two epochs, and seed 2027. I chose checkpoints by accuracy on 1,024 separate development examples. A prespecified rule triggered the four-layer distilled run when the best three-layer development result trailed the teacher by more than three points. The observed gap was 4.69 points. I exported the students to dynamic FP32 ONNX and checked their outputs against PyTorch.
+
+\subsection{Teacher benefit and routing}
+\begin{figure}[t]
+  \centering
+  \setlength{\fboxsep}{6pt}
+  \(\fbox{\textsf{Tokenize}}\ \longrightarrow\
+    \fbox{\textsf{Run student}}\ \longrightarrow\
+    \fbox{\textsf{Score and compare with cutoff}}\)
+  \par\smallskip
+  \(\text{Score below cutoff}\ \longrightarrow\ \text{Return student}
+  \qquad
+    \text{Score at or above cutoff}\ \longrightarrow\ \text{Run and return teacher}\)
+  \caption{Student-first execution. A fallback incurs teacher inference in addition to the student work already done.}
+  \label{fig:flow}
+\end{figure}
+The student runs on every request (Figure~\ref{fig:flow}). On 2,048 labeled fitting examples I set \(g_i=\mathbf{1}[\hat y_{t,i}=y_i]-\mathbf{1}[\hat y_{s,i}=y_i]\). This target is \(+1\) for a teacher fix, \(-1\) for harm, and zero when correctness is unchanged. I fit ridge regression with penalty 10 on non-intercept coefficients, using the standardized student margin \(m=|z_{s,1}-z_{s,0}|\), standardized log-base-two token length \(\ell=\log_2 L\), and their interaction. Writing \(\tilde m,\tilde\ell\) for the standardized values, the proposed routing score is
+\begin{equation}
+ \frac{\widehat G(x)}{C(L)} =
+ \frac{\beta_0+\beta_1\tilde m+\beta_2\tilde\ell+\beta_3\tilde m\tilde\ell}{C(L)}.
+\end{equation}
+Here \(C(L)\) is teacher-only ONNX inference cost, estimated from the median in each length group on gate-fit rows. The measured costs were 9.61, 17.91, and 27.83 ms for 3--16, 17--32, and 33+ tokens. Only the student output and length are needed to compute the score. The confidence-only control uses a one-feature ridge score. Its fitted coefficient on margin is negative, so its rule is equivalent to calling the teacher below a margin cutoff, with ties included.
+
+On 1,024 distinct calibration examples I evaluated score thresholds corresponding to candidate fallback fractions of \(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7,\) and \(1\). Among candidates within one accuracy point of teacher accuracy on calibration, I selected the smallest estimated mean extra teacher cost, counting zero extra cost when the student answer is kept. The fit and calibration partitions were disjoint from each other, student training, student development, and the 872-row validation split. They came from SST-2 training data, which was used to fine-tune the public teacher. Both operating cutoffs were fixed for validation.
+
+\subsection{Resident timing and follow-up experiments}
+For the main comparison, each fresh process loaded both ONNX sessions, used four ORT intra-op threads per session with spinning disabled, and warmed the sessions before measurement. Three shuffled blocks timed all 872 natural-length requests with batch size one on an Intel Core i5-1334U laptop. End-to-end time includes tokenization, routing when applicable, and inference. I report the median of within-block median latency reductions against teacher-only and give the range across blocks. I also report p95 and resident memory. The paired example bootstrap for accuracy uses 10,000 resamples of the same examples across policies.
+
+The cost-weighted training extension changed the coefficient of the distillation term by token length, using weights 0.537, 1.000, and 1.554 in the same three bins and retaining the remaining four-layer training settings. A balanced sample of 1,000 IMDb test reviews, selected without truncation from inputs of at most 512 tokens, provides an external accuracy comparison \citep{maas2011}. The INT8 extension applies ORT dynamic QInt8 weight quantization to MatMul and Gemm operations in the four-layer FP32 student with per-channel quantization and reduced range disabled \citep{ortquant}. It checks predictions and retains the frozen confidence cutoff. The SST-2 and IMDb samples were both inspected in earlier experiments, so the INT8 comparison is exploratory.
+
+\section{Results}
+\subsection{Fixed shapes and training ablations}
+None of the 11 tested lengths passed the fixed-shape screen in either backend. For example, at 33 tokens in one OpenVINO block, padding to 64 added 18.71 ms to p95 and specialization recovered 6.48 ms, leaving a net loss of 12.23 ms. The result applies to the tested lengths and settings. The archived break-even map reports the three-block range at each length.
+
+\begin{table}[h]
+\centering
+\caption{Training ablation on the same 872 SST-2 validation examples.}
+\label{tab:student}
+\begin{tabular}{lrr}
+\toprule Model & Correct & Accuracy (\%)\\
+\midrule
+Three-layer truncation & 645 & 73.97\\
+Three-layer supervised & 735 & 84.29\\
+Three-layer distilled & 739 & 84.75\\
+Four-layer distilled & 765 & 87.73\\
+Six-layer teacher & 794 & 91.06\\
+\bottomrule
+\end{tabular}
+\end{table}
+Supervised training recovered 90 correct predictions over truncation (Table~\ref{tab:student}). Distillation added four more correct predictions at three layers in this run. The four-layer distilled student recovered 26 more than its three-layer distilled counterpart. The study uses one seed and does not include a four-layer supervised control. The four-layer student still fell 3.33 points short of the teacher.
+
+\subsection{Frozen cascade comparison}
+\begin{table}[t]
+\centering
+\caption{Resident CPU comparison. Median and p95 are medians of their process-level summaries in milliseconds. Paired gain is the median of three within-block reductions in median latency versus teacher-only.}
+\label{tab:cascade}
+\begin{tabular}{lrrrrr}
+\toprule Policy & Correct & Teacher calls & Median & p95 & Paired gain\\
+\midrule
+Teacher only & 794 & 872 & 27.92 & 78.22 & ---\\
+Student only & 765 & 0 & 18.32 & 41.84 & 33.9\%\\
+Length and cost & 779 & 121 & 20.45 & 54.61 & 23.2\%\\
+Confidence only & 789 & 161 & 21.20 & 67.29 & 24.1\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=0.98\linewidth]{results/student-study/accuracy-latency.png}
+ \caption{Accuracy and measured CPU latency for individual models and for the benchmark with both sessions resident. Horizontal ranges show the range of process medians across three blocks.}
+ \label{fig:tradeoff}
+\end{figure}
+The confidence-only control met the observed criteria with a 0.57-point accuracy loss, latency reductions of 10.1\%, 24.1\%, and 30.3\% across the paired blocks, and maximum observed RSS of about 852 MiB in the resident study (Table~\ref{tab:cascade}, Figure~\ref{fig:tradeoff}). Its accuracy difference versus the teacher has a descriptive paired 95\% interval of \([-1.61,+0.46]\) percentage points, which crosses the one-point loss limit. Confidence cascade p95 was lower in two blocks and higher in one.
+
+The proposed gate corrected 24 student mistakes and introduced 10 errors, for 14 net corrections. It missed the accuracy target by losing 1.72 points relative to the teacher. It routed only 13 of 208 inputs in the longest bin, where the teacher got 186 correct and the student 174. Dividing benefit by teacher cost made expensive calls less attractive. This observed routing pattern is consistent with a cost penalty on potentially useful long fallbacks. It does not isolate the cost term as the sole reason for the result.
+
+\subsection{Cost-weighted training and INT8 follow-up}
+The cost-weighted student scored 832/1,000 on IMDb versus 843/1,000 for uniform distillation. The paired accuracy difference was \(-1.1\) points with a descriptive 95\% interval of \([-2.6,+0.4]\). On reused SST-2 validation it gained five correct predictions overall, and lost three in its targeted longest stratum. The external comparison did not support replacing uniform distillation. The weighted student has no measured ONNX speed result.
+
+\input{report/int8-results.tex}
+
+\section{Related work and limitations}
+Knowledge distillation transfers predictive information from a stronger model to a smaller one \citep{hinton2015,sanh2019}. DeeBERT exits early within a shared model \citep{xin2020}, whereas CascadeBERT uses a sequence of complete models and studies calibration for the fallback decision \citep{li2021}. Cascade-aware training explicitly considers the student's role in the cascade \citep{wang2024}. The present study compares practical routing rules for a frozen teacher and a compact trained student, and measures the consequences of those choices on the same CPU.
+
+The teacher was fine-tuned on the SST-2 training split that supplied gate fitting and calibration. Its average advantage over the student was smaller on calibration than on validation (2.25 versus 3.33 points), though training exposure could still affect which examples benefit from fallback. The 872 validation labels were excluded from threshold selection, and aggregate results on this split were inspected earlier in the project. A replication could hold gate rows out of teacher fine-tuning and repeat the comparison across CPUs and training seeds.
+
+\section{Code and reproduction}
+The repository README gives the complete command order, including setup, the dynamic teacher export, and the quantization follow-up. After preparing the teacher and training both student depths, run the following from the repository root.
+\begin{verbatim}
+uv run python scripts/fit_gate.py
+uv run python scripts/evaluate_students.py
+uv run python scripts/export_students.py
+uv run python scripts/evaluate_gate.py
+uv run python scripts/benchmark_cascade.py
+\end{verbatim}
+The project code implements partitioning, training, export checks, policy selection, and benchmarking using published model weights, datasets, and runtimes. The archives in \texttt{results/student-study/} record row-level predictions, calibration points, and per-block timing.
+
+\begin{thebibliography}{10}
+\bibitem[Hinton et~al.(2015)]{hinton2015}
+G. Hinton, O. Vinyals, and J. Dean. Distilling the knowledge in a neural network.
+\href{https://arxiv.org/abs/1503.02531}{arXiv:1503.02531}, 2015.
+\bibitem[Hugging Face(2019)]{checkpoint}
+Hugging Face. DistilBERT base uncased finetuned SST-2.
+\href{https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english/tree/714eb0fa89d2f80546fda750413ed43d93601a13}{Model card and pinned checkpoint}.
+\bibitem[Li et~al.(2021)]{li2021}
+L. Li, Y. Lin, D. Chen, S. Ren, P. Li, J. Zhou, and X. Sun. CascadeBERT: Accelerating inference of pre-trained language models via calibrated complete models cascade.
+\href{https://aclanthology.org/2021.findings-emnlp.43/}{Findings of EMNLP}, 2021.
+\bibitem[Maas et~al.(2011)]{maas2011}
+A. L. Maas, R. E. Daly, P. T. Pham, D. Huang, A. Y. Ng, and C. Potts.
+Learning word vectors for sentiment analysis.
+\href{https://aclanthology.org/P11-1015/}{ACL}, 2011.
+\bibitem[ONNX Runtime(n.d.)]{ortquant}
+ONNX Runtime. \href{https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html}{Quantize ONNX models}. Documentation.
+\bibitem[Sanh et~al.(2019)]{sanh2019}
+V. Sanh, L. Debut, J. Chaumond, and T. Wolf. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.
+\href{https://arxiv.org/abs/1910.01108}{arXiv:1910.01108}, 2019.
+\bibitem[Socher et~al.(2013)]{socher2013}
+R. Socher, A. Perelygin, J. Wu, J. Chuang, C. D. Manning, A. Ng, and C. Potts.
+Recursive deep models for semantic compositionality over a sentiment treebank.
+\href{https://aclanthology.org/D13-1170/}{EMNLP}, 2013.
+\bibitem[Wang et~al.(2018)]{wang2018}
+A. Wang, A. Singh, J. Michael, F. Hill, O. Levy, and S. R. Bowman.
+GLUE: A multi-task benchmark and analysis platform for natural language understanding.
+\href{https://aclanthology.org/W18-5446/}{BlackboxNLP}, 2018.
+\bibitem[Wang et~al.(2024)]{wang2024}
+C. Wang, S. Augenstein, K. Rush, W. Jitkrittum, H. Narasimhan, A. S. Rawat, A. K. Menon, and A. Go.
+Cascade-aware training of language models. \href{https://arxiv.org/abs/2406.00060}{arXiv:2406.00060}, 2024.
+\bibitem[Xin et~al.(2020)]{xin2020}
+J. Xin, R. Tang, J. Lee, Y. Yu, and J. Lin.
+DeeBERT: Dynamic early exiting for accelerating BERT inference.
+\href{https://aclanthology.org/2020.acl-main.204/}{ACL}, 2020.
+\end{thebibliography}
+\end{document}

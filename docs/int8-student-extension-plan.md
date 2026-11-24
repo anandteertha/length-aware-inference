@@ -2,6 +2,8 @@
 
 **Status:** protocol and code frozen before quantizing or evaluating this candidate. The November 23 presentation already has a complete FP32 result. This follow-up is exploratory because the SST-2 validation and selected IMDb sample have been inspected in earlier experiments; do not present either as a fresh independent holdout.
 
+The [outcome and separate metadata repair](int8-student-extension-results.md) are recorded alongside this original protocol.
+
 ## Question and single graph change
 
 The four-layer FP32 student runs before any teacher fallback. Does post-training [ONNX Runtime dynamic quantization](https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html) reduce its model size and end-to-end CPU cost while keeping the frozen confidence cascade's accuracy close to the full teacher? Dynamic quantization is established prior work and is recommended by ORT as a starting point for transformer models. This project tests its interaction with our already trained student and frozen gate, not a new quantization algorithm.

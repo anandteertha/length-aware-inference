@@ -16,10 +16,11 @@ the accuracy interval does not establish population noninferiority.
 The [NC State presentation](presentation/nc-state-etdl-project-guideline-aligned.pptx),
 [speaker script](presentation/speaker-script.md),
 [printable speaker script](output/pdf/speaker-script.pdf),
-[presentation outline](docs/presentation-outline.md), and
+[presentation outline](docs/presentation-outline.md),
 [Q&A sheet](docs/presentation-qa.md), and
-[slide-by-slide Q&A rehearsal](docs/presentation-qa-slide-by-slide.md) turn those findings into a 10-minute course
-talk. The [original fixed-shape report](docs/project-report.md) and
+[slide-by-slide Q&A rehearsal](docs/presentation-qa-slide-by-slide.md)
+turn those findings into a 10-minute course talk. The [final course report PDF](output/pdf/final-report.pdf)
+uses the official NeurIPS 2024 style. The [original fixed-shape report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md) preserve the earlier study.
 
 ## Training-based continuation
@@ -53,13 +54,16 @@ lost three in the targeted longest bin. The weighted model has no new ONNX timin
 claim.
 
 ```powershell
+uv sync --locked
+uv run etdl prepare --limit 128
+uv run etdl export
 uv run python scripts/training_feasibility.py
 uv run python scripts/train_students.py
 uv run python scripts/train_capacity.py
+uv run python scripts/fit_gate.py
 uv run python scripts/evaluate_students.py
 uv run python scripts/export_students.py
 uv run python scripts/benchmark_students.py
-uv run python scripts/fit_gate.py
 uv run python scripts/evaluate_gate.py
 uv run python scripts/benchmark_cascade.py
 uv run python scripts/plot_student_study.py
@@ -78,7 +82,7 @@ single-model and resident-cascade tradeoffs. See the
 [course delivery plan](docs/training-pivot-plan.md) for presentation and report
 milestones. Do not treat training-partition accuracy as final model accuracy.
 
-## INT8 ONNX student extension (pending AC run)
+## INT8 ONNX student extension
 
 The [fixed protocol](docs/int8-student-extension-plan.md) tests one dynamic INT8
 quantization of the verified four-layer student against its FP32 graph. The
@@ -88,29 +92,39 @@ matched CPU blocks with both student and teacher resident. These datasets have
 already been inspected, so the follow-up is exploratory. The script does not
 retune the confidence threshold.
 
-On Windows, with the laptop connected to AC and the terminal kept open:
+Direct conversion failed during ONNX shape inference. The separate
+[metadata repair and prediction audit](docs/int8-student-extension-results.md)
+produced a smaller graph with the original quantizer settings. The repaired
+INT8 confidence cascade scored 785/872, nine fewer correct predictions than the
+teacher (1.032 percentage points), missing the accuracy target.
+
+Use the archived source checkpoints and predictions with the pinned dependency
+versions. The first command reproduces the direct conversion attempt. The
+second evaluates the separate repair. The third continues that audit into
+timing when the laptop is on AC.
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_int8_extension.ps1
+uv run --locked python scripts/run_int8_extension.py --audit-only
+uv run --locked python scripts/run_int8_extension.py --audit-only --refresh-shape-metadata --output artifacts/student-study/int8-shape-repair
+uv run --locked python scripts/run_int8_extension.py --resume --refresh-shape-metadata --output artifacts/student-study/int8-shape-repair
 ```
 
-The wrapper checks power before starting and writes a console transcript to
-`artifacts/student-study/int8-extension-console.log`. Results are written to
-`artifacts/student-study/int8-extension/summary.json`; no result exists until the
-run completes. For an input-only check, add `-CheckOnly` (AC is not required).
-If the run stops after creating its output directory, rerun with `-Resume` after
-restoring AC. The runner verifies completed blocks before reusing them.
+The audit records the model and source hashes in `plan.json` and saves
+`validation-audit.json` and `external-audit.json` in its output directory.
+Timing writes `summary.json` after all blocks pass. Use `--check-only` to verify
+the source files. Use `--resume` with the same options to resume a partial run.
 
 ## Project status and code ownership
 
-The original fixed-shape study, compact-student training, frozen gate evaluation,
-resident CPU benchmark, and cost-weighted external extension are complete. The
-November 23 slide deck is drafted using NC State's official 16:9 PowerPoint
-template; timed rehearsal, final revisions, and the November 30 NeurIPS-format
-report remain. The code and archived measurements support those deliverables;
-they do not constitute a submitted course project by themselves. The editable
-deck can be rebuilt with `powershell -File presentation/build_deck.ps1` on a
-Windows machine with PowerPoint installed.
+The fixed-shape study, compact-student training, frozen gate evaluation,
+resident CPU benchmark, cost-weighted comparison, and INT8 graph and accuracy
+audit are documented in the final course report. Its
+[LaTeX source](report/final-report.tex) uses the
+[official NeurIPS 2024 style](https://media.neurips.cc/Conferences/NeurIPS2024/Styles.zip).
+Rebuild the PDF on Windows with MiKTeX's `pdflatex` using
+`powershell -NoProfile -ExecutionPolicy Bypass -File report/build.ps1`.
+The editable deck can be rebuilt with
+`powershell -File presentation/build_deck.ps1` on Windows with PowerPoint.
 
 The project-specific code in `src/etdl/`, `scripts/`, and `tools/` was developed
 for this repository. It uses the external pretrained DistilBERT checkpoint,
@@ -128,6 +142,15 @@ report, and demonstration utilities. `tests/` checks inference contracts,
 selection, comparisons, and archives. The named functions in these files
 correspond to their command stages; entry-point `main` functions parse arguments,
 validate inputs, and write reproducible output records.
+
+| Code | Main functions and classes |
+| --- | --- |
+| [Training](scripts/train_students.py) | `student_from_weights()` copies the teacher layers and classification head. `batches()` and `model_batch()` prepare minibatches. `evaluate()` measures development accuracy for checkpoint selection. [Capacity training](scripts/train_capacity.py) applies the development-gap rule before training the four-layer student. |
+| [Student evaluation](scripts/evaluate_students.py) and [export](scripts/export_students.py) | `truncated_teacher()` builds the no-update control. `student_model()` restores a trained checkpoint and `predict()` collects logits. `Logits` wraps the classifier for export with one ONNX output. |
+| [Gate fitting](scripts/fit_gate.py) | `base_features()` computes confidence and log-length. `design()` adds the interaction for joint policies. `score()` applies coefficients and optionally normalizes by cost. `route()` applies the frozen operating point. [Gate evaluation](scripts/evaluate_gate.py) compares fixed policies and computes paired accuracy intervals. |
+| [Cascade timing](scripts/benchmark_cascade.py) | `parent()` creates the frozen benchmark plan and launches process blocks. `method_gate()` resolves the gate for a policy. `worker()` runs requests with both sessions resident and checks predictions. |
+| [Fixed-shape variants](src/etdl/variants.py) and [router](src/etdl/router.py) | `build_variant()` exports a fixed input shape. `check_variant()` checks its logits against the reference. `RoutedClassifier` loads model sessions and applies the selected length policy. |
+| [INT8 audit](scripts/run_int8_extension.py) | `make_candidate()` applies and validates quantization. `strip_shape_metadata()` prepares the separate exploratory repair. `audit_validation()` and `audit_external()` check predictions. `benchmark_worker()` times resident sessions and `summarize()` aggregates completed AC blocks. |
 
 ## Original fixed-shape study
 
