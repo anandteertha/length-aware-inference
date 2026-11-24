@@ -1,6 +1,7 @@
 """One-candidate INT8 student audit and matched resident CPU benchmark.
 
-Run from the project root through run_int8_extension.ps1 on AC power. This is an
+Run from the project root through run_int8_extension.ps1 on AC power for timing.
+Use --audit-only to evaluate predictions and graph size without timing. This is an
 exploratory extension: SST-2 validation and the selected IMDb sample were already
 inspected before the quantization protocol was written.
 """
@@ -11,6 +12,7 @@ import random
 import statistics
 import subprocess
 import sys
+import tempfile
 import time
 from pathlib import Path
 
@@ -49,6 +51,12 @@ def arguments():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=STUDY / "int8-extension")
     parser.add_argument("--check-only", action="store_true")
+    parser.add_argument("--audit-only", action="store_true")
+    parser.add_argument(
+        "--refresh-shape-metadata",
+        action="store_true",
+        help="Run the exploratory repair that removes intermediate ONNX shape annotations.",
+    )
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--worker", action="store_true")
     parser.add_argument("--method", choices=METHODS)
@@ -110,13 +118,36 @@ def candidate_path(output):
     return output / "four_layer_distilled_int8.onnx"
 
 
-def make_candidate(output, source_hashes, resume):
+def strip_shape_metadata(source, destination):
+    """Remove intermediate annotations while preserving operators, weights, and public I/O."""
+    model = onnx.load(source)
+    del model.graph.value_info[:]
+    onnx.checker.check_model(model)
+    onnx.save(model, destination)
+    original, _ = session(source, threads=THREADS, allow_spinning=False)
+    stripped, _ = session(destination, threads=THREADS, allow_spinning=False)
+    for length in (3, 16, 32, 55, 211, 512):
+        inputs = {
+            "input_ids": np.full((1, length), 1000, dtype=np.int64),
+            "attention_mask": np.ones((1, length), dtype=np.int64),
+        }
+        np.testing.assert_allclose(
+            original.run(["logits"], inputs)[0],
+            stripped.run(["logits"], inputs)[0],
+            atol=1e-4,
+            rtol=1e-4,
+        )
+
+
+def make_candidate(output, source_hashes, resume, refresh_shape_metadata):
     path = candidate_path(output)
     plan_path = output / "plan.json"
     if plan_path.exists():
         plan = read_json(plan_path)
         if plan["source_hashes"] != source_hashes or sha256(path) != plan["candidate_sha256"]:
             raise ValueError("Existing quantization plan does not match source artifacts")
+        if plan.get("refreshed_shape_metadata", False) != refresh_shape_metadata:
+            raise ValueError("Resume with the same quantization source option")
         return plan
     if path.exists():
         if not resume:
@@ -124,14 +155,19 @@ def make_candidate(output, source_hashes, resume):
         path.unlink()  # This run's incomplete candidate; no completed plan exists.
     source = source_paths()["fp32"]
     print(json.dumps({"event": "quantizing", "source": str(source)}), flush=True)
-    quantize_dynamic(
-        model_input=source,
-        model_output=path,
-        op_types_to_quantize=["MatMul", "Gemm"],
-        per_channel=False,
-        reduce_range=False,
-        weight_type=QuantType.QInt8,
-    )
+    with tempfile.TemporaryDirectory(dir=output) as working:
+        quant_input = source
+        if refresh_shape_metadata:
+            quant_input = Path(working) / "student-without-intermediate-shapes.onnx"
+            strip_shape_metadata(source, quant_input)
+        quantize_dynamic(
+            model_input=quant_input,
+            model_output=path,
+            op_types_to_quantize=["MatMul", "Gemm"],
+            per_channel=False,
+            reduce_range=False,
+            weight_type=QuantType.QInt8,
+        )
     onnx.checker.check_model(str(path))
     operators = graph_operators(path)
     if not any("MatMulInteger" in name or "QLinearMatMul" in name for name in operators):
@@ -152,6 +188,7 @@ def make_candidate(output, source_hashes, resume):
         "source_operators": graph_operators(source),
         "candidate_operators": operators,
         "ort_version": ort.__version__,
+        "refreshed_shape_metadata": refresh_shape_metadata,
         "quantization": {
             "api": "onnxruntime.quantization.quantize_dynamic",
             "op_types_to_quantize": ["MatMul", "Gemm"],
@@ -570,8 +607,10 @@ def summarize(output, audit):
 
 def main():
     args = arguments()
-    if args.check_only and (args.worker or args.resume):
-        raise ValueError("--check-only cannot be combined with worker or resume")
+    if args.check_only and (args.worker or args.resume or args.audit_only):
+        raise ValueError("--check-only cannot be combined with worker, resume, or audit-only")
+    if args.audit_only and args.worker:
+        raise ValueError("--audit-only cannot be combined with worker")
     source_hashes = validate_sources()
     if args.check_only:
         print(
@@ -593,14 +632,18 @@ def main():
             raise ValueError("Worker requires a known method and block")
         benchmark_worker(args)
         return
-    require_ac()
+    if not args.audit_only:
+        require_ac()
     output = args.output.resolve()
     if output.exists() and not args.resume:
         raise ValueError(f"Output already exists; use --resume or a new path: {output}")
     output.mkdir(parents=True, exist_ok=True)
-    plan = make_candidate(output, source_hashes, args.resume)
+    plan = make_candidate(output, source_hashes, args.resume, args.refresh_shape_metadata)
     audit = audit_validation(output, plan)
     audit_external(output, plan)
+    if args.audit_only:
+        print(json.dumps({"event": "audit_complete", "output": str(output)}), flush=True)
+        return
     if (output / "summary.json").exists():
         if not args.resume:
             raise ValueError("Summary already exists")
