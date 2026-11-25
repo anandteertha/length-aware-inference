@@ -1,0 +1,71 @@
+{
+  "dataset": "IMDb train, new balanced sample with 3\u2013128 tokens",
+  "examples": 500,
+  "examples_33_plus": 499,
+  "examples_65_plus": 410,
+  "teacher_correct": 447,
+  "student_correct": 443,
+  "policies": {
+    "confidence": {
+      "correct": 449,
+      "accuracy": 0.898,
+      "calls": 95,
+      "fixes": 18,
+      "harms": 12,
+      "calls_33_plus": 95,
+      "calls_65_plus": 83,
+      "sst2_cost_table_proxy_ms_per_request": 5.2884315
+    },
+    "original_cost": {
+      "correct": 448,
+      "accuracy": 0.896,
+      "calls": 65,
+      "fixes": 16,
+      "harms": 11,
+      "calls_33_plus": 65,
+      "calls_65_plus": 58,
+      "sst2_cost_table_proxy_ms_per_request": 3.6184005
+    },
+    "soft_cost": {
+      "correct": 448,
+      "accuracy": 0.896,
+      "calls": 95,
+      "fixes": 17,
+      "harms": 12,
+      "calls_33_plus": 95,
+      "calls_65_plus": 84,
+      "sst2_cost_table_proxy_ms_per_request": 5.2884315
+    }
+  },
+  "soft_cost_comparisons": {
+    "confidence": {
+      "accuracy_difference": -0.0020000000000000018,
+      "paired_95pct_interval": [
+        -0.006,
+        0.0
+      ]
+    },
+    "original_cost": {
+      "accuracy_difference": 0.0,
+      "paired_95pct_interval": [
+        -0.006,
+        0.006
+      ]
+    },
+    "teacher_only": {
+      "accuracy_difference": 0.0020000000000000018,
+      "paired_95pct_interval": [
+        -0.014,
+        0.018
+      ]
+    }
+  },
+  "equal_call_count": 95,
+  "equal_call_count_correct": {
+    "confidence": 449,
+    "original_cost": 448,
+    "soft_cost": 448
+  },
+  "plan_sha256": "eef911d7795bb1b7158b9e921c39d58e18cf5b6d2431e07260608afe1550caf5",
+  "logits_sha256": "498ac93062bfc038168017fc9097ef332f0e81572cc10a287b45af117231929f"
+}

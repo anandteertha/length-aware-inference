@@ -1,0 +1,274 @@
+{
+  "status": "frozen from train-derived gate fit and calibration; validation unused",
+  "dataset_revision": "bcdcba79d07bc864c1c254ccfcedcce55bcc9a8c",
+  "teacher_model_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+  "student_checkpoint_sha256": "570ac42d935faa0c0d0223308171f8a2fb990f51829a16a2ba6b5a3cea57ab09",
+  "gate_records_sha256": "2a441b018c2ca856786938c07be7ea45e8631a3f4e2af8650a9dd02643f29ac6",
+  "fit_count": 2048,
+  "calibration_count": 1024,
+  "fit_teacher_helps": 49,
+  "fit_teacher_harms": 5,
+  "ridge_penalty": 10.0,
+  "parameters": {
+    "feature_mean": [
+      7.025067223878068,
+      3.4333110771874917
+    ],
+    "feature_scale": [
+      2.2613831952568857,
+      0.9768546299493321
+    ],
+    "coefficients": {
+      "confidence": [
+        0.021484375,
+        -0.040538623185251595
+      ],
+      "length": [
+        0.021484375000000167,
+        0.007464618029845953
+      ],
+      "joint": [
+        0.019778041900695334,
+        -0.0398913621131128,
+        0.001581083689774762,
+        -0.012295270651580556
+      ]
+    },
+    "teacher_cost_ms": {
+      "3-16": 9.6139,
+      "17-32": 17.9136,
+      "33+": 27.833849999999998
+    },
+    "teacher_cost_exponent": 0.75
+  },
+  "teacher_cost_raw_median_ms": {
+    "3-16": 9.6139,
+    "17-32": 17.9136,
+    "33+": 27.833849999999998
+  },
+  "teacher_cost_counts": {
+    "3-16": 1451,
+    "17-32": 473,
+    "33+": 124
+  },
+  "teacher_cost_power_plugged": [
+    true,
+    true
+  ],
+  "teacher_calibration_accuracy": 0.9765625,
+  "curves": {
+    "confidence": [
+      {
+        "requested_fallback_fraction": 0.0,
+        "route_mode": "none",
+        "threshold": null,
+        "calibration_accuracy": 0.9541015625,
+        "calibration_fallback_fraction": 0.0,
+        "estimated_extra_teacher_ms_per_request": 0.0
+      },
+      {
+        "requested_fallback_fraction": 0.1,
+        "route_mode": "threshold",
+        "threshold": 0.0909053777761831,
+        "calibration_accuracy": 0.9697265625,
+        "calibration_fallback_fraction": 0.1005859375,
+        "estimated_extra_teacher_ms_per_request": 1.2860978027343748
+      },
+      {
+        "requested_fallback_fraction": 0.2,
+        "route_mode": "threshold",
+        "threshold": 0.05750568780244018,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.2001953125,
+        "estimated_extra_teacher_ms_per_request": 2.548179248046875
+      },
+      {
+        "requested_fallback_fraction": 0.3,
+        "route_mode": "threshold",
+        "threshold": 0.036454453967244775,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.2998046875,
+        "estimated_extra_teacher_ms_per_request": 3.774674853515625
+      },
+      {
+        "requested_fallback_fraction": 0.4,
+        "route_mode": "threshold",
+        "threshold": 0.022157359495796766,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.400390625,
+        "estimated_extra_teacher_ms_per_request": 5.2161612304687495
+      },
+      {
+        "requested_fallback_fraction": 0.5,
+        "route_mode": "threshold",
+        "threshold": 0.012391508557714854,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.5,
+        "estimated_extra_teacher_ms_per_request": 6.502558203125
+      },
+      {
+        "requested_fallback_fraction": 0.7,
+        "route_mode": "threshold",
+        "threshold": -0.00470683698056291,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.7001953125,
+        "estimated_extra_teacher_ms_per_request": 8.835447509765626
+      },
+      {
+        "requested_fallback_fraction": 1.0,
+        "route_mode": "all",
+        "threshold": null,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 1.0,
+        "estimated_extra_teacher_ms_per_request": 12.50513974609375
+      }
+    ],
+    "length": [
+      {
+        "requested_fallback_fraction": 0.0,
+        "route_mode": "none",
+        "threshold": null,
+        "calibration_accuracy": 0.9541015625,
+        "calibration_fallback_fraction": 0.0,
+        "estimated_extra_teacher_ms_per_request": 0.0
+      },
+      {
+        "requested_fallback_fraction": 0.1,
+        "route_mode": "threshold",
+        "threshold": 0.03198410765597201,
+        "calibration_accuracy": 0.9560546875,
+        "calibration_fallback_fraction": 0.1083984375,
+        "estimated_extra_teacher_ms_per_request": 2.5230708984375
+      },
+      {
+        "requested_fallback_fraction": 0.2,
+        "route_mode": "threshold",
+        "threshold": 0.028274726817541788,
+        "calibration_accuracy": 0.9580078125,
+        "calibration_fallback_fraction": 0.2041015625,
+        "estimated_extra_teacher_ms_per_request": 4.237458398437499
+      },
+      {
+        "requested_fallback_fraction": 0.3,
+        "route_mode": "threshold",
+        "threshold": 0.025814718759295897,
+        "calibration_accuracy": 0.9619140625,
+        "calibration_fallback_fraction": 0.3037109375,
+        "estimated_extra_teacher_ms_per_request": 5.811086328125
+      },
+      {
+        "requested_fallback_fraction": 0.4,
+        "route_mode": "threshold",
+        "threshold": 0.022643216772004576,
+        "calibration_accuracy": 0.9697265625,
+        "calibration_fallback_fraction": 0.4423828125,
+        "estimated_extra_teacher_ms_per_request": 7.1442638671875
+      },
+      {
+        "requested_fallback_fraction": 0.5,
+        "route_mode": "threshold",
+        "threshold": 0.02063324383636051,
+        "calibration_accuracy": 0.970703125,
+        "calibration_fallback_fraction": 0.529296875,
+        "estimated_extra_teacher_ms_per_request": 7.97984697265625
+      },
+      {
+        "requested_fallback_fraction": 0.7,
+        "route_mode": "threshold",
+        "threshold": 0.016701141693609464,
+        "calibration_accuracy": 0.97265625,
+        "calibration_fallback_fraction": 0.7109375,
+        "estimated_extra_teacher_ms_per_request": 9.726121777343751
+      },
+      {
+        "requested_fallback_fraction": 1.0,
+        "route_mode": "all",
+        "threshold": null,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 1.0,
+        "estimated_extra_teacher_ms_per_request": 12.50513974609375
+      }
+    ],
+    "joint": [
+      {
+        "requested_fallback_fraction": 0.0,
+        "route_mode": "none",
+        "threshold": null,
+        "calibration_accuracy": 0.9541015625,
+        "calibration_fallback_fraction": 0.0,
+        "estimated_extra_teacher_ms_per_request": 0.0
+      },
+      {
+        "requested_fallback_fraction": 0.1,
+        "route_mode": "threshold",
+        "threshold": 0.08448722280789078,
+        "calibration_accuracy": 0.9716796875,
+        "calibration_fallback_fraction": 0.1005859375,
+        "estimated_extra_teacher_ms_per_request": 1.4998051757812498
+      },
+      {
+        "requested_fallback_fraction": 0.2,
+        "route_mode": "threshold",
+        "threshold": 0.051848212637234346,
+        "calibration_accuracy": 0.974609375,
+        "calibration_fallback_fraction": 0.2001953125,
+        "estimated_extra_teacher_ms_per_request": 2.7603040527343747
+      },
+      {
+        "requested_fallback_fraction": 0.3,
+        "route_mode": "threshold",
+        "threshold": 0.03518175017726701,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.2998046875,
+        "estimated_extra_teacher_ms_per_request": 3.9690067382812497
+      },
+      {
+        "requested_fallback_fraction": 0.4,
+        "route_mode": "threshold",
+        "threshold": 0.020044456003333863,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.400390625,
+        "estimated_extra_teacher_ms_per_request": 5.290690380859375
+      },
+      {
+        "requested_fallback_fraction": 0.5,
+        "route_mode": "threshold",
+        "threshold": 0.010942139480326674,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.5,
+        "estimated_extra_teacher_ms_per_request": 6.452344580078124
+      },
+      {
+        "requested_fallback_fraction": 0.7,
+        "route_mode": "threshold",
+        "threshold": -0.003689556208296829,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 0.7001953125,
+        "estimated_extra_teacher_ms_per_request": 8.60058974609375
+      },
+      {
+        "requested_fallback_fraction": 1.0,
+        "route_mode": "all",
+        "threshold": null,
+        "calibration_accuracy": 0.9765625,
+        "calibration_fallback_fraction": 1.0,
+        "estimated_extra_teacher_ms_per_request": 12.50513974609375
+      }
+    ],
+    "joint_per_cost": [
+      {
+        "requested_fallback_fraction": 0.1,
+        "route_mode": "threshold",
+        "threshold": 0.01330665966553472,
+        "calibration_correct": 997,
+        "calibration_accuracy": 0.9736328125,
+        "calibration_teacher_calls": 103,
+        "estimated_extra_teacher_ms_per_request": 1.2261964355468749
+      }
+    ]
+  },
+  "selected_policy": "joint_per_cost",
+  "selected_point_index": 0,
+  "selection_rule": "among points within 1 pp of teacher on gate calibration, minimize measured-bin extra teacher ms",
+  "soft_cost_plan_sha256": "eef911d7795bb1b7158b9e921c39d58e18cf5b6d2431e07260608afe1550caf5"
+}

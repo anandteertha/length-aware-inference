@@ -35,6 +35,7 @@ def arguments():
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--blocks", type=int, default=3)
     parser.add_argument("--limit", type=int, default=872)
+    parser.add_argument("--methods", nargs="+", choices=METHODS, default=METHODS)
     parser.add_argument("--worker", action="store_true")
     parser.add_argument("--method")
     parser.add_argument("--block", type=int)
@@ -149,6 +150,8 @@ def worker(args):
 def parent(args):
     if min(args.threads, args.blocks, args.limit) <= 0:
         raise ValueError("Threads, blocks, and limit must be positive")
+    if len(set(args.methods)) != len(args.methods):
+        raise ValueError("Benchmarked methods must be distinct")
     output = args.output.resolve()
     if output.exists():
         raise ValueError(f"Cascade timing output exists: {output}")
@@ -186,7 +189,7 @@ def parent(args):
     if len(dataset) != 872 or args.limit > 872:
         raise ValueError("Expected pinned 872-row validation split and limit <= 872")
     input_hashes = {}
-    for method in METHODS:
+    for method in args.methods:
         policy, point = method_gate(method, benchmark_plan)
         selected_rows = []
         for row in dataset.select(range(args.limit)):
@@ -218,7 +221,7 @@ def parent(args):
         input_hashes[method] = sha256(path)
     reports = []
     for block in range(args.blocks):
-        order = list(METHODS)
+        order = list(args.methods)
         random.Random(4107 + block).shuffle(order)
         for method in order:
             command = [
@@ -245,7 +248,7 @@ def parent(args):
             print(completed.stdout.strip(), flush=True)
             reports.append(read_json(output / f"{method}-block-{block}.json"))
     aggregate = {}
-    for method in METHODS:
+    for method in args.methods:
         subset = [row for row in reports if row["method"] == method]
         aggregate[method] = {
             "correct": [row["correct"] for row in subset],

@@ -15,6 +15,11 @@ process-block median time. A learned length-and-cost gate did worse on this
 evaluation (89.33%). These are observed results on one laptop and one split;
 the accuracy interval does not establish population noninferiority.
 
+The [softer cost penalty follow-up](docs/soft-cost-gate-results.md) recovered
+some of the original gate's accuracy loss. On the SST-2 replay, it got 786
+correct versus 789 for confidence-only at the same 161 teacher calls. The
+five paired CPU runs showed mixed latency results.
+
 The [original fixed-shape report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md) document the earlier study.
 

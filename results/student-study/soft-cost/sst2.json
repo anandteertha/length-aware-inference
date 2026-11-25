@@ -1,0 +1,72 @@
+{
+  "dataset": "SST-2 validation, previously inspected",
+  "examples": 872,
+  "examples_33_plus": 208,
+  "examples_65_plus": 0,
+  "teacher_correct": 794,
+  "student_correct": 765,
+  "policies": {
+    "confidence": {
+      "correct": 789,
+      "accuracy": 0.9048165137614679,
+      "calls": 161,
+      "fixes": 37,
+      "harms": 13,
+      "calls_33_plus": 45,
+      "calls_65_plus": 0,
+      "sst2_cost_table_proxy_ms_per_request": 3.657575630733945
+    },
+    "original_cost": {
+      "correct": 779,
+      "accuracy": 0.893348623853211,
+      "calls": 121,
+      "fixes": 24,
+      "harms": 10,
+      "calls_33_plus": 13,
+      "calls_65_plus": 0,
+      "sst2_cost_table_proxy_ms_per_request": 2.3195169151376143
+    },
+    "soft_cost": {
+      "correct": 786,
+      "accuracy": 0.9013761467889908,
+      "calls": 161,
+      "fixes": 34,
+      "harms": 13,
+      "calls_33_plus": 35,
+      "calls_65_plus": 0,
+      "sst2_cost_table_proxy_ms_per_request": 3.439113245412844
+    }
+  },
+  "soft_cost_comparisons": {
+    "confidence": {
+      "accuracy_difference": -0.0034403669724770714,
+      "paired_95pct_interval": [
+        -0.009174311926605505,
+        0.0011467889908256881
+      ]
+    },
+    "original_cost": {
+      "accuracy_difference": 0.008027522935779796,
+      "paired_95pct_interval": [
+        0.0,
+        0.017201834862385322
+      ]
+    },
+    "teacher_only": {
+      "accuracy_difference": -0.00917431192660556,
+      "paired_95pct_interval": [
+        -0.020642201834862386,
+        0.0011467889908256881
+      ]
+    }
+  },
+  "equal_call_count": 161,
+  "equal_call_count_correct": {
+    "confidence": 789,
+    "original_cost": 782,
+    "soft_cost": 786
+  },
+  "plan_sha256": "eef911d7795bb1b7158b9e921c39d58e18cf5b6d2431e07260608afe1550caf5",
+  "logits_sha256": "5863824e658d95f84d98d4aa1c23d1c0f1679a810dc70f4075ad21bc0fa5c9f4",
+  "advance_to_timing": false
+}

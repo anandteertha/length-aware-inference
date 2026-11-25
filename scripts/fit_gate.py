@@ -84,7 +84,8 @@ def score(records, policy, parameters):
         costs = np.asarray(
             [parameters["teacher_cost_ms"][length_bin(row["tokens"])] for row in records]
         )
-        value = value / costs
+        exponent = parameters.get("teacher_cost_exponent", 1.0)
+        value = value / (costs if exponent == 1.0 else np.power(costs, exponent))
     return value
 
 
