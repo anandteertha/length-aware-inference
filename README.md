@@ -1,5 +1,7 @@
 # Matching CPU computation to message length
 
+**[Final course report (PDF)](output/pdf/final-report.pdf)** · [PowerPoint deck](presentation/nc-state-etdl-project-guideline-aligned.pptx)
+
 This ECE 592 / CSC 591 project studies CPU sentiment inference under accuracy,
 latency, and resident-memory constraints. The proposal in
 `arrao6_project_proposal.pdf` began with fixed-length DistilBERT variants. The
@@ -13,15 +15,8 @@ process-block median time. A learned length-and-cost gate did worse on this
 evaluation (89.33%). These are observed results on one laptop and one split;
 the accuracy interval does not establish population noninferiority.
 
-The [NC State presentation](presentation/nc-state-etdl-project-guideline-aligned.pptx),
-[speaker script](presentation/speaker-script.md),
-[printable speaker script](output/pdf/speaker-script.pdf),
-[presentation outline](docs/presentation-outline.md),
-[Q&A sheet](docs/presentation-qa.md), and
-[slide-by-slide Q&A rehearsal](docs/presentation-qa-slide-by-slide.md)
-turn those findings into a 10-minute course talk. The [final course report PDF](output/pdf/final-report.pdf)
-uses the official NeurIPS 2024 style. The [original fixed-shape report](docs/project-report.md) and
-[CLI demonstration guide](docs/demo.md) preserve the earlier study.
+The [original fixed-shape report](docs/project-report.md) and
+[CLI demonstration guide](docs/demo.md) document the earlier study.
 
 ## Training-based continuation
 
@@ -77,10 +72,9 @@ existing output directories. The
 [student results](docs/student-training-results.md) report validation accuracy and
 three-block CPU timing. The [frozen-gate results](docs/gate-results.md) report the
 length-and-cost method, confidence-only control, and resident cascade timing. The
-[presentation figure](results/student-study/accuracy-latency.png) shows both
-single-model and resident-cascade tradeoffs. See the
-[course delivery plan](docs/training-pivot-plan.md) for presentation and report
-milestones. Do not treat training-partition accuracy as final model accuracy.
+[accuracy and latency figure](results/student-study/accuracy-latency.png) shows
+both single-model and resident-cascade tradeoffs. The
+[experiment protocol](docs/training-pivot-plan.md) describes the training and routing design.
 
 ## INT8 ONNX student extension
 

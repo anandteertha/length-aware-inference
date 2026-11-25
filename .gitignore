@@ -10,3 +10,14 @@ tmp/
 .env
 .env.*
 !.env.example
+
+# Local course rehearsal materials and superseded slide exports
+/docs/presentation-outline.md
+/docs/presentation-qa.md
+/docs/presentation-qa-slide-by-slide.md
+/docs/teacher-unseen-gate-repair-plan.md
+/output/pdf/speaker-script.pdf
+/presentation/nc-state-etdl-project.pptx
+/presentation/nc-state-etdl-project-revised.pptx
+/presentation/speaker-script.md
+/presentation/~$*.pptx
