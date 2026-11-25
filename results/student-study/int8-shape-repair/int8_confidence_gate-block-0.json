@@ -1,0 +1,7879 @@
+{
+  "method": "int8_confidence_gate",
+  "block": 0,
+  "plan_sha256": "c912e8fbaaccbca56d75d47d00163312ddb2913eff9c0ac284736cb329d53f08",
+  "model_sha256": "df86a420c162b37de25df513ce125d8fbde52f229c959954a1d0570d54604109",
+  "teacher_sha256": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+  "examples": 872,
+  "threads_per_session": 4,
+  "warmup_requests_per_session": 32,
+  "power_start": {
+    "power_plugged": true,
+    "battery_percent": 19
+  },
+  "power_end": {
+    "power_plugged": true,
+    "battery_percent": 20
+  },
+  "correct": 785,
+  "fallbacks": 206,
+  "student_startup_ms": 448.4907,
+  "teacher_startup_ms": 573.0688,
+  "inference_median_ms": 9.7423,
+  "inference_p95_ms": 43.417165,
+  "end_to_end_mean_ms": 16.279150458715595,
+  "end_to_end_median_ms": 10.08,
+  "end_to_end_p95_ms": 43.803359999999984,
+  "observed_max_rss_mib": 792.41015625,
+  "process_peak_wset_mib": 870.29296875,
+  "requests": [
+    {
+      "idx": 746,
+      "tokens": 8,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.7942,
+      "end_to_end_ms": 5.0376
+    },
+    {
+      "idx": 568,
+      "tokens": 47,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.7347,
+      "end_to_end_ms": 13.1979
+    },
+    {
+      "idx": 510,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4914,
+      "end_to_end_ms": 7.7972
+    },
+    {
+      "idx": 517,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 33.6903,
+      "end_to_end_ms": 33.9969
+    },
+    {
+      "idx": 454,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 35.2276,
+      "end_to_end_ms": 35.6321
+    },
+    {
+      "idx": 374,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.8179,
+      "end_to_end_ms": 9.1566
+    },
+    {
+      "idx": 195,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 17.732,
+      "end_to_end_ms": 17.9638
+    },
+    {
+      "idx": 496,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 27.541,
+      "end_to_end_ms": 27.835
+    },
+    {
+      "idx": 406,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.2023,
+      "end_to_end_ms": 11.5676
+    },
+    {
+      "idx": 365,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.7212,
+      "end_to_end_ms": 9.0144
+    },
+    {
+      "idx": 184,
+      "tokens": 52,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.7413,
+      "end_to_end_ms": 13.3412
+    },
+    {
+      "idx": 858,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.603,
+      "end_to_end_ms": 10.9551
+    },
+    {
+      "idx": 358,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 10.5047,
+      "end_to_end_ms": 10.8402
+    },
+    {
+      "idx": 703,
+      "tokens": 49,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.4911,
+      "end_to_end_ms": 12.8924
+    },
+    {
+      "idx": 69,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.0481,
+      "end_to_end_ms": 7.32
+    },
+    {
+      "idx": 161,
+      "tokens": 7,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.6268,
+      "end_to_end_ms": 3.8536
+    },
+    {
+      "idx": 304,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.6298,
+      "end_to_end_ms": 11.9393
+    },
+    {
+      "idx": 355,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.8697,
+      "end_to_end_ms": 5.1109
+    },
+    {
+      "idx": 87,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 28.3786,
+      "end_to_end_ms": 28.7492
+    },
+    {
+      "idx": 728,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.3851,
+      "end_to_end_ms": 30.018
+    },
+    {
+      "idx": 186,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0905,
+      "end_to_end_ms": 8.4021
+    },
+    {
+      "idx": 83,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 8.6258,
+      "end_to_end_ms": 8.9393
+    },
+    {
+      "idx": 690,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.986,
+      "end_to_end_ms": 6.2594
+    },
+    {
+      "idx": 241,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.483,
+      "end_to_end_ms": 5.7336
+    },
+    {
+      "idx": 19,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8071,
+      "end_to_end_ms": 8.0929
+    },
+    {
+      "idx": 686,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8392,
+      "end_to_end_ms": 8.15
+    },
+    {
+      "idx": 620,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.4897,
+      "end_to_end_ms": 10.8578
+    },
+    {
+      "idx": 611,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 22.4704,
+      "end_to_end_ms": 22.9408
+    },
+    {
+      "idx": 75,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4584,
+      "end_to_end_ms": 8.0432
+    },
+    {
+      "idx": 581,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.4372,
+      "end_to_end_ms": 11.8284
+    },
+    {
+      "idx": 639,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.5341,
+      "end_to_end_ms": 6.8312
+    },
+    {
+      "idx": 213,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 39.8151,
+      "end_to_end_ms": 40.1996
+    },
+    {
+      "idx": 226,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.0239,
+      "end_to_end_ms": 6.2941
+    },
+    {
+      "idx": 804,
+      "tokens": 47,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.0434,
+      "end_to_end_ms": 13.4488
+    },
+    {
+      "idx": 395,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 27.0725,
+      "end_to_end_ms": 27.36
+    },
+    {
+      "idx": 346,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.5022,
+      "end_to_end_ms": 5.7579
+    },
+    {
+      "idx": 157,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.5577,
+      "end_to_end_ms": 6.8312
+    },
+    {
+      "idx": 174,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 25.1688,
+      "end_to_end_ms": 25.4363
+    },
+    {
+      "idx": 618,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.702,
+      "end_to_end_ms": 19.9179
+    },
+    {
+      "idx": 578,
+      "tokens": 7,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 20.1589,
+      "end_to_end_ms": 20.442
+    },
+    {
+      "idx": 298,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 26.5963,
+      "end_to_end_ms": 27.0357
+    },
+    {
+      "idx": 609,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 60.2052,
+      "end_to_end_ms": 60.6215
+    },
+    {
+      "idx": 848,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5419,
+      "end_to_end_ms": 7.8171
+    },
+    {
+      "idx": 702,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 72.603,
+      "end_to_end_ms": 72.9778
+    },
+    {
+      "idx": 722,
+      "tokens": 40,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 31.1053,
+      "end_to_end_ms": 32.0102
+    },
+    {
+      "idx": 694,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.7343,
+      "end_to_end_ms": 11.1359
+    },
+    {
+      "idx": 653,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 20.6713,
+      "end_to_end_ms": 21.1946
+    },
+    {
+      "idx": 791,
+      "tokens": 46,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 31.2576,
+      "end_to_end_ms": 31.931
+    },
+    {
+      "idx": 597,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.2363,
+      "end_to_end_ms": 17.1029
+    },
+    {
+      "idx": 320,
+      "tokens": 8,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4575,
+      "end_to_end_ms": 5.7573
+    },
+    {
+      "idx": 558,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 76.2258,
+      "end_to_end_ms": 76.6545
+    },
+    {
+      "idx": 740,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 20.0151,
+      "end_to_end_ms": 20.8632
+    },
+    {
+      "idx": 257,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.429,
+      "end_to_end_ms": 12.7207
+    },
+    {
+      "idx": 319,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.1104,
+      "end_to_end_ms": 16.6396
+    },
+    {
+      "idx": 820,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 20.6664,
+      "end_to_end_ms": 21.4211
+    },
+    {
+      "idx": 394,
+      "tokens": 46,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 19.6442,
+      "end_to_end_ms": 20.3035
+    },
+    {
+      "idx": 646,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 9.9136,
+      "end_to_end_ms": 10.2733
+    },
+    {
+      "idx": 67,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8994,
+      "end_to_end_ms": 6.1593
+    },
+    {
+      "idx": 790,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.4103,
+      "end_to_end_ms": 4.7289
+    },
+    {
+      "idx": 724,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 25.6258,
+      "end_to_end_ms": 25.9107
+    },
+    {
+      "idx": 734,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 19.3104,
+      "end_to_end_ms": 19.5841
+    },
+    {
+      "idx": 759,
+      "tokens": 37,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.5858,
+      "end_to_end_ms": 9.9292
+    },
+    {
+      "idx": 714,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5271,
+      "end_to_end_ms": 7.8129
+    },
+    {
+      "idx": 561,
+      "tokens": 38,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 10.0354,
+      "end_to_end_ms": 10.3782
+    },
+    {
+      "idx": 823,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 21.8766,
+      "end_to_end_ms": 22.1407
+    },
+    {
+      "idx": 343,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7705,
+      "end_to_end_ms": 6.009
+    },
+    {
+      "idx": 91,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.941,
+      "end_to_end_ms": 8.2297
+    },
+    {
+      "idx": 600,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.5582,
+      "end_to_end_ms": 9.8494
+    },
+    {
+      "idx": 399,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 28.3303,
+      "end_to_end_ms": 28.6576
+    },
+    {
+      "idx": 796,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.494,
+      "end_to_end_ms": 9.8219
+    },
+    {
+      "idx": 405,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 6.9561,
+      "end_to_end_ms": 7.2337
+    },
+    {
+      "idx": 469,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9341,
+      "end_to_end_ms": 6.1951
+    },
+    {
+      "idx": 327,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.6657,
+      "end_to_end_ms": 5.9128
+    },
+    {
+      "idx": 287,
+      "tokens": 44,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.3502,
+      "end_to_end_ms": 11.8069
+    },
+    {
+      "idx": 526,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.1302,
+      "end_to_end_ms": 7.4009
+    },
+    {
+      "idx": 415,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5492,
+      "end_to_end_ms": 8.8817
+    },
+    {
+      "idx": 739,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5399,
+      "end_to_end_ms": 7.9161
+    },
+    {
+      "idx": 142,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 23.2632,
+      "end_to_end_ms": 23.547
+    },
+    {
+      "idx": 828,
+      "tokens": 43,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.7249,
+      "end_to_end_ms": 12.1154
+    },
+    {
+      "idx": 96,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.6853,
+      "end_to_end_ms": 10.0335
+    },
+    {
+      "idx": 452,
+      "tokens": 40,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.2455,
+      "end_to_end_ms": 11.6113
+    },
+    {
+      "idx": 826,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7135,
+      "end_to_end_ms": 5.9589
+    },
+    {
+      "idx": 774,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5922,
+      "end_to_end_ms": 7.8962
+    },
+    {
+      "idx": 68,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.8398,
+      "end_to_end_ms": 5.0624
+    },
+    {
+      "idx": 217,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.1158,
+      "end_to_end_ms": 13.4439
+    },
+    {
+      "idx": 449,
+      "tokens": 6,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 13.9937,
+      "end_to_end_ms": 14.216
+    },
+    {
+      "idx": 594,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.8844,
+      "end_to_end_ms": 14.3127
+    },
+    {
+      "idx": 86,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.7946,
+      "end_to_end_ms": 9.1372
+    },
+    {
+      "idx": 574,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.4708,
+      "end_to_end_ms": 6.7816
+    },
+    {
+      "idx": 120,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6418,
+      "end_to_end_ms": 8.9467
+    },
+    {
+      "idx": 373,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2369,
+      "end_to_end_ms": 7.5134
+    },
+    {
+      "idx": 655,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.5193,
+      "end_to_end_ms": 6.8003
+    },
+    {
+      "idx": 754,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.4227,
+      "end_to_end_ms": 6.6948
+    },
+    {
+      "idx": 121,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 35.592,
+      "end_to_end_ms": 35.9296
+    },
+    {
+      "idx": 146,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.4695,
+      "end_to_end_ms": 9.7886
+    },
+    {
+      "idx": 50,
+      "tokens": 42,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 41.1329,
+      "end_to_end_ms": 41.5158
+    },
+    {
+      "idx": 108,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0629,
+      "end_to_end_ms": 8.4126
+    },
+    {
+      "idx": 104,
+      "tokens": 55,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 53.0324,
+      "end_to_end_ms": 53.6317
+    },
+    {
+      "idx": 752,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3693,
+      "end_to_end_ms": 8.7043
+    },
+    {
+      "idx": 46,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.3463,
+      "end_to_end_ms": 7.6297
+    },
+    {
+      "idx": 137,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.1412,
+      "end_to_end_ms": 4.3955
+    },
+    {
+      "idx": 552,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6251,
+      "end_to_end_ms": 7.9411
+    },
+    {
+      "idx": 731,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.0586,
+      "end_to_end_ms": 5.2978
+    },
+    {
+      "idx": 541,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.5434,
+      "end_to_end_ms": 4.8025
+    },
+    {
+      "idx": 742,
+      "tokens": 51,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.8327,
+      "end_to_end_ms": 13.3318
+    },
+    {
+      "idx": 657,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.4504,
+      "end_to_end_ms": 6.7265
+    },
+    {
+      "idx": 129,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.9316,
+      "end_to_end_ms": 8.2202
+    },
+    {
+      "idx": 215,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 40.8511,
+      "end_to_end_ms": 41.2516
+    },
+    {
+      "idx": 342,
+      "tokens": 36,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.227,
+      "end_to_end_ms": 12.5526
+    },
+    {
+      "idx": 210,
+      "tokens": 44,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.0177,
+      "end_to_end_ms": 18.6238
+    },
+    {
+      "idx": 109,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6258,
+      "end_to_end_ms": 7.9221
+    },
+    {
+      "idx": 318,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.8701,
+      "end_to_end_ms": 32.5181
+    },
+    {
+      "idx": 116,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3968,
+      "end_to_end_ms": 9.005
+    },
+    {
+      "idx": 341,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 39.8055,
+      "end_to_end_ms": 40.1531
+    },
+    {
+      "idx": 789,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 55.9376,
+      "end_to_end_ms": 56.5643
+    },
+    {
+      "idx": 251,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.2527,
+      "end_to_end_ms": 6.5243
+    },
+    {
+      "idx": 464,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 24.9014,
+      "end_to_end_ms": 25.2032
+    },
+    {
+      "idx": 856,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.3806,
+      "end_to_end_ms": 7.678
+    },
+    {
+      "idx": 853,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.1316,
+      "end_to_end_ms": 6.3794
+    },
+    {
+      "idx": 672,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.0394,
+      "end_to_end_ms": 7.3113
+    },
+    {
+      "idx": 249,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 5.9683,
+      "end_to_end_ms": 6.2283
+    },
+    {
+      "idx": 388,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8848,
+      "end_to_end_ms": 6.1434
+    },
+    {
+      "idx": 201,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 37.4729,
+      "end_to_end_ms": 37.7995
+    },
+    {
+      "idx": 679,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.6732,
+      "end_to_end_ms": 5.9407
+    },
+    {
+      "idx": 836,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6202,
+      "end_to_end_ms": 8.9628
+    },
+    {
+      "idx": 424,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4443,
+      "end_to_end_ms": 5.6862
+    },
+    {
+      "idx": 377,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 19.0854,
+      "end_to_end_ms": 19.4068
+    },
+    {
+      "idx": 760,
+      "tokens": 42,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 11.8438,
+      "end_to_end_ms": 12.2012
+    },
+    {
+      "idx": 51,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.9208,
+      "end_to_end_ms": 8.2254
+    },
+    {
+      "idx": 289,
+      "tokens": 4,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 10.1521,
+      "end_to_end_ms": 10.3275
+    },
+    {
+      "idx": 860,
+      "tokens": 49,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.9711,
+      "end_to_end_ms": 14.3456
+    },
+    {
+      "idx": 548,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2562,
+      "end_to_end_ms": 7.5429
+    },
+    {
+      "idx": 675,
+      "tokens": 9,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.6508,
+      "end_to_end_ms": 3.8745
+    },
+    {
+      "idx": 833,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.7013,
+      "end_to_end_ms": 6.9775
+    },
+    {
+      "idx": 292,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 11.5481,
+      "end_to_end_ms": 11.8647
+    },
+    {
+      "idx": 40,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9949,
+      "end_to_end_ms": 9.2828
+    },
+    {
+      "idx": 782,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.4112,
+      "end_to_end_ms": 38.7351
+    },
+    {
+      "idx": 677,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.5311,
+      "end_to_end_ms": 6.8133
+    },
+    {
+      "idx": 233,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.5606,
+      "end_to_end_ms": 6.8182
+    },
+    {
+      "idx": 494,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 9.3373,
+      "end_to_end_ms": 9.6592
+    },
+    {
+      "idx": 633,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 21.9569,
+      "end_to_end_ms": 22.2177
+    },
+    {
+      "idx": 413,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.0343,
+      "end_to_end_ms": 6.3061
+    },
+    {
+      "idx": 387,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.3353,
+      "end_to_end_ms": 6.5892
+    },
+    {
+      "idx": 723,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.311,
+      "end_to_end_ms": 8.6099
+    },
+    {
+      "idx": 745,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.086,
+      "end_to_end_ms": 7.3697
+    },
+    {
+      "idx": 489,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.9048,
+      "end_to_end_ms": 7.2778
+    },
+    {
+      "idx": 279,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 25.3647,
+      "end_to_end_ms": 25.6294
+    },
+    {
+      "idx": 350,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6288,
+      "end_to_end_ms": 8.956
+    },
+    {
+      "idx": 715,
+      "tokens": 37,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.068,
+      "end_to_end_ms": 38.3978
+    },
+    {
+      "idx": 834,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 18.9795,
+      "end_to_end_ms": 19.37
+    },
+    {
+      "idx": 493,
+      "tokens": 7,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.8894,
+      "end_to_end_ms": 4.1296
+    },
+    {
+      "idx": 79,
+      "tokens": 53,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.4247,
+      "end_to_end_ms": 13.8377
+    },
+    {
+      "idx": 795,
+      "tokens": 36,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.9872,
+      "end_to_end_ms": 10.3314
+    },
+    {
+      "idx": 812,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.4274,
+      "end_to_end_ms": 28.7012
+    },
+    {
+      "idx": 547,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6169,
+      "end_to_end_ms": 8.9483
+    },
+    {
+      "idx": 208,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.3783,
+      "end_to_end_ms": 5.6505
+    },
+    {
+      "idx": 571,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.3834,
+      "end_to_end_ms": 38.8049
+    },
+    {
+      "idx": 269,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.4093,
+      "end_to_end_ms": 28.7157
+    },
+    {
+      "idx": 830,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 32.4543,
+      "end_to_end_ms": 32.7818
+    },
+    {
+      "idx": 709,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.7658,
+      "end_to_end_ms": 7.0588
+    },
+    {
+      "idx": 450,
+      "tokens": 39,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.8696,
+      "end_to_end_ms": 13.1938
+    },
+    {
+      "idx": 33,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 42.6216,
+      "end_to_end_ms": 42.9569
+    },
+    {
+      "idx": 471,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.0914,
+      "end_to_end_ms": 9.3784
+    },
+    {
+      "idx": 47,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.5555,
+      "end_to_end_ms": 5.8287
+    },
+    {
+      "idx": 670,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 24.3028,
+      "end_to_end_ms": 24.5589
+    },
+    {
+      "idx": 131,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 23.0115,
+      "end_to_end_ms": 23.3222
+    },
+    {
+      "idx": 629,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.005,
+      "end_to_end_ms": 6.3476
+    },
+    {
+      "idx": 216,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8441,
+      "end_to_end_ms": 8.1602
+    },
+    {
+      "idx": 511,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.4214,
+      "end_to_end_ms": 8.7165
+    },
+    {
+      "idx": 682,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.216,
+      "end_to_end_ms": 7.5223
+    },
+    {
+      "idx": 112,
+      "tokens": 9,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 4.4903,
+      "end_to_end_ms": 4.7061
+    },
+    {
+      "idx": 588,
+      "tokens": 37,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 39.7582,
+      "end_to_end_ms": 40.0671
+    },
+    {
+      "idx": 462,
+      "tokens": 6,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.2913,
+      "end_to_end_ms": 3.5055
+    },
+    {
+      "idx": 660,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.4435,
+      "end_to_end_ms": 9.7555
+    },
+    {
+      "idx": 718,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.2924,
+      "end_to_end_ms": 5.5576
+    },
+    {
+      "idx": 482,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.3947,
+      "end_to_end_ms": 10.7365
+    },
+    {
+      "idx": 685,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 6.4598,
+      "end_to_end_ms": 6.7271
+    },
+    {
+      "idx": 344,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8409,
+      "end_to_end_ms": 7.121
+    },
+    {
+      "idx": 617,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.0584,
+      "end_to_end_ms": 11.3945
+    },
+    {
+      "idx": 156,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8355,
+      "end_to_end_ms": 7.1068
+    },
+    {
+      "idx": 372,
+      "tokens": 47,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.9775,
+      "end_to_end_ms": 12.3575
+    },
+    {
+      "idx": 13,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.5153,
+      "end_to_end_ms": 29.8225
+    },
+    {
+      "idx": 396,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.0868,
+      "end_to_end_ms": 6.3389
+    },
+    {
+      "idx": 44,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.3169,
+      "end_to_end_ms": 6.6054
+    },
+    {
+      "idx": 832,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 23.718,
+      "end_to_end_ms": 23.9772
+    },
+    {
+      "idx": 0,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.7047,
+      "end_to_end_ms": 4.9447
+    },
+    {
+      "idx": 455,
+      "tokens": 37,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.6687,
+      "end_to_end_ms": 10.0026
+    },
+    {
+      "idx": 426,
+      "tokens": 42,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.368,
+      "end_to_end_ms": 10.8266
+    },
+    {
+      "idx": 302,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.0334,
+      "end_to_end_ms": 5.3079
+    },
+    {
+      "idx": 5,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.1513,
+      "end_to_end_ms": 7.4412
+    },
+    {
+      "idx": 72,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.6098,
+      "end_to_end_ms": 5.8649
+    },
+    {
+      "idx": 749,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 34.4527,
+      "end_to_end_ms": 34.8489
+    },
+    {
+      "idx": 436,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6027,
+      "end_to_end_ms": 6.8656
+    },
+    {
+      "idx": 223,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4637,
+      "end_to_end_ms": 7.7463
+    },
+    {
+      "idx": 852,
+      "tokens": 7,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.3345,
+      "end_to_end_ms": 3.5379
+    },
+    {
+      "idx": 813,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3567,
+      "end_to_end_ms": 9.6754
+    },
+    {
+      "idx": 572,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9588,
+      "end_to_end_ms": 6.2123
+    },
+    {
+      "idx": 706,
+      "tokens": 9,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.9999,
+      "end_to_end_ms": 5.2379
+    },
+    {
+      "idx": 100,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.4764,
+      "end_to_end_ms": 9.7897
+    },
+    {
+      "idx": 200,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.5158,
+      "end_to_end_ms": 13.8466
+    },
+    {
+      "idx": 315,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.1721,
+      "end_to_end_ms": 6.4753
+    },
+    {
+      "idx": 598,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.1869,
+      "end_to_end_ms": 8.5739
+    },
+    {
+      "idx": 610,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.108,
+      "end_to_end_ms": 5.3545
+    },
+    {
+      "idx": 247,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 44.3607,
+      "end_to_end_ms": 44.6983
+    },
+    {
+      "idx": 713,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9951,
+      "end_to_end_ms": 9.3085
+    },
+    {
+      "idx": 274,
+      "tokens": 45,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 43.3043,
+      "end_to_end_ms": 43.7021
+    },
+    {
+      "idx": 202,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.1977,
+      "end_to_end_ms": 6.4758
+    },
+    {
+      "idx": 214,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.0458,
+      "end_to_end_ms": 12.3891
+    },
+    {
+      "idx": 447,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.8691,
+      "end_to_end_ms": 11.1845
+    },
+    {
+      "idx": 400,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5203,
+      "end_to_end_ms": 8.015
+    },
+    {
+      "idx": 119,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.1854,
+      "end_to_end_ms": 9.4486
+    },
+    {
+      "idx": 236,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 9.5268,
+      "end_to_end_ms": 9.862
+    },
+    {
+      "idx": 105,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 43.5038,
+      "end_to_end_ms": 44.1223
+    },
+    {
+      "idx": 209,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 43.3948,
+      "end_to_end_ms": 43.7103
+    },
+    {
+      "idx": 352,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.7053,
+      "end_to_end_ms": 14.0858
+    },
+    {
+      "idx": 328,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.9721,
+      "end_to_end_ms": 10.3052
+    },
+    {
+      "idx": 624,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.9904,
+      "end_to_end_ms": 10.4139
+    },
+    {
+      "idx": 160,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 22.8998,
+      "end_to_end_ms": 23.4449
+    },
+    {
+      "idx": 409,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 22.9167,
+      "end_to_end_ms": 23.6238
+    },
+    {
+      "idx": 855,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.272,
+      "end_to_end_ms": 18.8437
+    },
+    {
+      "idx": 124,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 91.0673,
+      "end_to_end_ms": 91.83
+    },
+    {
+      "idx": 45,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.5648,
+      "end_to_end_ms": 13.2594
+    },
+    {
+      "idx": 147,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 90.5813,
+      "end_to_end_ms": 91.2465
+    },
+    {
+      "idx": 786,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 133.361,
+      "end_to_end_ms": 134.5002
+    },
+    {
+      "idx": 554,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3685,
+      "end_to_end_ms": 10.0219
+    },
+    {
+      "idx": 545,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 20.9198,
+      "end_to_end_ms": 21.6899
+    },
+    {
+      "idx": 559,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.9971,
+      "end_to_end_ms": 16.595
+    },
+    {
+      "idx": 642,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 25.4674,
+      "end_to_end_ms": 26.3001
+    },
+    {
+      "idx": 478,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 63.5177,
+      "end_to_end_ms": 64.1074
+    },
+    {
+      "idx": 222,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 27.9592,
+      "end_to_end_ms": 28.8754
+    },
+    {
+      "idx": 692,
+      "tokens": 39,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 61.3053,
+      "end_to_end_ms": 62.0834
+    },
+    {
+      "idx": 822,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.2525,
+      "end_to_end_ms": 4.4909
+    },
+    {
+      "idx": 524,
+      "tokens": 42,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.8233,
+      "end_to_end_ms": 14.1788
+    },
+    {
+      "idx": 487,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.345,
+      "end_to_end_ms": 7.6242
+    },
+    {
+      "idx": 300,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.714,
+      "end_to_end_ms": 5.963
+    },
+    {
+      "idx": 868,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.5595,
+      "end_to_end_ms": 5.7984
+    },
+    {
+      "idx": 583,
+      "tokens": 9,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.984,
+      "end_to_end_ms": 4.2041
+    },
+    {
+      "idx": 470,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3982,
+      "end_to_end_ms": 9.6675
+    },
+    {
+      "idx": 125,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.1674,
+      "end_to_end_ms": 13.6084
+    },
+    {
+      "idx": 338,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.8611,
+      "end_to_end_ms": 11.2931
+    },
+    {
+      "idx": 861,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.7366,
+      "end_to_end_ms": 14.1041
+    },
+    {
+      "idx": 647,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9143,
+      "end_to_end_ms": 6.2472
+    },
+    {
+      "idx": 432,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5819,
+      "end_to_end_ms": 8.9157
+    },
+    {
+      "idx": 168,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3916,
+      "end_to_end_ms": 9.783
+    },
+    {
+      "idx": 3,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.9611,
+      "end_to_end_ms": 19.5088
+    },
+    {
+      "idx": 382,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 9.5138,
+      "end_to_end_ms": 9.8277
+    },
+    {
+      "idx": 15,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.607,
+      "end_to_end_ms": 9.9859
+    },
+    {
+      "idx": 783,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3571,
+      "end_to_end_ms": 9.6652
+    },
+    {
+      "idx": 870,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 33.1813,
+      "end_to_end_ms": 33.4374
+    },
+    {
+      "idx": 235,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 55.5631,
+      "end_to_end_ms": 56.0265
+    },
+    {
+      "idx": 360,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8233,
+      "end_to_end_ms": 6.0914
+    },
+    {
+      "idx": 36,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.8317,
+      "end_to_end_ms": 39.6249
+    },
+    {
+      "idx": 814,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.41,
+      "end_to_end_ms": 8.7159
+    },
+    {
+      "idx": 299,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3487,
+      "end_to_end_ms": 9.684
+    },
+    {
+      "idx": 811,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.1734,
+      "end_to_end_ms": 15.549
+    },
+    {
+      "idx": 661,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.6589,
+      "end_to_end_ms": 10.9841
+    },
+    {
+      "idx": 254,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.1527,
+      "end_to_end_ms": 8.5243
+    },
+    {
+      "idx": 684,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.7344,
+      "end_to_end_ms": 7.0507
+    },
+    {
+      "idx": 227,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2711,
+      "end_to_end_ms": 8.681
+    },
+    {
+      "idx": 357,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 33.0324,
+      "end_to_end_ms": 33.4189
+    },
+    {
+      "idx": 321,
+      "tokens": 9,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.7022,
+      "end_to_end_ms": 3.9301
+    },
+    {
+      "idx": 204,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.7381,
+      "end_to_end_ms": 39.0543
+    },
+    {
+      "idx": 293,
+      "tokens": 44,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.9405,
+      "end_to_end_ms": 19.698
+    },
+    {
+      "idx": 779,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.6495,
+      "end_to_end_ms": 11.0733
+    },
+    {
+      "idx": 651,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 40.1766,
+      "end_to_end_ms": 40.6368
+    },
+    {
+      "idx": 688,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 42.5369,
+      "end_to_end_ms": 42.8876
+    },
+    {
+      "idx": 761,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.091,
+      "end_to_end_ms": 9.813
+    },
+    {
+      "idx": 557,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.6008,
+      "end_to_end_ms": 9.9318
+    },
+    {
+      "idx": 35,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.0543,
+      "end_to_end_ms": 5.3048
+    },
+    {
+      "idx": 656,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 26.3739,
+      "end_to_end_ms": 26.6445
+    },
+    {
+      "idx": 54,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.5491,
+      "end_to_end_ms": 10.9371
+    },
+    {
+      "idx": 519,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 7.3296,
+      "end_to_end_ms": 7.6857
+    },
+    {
+      "idx": 151,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.3764,
+      "end_to_end_ms": 10.6991
+    },
+    {
+      "idx": 332,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 36.125,
+      "end_to_end_ms": 36.4209
+    },
+    {
+      "idx": 90,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5478,
+      "end_to_end_ms": 7.8327
+    },
+    {
+      "idx": 196,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.1276,
+      "end_to_end_ms": 28.4185
+    },
+    {
+      "idx": 56,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.8878,
+      "end_to_end_ms": 10.2248
+    },
+    {
+      "idx": 766,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.2651,
+      "end_to_end_ms": 9.5973
+    },
+    {
+      "idx": 353,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8262,
+      "end_to_end_ms": 7.0903
+    },
+    {
+      "idx": 497,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8215,
+      "end_to_end_ms": 8.1251
+    },
+    {
+      "idx": 753,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 30.4514,
+      "end_to_end_ms": 30.7358
+    },
+    {
+      "idx": 765,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 14.3912,
+      "end_to_end_ms": 14.897
+    },
+    {
+      "idx": 433,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.0721,
+      "end_to_end_ms": 16.6503
+    },
+    {
+      "idx": 21,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 30.7548,
+      "end_to_end_ms": 31.0936
+    },
+    {
+      "idx": 240,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.441,
+      "end_to_end_ms": 8.7457
+    },
+    {
+      "idx": 864,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.6064,
+      "end_to_end_ms": 4.8461
+    },
+    {
+      "idx": 845,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 37.8259,
+      "end_to_end_ms": 38.1767
+    },
+    {
+      "idx": 504,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.7654,
+      "end_to_end_ms": 5.0381
+    },
+    {
+      "idx": 871,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3661,
+      "end_to_end_ms": 8.7053
+    },
+    {
+      "idx": 132,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.2744,
+      "end_to_end_ms": 6.5476
+    },
+    {
+      "idx": 20,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 39.749,
+      "end_to_end_ms": 40.0866
+    },
+    {
+      "idx": 481,
+      "tokens": 9,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.3352,
+      "end_to_end_ms": 4.5629
+    },
+    {
+      "idx": 412,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 22.1265,
+      "end_to_end_ms": 22.386
+    },
+    {
+      "idx": 310,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6004,
+      "end_to_end_ms": 6.9012
+    },
+    {
+      "idx": 295,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8577,
+      "end_to_end_ms": 6.1202
+    },
+    {
+      "idx": 29,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7951,
+      "end_to_end_ms": 6.0423
+    },
+    {
+      "idx": 613,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.0683,
+      "end_to_end_ms": 9.372
+    },
+    {
+      "idx": 278,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.4524,
+      "end_to_end_ms": 6.7174
+    },
+    {
+      "idx": 244,
+      "tokens": 39,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.2639,
+      "end_to_end_ms": 12.6021
+    },
+    {
+      "idx": 704,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 30.3284,
+      "end_to_end_ms": 30.6079
+    },
+    {
+      "idx": 255,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3148,
+      "end_to_end_ms": 8.6025
+    },
+    {
+      "idx": 296,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.6715,
+      "end_to_end_ms": 12.9863
+    },
+    {
+      "idx": 570,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.4911,
+      "end_to_end_ms": 10.934
+    },
+    {
+      "idx": 555,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.811,
+      "end_to_end_ms": 12.2708
+    },
+    {
+      "idx": 658,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.3836,
+      "end_to_end_ms": 4.6517
+    },
+    {
+      "idx": 721,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.5078,
+      "end_to_end_ms": 5.7607
+    },
+    {
+      "idx": 6,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.5006,
+      "end_to_end_ms": 3.7264
+    },
+    {
+      "idx": 815,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.7593,
+      "end_to_end_ms": 4.9824
+    },
+    {
+      "idx": 522,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.1233,
+      "end_to_end_ms": 9.4308
+    },
+    {
+      "idx": 792,
+      "tokens": 9,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.992,
+      "end_to_end_ms": 4.2149
+    },
+    {
+      "idx": 867,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 17.6437,
+      "end_to_end_ms": 17.8978
+    },
+    {
+      "idx": 149,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 39.686,
+      "end_to_end_ms": 40.1293
+    },
+    {
+      "idx": 711,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6911,
+      "end_to_end_ms": 8.0342
+    },
+    {
+      "idx": 767,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.2035,
+      "end_to_end_ms": 6.4783
+    },
+    {
+      "idx": 10,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6078,
+      "end_to_end_ms": 6.8725
+    },
+    {
+      "idx": 193,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.7456,
+      "end_to_end_ms": 30.0515
+    },
+    {
+      "idx": 155,
+      "tokens": 40,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.1132,
+      "end_to_end_ms": 10.4737
+    },
+    {
+      "idx": 843,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.5677,
+      "end_to_end_ms": 3.7796
+    },
+    {
+      "idx": 331,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9832,
+      "end_to_end_ms": 6.251
+    },
+    {
+      "idx": 781,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.5681,
+      "end_to_end_ms": 4.7843
+    },
+    {
+      "idx": 110,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.9528,
+      "end_to_end_ms": 5.1927
+    },
+    {
+      "idx": 446,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 40.9873,
+      "end_to_end_ms": 41.3121
+    },
+    {
+      "idx": 671,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.2604,
+      "end_to_end_ms": 13.658
+    },
+    {
+      "idx": 259,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.8592,
+      "end_to_end_ms": 10.1719
+    },
+    {
+      "idx": 8,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4324,
+      "end_to_end_ms": 7.7393
+    },
+    {
+      "idx": 66,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 27.3985,
+      "end_to_end_ms": 27.661
+    },
+    {
+      "idx": 480,
+      "tokens": 37,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.1897,
+      "end_to_end_ms": 12.5181
+    },
+    {
+      "idx": 443,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.4356,
+      "end_to_end_ms": 8.7144
+    },
+    {
+      "idx": 228,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8119,
+      "end_to_end_ms": 8.0655
+    },
+    {
+      "idx": 564,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5673,
+      "end_to_end_ms": 8.8382
+    },
+    {
+      "idx": 55,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.9861,
+      "end_to_end_ms": 5.2016
+    },
+    {
+      "idx": 404,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.0954,
+      "end_to_end_ms": 9.3702
+    },
+    {
+      "idx": 18,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.4269,
+      "end_to_end_ms": 6.6604
+    },
+    {
+      "idx": 701,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.1212,
+      "end_to_end_ms": 13.4583
+    },
+    {
+      "idx": 461,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5289,
+      "end_to_end_ms": 8.7985
+    },
+    {
+      "idx": 159,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.2097,
+      "end_to_end_ms": 6.4686
+    },
+    {
+      "idx": 472,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.9411,
+      "end_to_end_ms": 32.2689
+    },
+    {
+      "idx": 267,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 8.7698,
+      "end_to_end_ms": 9.0548
+    },
+    {
+      "idx": 674,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8769,
+      "end_to_end_ms": 8.1377
+    },
+    {
+      "idx": 532,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 32.7179,
+      "end_to_end_ms": 33.0286
+    },
+    {
+      "idx": 167,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.0925,
+      "end_to_end_ms": 6.368
+    },
+    {
+      "idx": 70,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 39.724,
+      "end_to_end_ms": 40.0834
+    },
+    {
+      "idx": 182,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 33.9918,
+      "end_to_end_ms": 34.31
+    },
+    {
+      "idx": 717,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.7956,
+      "end_to_end_ms": 8.1103
+    },
+    {
+      "idx": 370,
+      "tokens": 36,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.6316,
+      "end_to_end_ms": 9.9736
+    },
+    {
+      "idx": 12,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4656,
+      "end_to_end_ms": 7.759
+    },
+    {
+      "idx": 62,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.0623,
+      "end_to_end_ms": 29.3372
+    },
+    {
+      "idx": 850,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.925,
+      "end_to_end_ms": 39.5212
+    },
+    {
+      "idx": 286,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8233,
+      "end_to_end_ms": 7.123
+    },
+    {
+      "idx": 379,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2174,
+      "end_to_end_ms": 7.4891
+    },
+    {
+      "idx": 271,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 4.5754,
+      "end_to_end_ms": 4.8179
+    },
+    {
+      "idx": 166,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.4038,
+      "end_to_end_ms": 10.7611
+    },
+    {
+      "idx": 181,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2623,
+      "end_to_end_ms": 7.564
+    },
+    {
+      "idx": 391,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.2881,
+      "end_to_end_ms": 12.5948
+    },
+    {
+      "idx": 818,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 23.0425,
+      "end_to_end_ms": 23.31
+    },
+    {
+      "idx": 277,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.4635,
+      "end_to_end_ms": 9.7687
+    },
+    {
+      "idx": 582,
+      "tokens": 53,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.3825,
+      "end_to_end_ms": 13.7611
+    },
+    {
+      "idx": 385,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 36.6033,
+      "end_to_end_ms": 36.9233
+    },
+    {
+      "idx": 268,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.1013,
+      "end_to_end_ms": 31.5252
+    },
+    {
+      "idx": 230,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 29.0753,
+      "end_to_end_ms": 29.3886
+    },
+    {
+      "idx": 458,
+      "tokens": 45,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 50.3425,
+      "end_to_end_ms": 50.7825
+    },
+    {
+      "idx": 126,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.7184,
+      "end_to_end_ms": 29.0231
+    },
+    {
+      "idx": 199,
+      "tokens": 38,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.4643,
+      "end_to_end_ms": 10.8114
+    },
+    {
+      "idx": 183,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.1719,
+      "end_to_end_ms": 5.4176
+    },
+    {
+      "idx": 800,
+      "tokens": 54,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 53.6474,
+      "end_to_end_ms": 54.0231
+    },
+    {
+      "idx": 31,
+      "tokens": 38,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 37.9436,
+      "end_to_end_ms": 38.5828
+    },
+    {
+      "idx": 735,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 31.85,
+      "end_to_end_ms": 32.1664
+    },
+    {
+      "idx": 187,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.3731,
+      "end_to_end_ms": 10.6797
+    },
+    {
+      "idx": 242,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.9953,
+      "end_to_end_ms": 5.2668
+    },
+    {
+      "idx": 808,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.5537,
+      "end_to_end_ms": 5.7983
+    },
+    {
+      "idx": 224,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.6356,
+      "end_to_end_ms": 9.9585
+    },
+    {
+      "idx": 314,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2283,
+      "end_to_end_ms": 7.5215
+    },
+    {
+      "idx": 725,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6301,
+      "end_to_end_ms": 7.9238
+    },
+    {
+      "idx": 408,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9002,
+      "end_to_end_ms": 9.2098
+    },
+    {
+      "idx": 733,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 35.1,
+      "end_to_end_ms": 35.4363
+    },
+    {
+      "idx": 569,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.7589,
+      "end_to_end_ms": 7.0477
+    },
+    {
+      "idx": 134,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4864,
+      "end_to_end_ms": 7.7844
+    },
+    {
+      "idx": 756,
+      "tokens": 9,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.9885,
+      "end_to_end_ms": 4.2091
+    },
+    {
+      "idx": 771,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 38.1857,
+      "end_to_end_ms": 38.5259
+    },
+    {
+      "idx": 457,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.669,
+      "end_to_end_ms": 7.9647
+    },
+    {
+      "idx": 337,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.978,
+      "end_to_end_ms": 8.3251
+    },
+    {
+      "idx": 625,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.5733,
+      "end_to_end_ms": 6.8412
+    },
+    {
+      "idx": 762,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.1107,
+      "end_to_end_ms": 6.446
+    },
+    {
+      "idx": 417,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.1965,
+      "end_to_end_ms": 8.523
+    },
+    {
+      "idx": 501,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 8.4718,
+      "end_to_end_ms": 8.7581
+    },
+    {
+      "idx": 654,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0958,
+      "end_to_end_ms": 8.3975
+    },
+    {
+      "idx": 726,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3743,
+      "end_to_end_ms": 9.7173
+    },
+    {
+      "idx": 25,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3594,
+      "end_to_end_ms": 9.6958
+    },
+    {
+      "idx": 691,
+      "tokens": 39,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.6305,
+      "end_to_end_ms": 11.9775
+    },
+    {
+      "idx": 712,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.4561,
+      "end_to_end_ms": 4.7126
+    },
+    {
+      "idx": 294,
+      "tokens": 49,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.7138,
+      "end_to_end_ms": 13.0734
+    },
+    {
+      "idx": 114,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.3059,
+      "end_to_end_ms": 10.6435
+    },
+    {
+      "idx": 664,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.2639,
+      "end_to_end_ms": 10.6025
+    },
+    {
+      "idx": 1,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.3955,
+      "end_to_end_ms": 4.6423
+    },
+    {
+      "idx": 84,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0086,
+      "end_to_end_ms": 8.3485
+    },
+    {
+      "idx": 835,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.1344,
+      "end_to_end_ms": 10.4461
+    },
+    {
+      "idx": 595,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.0604,
+      "end_to_end_ms": 38.3762
+    },
+    {
+      "idx": 593,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.8999,
+      "end_to_end_ms": 10.2962
+    },
+    {
+      "idx": 211,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9018,
+      "end_to_end_ms": 9.2126
+    },
+    {
+      "idx": 775,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.2164,
+      "end_to_end_ms": 9.5753
+    },
+    {
+      "idx": 24,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 24.2778,
+      "end_to_end_ms": 24.5323
+    },
+    {
+      "idx": 585,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.2048,
+      "end_to_end_ms": 11.7165
+    },
+    {
+      "idx": 384,
+      "tokens": 50,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 20.7329,
+      "end_to_end_ms": 21.1705
+    },
+    {
+      "idx": 106,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.176,
+      "end_to_end_ms": 10.4759
+    },
+    {
+      "idx": 543,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 50.3807,
+      "end_to_end_ms": 50.8463
+    },
+    {
+      "idx": 513,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 53.8299,
+      "end_to_end_ms": 54.2214
+    },
+    {
+      "idx": 636,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.2962,
+      "end_to_end_ms": 15.6785
+    },
+    {
+      "idx": 207,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.4156,
+      "end_to_end_ms": 9.7445
+    },
+    {
+      "idx": 676,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9437,
+      "end_to_end_ms": 9.3367
+    },
+    {
+      "idx": 128,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.8773,
+      "end_to_end_ms": 11.2535
+    },
+    {
+      "idx": 484,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2441,
+      "end_to_end_ms": 8.7193
+    },
+    {
+      "idx": 57,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.774,
+      "end_to_end_ms": 6.0356
+    },
+    {
+      "idx": 322,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.4905,
+      "end_to_end_ms": 4.7253
+    },
+    {
+      "idx": 445,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 35.4321,
+      "end_to_end_ms": 35.735
+    },
+    {
+      "idx": 589,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 56.0736,
+      "end_to_end_ms": 56.7177
+    },
+    {
+      "idx": 43,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.8209,
+      "end_to_end_ms": 16.4515
+    },
+    {
+      "idx": 540,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.3349,
+      "end_to_end_ms": 12.8143
+    },
+    {
+      "idx": 689,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 69.2628,
+      "end_to_end_ms": 70.4615
+    },
+    {
+      "idx": 111,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.2528,
+      "end_to_end_ms": 28.6589
+    },
+    {
+      "idx": 225,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 46.0133,
+      "end_to_end_ms": 46.5202
+    },
+    {
+      "idx": 851,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 55.9045,
+      "end_to_end_ms": 56.2807
+    },
+    {
+      "idx": 839,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2372,
+      "end_to_end_ms": 7.8207
+    },
+    {
+      "idx": 285,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 50.0063,
+      "end_to_end_ms": 50.5853
+    },
+    {
+      "idx": 162,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 22.9942,
+      "end_to_end_ms": 23.4616
+    },
+    {
+      "idx": 197,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.2103,
+      "end_to_end_ms": 12.8054
+    },
+    {
+      "idx": 697,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 63.828,
+      "end_to_end_ms": 64.4118
+    },
+    {
+      "idx": 219,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 29.3929,
+      "end_to_end_ms": 30.3342
+    },
+    {
+      "idx": 28,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.3836,
+      "end_to_end_ms": 16.9655
+    },
+    {
+      "idx": 621,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.462,
+      "end_to_end_ms": 19.0998
+    },
+    {
+      "idx": 730,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 24.7312,
+      "end_to_end_ms": 25.5255
+    },
+    {
+      "idx": 435,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.278,
+      "end_to_end_ms": 9.6838
+    },
+    {
+      "idx": 708,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.9599,
+      "end_to_end_ms": 16.3747
+    },
+    {
+      "idx": 133,
+      "tokens": 46,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 23.851,
+      "end_to_end_ms": 24.542
+    },
+    {
+      "idx": 221,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7439,
+      "end_to_end_ms": 6.0282
+    },
+    {
+      "idx": 747,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.9511,
+      "end_to_end_ms": 13.3552
+    },
+    {
+      "idx": 430,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2692,
+      "end_to_end_ms": 8.641
+    },
+    {
+      "idx": 810,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8926,
+      "end_to_end_ms": 6.1522
+    },
+    {
+      "idx": 607,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.4647,
+      "end_to_end_ms": 4.688
+    },
+    {
+      "idx": 252,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.9476,
+      "end_to_end_ms": 5.1788
+    },
+    {
+      "idx": 634,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6877,
+      "end_to_end_ms": 7.9911
+    },
+    {
+      "idx": 641,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8728,
+      "end_to_end_ms": 7.1502
+    },
+    {
+      "idx": 237,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.884,
+      "end_to_end_ms": 7.1457
+    },
+    {
+      "idx": 381,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.7808,
+      "end_to_end_ms": 11.0948
+    },
+    {
+      "idx": 139,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7294,
+      "end_to_end_ms": 5.9692
+    },
+    {
+      "idx": 857,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.3671,
+      "end_to_end_ms": 13.7124
+    },
+    {
+      "idx": 102,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.8618,
+      "end_to_end_ms": 30.1429
+    },
+    {
+      "idx": 386,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4001,
+      "end_to_end_ms": 5.6629
+    },
+    {
+      "idx": 776,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5089,
+      "end_to_end_ms": 8.8356
+    },
+    {
+      "idx": 165,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.3914,
+      "end_to_end_ms": 29.7153
+    },
+    {
+      "idx": 141,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.1258,
+      "end_to_end_ms": 8.4116
+    },
+    {
+      "idx": 2,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0445,
+      "end_to_end_ms": 8.3261
+    },
+    {
+      "idx": 483,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.9981,
+      "end_to_end_ms": 11.3456
+    },
+    {
+      "idx": 627,
+      "tokens": 9,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.6549,
+      "end_to_end_ms": 3.8832
+    },
+    {
+      "idx": 518,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.0827,
+      "end_to_end_ms": 6.3198
+    },
+    {
+      "idx": 498,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.1794,
+      "end_to_end_ms": 7.4845
+    },
+    {
+      "idx": 39,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.9273,
+      "end_to_end_ms": 8.1978
+    },
+    {
+      "idx": 418,
+      "tokens": 42,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.733,
+      "end_to_end_ms": 11.147
+    },
+    {
+      "idx": 549,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.5602,
+      "end_to_end_ms": 4.7772
+    },
+    {
+      "idx": 527,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 20.2539,
+      "end_to_end_ms": 20.5207
+    },
+    {
+      "idx": 136,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4603,
+      "end_to_end_ms": 5.7242
+    },
+    {
+      "idx": 544,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 8.7441,
+      "end_to_end_ms": 9.0442
+    },
+    {
+      "idx": 623,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7215,
+      "end_to_end_ms": 5.9883
+    },
+    {
+      "idx": 649,
+      "tokens": 36,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.6914,
+      "end_to_end_ms": 12.0558
+    },
+    {
+      "idx": 263,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.1424,
+      "end_to_end_ms": 7.3965
+    },
+    {
+      "idx": 369,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.7993,
+      "end_to_end_ms": 10.1265
+    },
+    {
+      "idx": 440,
+      "tokens": 48,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 53.7484,
+      "end_to_end_ms": 54.136
+    },
+    {
+      "idx": 622,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.2359,
+      "end_to_end_ms": 11.5991
+    },
+    {
+      "idx": 536,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6168,
+      "end_to_end_ms": 7.9226
+    },
+    {
+      "idx": 637,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.3058,
+      "end_to_end_ms": 7.5633
+    },
+    {
+      "idx": 63,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.2308,
+      "end_to_end_ms": 11.625
+    },
+    {
+      "idx": 282,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 12.9228,
+      "end_to_end_ms": 13.5151
+    },
+    {
+      "idx": 78,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.9881,
+      "end_to_end_ms": 17.4852
+    },
+    {
+      "idx": 577,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.9945,
+      "end_to_end_ms": 11.4513
+    },
+    {
+      "idx": 95,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 18.5519,
+      "end_to_end_ms": 19.1239
+    },
+    {
+      "idx": 777,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.4208,
+      "end_to_end_ms": 19.0217
+    },
+    {
+      "idx": 437,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 19.9158,
+      "end_to_end_ms": 20.7313
+    },
+    {
+      "idx": 171,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.7121,
+      "end_to_end_ms": 7.0678
+    },
+    {
+      "idx": 170,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7681,
+      "end_to_end_ms": 6.0664
+    },
+    {
+      "idx": 175,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 7.9027,
+      "end_to_end_ms": 8.2155
+    },
+    {
+      "idx": 525,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7406,
+      "end_to_end_ms": 6.0056
+    },
+    {
+      "idx": 138,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.2953,
+      "end_to_end_ms": 5.5508
+    },
+    {
+      "idx": 716,
+      "tokens": 40,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.9021,
+      "end_to_end_ms": 12.2901
+    },
+    {
+      "idx": 794,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2225,
+      "end_to_end_ms": 8.5157
+    },
+    {
+      "idx": 528,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 27.0463,
+      "end_to_end_ms": 27.3119
+    },
+    {
+      "idx": 538,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.114,
+      "end_to_end_ms": 9.6997
+    },
+    {
+      "idx": 466,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0017,
+      "end_to_end_ms": 8.2962
+    },
+    {
+      "idx": 118,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 8.016,
+      "end_to_end_ms": 8.4396
+    },
+    {
+      "idx": 7,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.2038,
+      "end_to_end_ms": 5.4583
+    },
+    {
+      "idx": 659,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 25.3591,
+      "end_to_end_ms": 25.6276
+    },
+    {
+      "idx": 563,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8504,
+      "end_to_end_ms": 7.1301
+    },
+    {
+      "idx": 309,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.2014,
+      "end_to_end_ms": 6.4401
+    },
+    {
+      "idx": 631,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 19.8564,
+      "end_to_end_ms": 20.1093
+    },
+    {
+      "idx": 529,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.9275,
+      "end_to_end_ms": 10.2848
+    },
+    {
+      "idx": 245,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.4954,
+      "end_to_end_ms": 9.0491
+    },
+    {
+      "idx": 248,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 8.748,
+      "end_to_end_ms": 9.0494
+    },
+    {
+      "idx": 459,
+      "tokens": 49,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.5399,
+      "end_to_end_ms": 11.9081
+    },
+    {
+      "idx": 687,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8357,
+      "end_to_end_ms": 8.1268
+    },
+    {
+      "idx": 817,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.3353,
+      "end_to_end_ms": 4.5786
+    },
+    {
+      "idx": 416,
+      "tokens": 7,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.4384,
+      "end_to_end_ms": 3.6323
+    },
+    {
+      "idx": 824,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.7186,
+      "end_to_end_ms": 32.0438
+    },
+    {
+      "idx": 486,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.3074,
+      "end_to_end_ms": 10.6049
+    },
+    {
+      "idx": 212,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.9714,
+      "end_to_end_ms": 7.2159
+    },
+    {
+      "idx": 798,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 14.0558,
+      "end_to_end_ms": 14.4134
+    },
+    {
+      "idx": 220,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 42.5674,
+      "end_to_end_ms": 42.8743
+    },
+    {
+      "idx": 272,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7243,
+      "end_to_end_ms": 5.9732
+    },
+    {
+      "idx": 335,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 44.8418,
+      "end_to_end_ms": 45.163
+    },
+    {
+      "idx": 785,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 32.265,
+      "end_to_end_ms": 32.5762
+    },
+    {
+      "idx": 668,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6654,
+      "end_to_end_ms": 6.9332
+    },
+    {
+      "idx": 727,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.3228,
+      "end_to_end_ms": 10.6332
+    },
+    {
+      "idx": 422,
+      "tokens": 42,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 45.4959,
+      "end_to_end_ms": 45.9662
+    },
+    {
+      "idx": 229,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.2005,
+      "end_to_end_ms": 6.4608
+    },
+    {
+      "idx": 135,
+      "tokens": 43,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 48.4069,
+      "end_to_end_ms": 48.7772
+    },
+    {
+      "idx": 203,
+      "tokens": 4,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 2.7874,
+      "end_to_end_ms": 2.985
+    },
+    {
+      "idx": 16,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2698,
+      "end_to_end_ms": 7.5328
+    },
+    {
+      "idx": 506,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.531,
+      "end_to_end_ms": 6.7879
+    },
+    {
+      "idx": 383,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.8081,
+      "end_to_end_ms": 5.0586
+    },
+    {
+      "idx": 707,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.2251,
+      "end_to_end_ms": 5.4611
+    },
+    {
+      "idx": 539,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.5472,
+      "end_to_end_ms": 3.7585
+    },
+    {
+      "idx": 816,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 26.687,
+      "end_to_end_ms": 26.9732
+    },
+    {
+      "idx": 9,
+      "tokens": 40,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.2363,
+      "end_to_end_ms": 10.6072
+    },
+    {
+      "idx": 59,
+      "tokens": 37,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.881,
+      "end_to_end_ms": 39.207
+    },
+    {
+      "idx": 477,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 29.7503,
+      "end_to_end_ms": 30.1263
+    },
+    {
+      "idx": 77,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.235,
+      "end_to_end_ms": 7.5225
+    },
+    {
+      "idx": 82,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 26.6429,
+      "end_to_end_ms": 26.9242
+    },
+    {
+      "idx": 340,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 33.1404,
+      "end_to_end_ms": 33.4928
+    },
+    {
+      "idx": 291,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 32.6337,
+      "end_to_end_ms": 33.0608
+    },
+    {
+      "idx": 376,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.1482,
+      "end_to_end_ms": 11.4886
+    },
+    {
+      "idx": 565,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.1655,
+      "end_to_end_ms": 8.4338
+    },
+    {
+      "idx": 378,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.0052,
+      "end_to_end_ms": 13.3326
+    },
+    {
+      "idx": 17,
+      "tokens": 44,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.6337,
+      "end_to_end_ms": 12.0062
+    },
+    {
+      "idx": 531,
+      "tokens": 48,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.9577,
+      "end_to_end_ms": 14.5051
+    },
+    {
+      "idx": 397,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.1941,
+      "end_to_end_ms": 9.5009
+    },
+    {
+      "idx": 392,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5011,
+      "end_to_end_ms": 8.7647
+    },
+    {
+      "idx": 329,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6002,
+      "end_to_end_ms": 8.8872
+    },
+    {
+      "idx": 258,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.3076,
+      "end_to_end_ms": 7.6167
+    },
+    {
+      "idx": 371,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.6611,
+      "end_to_end_ms": 11.0074
+    },
+    {
+      "idx": 389,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8153,
+      "end_to_end_ms": 7.1026
+    },
+    {
+      "idx": 339,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.7172,
+      "end_to_end_ms": 6.9884
+    },
+    {
+      "idx": 362,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6533,
+      "end_to_end_ms": 8.9605
+    },
+    {
+      "idx": 803,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 33.4683,
+      "end_to_end_ms": 33.7666
+    },
+    {
+      "idx": 158,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 38.1718,
+      "end_to_end_ms": 38.5266
+    },
+    {
+      "idx": 640,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5866,
+      "end_to_end_ms": 7.9249
+    },
+    {
+      "idx": 695,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 9.5228,
+      "end_to_end_ms": 9.8194
+    },
+    {
+      "idx": 508,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9121,
+      "end_to_end_ms": 9.2546
+    },
+    {
+      "idx": 755,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4275,
+      "end_to_end_ms": 7.7307
+    },
+    {
+      "idx": 448,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 7.7045,
+      "end_to_end_ms": 8.0112
+    },
+    {
+      "idx": 419,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.1894,
+      "end_to_end_ms": 5.4669
+    },
+    {
+      "idx": 61,
+      "tokens": 38,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.3654,
+      "end_to_end_ms": 13.7569
+    },
+    {
+      "idx": 324,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 34.482,
+      "end_to_end_ms": 34.8071
+    },
+    {
+      "idx": 732,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4739,
+      "end_to_end_ms": 7.7771
+    },
+    {
+      "idx": 797,
+      "tokens": 42,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.5884,
+      "end_to_end_ms": 10.9786
+    },
+    {
+      "idx": 27,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3715,
+      "end_to_end_ms": 8.6807
+    },
+    {
+      "idx": 632,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.1534,
+      "end_to_end_ms": 4.3785
+    },
+    {
+      "idx": 602,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.6963,
+      "end_to_end_ms": 5.9199
+    },
+    {
+      "idx": 113,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.7264,
+      "end_to_end_ms": 3.9457
+    },
+    {
+      "idx": 619,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.6245,
+      "end_to_end_ms": 5.8791
+    },
+    {
+      "idx": 479,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9737,
+      "end_to_end_ms": 6.2069
+    },
+    {
+      "idx": 198,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.102,
+      "end_to_end_ms": 9.6521
+    },
+    {
+      "idx": 748,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.7155,
+      "end_to_end_ms": 28.9862
+    },
+    {
+      "idx": 423,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9528,
+      "end_to_end_ms": 6.2157
+    },
+    {
+      "idx": 103,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4492,
+      "end_to_end_ms": 7.6967
+    },
+    {
+      "idx": 53,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8694,
+      "end_to_end_ms": 6.2846
+    },
+    {
+      "idx": 719,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.1072,
+      "end_to_end_ms": 9.3767
+    },
+    {
+      "idx": 846,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 18.6716,
+      "end_to_end_ms": 18.912
+    },
+    {
+      "idx": 144,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8928,
+      "end_to_end_ms": 7.1833
+    },
+    {
+      "idx": 276,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.4529,
+      "end_to_end_ms": 9.7684
+    },
+    {
+      "idx": 535,
+      "tokens": 9,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.8389,
+      "end_to_end_ms": 4.0663
+    },
+    {
+      "idx": 863,
+      "tokens": 45,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 11.601,
+      "end_to_end_ms": 11.9562
+    },
+    {
+      "idx": 38,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.018,
+      "end_to_end_ms": 8.3078
+    },
+    {
+      "idx": 520,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.7266,
+      "end_to_end_ms": 11.2146
+    },
+    {
+      "idx": 499,
+      "tokens": 37,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 40.02,
+      "end_to_end_ms": 40.3653
+    },
+    {
+      "idx": 608,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 34.1488,
+      "end_to_end_ms": 34.579
+    },
+    {
+      "idx": 862,
+      "tokens": 52,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 13.9859,
+      "end_to_end_ms": 14.3948
+    },
+    {
+      "idx": 542,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4626,
+      "end_to_end_ms": 5.6984
+    },
+    {
+      "idx": 190,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 42.9627,
+      "end_to_end_ms": 43.2975
+    },
+    {
+      "idx": 313,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8807,
+      "end_to_end_ms": 6.2085
+    },
+    {
+      "idx": 89,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.1283,
+      "end_to_end_ms": 29.4148
+    },
+    {
+      "idx": 809,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.1142,
+      "end_to_end_ms": 10.8334
+    },
+    {
+      "idx": 14,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6471,
+      "end_to_end_ms": 8.9635
+    },
+    {
+      "idx": 261,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.617,
+      "end_to_end_ms": 7.9184
+    },
+    {
+      "idx": 270,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.1316,
+      "end_to_end_ms": 5.3677
+    },
+    {
+      "idx": 37,
+      "tokens": 40,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 45.9817,
+      "end_to_end_ms": 46.3175
+    },
+    {
+      "idx": 361,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2028,
+      "end_to_end_ms": 8.5316
+    },
+    {
+      "idx": 465,
+      "tokens": 36,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.1677,
+      "end_to_end_ms": 12.528
+    },
+    {
+      "idx": 764,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 24.1511,
+      "end_to_end_ms": 24.4863
+    },
+    {
+      "idx": 30,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.4743,
+      "end_to_end_ms": 11.8187
+    },
+    {
+      "idx": 773,
+      "tokens": 9,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.9187,
+      "end_to_end_ms": 4.1405
+    },
+    {
+      "idx": 411,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 36.9585,
+      "end_to_end_ms": 37.245
+    },
+    {
+      "idx": 49,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.5614,
+      "end_to_end_ms": 11.9318
+    },
+    {
+      "idx": 683,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 43.5951,
+      "end_to_end_ms": 43.9171
+    },
+    {
+      "idx": 88,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 68.1915,
+      "end_to_end_ms": 68.5566
+    },
+    {
+      "idx": 616,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.6508,
+      "end_to_end_ms": 16.1446
+    },
+    {
+      "idx": 474,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.2073,
+      "end_to_end_ms": 9.5415
+    },
+    {
+      "idx": 566,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.3982,
+      "end_to_end_ms": 19.2732
+    },
+    {
+      "idx": 801,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 45.0099,
+      "end_to_end_ms": 45.6294
+    },
+    {
+      "idx": 837,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.7121,
+      "end_to_end_ms": 12.2256
+    },
+    {
+      "idx": 854,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 25.4923,
+      "end_to_end_ms": 26.3485
+    },
+    {
+      "idx": 841,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.7398,
+      "end_to_end_ms": 17.3727
+    },
+    {
+      "idx": 232,
+      "tokens": 53,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 34.1811,
+      "end_to_end_ms": 35.0643
+    },
+    {
+      "idx": 122,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 35.4196,
+      "end_to_end_ms": 35.8682
+    },
+    {
+      "idx": 354,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.7708,
+      "end_to_end_ms": 13.1063
+    },
+    {
+      "idx": 231,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 26.9084,
+      "end_to_end_ms": 27.5905
+    },
+    {
+      "idx": 23,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 17.6238,
+      "end_to_end_ms": 18.2558
+    },
+    {
+      "idx": 643,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 14.3338,
+      "end_to_end_ms": 14.9081
+    },
+    {
+      "idx": 265,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 22.0761,
+      "end_to_end_ms": 22.7393
+    },
+    {
+      "idx": 218,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 57.0008,
+      "end_to_end_ms": 57.5654
+    },
+    {
+      "idx": 264,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.1022,
+      "end_to_end_ms": 18.7202
+    },
+    {
+      "idx": 176,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 43.4445,
+      "end_to_end_ms": 44.0884
+    },
+    {
+      "idx": 502,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.2169,
+      "end_to_end_ms": 10.5714
+    },
+    {
+      "idx": 579,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 25.3382,
+      "end_to_end_ms": 25.6155
+    },
+    {
+      "idx": 859,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6905,
+      "end_to_end_ms": 6.9731
+    },
+    {
+      "idx": 743,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 53.9079,
+      "end_to_end_ms": 54.2583
+    },
+    {
+      "idx": 273,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 20.2254,
+      "end_to_end_ms": 20.482
+    },
+    {
+      "idx": 741,
+      "tokens": 11,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 16.3828,
+      "end_to_end_ms": 16.6453
+    },
+    {
+      "idx": 323,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 4.1934,
+      "end_to_end_ms": 4.445
+    },
+    {
+      "idx": 556,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.7642,
+      "end_to_end_ms": 7.0327
+    },
+    {
+      "idx": 468,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.1628,
+      "end_to_end_ms": 6.4236
+    },
+    {
+      "idx": 192,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 34.2217,
+      "end_to_end_ms": 34.5215
+    },
+    {
+      "idx": 194,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 30.2112,
+      "end_to_end_ms": 30.5362
+    },
+    {
+      "idx": 576,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.9188,
+      "end_to_end_ms": 8.2347
+    },
+    {
+      "idx": 60,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.9155,
+      "end_to_end_ms": 8.2115
+    },
+    {
+      "idx": 414,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 29.686,
+      "end_to_end_ms": 29.9919
+    },
+    {
+      "idx": 145,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 10.5374,
+      "end_to_end_ms": 10.9068
+    },
+    {
+      "idx": 420,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8178,
+      "end_to_end_ms": 8.0949
+    },
+    {
+      "idx": 130,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6609,
+      "end_to_end_ms": 6.9197
+    },
+    {
+      "idx": 842,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.3992,
+      "end_to_end_ms": 7.6779
+    },
+    {
+      "idx": 26,
+      "tokens": 35,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.5941,
+      "end_to_end_ms": 12.9283
+    },
+    {
+      "idx": 188,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.69,
+      "end_to_end_ms": 8.9994
+    },
+    {
+      "idx": 751,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8973,
+      "end_to_end_ms": 6.1122
+    },
+    {
+      "idx": 173,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 30.7737,
+      "end_to_end_ms": 31.0754
+    },
+    {
+      "idx": 591,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.5126,
+      "end_to_end_ms": 4.7758
+    },
+    {
+      "idx": 363,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 25.4787,
+      "end_to_end_ms": 25.7401
+    },
+    {
+      "idx": 333,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.1232,
+      "end_to_end_ms": 8.4507
+    },
+    {
+      "idx": 92,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 6.0425,
+      "end_to_end_ms": 6.3139
+    },
+    {
+      "idx": 150,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.1026,
+      "end_to_end_ms": 5.3678
+    },
+    {
+      "idx": 551,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 27.5447,
+      "end_to_end_ms": 27.8303
+    },
+    {
+      "idx": 401,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 35.0925,
+      "end_to_end_ms": 35.4192
+    },
+    {
+      "idx": 663,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.9914,
+      "end_to_end_ms": 10.3071
+    },
+    {
+      "idx": 787,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.6546,
+      "end_to_end_ms": 5.9189
+    },
+    {
+      "idx": 567,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.2463,
+      "end_to_end_ms": 9.5484
+    },
+    {
+      "idx": 475,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.8045,
+      "end_to_end_ms": 10.1608
+    },
+    {
+      "idx": 866,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.263,
+      "end_to_end_ms": 9.5695
+    },
+    {
+      "idx": 788,
+      "tokens": 33,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.397,
+      "end_to_end_ms": 10.7096
+    },
+    {
+      "idx": 831,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.5669,
+      "end_to_end_ms": 5.8778
+    },
+    {
+      "idx": 778,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.8089,
+      "end_to_end_ms": 6.0466
+    },
+    {
+      "idx": 638,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3934,
+      "end_to_end_ms": 8.7049
+    },
+    {
+      "idx": 681,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.9478,
+      "end_to_end_ms": 5.1882
+    },
+    {
+      "idx": 76,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9257,
+      "end_to_end_ms": 6.1685
+    },
+    {
+      "idx": 463,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6943,
+      "end_to_end_ms": 7.9966
+    },
+    {
+      "idx": 311,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.4934,
+      "end_to_end_ms": 4.7166
+    },
+    {
+      "idx": 407,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.3188,
+      "end_to_end_ms": 5.5672
+    },
+    {
+      "idx": 189,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0338,
+      "end_to_end_ms": 8.35
+    },
+    {
+      "idx": 865,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.2792,
+      "end_to_end_ms": 28.5544
+    },
+    {
+      "idx": 58,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 19.7572,
+      "end_to_end_ms": 20.0271
+    },
+    {
+      "idx": 648,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.9456,
+      "end_to_end_ms": 10.2769
+    },
+    {
+      "idx": 107,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 29.7628,
+      "end_to_end_ms": 30.0707
+    },
+    {
+      "idx": 521,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4133,
+      "end_to_end_ms": 7.711
+    },
+    {
+      "idx": 587,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.8508,
+      "end_to_end_ms": 32.1161
+    },
+    {
+      "idx": 427,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.6241,
+      "end_to_end_ms": 11.9754
+    },
+    {
+      "idx": 336,
+      "tokens": 35,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.5408,
+      "end_to_end_ms": 9.8755
+    },
+    {
+      "idx": 849,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.3096,
+      "end_to_end_ms": 13.9249
+    },
+    {
+      "idx": 243,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 20.9142,
+      "end_to_end_ms": 21.1654
+    },
+    {
+      "idx": 673,
+      "tokens": 37,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 39.7256,
+      "end_to_end_ms": 40.0768
+    },
+    {
+      "idx": 308,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4427,
+      "end_to_end_ms": 7.827
+    },
+    {
+      "idx": 93,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 25.8798,
+      "end_to_end_ms": 26.1516
+    },
+    {
+      "idx": 516,
+      "tokens": 14,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4325,
+      "end_to_end_ms": 5.711
+    },
+    {
+      "idx": 844,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9904,
+      "end_to_end_ms": 9.2865
+    },
+    {
+      "idx": 451,
+      "tokens": 47,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.8325,
+      "end_to_end_ms": 12.2186
+    },
+    {
+      "idx": 770,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 18.5608,
+      "end_to_end_ms": 18.9659
+    },
+    {
+      "idx": 650,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.5466,
+      "end_to_end_ms": 7.785
+    },
+    {
+      "idx": 467,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.7735,
+      "end_to_end_ms": 12.1855
+    },
+    {
+      "idx": 71,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.2349,
+      "end_to_end_ms": 10.6088
+    },
+    {
+      "idx": 678,
+      "tokens": 37,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 42.1008,
+      "end_to_end_ms": 42.4278
+    },
+    {
+      "idx": 473,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.8936,
+      "end_to_end_ms": 12.2517
+    },
+    {
+      "idx": 185,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.762,
+      "end_to_end_ms": 9.0821
+    },
+    {
+      "idx": 169,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6824,
+      "end_to_end_ms": 7.0075
+    },
+    {
+      "idx": 802,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6248,
+      "end_to_end_ms": 8.9157
+    },
+    {
+      "idx": 614,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9289,
+      "end_to_end_ms": 9.186
+    },
+    {
+      "idx": 364,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 30.5381,
+      "end_to_end_ms": 30.8512
+    },
+    {
+      "idx": 368,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6709,
+      "end_to_end_ms": 6.9362
+    },
+    {
+      "idx": 42,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6339,
+      "end_to_end_ms": 8.9326
+    },
+    {
+      "idx": 720,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3212,
+      "end_to_end_ms": 8.6205
+    },
+    {
+      "idx": 710,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.2987,
+      "end_to_end_ms": 6.5618
+    },
+    {
+      "idx": 117,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0906,
+      "end_to_end_ms": 8.4015
+    },
+    {
+      "idx": 768,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.3938,
+      "end_to_end_ms": 9.6965
+    },
+    {
+      "idx": 590,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2309,
+      "end_to_end_ms": 8.5478
+    },
+    {
+      "idx": 696,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.4009,
+      "end_to_end_ms": 10.7322
+    },
+    {
+      "idx": 744,
+      "tokens": 7,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.3615,
+      "end_to_end_ms": 3.571
+    },
+    {
+      "idx": 256,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4235,
+      "end_to_end_ms": 5.6584
+    },
+    {
+      "idx": 260,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 35.5328,
+      "end_to_end_ms": 35.8695
+    },
+    {
+      "idx": 476,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.3459,
+      "end_to_end_ms": 7.6558
+    },
+    {
+      "idx": 351,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.6462,
+      "end_to_end_ms": 9.9775
+    },
+    {
+      "idx": 180,
+      "tokens": 17,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.07,
+      "end_to_end_ms": 6.3314
+    },
+    {
+      "idx": 428,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.6149,
+      "end_to_end_ms": 5.8838
+    },
+    {
+      "idx": 97,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 40.6565,
+      "end_to_end_ms": 41.0954
+    },
+    {
+      "idx": 580,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5015,
+      "end_to_end_ms": 8.8254
+    },
+    {
+      "idx": 153,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.0545,
+      "end_to_end_ms": 6.3712
+    },
+    {
+      "idx": 644,
+      "tokens": 42,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.6646,
+      "end_to_end_ms": 13.1646
+    },
+    {
+      "idx": 763,
+      "tokens": 48,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 51.2626,
+      "end_to_end_ms": 51.6906
+    },
+    {
+      "idx": 316,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.9132,
+      "end_to_end_ms": 7.2154
+    },
+    {
+      "idx": 507,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.9702,
+      "end_to_end_ms": 8.2612
+    },
+    {
+      "idx": 290,
+      "tokens": 23,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.1874,
+      "end_to_end_ms": 7.4891
+    },
+    {
+      "idx": 546,
+      "tokens": 37,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 14.1047,
+      "end_to_end_ms": 14.4438
+    },
+    {
+      "idx": 847,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 42.6168,
+      "end_to_end_ms": 42.9802
+    },
+    {
+      "idx": 533,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2809,
+      "end_to_end_ms": 8.6059
+    },
+    {
+      "idx": 512,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.2075,
+      "end_to_end_ms": 9.5305
+    },
+    {
+      "idx": 530,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5849,
+      "end_to_end_ms": 8.908
+    },
+    {
+      "idx": 403,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.7804,
+      "end_to_end_ms": 5.0062
+    },
+    {
+      "idx": 334,
+      "tokens": 50,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.8103,
+      "end_to_end_ms": 13.2545
+    },
+    {
+      "idx": 630,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2089,
+      "end_to_end_ms": 7.4735
+    },
+    {
+      "idx": 164,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.0836,
+      "end_to_end_ms": 6.3253
+    },
+    {
+      "idx": 705,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 25.1485,
+      "end_to_end_ms": 25.4221
+    },
+    {
+      "idx": 729,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.54,
+      "end_to_end_ms": 7.8386
+    },
+    {
+      "idx": 807,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7266,
+      "end_to_end_ms": 5.9598
+    },
+    {
+      "idx": 784,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6227,
+      "end_to_end_ms": 6.9111
+    },
+    {
+      "idx": 348,
+      "tokens": 9,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.8222,
+      "end_to_end_ms": 4.0371
+    },
+    {
+      "idx": 177,
+      "tokens": 37,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.9845,
+      "end_to_end_ms": 12.3146
+    },
+    {
+      "idx": 652,
+      "tokens": 5,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.2791,
+      "end_to_end_ms": 3.4894
+    },
+    {
+      "idx": 626,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.153,
+      "end_to_end_ms": 8.6061
+    },
+    {
+      "idx": 101,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 45.9834,
+      "end_to_end_ms": 46.2759
+    },
+    {
+      "idx": 266,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 65.1908,
+      "end_to_end_ms": 66.0364
+    },
+    {
+      "idx": 793,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 14.93,
+      "end_to_end_ms": 15.4654
+    },
+    {
+      "idx": 375,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 32.4373,
+      "end_to_end_ms": 32.8574
+    },
+    {
+      "idx": 148,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.9241,
+      "end_to_end_ms": 8.2028
+    },
+    {
+      "idx": 869,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 21.6366,
+      "end_to_end_ms": 22.009
+    },
+    {
+      "idx": 380,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.6481,
+      "end_to_end_ms": 6.9244
+    },
+    {
+      "idx": 73,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 30.5868,
+      "end_to_end_ms": 30.9033
+    },
+    {
+      "idx": 805,
+      "tokens": 34,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 40.1763,
+      "end_to_end_ms": 40.6992
+    },
+    {
+      "idx": 206,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.4247,
+      "end_to_end_ms": 6.7496
+    },
+    {
+      "idx": 429,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.9576,
+      "end_to_end_ms": 9.3704
+    },
+    {
+      "idx": 297,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.9791,
+      "end_to_end_ms": 6.2525
+    },
+    {
+      "idx": 52,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.6665,
+      "end_to_end_ms": 7.9297
+    },
+    {
+      "idx": 537,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.6256,
+      "end_to_end_ms": 8.9483
+    },
+    {
+      "idx": 178,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 25.6788,
+      "end_to_end_ms": 25.9495
+    },
+    {
+      "idx": 604,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 8.1174,
+      "end_to_end_ms": 8.4296
+    },
+    {
+      "idx": 140,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.0356,
+      "end_to_end_ms": 7.3078
+    },
+    {
+      "idx": 698,
+      "tokens": 43,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.47,
+      "end_to_end_ms": 11.8673
+    },
+    {
+      "idx": 612,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 34.7588,
+      "end_to_end_ms": 35.2689
+    },
+    {
+      "idx": 666,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.1373,
+      "end_to_end_ms": 6.4199
+    },
+    {
+      "idx": 11,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 14.5541,
+      "end_to_end_ms": 14.888
+    },
+    {
+      "idx": 825,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.2842,
+      "end_to_end_ms": 15.6238
+    },
+    {
+      "idx": 306,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.2164,
+      "end_to_end_ms": 7.6866
+    },
+    {
+      "idx": 615,
+      "tokens": 43,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 51.1764,
+      "end_to_end_ms": 51.6869
+    },
+    {
+      "idx": 22,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 15.3997,
+      "end_to_end_ms": 15.6581
+    },
+    {
+      "idx": 275,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.0527,
+      "end_to_end_ms": 7.3219
+    },
+    {
+      "idx": 599,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.6296,
+      "end_to_end_ms": 3.847
+    },
+    {
+      "idx": 32,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.5234,
+      "end_to_end_ms": 4.7395
+    },
+    {
+      "idx": 349,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.5596,
+      "end_to_end_ms": 10.8734
+    },
+    {
+      "idx": 246,
+      "tokens": 41,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.8689,
+      "end_to_end_ms": 12.2131
+    },
+    {
+      "idx": 393,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7614,
+      "end_to_end_ms": 5.9884
+    },
+    {
+      "idx": 41,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 14.2697,
+      "end_to_end_ms": 14.6479
+    },
+    {
+      "idx": 827,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.9799,
+      "end_to_end_ms": 14.4563
+    },
+    {
+      "idx": 769,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.649,
+      "end_to_end_ms": 14.1734
+    },
+    {
+      "idx": 700,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.4006,
+      "end_to_end_ms": 16.0184
+    },
+    {
+      "idx": 64,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 60.0601,
+      "end_to_end_ms": 60.654
+    },
+    {
+      "idx": 500,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.1588,
+      "end_to_end_ms": 13.8044
+    },
+    {
+      "idx": 48,
+      "tokens": 14,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.983,
+      "end_to_end_ms": 11.3549
+    },
+    {
+      "idx": 163,
+      "tokens": 54,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 26.7868,
+      "end_to_end_ms": 27.5516
+    },
+    {
+      "idx": 738,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.3415,
+      "end_to_end_ms": 6.8388
+    },
+    {
+      "idx": 699,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 7.0867,
+      "end_to_end_ms": 7.3997
+    },
+    {
+      "idx": 603,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.8846,
+      "end_to_end_ms": 11.2692
+    },
+    {
+      "idx": 179,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.936,
+      "end_to_end_ms": 5.2116
+    },
+    {
+      "idx": 85,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.8256,
+      "end_to_end_ms": 9.2905
+    },
+    {
+      "idx": 325,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4449,
+      "end_to_end_ms": 7.7935
+    },
+    {
+      "idx": 345,
+      "tokens": 47,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.3195,
+      "end_to_end_ms": 12.6732
+    },
+    {
+      "idx": 662,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4986,
+      "end_to_end_ms": 5.7483
+    },
+    {
+      "idx": 505,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 21.1855,
+      "end_to_end_ms": 21.4419
+    },
+    {
+      "idx": 326,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.3499,
+      "end_to_end_ms": 6.6088
+    },
+    {
+      "idx": 441,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 32.9185,
+      "end_to_end_ms": 33.2371
+    },
+    {
+      "idx": 402,
+      "tokens": 29,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.0968,
+      "end_to_end_ms": 31.4094
+    },
+    {
+      "idx": 819,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.5786,
+      "end_to_end_ms": 10.9743
+    },
+    {
+      "idx": 806,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.5064,
+      "end_to_end_ms": 6.7983
+    },
+    {
+      "idx": 367,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.726,
+      "end_to_end_ms": 6.9757
+    },
+    {
+      "idx": 4,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.4837,
+      "end_to_end_ms": 4.7018
+    },
+    {
+      "idx": 553,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0081,
+      "end_to_end_ms": 8.3016
+    },
+    {
+      "idx": 356,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 38.7303,
+      "end_to_end_ms": 39.0904
+    },
+    {
+      "idx": 669,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.7578,
+      "end_to_end_ms": 8.0409
+    },
+    {
+      "idx": 398,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 21.0282,
+      "end_to_end_ms": 21.2892
+    },
+    {
+      "idx": 460,
+      "tokens": 37,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.7381,
+      "end_to_end_ms": 11.0823
+    },
+    {
+      "idx": 65,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.8917,
+      "end_to_end_ms": 7.164
+    },
+    {
+      "idx": 453,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.4486,
+      "end_to_end_ms": 10.7848
+    },
+    {
+      "idx": 191,
+      "tokens": 38,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.7323,
+      "end_to_end_ms": 11.1573
+    },
+    {
+      "idx": 829,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 20.2421,
+      "end_to_end_ms": 20.4682
+    },
+    {
+      "idx": 495,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 10.7454,
+      "end_to_end_ms": 11.0944
+    },
+    {
+      "idx": 172,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.7755,
+      "end_to_end_ms": 39.085
+    },
+    {
+      "idx": 438,
+      "tokens": 53,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 34.133,
+      "end_to_end_ms": 34.7638
+    },
+    {
+      "idx": 288,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 24.2461,
+      "end_to_end_ms": 24.9868
+    },
+    {
+      "idx": 606,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.7151,
+      "end_to_end_ms": 6.0311
+    },
+    {
+      "idx": 439,
+      "tokens": 27,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.2814,
+      "end_to_end_ms": 9.6179
+    },
+    {
+      "idx": 799,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.4761,
+      "end_to_end_ms": 6.7346
+    },
+    {
+      "idx": 444,
+      "tokens": 44,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.8721,
+      "end_to_end_ms": 13.2234
+    },
+    {
+      "idx": 390,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.8086,
+      "end_to_end_ms": 8.0856
+    },
+    {
+      "idx": 757,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 46.8678,
+      "end_to_end_ms": 47.2417
+    },
+    {
+      "idx": 442,
+      "tokens": 31,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.0487,
+      "end_to_end_ms": 10.4914
+    },
+    {
+      "idx": 750,
+      "tokens": 33,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.3393,
+      "end_to_end_ms": 38.7238
+    },
+    {
+      "idx": 491,
+      "tokens": 41,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.7182,
+      "end_to_end_ms": 12.086
+    },
+    {
+      "idx": 667,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 5.3918,
+      "end_to_end_ms": 5.7864
+    },
+    {
+      "idx": 94,
+      "tokens": 32,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 34.281,
+      "end_to_end_ms": 34.5885
+    },
+    {
+      "idx": 305,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4749,
+      "end_to_end_ms": 7.7832
+    },
+    {
+      "idx": 283,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.0204,
+      "end_to_end_ms": 8.2952
+    },
+    {
+      "idx": 605,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 21.6488,
+      "end_to_end_ms": 21.9038
+    },
+    {
+      "idx": 205,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 17.2353,
+      "end_to_end_ms": 17.5022
+    },
+    {
+      "idx": 307,
+      "tokens": 30,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.7648,
+      "end_to_end_ms": 9.1123
+    },
+    {
+      "idx": 573,
+      "tokens": 7,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.6334,
+      "end_to_end_ms": 4.8386
+    },
+    {
+      "idx": 485,
+      "tokens": 22,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4725,
+      "end_to_end_ms": 7.8365
+    },
+    {
+      "idx": 34,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.4382,
+      "end_to_end_ms": 8.7278
+    },
+    {
+      "idx": 645,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.9086,
+      "end_to_end_ms": 29.1898
+    },
+    {
+      "idx": 80,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.3406,
+      "end_to_end_ms": 7.6365
+    },
+    {
+      "idx": 301,
+      "tokens": 44,
+      "prediction": 1,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 11.7392,
+      "end_to_end_ms": 12.1104
+    },
+    {
+      "idx": 312,
+      "tokens": 18,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 22.2792,
+      "end_to_end_ms": 22.7296
+    },
+    {
+      "idx": 410,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.6461,
+      "end_to_end_ms": 17.0795
+    },
+    {
+      "idx": 250,
+      "tokens": 17,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.4949,
+      "end_to_end_ms": 7.7742
+    },
+    {
+      "idx": 838,
+      "tokens": 20,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 36.3002,
+      "end_to_end_ms": 36.6722
+    },
+    {
+      "idx": 262,
+      "tokens": 48,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 68.3563,
+      "end_to_end_ms": 68.7348
+    },
+    {
+      "idx": 347,
+      "tokens": 22,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 19.4867,
+      "end_to_end_ms": 20.1514
+    },
+    {
+      "idx": 490,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.3257,
+      "end_to_end_ms": 13.8381
+    },
+    {
+      "idx": 127,
+      "tokens": 39,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 34.572,
+      "end_to_end_ms": 35.5073
+    },
+    {
+      "idx": 281,
+      "tokens": 15,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 14.9933,
+      "end_to_end_ms": 15.5002
+    },
+    {
+      "idx": 693,
+      "tokens": 23,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 17.6536,
+      "end_to_end_ms": 18.1822
+    },
+    {
+      "idx": 592,
+      "tokens": 28,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.1321,
+      "end_to_end_ms": 15.5704
+    },
+    {
+      "idx": 840,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 23.6115,
+      "end_to_end_ms": 24.3117
+    },
+    {
+      "idx": 284,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 12.8191,
+      "end_to_end_ms": 13.2225
+    },
+    {
+      "idx": 98,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 26.2625,
+      "end_to_end_ms": 27.0203
+    },
+    {
+      "idx": 601,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.0863,
+      "end_to_end_ms": 11.5485
+    },
+    {
+      "idx": 736,
+      "tokens": 19,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 58.0149,
+      "end_to_end_ms": 58.687
+    },
+    {
+      "idx": 737,
+      "tokens": 24,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 21.1552,
+      "end_to_end_ms": 21.8521
+    },
+    {
+      "idx": 523,
+      "tokens": 16,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 16.8081,
+      "end_to_end_ms": 17.6922
+    },
+    {
+      "idx": 74,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.8671,
+      "end_to_end_ms": 19.4478
+    },
+    {
+      "idx": 492,
+      "tokens": 10,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.4072,
+      "end_to_end_ms": 14.0185
+    },
+    {
+      "idx": 628,
+      "tokens": 39,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 33.3621,
+      "end_to_end_ms": 34.1458
+    },
+    {
+      "idx": 772,
+      "tokens": 36,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 29.1478,
+      "end_to_end_ms": 29.9501
+    },
+    {
+      "idx": 81,
+      "tokens": 26,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 29.6063,
+      "end_to_end_ms": 30.4271
+    },
+    {
+      "idx": 586,
+      "tokens": 27,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 32.6753,
+      "end_to_end_ms": 33.5863
+    },
+    {
+      "idx": 534,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.1525,
+      "end_to_end_ms": 15.9272
+    },
+    {
+      "idx": 515,
+      "tokens": 24,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 23.1143,
+      "end_to_end_ms": 23.7616
+    },
+    {
+      "idx": 143,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 21.212,
+      "end_to_end_ms": 21.9461
+    },
+    {
+      "idx": 253,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 48.7938,
+      "end_to_end_ms": 49.5596
+    },
+    {
+      "idx": 123,
+      "tokens": 13,
+      "prediction": 0,
+      "correct": false,
+      "fallback": false,
+      "inference_ms": 11.7761,
+      "end_to_end_ms": 12.2913
+    },
+    {
+      "idx": 239,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 15.7879,
+      "end_to_end_ms": 16.4139
+    },
+    {
+      "idx": 303,
+      "tokens": 11,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.6279,
+      "end_to_end_ms": 12.1137
+    },
+    {
+      "idx": 584,
+      "tokens": 32,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 22.189,
+      "end_to_end_ms": 22.961
+    },
+    {
+      "idx": 115,
+      "tokens": 21,
+      "prediction": 1,
+      "correct": false,
+      "fallback": true,
+      "inference_ms": 44.1416,
+      "end_to_end_ms": 44.5736
+    },
+    {
+      "idx": 780,
+      "tokens": 15,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.813,
+      "end_to_end_ms": 8.3808
+    },
+    {
+      "idx": 238,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.9875,
+      "end_to_end_ms": 10.3325
+    },
+    {
+      "idx": 509,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.3876,
+      "end_to_end_ms": 31.7866
+    },
+    {
+      "idx": 456,
+      "tokens": 30,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5125,
+      "end_to_end_ms": 8.8293
+    },
+    {
+      "idx": 421,
+      "tokens": 26,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 28.2997,
+      "end_to_end_ms": 28.6038
+    },
+    {
+      "idx": 434,
+      "tokens": 10,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.1799,
+      "end_to_end_ms": 4.4101
+    },
+    {
+      "idx": 425,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 31.6411,
+      "end_to_end_ms": 31.9335
+    },
+    {
+      "idx": 503,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.2445,
+      "end_to_end_ms": 8.51
+    },
+    {
+      "idx": 488,
+      "tokens": 40,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 11.2704,
+      "end_to_end_ms": 11.8326
+    },
+    {
+      "idx": 154,
+      "tokens": 12,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.4862,
+      "end_to_end_ms": 5.715
+    },
+    {
+      "idx": 821,
+      "tokens": 20,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.3149,
+      "end_to_end_ms": 8.5792
+    },
+    {
+      "idx": 99,
+      "tokens": 12,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 4.6647,
+      "end_to_end_ms": 4.9225
+    },
+    {
+      "idx": 514,
+      "tokens": 37,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.2093,
+      "end_to_end_ms": 10.5475
+    },
+    {
+      "idx": 359,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.31,
+      "end_to_end_ms": 7.6139
+    },
+    {
+      "idx": 575,
+      "tokens": 40,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 38.7721,
+      "end_to_end_ms": 39.3703
+    },
+    {
+      "idx": 635,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.9274,
+      "end_to_end_ms": 4.1505
+    },
+    {
+      "idx": 758,
+      "tokens": 49,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 13.7135,
+      "end_to_end_ms": 14.1045
+    },
+    {
+      "idx": 317,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.5278,
+      "end_to_end_ms": 8.8522
+    },
+    {
+      "idx": 562,
+      "tokens": 19,
+      "prediction": 0,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 25.4016,
+      "end_to_end_ms": 25.7875
+    },
+    {
+      "idx": 596,
+      "tokens": 25,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.7486,
+      "end_to_end_ms": 9.0633
+    },
+    {
+      "idx": 280,
+      "tokens": 31,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 10.2803,
+      "end_to_end_ms": 10.6404
+    },
+    {
+      "idx": 431,
+      "tokens": 8,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 3.5168,
+      "end_to_end_ms": 3.7971
+    },
+    {
+      "idx": 234,
+      "tokens": 13,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 5.82,
+      "end_to_end_ms": 6.0612
+    },
+    {
+      "idx": 680,
+      "tokens": 25,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 14.1911,
+      "end_to_end_ms": 14.5611
+    },
+    {
+      "idx": 366,
+      "tokens": 29,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 18.3096,
+      "end_to_end_ms": 18.9876
+    },
+    {
+      "idx": 152,
+      "tokens": 34,
+      "prediction": 1,
+      "correct": true,
+      "fallback": true,
+      "inference_ms": 41.2612,
+      "end_to_end_ms": 41.8187
+    },
+    {
+      "idx": 330,
+      "tokens": 16,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 7.0175,
+      "end_to_end_ms": 7.27
+    },
+    {
+      "idx": 550,
+      "tokens": 18,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 6.9896,
+      "end_to_end_ms": 7.2502
+    },
+    {
+      "idx": 560,
+      "tokens": 21,
+      "prediction": 0,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 8.1135,
+      "end_to_end_ms": 8.3681
+    },
+    {
+      "idx": 665,
+      "tokens": 28,
+      "prediction": 1,
+      "correct": true,
+      "fallback": false,
+      "inference_ms": 9.8479,
+      "end_to_end_ms": 10.1288
+    }
+  ]
+}

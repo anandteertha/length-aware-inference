@@ -93,10 +93,12 @@ already been inspected, so the follow-up is exploratory. The script does not
 retune the confidence threshold.
 
 Direct conversion failed during ONNX shape inference. The separate
-[metadata repair and prediction audit](docs/int8-student-extension-results.md)
+[metadata repair and benchmark](docs/int8-student-extension-results.md)
 produced a smaller graph with the original quantizer settings. The repaired
-INT8 confidence cascade scored 785/872, nine fewer correct predictions than the
-teacher (1.032 percentage points), missing the accuracy target.
+INT8 confidence cascade reduced paired median latency by 47.0% versus the FP32
+cascade and used 871.4 MiB maximum peak working set versus 953.2 MiB. It scored
+785/872, nine fewer correct predictions than the teacher (1.032 percentage
+points), missing the accuracy target.
 
 Use the archived source checkpoints and predictions with the pinned dependency
 versions. The first command reproduces the direct conversion attempt. The
@@ -117,8 +119,8 @@ the source files. Use `--resume` with the same options to resume a partial run.
 ## Project status and code ownership
 
 The fixed-shape study, compact-student training, frozen gate evaluation,
-resident CPU benchmark, cost-weighted comparison, and INT8 graph and accuracy
-audit are documented in the final course report. Its
+resident CPU benchmark, cost-weighted comparison, and INT8 accuracy and timing
+results are documented in the final course report. Its
 [LaTeX source](report/final-report.tex) uses the
 [official NeurIPS 2024 style](https://media.neurips.cc/Conferences/NeurIPS2024/Styles.zip).
 Rebuild the PDF on Windows with MiKTeX's `pdflatex` using

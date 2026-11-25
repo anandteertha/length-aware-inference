@@ -1,0 +1,132 @@
+{
+  "status": "exploratory: SST-2 validation and IMDb sample previously inspected",
+  "plan_sha256": "c912e8fbaaccbca56d75d47d00163312ddb2913eff9c0ac284736cb329d53f08",
+  "validation_audit_sha256": "74b597bd5d9db23c0f39f6c69b3cf964a7f3ee63b460c6e4c025e43b8b4e3464",
+  "external_audit_sha256": "414cd6f749d9fee46ad14941e675db091e6613d52a0c7f9b292c3e72aaca41be",
+  "blocks": 3,
+  "methods": {
+    "teacher_only": {
+      "correct": 794,
+      "fallbacks": 872,
+      "median_of_process_medians_ms": 35.39525,
+      "process_medians_ms": [
+        35.39525,
+        28.75,
+        46.264849999999996
+      ],
+      "median_of_process_p95_ms": 87.52636999999994,
+      "process_p95_ms": [
+        87.52636999999994,
+        68.19424500000001,
+        90.79756499999998
+      ],
+      "max_observed_rss_mib": 876.421875,
+      "max_peak_wset_mib": 952.42578125
+    },
+    "fp32_student_only": {
+      "correct": 765,
+      "fallbacks": 0,
+      "median_of_process_medians_ms": 30.641750000000002,
+      "process_medians_ms": [
+        29.5912,
+        31.949550000000002,
+        30.641750000000002
+      ],
+      "median_of_process_p95_ms": 59.18888999999998,
+      "process_p95_ms": [
+        58.53782999999999,
+        59.18888999999998,
+        59.315374999999996
+      ],
+      "max_observed_rss_mib": 875.8984375,
+      "max_peak_wset_mib": 952.44140625
+    },
+    "int8_student_only": {
+      "correct": 760,
+      "fallbacks": 0,
+      "median_of_process_medians_ms": 15.224350000000001,
+      "process_medians_ms": [
+        11.2472,
+        16.593249999999998,
+        15.224350000000001
+      ],
+      "median_of_process_p95_ms": 33.515054999999975,
+      "process_p95_ms": [
+        32.230835,
+        33.89189,
+        33.515054999999975
+      ],
+      "max_observed_rss_mib": 793.453125,
+      "max_peak_wset_mib": 870.953125
+    },
+    "fp32_confidence_gate": {
+      "correct": 789,
+      "fallbacks": 161,
+      "median_of_process_medians_ms": 27.180300000000003,
+      "process_medians_ms": [
+        22.25685,
+        27.180300000000003,
+        31.77795
+      ],
+      "median_of_process_p95_ms": 91.51589499999993,
+      "process_p95_ms": [
+        67.26324999999997,
+        91.51589499999993,
+        103.28887999999989
+      ],
+      "max_observed_rss_mib": 877.96875,
+      "max_peak_wset_mib": 953.2265625
+    },
+    "int8_confidence_gate": {
+      "correct": 785,
+      "fallbacks": 206,
+      "median_of_process_medians_ms": 14.393650000000001,
+      "process_medians_ms": [
+        10.08,
+        14.393650000000001,
+        16.97505
+      ],
+      "median_of_process_p95_ms": 80.349915,
+      "process_p95_ms": [
+        43.803359999999984,
+        80.349915,
+        82.93316999999999
+      ],
+      "max_observed_rss_mib": 793.88671875,
+      "max_peak_wset_mib": 871.359375
+    }
+  },
+  "paired_reductions": {
+    "int8_student_vs_fp32_student": {
+      "by_block_percent": [
+        61.9914028494958,
+        48.064213736969705,
+        50.315011381530105
+      ],
+      "median_percent": 50.315011381530105
+    },
+    "int8_cascade_vs_fp32_cascade": {
+      "by_block_percent": [
+        54.7105722507902,
+        47.04381482176429,
+        46.58229999103152
+      ],
+      "median_percent": 47.04381482176429
+    },
+    "int8_cascade_vs_teacher": {
+      "by_block_percent": [
+        71.52160247490836,
+        49.93513043478261,
+        63.30896998477245
+      ],
+      "median_percent": 63.30896998477245
+    }
+  },
+  "prespecified_screen": {
+    "within_one_accuracy_point_of_teacher": false,
+    "at_least_15_percent_median_reduction_vs_teacher": true,
+    "resident_memory_under_1536_mib": true,
+    "faster_than_fp32_cascade_in_all_blocks": true,
+    "accuracy_no_worse_than_fp32_cascade": false
+  }
+}
