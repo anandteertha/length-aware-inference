@@ -1,0 +1,374 @@
+{
+  "calibration": {
+    "margin_q1": {
+      "n": 205,
+      "fixes": 24,
+      "harms": 1,
+      "calls": 103,
+      "routed_fixes": 17,
+      "routed_harms": 1
+    },
+    "margin_q2": {
+      "n": 205,
+      "fixes": 1,
+      "harms": 1,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q3": {
+      "n": 204,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q4": {
+      "n": 205,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q5": {
+      "n": 205,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "tokens_0_16": {
+      "n": 739,
+      "fixes": 17,
+      "harms": 1,
+      "calls": 72,
+      "routed_fixes": 10,
+      "routed_harms": 1
+    },
+    "tokens_17_32": {
+      "n": 225,
+      "fixes": 7,
+      "harms": 1,
+      "calls": 24,
+      "routed_fixes": 6,
+      "routed_harms": 0
+    },
+    "tokens_33_64": {
+      "n": 60,
+      "fixes": 1,
+      "harms": 0,
+      "calls": 7,
+      "routed_fixes": 1,
+      "routed_harms": 0
+    },
+    "predict_negative": {
+      "n": 468,
+      "fixes": 21,
+      "harms": 1,
+      "calls": 59,
+      "routed_fixes": 14,
+      "routed_harms": 0
+    },
+    "predict_positive": {
+      "n": 556,
+      "fixes": 4,
+      "harms": 1,
+      "calls": 44,
+      "routed_fixes": 3,
+      "routed_harms": 1
+    },
+    "negation": {
+      "n": 104,
+      "fixes": 7,
+      "harms": 0,
+      "calls": 20,
+      "routed_fixes": 2,
+      "routed_harms": 0
+    },
+    "no_negation": {
+      "n": 920,
+      "fixes": 18,
+      "harms": 2,
+      "calls": 83,
+      "routed_fixes": 15,
+      "routed_harms": 1
+    },
+    "contrast": {
+      "n": 50,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 8,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "no_contrast": {
+      "n": 974,
+      "fixes": 25,
+      "harms": 2,
+      "calls": 95,
+      "routed_fixes": 17,
+      "routed_harms": 1
+    },
+    "routed": {
+      "n": 103,
+      "fixes": 17,
+      "harms": 1,
+      "calls": 103,
+      "routed_fixes": 17,
+      "routed_harms": 1
+    },
+    "not_routed": {
+      "n": 921,
+      "fixes": 8,
+      "harms": 1,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q1_tokens_0_16": {
+      "n": 146,
+      "fixes": 16,
+      "harms": 1,
+      "calls": 72,
+      "routed_fixes": 10,
+      "routed_harms": 1
+    },
+    "margin_q1_tokens_17_32": {
+      "n": 44,
+      "fixes": 7,
+      "harms": 0,
+      "calls": 24,
+      "routed_fixes": 6,
+      "routed_harms": 0
+    },
+    "margin_q1_tokens_33_64": {
+      "n": 15,
+      "fixes": 1,
+      "harms": 0,
+      "calls": 7,
+      "routed_fixes": 1,
+      "routed_harms": 0
+    },
+    "margin_q1_negation": {
+      "n": 40,
+      "fixes": 6,
+      "harms": 0,
+      "calls": 20,
+      "routed_fixes": 2,
+      "routed_harms": 0
+    },
+    "margin_q1_no_negation": {
+      "n": 165,
+      "fixes": 18,
+      "harms": 1,
+      "calls": 83,
+      "routed_fixes": 15,
+      "routed_harms": 1
+    },
+    "margin_q1_contrast": {
+      "n": 15,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 8,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q1_no_contrast": {
+      "n": 190,
+      "fixes": 24,
+      "harms": 1,
+      "calls": 95,
+      "routed_fixes": 17,
+      "routed_harms": 1
+    }
+  },
+  "stanford_development": {
+    "margin_q1": {
+      "n": 363,
+      "fixes": 76,
+      "harms": 32,
+      "calls": 337,
+      "routed_fixes": 73,
+      "routed_harms": 31
+    },
+    "margin_q2": {
+      "n": 362,
+      "fixes": 15,
+      "harms": 11,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q3": {
+      "n": 362,
+      "fixes": 0,
+      "harms": 2,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q4": {
+      "n": 362,
+      "fixes": 1,
+      "harms": 1,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q5": {
+      "n": 363,
+      "fixes": 1,
+      "harms": 0,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "tokens_0_16": {
+      "n": 446,
+      "fixes": 14,
+      "harms": 12,
+      "calls": 62,
+      "routed_fixes": 9,
+      "routed_harms": 8
+    },
+    "tokens_17_32": {
+      "n": 947,
+      "fixes": 48,
+      "harms": 16,
+      "calls": 170,
+      "routed_fixes": 37,
+      "routed_harms": 12
+    },
+    "tokens_33_64": {
+      "n": 419,
+      "fixes": 31,
+      "harms": 18,
+      "calls": 105,
+      "routed_fixes": 27,
+      "routed_harms": 11
+    },
+    "predict_negative": {
+      "n": 887,
+      "fixes": 46,
+      "harms": 34,
+      "calls": 194,
+      "routed_fixes": 34,
+      "routed_harms": 22
+    },
+    "predict_positive": {
+      "n": 925,
+      "fixes": 47,
+      "harms": 12,
+      "calls": 143,
+      "routed_fixes": 39,
+      "routed_harms": 9
+    },
+    "negation": {
+      "n": 369,
+      "fixes": 32,
+      "harms": 12,
+      "calls": 104,
+      "routed_fixes": 25,
+      "routed_harms": 9
+    },
+    "no_negation": {
+      "n": 1443,
+      "fixes": 61,
+      "harms": 34,
+      "calls": 233,
+      "routed_fixes": 48,
+      "routed_harms": 22
+    },
+    "contrast": {
+      "n": 307,
+      "fixes": 30,
+      "harms": 12,
+      "calls": 77,
+      "routed_fixes": 22,
+      "routed_harms": 6
+    },
+    "no_contrast": {
+      "n": 1505,
+      "fixes": 63,
+      "harms": 34,
+      "calls": 260,
+      "routed_fixes": 51,
+      "routed_harms": 25
+    },
+    "routed": {
+      "n": 337,
+      "fixes": 73,
+      "harms": 31,
+      "calls": 337,
+      "routed_fixes": 73,
+      "routed_harms": 31
+    },
+    "not_routed": {
+      "n": 1475,
+      "fixes": 20,
+      "harms": 15,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q1_tokens_0_16": {
+      "n": 65,
+      "fixes": 9,
+      "harms": 8,
+      "calls": 62,
+      "routed_fixes": 9,
+      "routed_harms": 8
+    },
+    "margin_q1_tokens_17_32": {
+      "n": 185,
+      "fixes": 40,
+      "harms": 12,
+      "calls": 170,
+      "routed_fixes": 37,
+      "routed_harms": 12
+    },
+    "margin_q1_tokens_33_64": {
+      "n": 113,
+      "fixes": 27,
+      "harms": 12,
+      "calls": 105,
+      "routed_fixes": 27,
+      "routed_harms": 11
+    },
+    "margin_q1_negation": {
+      "n": 117,
+      "fixes": 26,
+      "harms": 9,
+      "calls": 104,
+      "routed_fixes": 25,
+      "routed_harms": 9
+    },
+    "margin_q1_no_negation": {
+      "n": 246,
+      "fixes": 50,
+      "harms": 23,
+      "calls": 233,
+      "routed_fixes": 48,
+      "routed_harms": 22
+    },
+    "margin_q1_contrast": {
+      "n": 82,
+      "fixes": 25,
+      "harms": 6,
+      "calls": 77,
+      "routed_fixes": 22,
+      "routed_harms": 6
+    },
+    "margin_q1_no_contrast": {
+      "n": 281,
+      "fixes": 51,
+      "harms": 26,
+      "calls": 260,
+      "routed_fixes": 51,
+      "routed_harms": 25
+    }
+  }
+}

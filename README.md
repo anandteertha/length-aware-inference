@@ -22,6 +22,10 @@ five paired CPU runs showed mixed latency results.
 The [formula search](docs/gate-formula-search-results.md) screened 58 variants
 and evaluated two frozen choices on 1,812 separate Stanford test sentences.
 Confidence-only led both at the same 337 teacher calls.
+The [gate signal study](docs/gate-signal-study-results.md) tried 60 additional
+formulas. On a fresh IMDb sample, two frozen scores avoided the same single
+teacher error at a matched budget. Confidence remained the clearest predictor
+of teacher benefit across the inspected cohorts.
 
 The [original fixed-shape report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md) document the earlier study.

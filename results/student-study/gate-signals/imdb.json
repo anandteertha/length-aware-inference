@@ -1,0 +1,322 @@
+{
+  "plan_sha256": "79a38c093155d6e67fc5aa5f0cf9ed27977925364119eb7f490997b3e9345364",
+  "logits_sha256": "d6c2aa433474c619d31409ff8dbcb5e8d1b921bb96ab2c1c099c12040d1daf47",
+  "n": 720,
+  "student_correct": 623,
+  "teacher_correct": 642,
+  "confidence": {
+    "correct": 640,
+    "calls": 174,
+    "fixes": 32,
+    "harms": 15,
+    "long_calls": 173
+  },
+  "oracle_correct": 666,
+  "finalists": {
+    "ridge": {
+      "matched": {
+        "correct": 641,
+        "calls": 174,
+        "fixes": 32,
+        "harms": 14,
+        "long_calls": 173
+      },
+      "fixed": {
+        "correct": 645,
+        "calls": 259,
+        "fixes": 39,
+        "harms": 17,
+        "long_calls": 258
+      },
+      "delta_95pct_interval": [
+        0.0,
+        0.004166666666666667
+      ],
+      "wins_vs_confidence": 1,
+      "losses_vs_confidence": 0,
+      "changed_routes": 6,
+      "wins_ids": [
+        6003
+      ],
+      "losses_ids": []
+    },
+    "fix_harm": {
+      "matched": {
+        "correct": 641,
+        "calls": 174,
+        "fixes": 32,
+        "harms": 14,
+        "long_calls": 173
+      },
+      "fixed": {
+        "correct": 646,
+        "calls": 266,
+        "fixes": 40,
+        "harms": 17,
+        "long_calls": 265
+      },
+      "delta_95pct_interval": [
+        0.0,
+        0.004166666666666667
+      ],
+      "wins_vs_confidence": 1,
+      "losses_vs_confidence": 0,
+      "changed_routes": 6,
+      "wins_ids": [
+        6003
+      ],
+      "losses_ids": []
+    },
+    "groups": {
+      "matched": {
+        "correct": 640,
+        "calls": 174,
+        "fixes": 32,
+        "harms": 15,
+        "long_calls": 174
+      },
+      "fixed": {
+        "correct": 645,
+        "calls": 262,
+        "fixes": 39,
+        "harms": 17,
+        "long_calls": 261
+      },
+      "delta_95pct_interval": [
+        0.0,
+        0.0
+      ],
+      "wins_vs_confidence": 0,
+      "losses_vs_confidence": 0,
+      "changed_routes": 2,
+      "wins_ids": [],
+      "losses_ids": []
+    }
+  },
+  "patterns": {
+    "margin_q1": {
+      "n": 144,
+      "fixes": 30,
+      "harms": 13,
+      "calls": 144,
+      "routed_fixes": 30,
+      "routed_harms": 13
+    },
+    "margin_q2": {
+      "n": 144,
+      "fixes": 10,
+      "harms": 6,
+      "calls": 30,
+      "routed_fixes": 2,
+      "routed_harms": 2
+    },
+    "margin_q3": {
+      "n": 144,
+      "fixes": 3,
+      "harms": 3,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q4": {
+      "n": 144,
+      "fixes": 0,
+      "harms": 2,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q5": {
+      "n": 144,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "tokens_0_16": {
+      "n": 2,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 1,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "tokens_17_32": {
+      "n": 5,
+      "fixes": 1,
+      "harms": 0,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "tokens_33_64": {
+      "n": 72,
+      "fixes": 1,
+      "harms": 1,
+      "calls": 12,
+      "routed_fixes": 1,
+      "routed_harms": 0
+    },
+    "tokens_65_96": {
+      "n": 161,
+      "fixes": 5,
+      "harms": 7,
+      "calls": 30,
+      "routed_fixes": 3,
+      "routed_harms": 4
+    },
+    "tokens_97_128": {
+      "n": 240,
+      "fixes": 20,
+      "harms": 8,
+      "calls": 62,
+      "routed_fixes": 15,
+      "routed_harms": 6
+    },
+    "tokens_129_512": {
+      "n": 240,
+      "fixes": 16,
+      "harms": 8,
+      "calls": 69,
+      "routed_fixes": 13,
+      "routed_harms": 5
+    },
+    "predict_negative": {
+      "n": 361,
+      "fixes": 26,
+      "harms": 13,
+      "calls": 95,
+      "routed_fixes": 19,
+      "routed_harms": 6
+    },
+    "predict_positive": {
+      "n": 359,
+      "fixes": 17,
+      "harms": 11,
+      "calls": 79,
+      "routed_fixes": 13,
+      "routed_harms": 9
+    },
+    "negation": {
+      "n": 518,
+      "fixes": 33,
+      "harms": 17,
+      "calls": 130,
+      "routed_fixes": 27,
+      "routed_harms": 12
+    },
+    "no_negation": {
+      "n": 202,
+      "fixes": 10,
+      "harms": 7,
+      "calls": 44,
+      "routed_fixes": 5,
+      "routed_harms": 3
+    },
+    "contrast": {
+      "n": 432,
+      "fixes": 27,
+      "harms": 19,
+      "calls": 116,
+      "routed_fixes": 20,
+      "routed_harms": 12
+    },
+    "no_contrast": {
+      "n": 288,
+      "fixes": 16,
+      "harms": 5,
+      "calls": 58,
+      "routed_fixes": 12,
+      "routed_harms": 3
+    },
+    "routed": {
+      "n": 174,
+      "fixes": 32,
+      "harms": 15,
+      "calls": 174,
+      "routed_fixes": 32,
+      "routed_harms": 15
+    },
+    "not_routed": {
+      "n": 546,
+      "fixes": 11,
+      "harms": 9,
+      "calls": 0,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q1_tokens_0_16": {
+      "n": 1,
+      "fixes": 0,
+      "harms": 0,
+      "calls": 1,
+      "routed_fixes": 0,
+      "routed_harms": 0
+    },
+    "margin_q1_tokens_33_64": {
+      "n": 10,
+      "fixes": 1,
+      "harms": 0,
+      "calls": 10,
+      "routed_fixes": 1,
+      "routed_harms": 0
+    },
+    "margin_q1_tokens_65_96": {
+      "n": 22,
+      "fixes": 3,
+      "harms": 3,
+      "calls": 22,
+      "routed_fixes": 3,
+      "routed_harms": 3
+    },
+    "margin_q1_tokens_97_128": {
+      "n": 53,
+      "fixes": 14,
+      "harms": 6,
+      "calls": 53,
+      "routed_fixes": 14,
+      "routed_harms": 6
+    },
+    "margin_q1_tokens_129_512": {
+      "n": 58,
+      "fixes": 12,
+      "harms": 4,
+      "calls": 58,
+      "routed_fixes": 12,
+      "routed_harms": 4
+    },
+    "margin_q1_negation": {
+      "n": 110,
+      "fixes": 26,
+      "harms": 11,
+      "calls": 110,
+      "routed_fixes": 26,
+      "routed_harms": 11
+    },
+    "margin_q1_no_negation": {
+      "n": 34,
+      "fixes": 4,
+      "harms": 2,
+      "calls": 34,
+      "routed_fixes": 4,
+      "routed_harms": 2
+    },
+    "margin_q1_contrast": {
+      "n": 95,
+      "fixes": 18,
+      "harms": 10,
+      "calls": 95,
+      "routed_fixes": 18,
+      "routed_harms": 10
+    },
+    "margin_q1_no_contrast": {
+      "n": 49,
+      "fixes": 12,
+      "harms": 3,
+      "calls": 49,
+      "routed_fixes": 12,
+      "routed_harms": 3
+    }
+  }
+}
