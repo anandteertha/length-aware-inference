@@ -1,0 +1,1534 @@
+{
+  "original_gate_sha256": "07c9e9417fce272e018fe48e3a5549c0980294834c4fb8cf933651990306849a",
+  "calibration_and_fit_sha256": "2a441b018c2ca856786938c07be7ea45e8631a3f4e2af8650a9dd02643f29ac6",
+  "development_sha256": "5863824e658d95f84d98d4aa1c23d1c0f1679a810dc70f4075ad21bc0fa5c9f4",
+  "stanford_test_url": "https://raw.githubusercontent.com/stanfordnlp/sentiment-treebank/fa0a89e0cabf5eac3ff4e1d27551fad4046ec012/binary/test-binary.txt",
+  "stanford_test_sha256": "00ecd5cae460771baaf707439b046494f6bdfcec8552abfc7b66b22122e059a2",
+  "confidence_point": {
+    "requested_fallback_fraction": 0.1,
+    "route_mode": "threshold",
+    "threshold": 0.0909053777761831,
+    "calibration_accuracy": 0.9697265625,
+    "calibration_fallback_fraction": 0.1005859375,
+    "estimated_extra_teacher_ms_per_request": 1.2860978027343748
+  },
+  "calibration_quotas": [
+    103,
+    205,
+    308
+  ],
+  "development_quota": 161,
+  "development_confidence_correct": 789,
+  "frozen_indices": {
+    "calibration_selected": 53,
+    "development_selected": 9
+  },
+  "grid": [
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        993,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1316.9641500000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3189.40595,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.0880906322751911
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1098.1278000000002,
+      "development_correct_at_quota": 785,
+      "development_teacher_ms_at_quota": 2904.36895,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.025533469901210158
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1064.929,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2752.1271500000003,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.01410845966908113
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.25,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1388.2234000000005,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3263.9063,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08729252308566854
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.25,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1169.3870500000005,
+      "development_correct_at_quota": 785,
+      "development_teacher_ms_at_quota": 2957.4082499999995,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.025423702778875054
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.25,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1098.1278000000004,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2808.40755,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013950815404096593
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.5,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        996,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1441.2627000000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3310.26645,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08558383047837712
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.5,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1230.7260500000004,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3028.6675,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02543280358824633
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 0.5,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1142.8674000000003,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2864.68795,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013679770079670032
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 1.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        998,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1517.5805500000004,
+      "development_correct_at_quota": 790,
+      "development_teacher_ms_at_quota": 3374.84655,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08449059143627352
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 1.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        998,
+        999,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1341.8632500000006,
+      "development_correct_at_quota": 788,
+      "development_teacher_ms_at_quota": 3116.5261499999997,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.024730396776682196
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.0,
+        "interaction_scale": 1.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1255.6251500000005,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2990.60705,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013187056264282621
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        993,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1325.2638500000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3189.40595,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08818056360422744
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1116.3477500000004,
+      "development_correct_at_quota": 785,
+      "development_teacher_ms_at_quota": 2904.36895,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02560110110573706
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1064.929,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2752.1271500000003,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.014119841475295668
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.25,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1396.5231000000006,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3263.9063,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.0870667270731008
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.25,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1177.6867500000003,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2965.70795,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02541388151391441
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.25,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1098.1278000000004,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2808.40755,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.01391316922115575
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.5,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        996,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1441.2627000000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3310.26645,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08551342006445038
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.5,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        996,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1239.0257500000002,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3036.9672,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02543087598919709
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 0.5,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1142.8674000000003,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2864.68795,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013699567594742897
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 1.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        998,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1517.5805500000004,
+      "development_correct_at_quota": 790,
+      "development_teacher_ms_at_quota": 3384.7668,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08439240375450162
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 1.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        998,
+        999,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1360.0832000000005,
+      "development_correct_at_quota": 788,
+      "development_teacher_ms_at_quota": 3116.5261499999997,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.024814724742460315
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.25,
+        "interaction_scale": 1.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.0003952709224436905,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1255.6251500000005,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2990.60705,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013216957114595647
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        993,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1325.2638500000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3189.40595,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08786308462410207
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        993,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1124.6474500000004,
+      "development_correct_at_quota": 785,
+      "development_teacher_ms_at_quota": 2912.6686500000005,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.025607365015600837
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1064.929,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2752.1271500000003,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.014128485354267462
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.25,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1396.5231000000006,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3263.9063,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08721589619252039
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.25,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1177.6867500000003,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2965.70795,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02544953142134125
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.25,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1098.1278000000004,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2808.40755,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013881306428422124
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.5,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        996,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1449.5624000000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3320.1867,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08551706987837833
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.5,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        996,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1239.0257500000002,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3036.9672,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.025336174236073948
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 0.5,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1142.8674000000003,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2872.98765,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013719365109815758
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 1.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        998,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1517.5805500000004,
+      "development_correct_at_quota": 790,
+      "development_teacher_ms_at_quota": 3384.7668,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.0843951796539408
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 1.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        998,
+        999,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1360.0832000000005,
+      "development_correct_at_quota": 788,
+      "development_teacher_ms_at_quota": 3116.5261499999997,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02487402471378805
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 0.5,
+        "interaction_scale": 1.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.000790541844887381,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1255.6251500000005,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2990.60705,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.01324685796490867
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1351.7835000000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3199.3261999999995,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08780735835055772
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        993,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1142.8674000000003,
+      "development_correct_at_quota": 785,
+      "development_teacher_ms_at_quota": 2912.6686500000005,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02566279158748503
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.0
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1064.929,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2742.2069,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.014022790659196711
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.25,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1414.7430500000005,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3263.9063,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08712240140431184
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.25,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1194.2861500000004,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2974.00765,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02543951333443519
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.25,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.003073817662895139
+        ]
+      },
+      "calibration_correct_by_quota": [
+        994,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1106.4275000000002,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2808.40755,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013812550985092563
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.5,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        996,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1457.8621000000005,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3320.1867,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08577129805736171
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.5,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        996,
+        1000,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1247.3254500000003,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3045.2669,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.02542958066422869
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 0.5,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.006147635325790278
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        1001,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1142.8674000000003,
+      "development_correct_at_quota": 784,
+      "development_teacher_ms_at_quota": 2872.98765,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013679371077266744
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 1.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        998,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1535.8005000000003,
+      "development_correct_at_quota": 790,
+      "development_teacher_ms_at_quota": 3384.7668,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08448722280789078
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 1.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        998,
+        999,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1360.0832000000003,
+      "development_correct_at_quota": 788,
+      "development_teacher_ms_at_quota": 3116.5261499999997,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.0248208177247866
+      }
+    },
+    {
+      "formula": {
+        "family": "shrink",
+        "length_scale": 1.0,
+        "interaction_scale": 1.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1255.6251500000005,
+      "development_correct_at_quota": 786,
+      "development_teacher_ms_at_quota": 2998.90675,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.01330665966553472
+      }
+    },
+    {
+      "formula": {
+        "family": "additive_cost",
+        "cost_penalty": 0.005,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        998,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1499.3606000000004,
+      "development_correct_at_quota": 789,
+      "development_teacher_ms_at_quota": 3328.4864,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08387360220664096
+      }
+    },
+    {
+      "formula": {
+        "family": "additive_cost",
+        "cost_penalty": 0.015,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        995,
+        999,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1466.1618000000005,
+      "development_correct_at_quota": 788,
+      "development_teacher_ms_at_quota": 3252.3655,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08139266431904982
+      }
+    },
+    {
+      "formula": {
+        "family": "additive_cost",
+        "cost_penalty": 0.03,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        998,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1341.8632500000006,
+      "development_correct_at_quota": 788,
+      "development_teacher_ms_at_quota": 3133.1255499999997,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.07670621223229952
+      }
+    },
+    {
+      "formula": {
+        "family": "additive_cost",
+        "cost_penalty": 0.06,
+        "coefficients": [
+          0.019778041900695334,
+          -0.0398913621131128,
+          0.001581083689774762,
+          -0.012295270651580556
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1000,
+        1001
+      ],
+      "calibration_teacher_ms_at_first_quota": 1210.8855500000004,
+      "development_correct_at_quota": 782,
+      "development_teacher_ms_at_quota": 2825.00695,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.0713854399232993
+      }
+    },
+    {
+      "formula": {
+        "family": "class_adjusted",
+        "ridge_penalty": 10.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.015768855862737647,
+          -0.04289459135442104,
+          0.0008418724885879231,
+          -0.010900852231678712,
+          -0.0020444607331731117,
+          0.01886949515757382
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1002,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1482.7612000000004,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3361.4882500000003,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08988225898153926
+      }
+    },
+    {
+      "formula": {
+        "family": "class_adjusted",
+        "ridge_penalty": 10.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.015768855862737647,
+          -0.04289459135442104,
+          0.0008418724885879231,
+          -0.010900852231678712,
+          -0.0020444607331731117,
+          0.01886949515757382
+        ]
+      },
+      "calibration_correct_by_quota": [
+        998,
+        1002,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1325.2638500000005,
+      "development_correct_at_quota": 781,
+      "development_teacher_ms_at_quota": 3031.9086,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.025184592292995273
+      }
+    },
+    {
+      "formula": {
+        "family": "class_adjusted",
+        "ridge_penalty": 10.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.015768855862737647,
+          -0.04289459135442104,
+          0.0008418724885879231,
+          -0.010900852231678712,
+          -0.0020444607331731117,
+          0.01886949515757382
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1002,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1245.7049000000004,
+      "development_correct_at_quota": 779,
+      "development_teacher_ms_at_quota": 2911.0481,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.01343678854151383
+      }
+    },
+    {
+      "formula": {
+        "family": "class_adjusted",
+        "ridge_penalty": 40.0,
+        "exponent": 0.0,
+        "coefficients": [
+          0.015894859871179074,
+          -0.0421652124003627,
+          0.0009264229201308332,
+          -0.010791040564893516,
+          -0.002188481905474295,
+          0.018452642282135005
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1002,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1492.6814500000003,
+      "development_correct_at_quota": 787,
+      "development_teacher_ms_at_quota": 3361.4882500000003,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08906475001589934
+      }
+    },
+    {
+      "formula": {
+        "family": "class_adjusted",
+        "ridge_penalty": 40.0,
+        "exponent": 0.5,
+        "coefficients": [
+          0.015894859871179074,
+          -0.0421652124003627,
+          0.0009264229201308332,
+          -0.010791040564893516,
+          -0.002188481905474295,
+          0.018452642282135005
+        ]
+      },
+      "calibration_correct_by_quota": [
+        998,
+        1002,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1325.2638500000005,
+      "development_correct_at_quota": 781,
+      "development_teacher_ms_at_quota": 3031.9086,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.024917955720071633
+      }
+    },
+    {
+      "formula": {
+        "family": "class_adjusted",
+        "ridge_penalty": 40.0,
+        "exponent": 0.75,
+        "coefficients": [
+          0.015894859871179074,
+          -0.0421652124003627,
+          0.0009264229201308332,
+          -0.010791040564893516,
+          -0.002188481905474295,
+          0.018452642282135005
+        ]
+      },
+      "calibration_correct_by_quota": [
+        997,
+        1002,
+        1000
+      ],
+      "calibration_teacher_ms_at_first_quota": 1245.7049000000004,
+      "development_correct_at_quota": 779,
+      "development_teacher_ms_at_quota": 2911.0481,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.013304798426532705
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "plan_sha256": "0220b390c975d7405de2de432ad638f0e4667000db852a20e242a769f98ac347",
+  "logits_sha256": "718f59b2a6e4a3969c09a9650a8f867567ab0d2472f7262331ce672e94f4d5f9",
+  "n": 1812,
+  "student_correct": 1628,
+  "teacher_correct": 1675,
+  "available_teacher_fixes": 93,
+  "available_teacher_harms": 46,
+  "confidence_correct": 1670,
+  "matched_calls": 337,
+  "confidence_teacher_cost_proxy_ms_per_request": 3.622476848785872,
+  "candidates": {
+    "calibration_selected": {
+      "formula_index": 53,
+      "fixed_correct": 1658,
+      "fixed_calls": 361,
+      "matched_correct": 1656,
+      "matched_teacher_cost_proxy_ms_per_request": 3.4488560982339957,
+      "matched_accuracy_difference_95pct_interval": [
+        -0.014900662251655629,
+        -0.0011037527593818985
+      ],
+      "matched_wins": 12,
+      "matched_losses": 26
+    },
+    "development_selected": {
+      "formula_index": 9,
+      "fixed_correct": 1673,
+      "fixed_calls": 495,
+      "matched_correct": 1669,
+      "matched_teacher_cost_proxy_ms_per_request": 3.8574315949227374,
+      "matched_accuracy_difference_95pct_interval": [
+        -0.003863134657836645,
+        0.0027593818984547464
+      ],
+      "matched_wins": 4,
+      "matched_losses": 5
+    }
+  }
+}

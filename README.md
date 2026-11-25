@@ -19,6 +19,9 @@ The [softer cost penalty follow-up](docs/soft-cost-gate-results.md) recovered
 some of the original gate's accuracy loss. On the SST-2 replay, it got 786
 correct versus 789 for confidence-only at the same 161 teacher calls. The
 five paired CPU runs showed mixed latency results.
+The [formula search](docs/gate-formula-search-results.md) screened 58 variants
+and evaluated two frozen choices on 1,812 separate Stanford test sentences.
+Confidence-only led both at the same 337 teacher calls.
 
 The [original fixed-shape report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md) document the earlier study.
