@@ -1,0 +1,40 @@
+{
+  "original_gate_sha256": "07c9e9417fce272e018fe48e3a5549c0980294834c4fb8cf933651990306849a",
+  "validation_logits_sha256": "5863824e658d95f84d98d4aa1c23d1c0f1679a810dc70f4075ad21bc0fa5c9f4",
+  "calibration_sha256": "2a441b018c2ca856786938c07be7ea45e8631a3f4e2af8650a9dd02643f29ac6",
+  "stanford_logits_sha256": "718f59b2a6e4a3969c09a9650a8f867567ab0d2472f7262331ce672e94f4d5f9",
+  "sensitivity_exponents": [
+    -1.0,
+    2.0
+  ],
+  "selected_development_regime": {
+    "lower": 0.05173926108845902,
+    "upper": 0.08144601285236308,
+    "correct": 790,
+    "calls": 161,
+    "long_correct": 184,
+    "long_calls": 55,
+    "teacher_fixes": 38,
+    "teacher_harms": 13,
+    "teacher_cost_proxy_ms_per_request": 3.828447993119266,
+    "exponent": 0.06659263697041105
+  },
+  "frozen_cutoff": {
+    "route_mode": "threshold",
+    "threshold": 0.07233968016451897
+  },
+  "selected_under_development_teacher_cost_proxy": {
+    "exponent": 0.036378159894892695,
+    "point": {
+      "route_mode": "threshold",
+      "threshold": 0.11174123138573994
+    },
+    "correct": 790,
+    "calls": 140,
+    "long_correct": 184,
+    "long_calls": 50,
+    "teacher_fixes": 36,
+    "teacher_harms": 11,
+    "teacher_cost_proxy_ms_per_request": 3.3591963302752292
+  }
+}
