@@ -151,6 +151,8 @@ results are documented in the final course report. Its
 [official NeurIPS 2024 style](https://media.neurips.cc/Conferences/NeurIPS2024/Styles.zip).
 Rebuild the PDF on Windows with MiKTeX's `pdflatex` using
 `powershell -NoProfile -ExecutionPolicy Bypass -File report/build.ps1`.
+The report's grid and paired-latency figure assets can be regenerated from
+the archives with `uv run --locked python tools/plot_report_routing.py`.
 The editable deck can be rebuilt with
 `powershell -File presentation/build_deck.ps1` on Windows with PowerPoint.
 
