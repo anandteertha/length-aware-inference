@@ -1,0 +1,43 @@
+{
+  "grid_results_sha256": "00c4755d344c0e5e890ddf9c00cdeb0786ebd59867801010aa35d9ca8ca88260",
+  "policies": {
+    "sst2_selection": {
+      "exponent": 0.1,
+      "calibration_fallback_target": 0.04,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.09240138617791267
+      },
+      "grid_index": [
+        5,
+        6
+      ]
+    },
+    "retrospective_choice": {
+      "exponent": 0.16,
+      "calibration_fallback_target": 0.0475,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.07544633992186026
+      },
+      "grid_index": [
+        8,
+        9
+      ]
+    }
+  },
+  "imdb_design": {
+    "split": "test",
+    "boundaries": [
+      97,
+      129
+    ],
+    "max_tokens": 160,
+    "per_cell": 120,
+    "seed": 2081
+  },
+  "additional_exclusions": {
+    "gate-signals/imdb-selection.json": "fedff516532adc029e0b105c022cda6ae2e6302c83307f21a0fae14794e0c397",
+    "teacher-harm/imdb-selection.json": "d275e8a5194aea3bdf8cb8ceb5b66ed5b757f6f3ef026825ba432648059e01e0"
+  }
+}

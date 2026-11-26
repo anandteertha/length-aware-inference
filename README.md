@@ -22,6 +22,10 @@ five paired CPU runs showed mixed latency results.
 The [continuous cost-exponent sweep](docs/cost-exponent-sweep-results.md)
 found a one-example gain on GLUE at equal calls. The selected exponent tied
 confidence-only on the previously inspected Stanford test split.
+The [exponent and cutoff heatmap](docs/gate-grid-results.md) visualizes
+4,641 fixed-threshold policies against the confidence cascade's accuracy,
+teacher call count, and estimated teacher cost. Both selected policies
+made more teacher calls and got four fewer answers right on a new IMDb sample.
 The [formula search](docs/gate-formula-search-results.md) screened 58 variants
 and evaluated two frozen choices on 1,812 separate Stanford test sentences.
 Confidence-only led both at the same 337 teacher calls.

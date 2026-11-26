@@ -1,0 +1,45 @@
+{
+  "plan_sha256": "db5ed98452c0703af43431a3710d688850890bd7f53e3e81b90d5a9a9e1c56e2",
+  "selection_sha256": "9b83fbb9dec599375c32571edb39f161e598fab8cc2adf4267f494a6cc9941b1",
+  "logits_sha256": "742d5e35adaf2c513dbb3f3812cc93f4488a010275a05bf9217189d85a30c94c",
+  "n": 720,
+  "teacher_correct": 647,
+  "student_correct": 630,
+  "confidence": {
+    "correct": 647,
+    "calls": 147,
+    "long_correct": 645,
+    "long_calls": 146,
+    "teacher_fixes": 34,
+    "teacher_harms": 17,
+    "teacher_cost_proxy_ms_per_request": 5.657438888888887
+  },
+  "policies": {
+    "sst2_selection": {
+      "correct": 643,
+      "calls": 213,
+      "long_correct": 641,
+      "long_calls": 212,
+      "teacher_fixes": 37,
+      "teacher_harms": 24,
+      "teacher_cost_proxy_ms_per_request": 8.208875138888885,
+      "paired_95pct_interval_vs_confidence": [
+        -0.013888888888888888,
+        0.002777777777777778
+      ]
+    },
+    "retrospective_choice": {
+      "correct": 643,
+      "calls": 213,
+      "long_correct": 641,
+      "long_calls": 212,
+      "teacher_fixes": 37,
+      "teacher_harms": 24,
+      "teacher_cost_proxy_ms_per_request": 8.208875138888885,
+      "paired_95pct_interval_vs_confidence": [
+        -0.013888888888888888,
+        0.002777777777777778
+      ]
+    }
+  }
+}
