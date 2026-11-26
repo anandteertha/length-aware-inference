@@ -78,5 +78,5 @@ archive contains every cell's accuracy, call count, and estimated teacher
 cost. The [IMDb audit](../results/student-study/gate-grid/imdb.json) checks
 the [frozen policies](../results/student-study/gate-grid/imdb-plan.json)
 using the verified teacher and student ONNX exports.
-The teacher cost proxy sums the original bin medians. CPU request latency
-was not measured for these policies.
+The teacher cost proxy sums the original bin medians. The 0.16 choice was
+timed separately with [four matched CPU blocks](gate-grid-timing-results.md).

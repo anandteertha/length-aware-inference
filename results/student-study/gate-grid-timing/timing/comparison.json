@@ -1,0 +1,60 @@
+{
+  "run_plan_sha256": "1468e9d3cd7e585840d855de7bcca6c8d1eaf4a5b09053dd9c500d38ae2f5fd3",
+  "benchmark_summary_sha256": "1dfdca9007a9d46808983ced0ac67757f4e85e9001569edf6af61003d1903083",
+  "process_order": [
+    "selected_gate-block-0",
+    "confidence_gate-block-0",
+    "confidence_gate-block-1",
+    "selected_gate-block-1",
+    "selected_gate-block-2",
+    "confidence_gate-block-2",
+    "confidence_gate-block-3",
+    "selected_gate-block-3"
+  ],
+  "correct_and_calls": {
+    "selected_gate": [
+      790,
+      149
+    ],
+    "confidence_gate": [
+      789,
+      161
+    ]
+  },
+  "paired_end_to_end": {
+    "median": {
+      "change_pct_by_block": [
+        -2.1832189742442054,
+        1.7606730322382802,
+        -3.611567232256896,
+        -1.8568707534564632
+      ],
+      "median_paired_change_pct": -2.0200448638503343,
+      "blocks_where_candidate_was_faster": 3
+    },
+    "mean": {
+      "change_pct_by_block": [
+        -0.9287647493872564,
+        3.5496282523520772,
+        -5.415461977296687,
+        -1.0059558058636564
+      ],
+      "median_paired_change_pct": -0.9673602776254564,
+      "blocks_where_candidate_was_faster": 3
+    },
+    "p95": {
+      "change_pct_by_block": [
+        4.811468180793699,
+        5.117555946258845,
+        -3.532468356780627,
+        1.4668604219686854
+      ],
+      "median_paired_change_pct": 3.139164301381192,
+      "blocks_where_candidate_was_faster": 1
+    }
+  },
+  "max_peak_working_set_mib": {
+    "selected_gate": 928.00390625,
+    "confidence_gate": 927.72265625
+  }
+}

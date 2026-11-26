@@ -26,6 +26,9 @@ The [exponent and cutoff heatmap](docs/gate-grid-results.md) visualizes
 4,641 fixed-threshold policies against the confidence cascade's accuracy,
 teacher call count, and estimated teacher cost. Both selected policies
 made more teacher calls and got four fewer answers right on a new IMDb sample.
+In the [SST-2 CPU benchmark](docs/gate-grid-timing-results.md), the 0.16
+setting got one more answer right and reduced paired median latency by 2.02%,
+while paired p95 increased by 3.14%.
 The [formula search](docs/gate-formula-search-results.md) screened 58 variants
 and evaluated two frozen choices on 1,812 separate Stanford test sentences.
 Confidence-only led both at the same 337 teacher calls.

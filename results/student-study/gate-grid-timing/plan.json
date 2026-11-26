@@ -1,0 +1,36 @@
+{
+  "grid_choice_sha256": "db5ed98452c0703af43431a3710d688850890bd7f53e3e81b90d5a9a9e1c56e2",
+  "gate_plan_sha256": "38cba3ba85f864ab2d09c0bccc35442eb456eb020a59285bc758e04f976e46c5",
+  "model_sha256": {
+    "teacher": "f43c0fdf362ee74160b2a38290f0cf6ec3c351c48ae71a9c075358836ff3181e",
+    "student": "108f540e639fa460b170a1d124c81c8372e296e2d6748ea7b86fc72d8a952058"
+  },
+  "candidate": {
+    "exponent": 0.16,
+    "calibration_fallback_target": 0.0475,
+    "point": {
+      "route_mode": "threshold",
+      "threshold": 0.07544633992186026
+    },
+    "grid_index": [
+      8,
+      9
+    ]
+  },
+  "primary_latency_metric": "paired end-to-end median request latency",
+  "expected_correct_and_calls": {
+    "selected_gate": [
+      790,
+      149
+    ],
+    "confidence_gate": [
+      789,
+      161
+    ]
+  },
+  "examples_per_block": 872,
+  "blocks": 4,
+  "threads": 4,
+  "require_ac": true,
+  "balanced_order": true
+}

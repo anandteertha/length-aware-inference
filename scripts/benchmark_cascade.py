@@ -36,6 +36,8 @@ def arguments():
     parser.add_argument("--blocks", type=int, default=3)
     parser.add_argument("--limit", type=int, default=872)
     parser.add_argument("--methods", nargs="+", choices=METHODS, default=METHODS)
+    parser.add_argument("--balanced-order", action="store_true")
+    parser.add_argument("--require-ac", action="store_true")
     parser.add_argument("--worker", action="store_true")
     parser.add_argument("--method")
     parser.add_argument("--block", type=int)
@@ -44,6 +46,12 @@ def arguments():
 
 def percentile(values, q):
     return float(np.percentile(np.asarray(values), q))
+
+
+def require_ac():
+    battery = psutil.sensors_battery()
+    if battery is None or not battery.power_plugged:
+        raise RuntimeError("AC power is required for this benchmark")
 
 
 def method_gate(method, benchmark_plan):
@@ -152,6 +160,8 @@ def parent(args):
         raise ValueError("Threads, blocks, and limit must be positive")
     if len(set(args.methods)) != len(args.methods):
         raise ValueError("Benchmarked methods must be distinct")
+    if args.require_ac:
+        require_ac()
     output = args.output.resolve()
     if output.exists():
         raise ValueError(f"Cascade timing output exists: {output}")
@@ -220,10 +230,18 @@ def parent(args):
         write_json(path, {"split": "validation", "rows": selected_rows})
         input_hashes[method] = sha256(path)
     reports = []
+    base_order = list(args.methods)
+    random.Random(4107).shuffle(base_order)
     for block in range(args.blocks):
-        order = list(args.methods)
-        random.Random(4107 + block).shuffle(order)
+        if args.balanced_order:
+            shift = block % len(base_order)
+            order = base_order[shift:] + base_order[:shift]
+        else:
+            order = list(args.methods)
+            random.Random(4107 + block).shuffle(order)
         for method in order:
+            if args.require_ac:
+                require_ac()
             command = [
                 sys.executable,
                 "-u",
@@ -246,7 +264,12 @@ def parent(args):
             ]
             completed = subprocess.run(command, check=True, capture_output=True, text=True)
             print(completed.stdout.strip(), flush=True)
-            reports.append(read_json(output / f"{method}-block-{block}.json"))
+            result = read_json(output / f"{method}-block-{block}.json")
+            if args.require_ac and not (
+                result["power_plugged_start"] and result["power_plugged_end"]
+            ):
+                raise RuntimeError(f"AC power check failed for {method} in block {block}")
+            reports.append(result)
     aggregate = {}
     for method in args.methods:
         subset = [row for row in reports if row["method"] == method]
