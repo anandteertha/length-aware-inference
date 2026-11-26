@@ -1,0 +1,65 @@
+{
+  "plan_sha256": "26fc18bf6215eafd099c8d737905c5752e12a6a2dcf7af65d388e0f936c0a99a",
+  "sst2": {
+    "n": 872,
+    "teacher_correct": 794,
+    "policies": {
+      "inherited": {
+        "correct": 785,
+        "calls": 206,
+        "fixes": 39,
+        "harms": 14,
+        "within_one_point": false
+      },
+      "primary": {
+        "correct": 782,
+        "calls": 165,
+        "fixes": 35,
+        "harms": 13,
+        "within_one_point": false,
+        "paired_95pct_interval_vs_inherited": [
+          -0.009174311926605505,
+          0.0011467889908256881
+        ]
+      },
+      "original_budget": {
+        "correct": 780,
+        "calls": 125,
+        "fixes": 30,
+        "harms": 10,
+        "within_one_point": false
+      }
+    }
+  },
+  "imdb": {
+    "n": 1000,
+    "teacher_correct": 895,
+    "policies": {
+      "inherited": {
+        "correct": 887,
+        "calls": 449,
+        "fixes": 83,
+        "harms": 39,
+        "within_one_point": true
+      },
+      "primary": {
+        "correct": 887,
+        "calls": 370,
+        "fixes": 77,
+        "harms": 33,
+        "within_one_point": true,
+        "paired_95pct_interval_vs_inherited": [
+          -0.007,
+          0.007
+        ]
+      },
+      "original_budget": {
+        "correct": 879,
+        "calls": 281,
+        "fixes": 67,
+        "harms": 31,
+        "within_one_point": false
+      }
+    }
+  }
+}

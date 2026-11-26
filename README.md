@@ -126,6 +126,12 @@ The audit records the model and source hashes in `plan.json` and saves
 Timing writes `summary.json` after all blocks pass. Use `--check-only` to verify
 the source files. Use `--resume` with the same options to resume a partial run.
 
+The [INT8 cutoff recalibration](docs/int8-recalibration-results.md) reduced
+teacher calls from 206 to 165 on SST-2 while scoring 782/872, outside the
+one-point teacher accuracy budget. On the reused IMDb sample it kept
+887/1,000 correct while reducing calls from 449 to 370. These are prediction
+replays. The recalibrated cutoff did not advance to CPU timing.
+
 ## Project status and code ownership
 
 The fixed-shape study, compact-student training, frozen gate evaluation,
@@ -163,6 +169,7 @@ validate inputs, and write reproducible output records.
 | [Cascade timing](scripts/benchmark_cascade.py) | `parent()` creates the frozen benchmark plan and launches process blocks. `method_gate()` resolves the gate for a policy. `worker()` runs requests with both sessions resident and checks predictions. |
 | [Fixed-shape variants](src/etdl/variants.py) and [router](src/etdl/router.py) | `build_variant()` exports a fixed input shape. `check_variant()` checks its logits against the reference. `RoutedClassifier` loads model sessions and applies the selected length policy. |
 | [INT8 audit](scripts/run_int8_extension.py) | `make_candidate()` applies and validates quantization. `strip_shape_metadata()` prepares the separate exploratory repair. `audit_validation()` and `audit_external()` check predictions. `benchmark_worker()` times resident sessions and `summarize()` aggregates completed AC blocks. |
+| [INT8 cutoff recalibration](scripts/recalibrate_int8.py) | `calibrate()` scores the Stanford cohort and freezes cutoffs. `replay()` evaluates those cutoffs against archived INT8 and teacher predictions. |
 
 ## Original fixed-shape study
 

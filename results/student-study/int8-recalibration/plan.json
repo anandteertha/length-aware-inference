@@ -1,0 +1,170 @@
+{
+  "candidate_sha256": "df86a420c162b37de25df513ce125d8fbde52f229c959954a1d0570d54604109",
+  "gate_sha256": "07c9e9417fce272e018fe48e3a5549c0980294834c4fb8cf933651990306849a",
+  "source_int8_plan_sha256": "c912e8fbaaccbca56d75d47d00163312ddb2913eff9c0ac284736cb329d53f08",
+  "stanford_archive_sha256": "718f59b2a6e4a3969c09a9650a8f867567ab0d2472f7262331ce672e94f4d5f9",
+  "calibration_logits_sha256": "173fef334cc0167bce4663d7eb222122b3d917dd3e1d0094b9a6e8246696cb39",
+  "calibration_examples": 1812,
+  "teacher_correct": 1675,
+  "inherited_point": {
+    "requested_fallback_fraction": 0.1,
+    "route_mode": "threshold",
+    "threshold": 0.0909053777761831,
+    "calibration_accuracy": 0.9697265625,
+    "calibration_fallback_fraction": 0.1005859375,
+    "estimated_extra_teacher_ms_per_request": 1.2860978027343748
+  },
+  "inherited_calibration": {
+    "correct": 1674,
+    "calls": 431,
+    "fixes": 88,
+    "harms": 31
+  },
+  "candidates": [
+    {
+      "nominal_quota": 0.1,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.12083554676586368
+      },
+      "correct": 1647,
+      "calls": 182,
+      "fixes": 51,
+      "harms": 21
+    },
+    {
+      "nominal_quota": 0.15,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.11058932640821835
+      },
+      "correct": 1662,
+      "calls": 272,
+      "fixes": 70,
+      "harms": 25
+    },
+    {
+      "nominal_quota": 0.2,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.0992776510135311
+      },
+      "correct": 1666,
+      "calls": 363,
+      "fixes": 77,
+      "harms": 28
+    },
+    {
+      "nominal_quota": 0.25,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.08730546515596674
+      },
+      "correct": 1673,
+      "calls": 453,
+      "fixes": 89,
+      "harms": 33
+    },
+    {
+      "nominal_quota": 0.3,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.07709650599304292
+      },
+      "correct": 1675,
+      "calls": 544,
+      "fixes": 95,
+      "harms": 37
+    },
+    {
+      "nominal_quota": 0.35,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.06900987427666722
+      },
+      "correct": 1674,
+      "calls": 634,
+      "fixes": 96,
+      "harms": 39
+    },
+    {
+      "nominal_quota": 0.4,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.061510845886706585
+      },
+      "correct": 1675,
+      "calls": 725,
+      "fixes": 98,
+      "harms": 40
+    },
+    {
+      "nominal_quota": 0.5,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.04555868608634897
+      },
+      "correct": 1674,
+      "calls": 906,
+      "fixes": 99,
+      "harms": 42
+    },
+    {
+      "nominal_quota": 0.65,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.022599653736567037
+      },
+      "correct": 1674,
+      "calls": 1178,
+      "fixes": 100,
+      "harms": 43
+    },
+    {
+      "nominal_quota": 0.8,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.002695186262742211
+      },
+      "correct": 1675,
+      "calls": 1449,
+      "fixes": 101,
+      "harms": 43
+    },
+    {
+      "nominal_quota": 1.0,
+      "point": {
+        "route_mode": "all",
+        "threshold": null
+      },
+      "correct": 1675,
+      "calls": 1812,
+      "fixes": 101,
+      "harms": 43
+    }
+  ],
+  "selected": {
+    "primary": {
+      "nominal_quota": 0.2,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.0992776510135311
+      },
+      "correct": 1666,
+      "calls": 363,
+      "fixes": 77,
+      "harms": 28
+    },
+    "original_budget": {
+      "nominal_quota": 0.15,
+      "point": {
+        "route_mode": "threshold",
+        "threshold": 0.11058932640821835
+      },
+      "correct": 1662,
+      "calls": 272,
+      "fixes": 70,
+      "harms": 25
+    }
+  }
+}
