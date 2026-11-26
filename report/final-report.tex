@@ -18,7 +18,8 @@
 \maketitle
 
 \begin{abstract}
-I study how input shape, student training, and fallback policy affect batch-one CPU sentiment inference. Fixed-shape ONNX execution did not pass the break-even screen at any of 11 tested lengths. A four-layer distilled student with confidence-based fallback scored 90.48\% versus 91.06\% for the full teacher on 872 GLUE SST-2 sentences, and reduced paired median latency by 24.1\% within the memory budget. The original length-and-cost gate missed the one-point accuracy target. A tuned version got one more sentence right than confidence-only, used 12 fewer teacher calls, and reduced paired median latency by 2.02\% in a separate benchmark, while paired p95 increased by 3.14\%. On 720 previously unscored IMDb reviews, the tuned cutoff made 66 additional calls and lost four predictions relative to confidence-only. The results identify when extra routing information can help and how selection, cost estimates, and length distribution limit transfer. Code, protocols, and measurements are in the \href{https://github.com/anandteertha/length-aware-inference}{project repository}.
+I study how input shape, student training, and fallback policy affect batch-one CPU sentiment inference. Fixed-shape ONNX execution did not pass the break-even screen at any of 11 tested lengths. A four-layer distilled student with confidence-based fallback scored 90.48\% versus 91.06\% for the full teacher on 872 GLUE SST-2 sentences, and reduced paired median latency by 24.1\% within the memory budget. The original length-and-cost gate missed the one-point accuracy target. A tuned version got one more sentence right than confidence-only, used 12 fewer teacher calls, and reduced paired median latency by 2.02\% in a separate benchmark, while paired p95 increased by 3.14\%. On 720 previously unscored IMDb reviews, the tuned cutoff made 66 additional calls and lost four predictions relative to confidence-only. The results identify when extra routing information can help and how selection, cost estimates, and length distribution limit transfer. Code and experiment records are available on GitHub.\newline
+\url{https://github.com/anandteertha/length-aware-inference}
 \end{abstract}
 
 \section{Introduction}
@@ -136,7 +137,8 @@ The cost-weighted student scored 832/1,000 on IMDb versus 843/1,000 for uniform 
 \input{report/discussion.tex}
 
 \section{Code and reproduction}
-The \href{https://github.com/anandteertha/length-aware-inference#readme}{README} gives setup and the full command order. With the dynamic teacher prepared, train and export the students and fit the original gate.
+GitHub \quad \url{https://github.com/anandteertha/length-aware-inference}\newline
+Follow the \href{https://github.com/anandteertha/length-aware-inference#readme}{README} to set up the teacher before running these commands.
 \begin{verbatim}
 uv run --locked python scripts/train_students.py
 uv run --locked python scripts/train_capacity.py
