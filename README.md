@@ -26,6 +26,10 @@ The [gate signal study](docs/gate-signal-study-results.md) tried 60 additional
 formulas. On a fresh IMDb sample, two frozen scores avoided the same single
 teacher error at a matched budget. Confidence remained the clearest predictor
 of teacher benefit across the inspected cohorts.
+The [teacher-harm follow-up](docs/harm-aware-gate-results.md) found a small
+streaming tradeoff on 960 fresh reviews. Its best rule made 16 fewer teacher
+calls and got two more right than the original confidence cutoff, while
+the primary equal-budget comparison tied confidence-only.
 
 The [original fixed-shape report](docs/project-report.md) and
 [CLI demonstration guide](docs/demo.md) document the earlier study.

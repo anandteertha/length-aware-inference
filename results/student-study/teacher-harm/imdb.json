@@ -1,0 +1,96 @@
+{
+  "plan_sha256": "84cb7e7214afcd94da81813aca8c17dbc32f2c26c4984cfa95f155daf33b8737",
+  "logits_sha256": "71dfd18d337e67a7aacf223e73f805bef599c6984c8395b5a970e40dae289819",
+  "n": 960,
+  "student_correct": 822,
+  "teacher_correct": 868,
+  "confidence": {
+    "correct": 865,
+    "calls": 222,
+    "fixes": 60,
+    "harms": 17,
+    "long_calls": 220
+  },
+  "finalists": {
+    "harm_only": {
+      "matched": {
+        "correct": 864,
+        "calls": 222,
+        "fixes": 60,
+        "harms": 18,
+        "long_calls": 219
+      },
+      "fixed": {
+        "correct": 864,
+        "calls": 226,
+        "fixes": 60,
+        "harms": 18,
+        "long_calls": 223
+      },
+      "swaps": 8,
+      "removed_fixes": 0,
+      "removed_harms": 0,
+      "added_fixes": 0,
+      "added_harms": 1,
+      "wins_vs_confidence": 0,
+      "losses_vs_confidence": 1,
+      "paired_95pct_accuracy_interval": [
+        -0.003125,
+        0.0
+      ],
+      "diagnostics": {
+        "confidence_at_fixed_call_quota": {
+          "correct": 865,
+          "calls": 226,
+          "fixes": 60,
+          "harms": 17,
+          "long_calls": 224
+        },
+        "window_examples": 125,
+        "window_harms": 10,
+        "window_fixes": 13,
+        "window_harm_auc": 0.4260869565217391
+      }
+    },
+    "fix_minus_two_harms": {
+      "matched": {
+        "correct": 865,
+        "calls": 222,
+        "fixes": 61,
+        "harms": 18,
+        "long_calls": 220
+      },
+      "fixed": {
+        "correct": 867,
+        "calls": 206,
+        "fixes": 59,
+        "harms": 14,
+        "long_calls": 204
+      },
+      "swaps": 9,
+      "removed_fixes": 0,
+      "removed_harms": 1,
+      "added_fixes": 1,
+      "added_harms": 2,
+      "wins_vs_confidence": 2,
+      "losses_vs_confidence": 2,
+      "paired_95pct_accuracy_interval": [
+        -0.004166666666666667,
+        0.004166666666666667
+      ],
+      "diagnostics": {
+        "confidence_at_fixed_call_quota": {
+          "correct": 866,
+          "calls": 206,
+          "fixes": 60,
+          "harms": 16,
+          "long_calls": 204
+        },
+        "window_examples": 125,
+        "window_harms": 10,
+        "window_fixes": 13,
+        "window_harm_auc": 0.4260869565217391
+      }
+    }
+  }
+}

@@ -62,7 +62,7 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-np.clip(x, -50, 50)))
 
 
-def logistic(matrix, labels, penalty):
+def logistic(matrix, labels, penalty, *, tolerance=1e-7):
     """Fit a small L2 logistic model with a damped Newton update."""
     weights = np.zeros(matrix.shape[1])
 
@@ -73,7 +73,7 @@ def logistic(matrix, labels, penalty):
     for _ in range(100):
         p = sigmoid(matrix @ weights)
         gradient = matrix.T @ (p - labels) + penalty @ weights
-        if np.max(np.abs(gradient)) < 1e-7:
+        if np.max(np.abs(gradient)) < tolerance:
             return weights.tolist()
         curvature = matrix.T @ (matrix * (p * (1 - p))[:, None]) + penalty
         step = np.linalg.solve(curvature, gradient)
@@ -370,7 +370,17 @@ def freeze(output):
     )
 
 
-def infer_imdb(output, gate):
+def infer_imdb(
+    output,
+    gate,
+    *,
+    split="test",
+    boundaries=(97, 129),
+    max_tokens=160,
+    per_cell=120,
+    seed=2039,
+    extra_exclusions=(),
+):
     previous = read_json(ARCHIVE / "cost-weighted/external-selection.json")
     earlier = read_json(ARCHIVE / "soft-cost/imdb-selection.json")
     dataset_name = previous["dataset_id"]
@@ -379,25 +389,31 @@ def infer_imdb(output, gate):
     train = load_dataset(dataset_name, split="train", revision=revision)
     seen = {normalized(test[r["dataset_index"]]["text"]) for r in previous["rows"]}
     seen.update(normalized(train[r["idx"]]["text"]) for r in earlier["rows"])
+    splits = {"test": test, "train": train}
+    for path in extra_exclusions:
+        archive = read_json(path)
+        seen.update(normalized(splits[archive["split"]][r["idx"]]["text"]) for r in archive["rows"])
+    dataset = splits[split]
     config = load_config(ROOT / "configs/default.toml")
     manifest = read_json(ARCHIVE / "manifest.json")
     if model_source(config) != manifest["model_source"]:
         raise ValueError("Tokenizer model source differs")
     tokenizer = load_tokenizer(config)
-    counts = np.zeros((3, 2), dtype=int)
+    counts = np.zeros((len(boundaries) + 1, 2), dtype=int)
+    total = counts.size * per_cell
     rows, inputs = [], []
-    for index in np.random.default_rng(2039).permutation(len(test)):
-        row = test[int(index)]
+    for index in np.random.default_rng(seed).permutation(len(dataset)):
+        row = dataset[int(index)]
         text, label = row["text"], row["label"]
         key = normalized(text)
-        if key in seen or np.all(counts[:, label] >= 120):
+        if key in seen or np.all(counts[:, label] >= per_cell):
             continue
         encoded = tokenizer(text, truncation=False, verbose=False, return_tensors="np")
         tokens = encoded["input_ids"].shape[1]
-        if tokens > 160:
+        if tokens > max_tokens:
             continue
-        group = int(np.digitize(tokens, [97, 129]))
-        if counts[group, label] >= 120:
+        group = int(np.digitize(tokens, boundaries))
+        if counts[group, label] >= per_cell:
             continue
         counts[group, label] += 1
         seen.add(key)
@@ -411,21 +427,21 @@ def infer_imdb(output, gate):
             }
         )
         inputs.append({name: encoded[name] for name in ("input_ids", "attention_mask")})
-        if np.all(counts == 120):
+        if len(rows) == total:
             break
-    if len(rows) != 720:
+    if len(rows) != total:
         raise ValueError(f"Fresh length/label quotas not met: {counts.tolist()}")
     write_json(
         output / "imdb-selection.json",
         {
             "dataset_id": dataset_name,
             "revision": revision,
-            "split": "test",
-            "seed": 2039,
+            "split": split,
+            "seed": seed,
             "rows": rows,
         },
     )
-    print("Locked 720 IMDb review IDs before inference", flush=True)
+    print(f"Locked {total} IMDb review IDs before inference", flush=True)
     teacher_path = config.artifact_dir / "models/dynamic.onnx"
     student_path = ROOT / "artifacts/student-study/onnx-verified/four_layer_distilled.onnx"
     export = read_json(ARCHIVE / "onnx-export-summary.json")["four_layer_distilled"]
@@ -440,7 +456,7 @@ def infer_imdb(output, gate):
         row["teacher_logits"] = teacher.run(["logits"], inputs_for_row)[0][0].tolist()
         row["student_logits"] = student.run(["logits"], inputs_for_row)[0][0].tolist()
         if i % 240 == 0:
-            print(f"Scored {i} / 720 IMDb reviews", flush=True)
+            print(f"Scored {i} / {total} IMDb reviews", flush=True)
     write_json(
         output / "imdb-logits.json",
         {
